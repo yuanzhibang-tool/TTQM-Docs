@@ -1,0 +1,23 @@
+{
+  "name": "ttqm-docs",
+  "version": "0.0.1",
+  "description": "TTQM, The Better Mqtt Tool Documents",
+  "scripts": {
+    "dev": "docsify serve",
+    "merge-to-main": "yzb-merge-main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanzhibang-tool/TTQM-Docs.git"
+  },
+  "author": "yuanzhibang.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuanzhibang-tool/TTQM-Docs/issues"
+  },
+  "homepage": "https://github.com/yuanzhibang-tool/TTQM-Docs#readme",
+  "devDependencies": {
+    "@yuanzhibang/cli": "^0.0.20",
+    "docsify": "^4.13.0"
+  }
+}
