@@ -13,6 +13,7 @@
 | 5    | 可以添加自定义的 `变量管道(variable pipe)`,其为`function`类型,将会传入整个消息体和需要传入的参数,将返回值作为模板变量                                                                                                                                        |
 | 6    | 可以添加自定义的`pipe`,用来处理整个消息体,并返回新的消息体                                                                                                                                                                                                   |
 | 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)                                                                                                                             |
+| 8    | 可以通过 `console` 来实现打印调试                                                                                                                                                                                                                            |
 
 ---
 
@@ -27,6 +28,7 @@
 | 5    | 支持监听`MQTT`客户端事件以及图表事件来实现不同的图表更新,例如: 客户端连接上,断开等,具体请参考 [图表>脚本](zh-cn/chart/script.md) |
 | 6    | 支持同时绘制多图表                                                                                                               |
 | 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md) |
+| 8    | 可以通过 `console` 来实现打印调试                                                                                                |
 
 ---
 
@@ -39,4 +41,4 @@
 | 3    | 支持发布消息                                                                                                                     |
 | 4    | 可以模拟 `IOT` 设备,以及其他端设备                                                                                               |
 | 5    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md) |
-|      |
+| 6    | 可以通过 `console` 来实现打印调试                                                                                                |
