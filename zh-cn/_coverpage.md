@@ -10,5 +10,5 @@
 - 拓展开发
 - 工具商店
 
-<a href="https://github.com/yuanzhibang-tool/yzb-document/" target="_blank">GitHub</a>
+<a href="https://github.com/yuanzhibang-tool/TTQM-Docs/" target="_blank">GitHub</a>
 [开始吧!](get_started)

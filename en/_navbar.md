@@ -1,8 +1,7 @@
 <!-- _navbar.md -->
 
-- [Github](https://github.com/yuanzhibang-tool)
-- [Docker](https://hub.docker.com/u/yuanzhibang)
-- [npm](https://www.npmjs.com/~yuanzhibang)
+- [Official Website](https://ttqm.app)
+- [Contact Us](mailto:developer@yuanzhibang.com)
 
 - **[En]**
   - [En](/en/)

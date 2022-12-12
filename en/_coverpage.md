@@ -10,5 +10,5 @@
 - Expansion development
 - Tool shop
 
-<a href="https://github.com/yuanzhibang-tool/yzb-document/" target="_blank">GitHub</a>
+<a href="https://github.com/yuanzhibang-tool/TTQM-Docs/" target="_blank">GitHub</a>
 [Get started!](get_started)
