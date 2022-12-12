@@ -10,6 +10,8 @@
   - [概念](zh-cn/pre-publish-script/concept.md)
   - [能力](zh-cn/pre-publish-script/ability.md)
   - [使用](zh-cn/pre-publish-script/usage.md)
+  - [内置 pipe,variable](zh-cn/pre-publish-script/demo.md)
+  - [拓展](zh-cn/pre-publish-script/expand.md)
   - [示例](zh-cn/pre-publish-script/demo.md)
 
 - [图表](zh-cn/chart/default.md)
@@ -17,8 +19,9 @@
   - [概念](zh-cn/chart/concept.md)
   - [能力](zh-cn/chart/ability.md)
   - [使用](zh-cn/chart/usage.md)
+  - [配置](zh-cn/chart/option.md)
+  - [脚本](zh-cn/chart/script.md)
   - [示例](zh-cn/chart/demo.md)
-  - [拓展](zh-cn/user-script/demo.md)
 
 - [用户脚本](zh-cn/user-script/default.md)
 
