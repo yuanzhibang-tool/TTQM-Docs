@@ -1,7 +1,7 @@
 {
   "name": "ttqm-docs",
   "version": "0.0.1",
-  "description": "TTQM, The Better Mqtt Tool Documents",
+  "description": "TTQM, A Better Mqtt Tool Documents",
   "scripts": {
     "dev": "docsify serve",
     "merge-to-main": "yzb-merge-main"
