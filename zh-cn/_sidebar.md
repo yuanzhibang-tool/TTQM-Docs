@@ -10,7 +10,7 @@
   - [概念](zh-cn/pre-publish-script/concept.md)
   - [能力](zh-cn/pre-publish-script/ability.md)
   - [使用](zh-cn/pre-publish-script/usage.md)
-  - [内置 pipe,variable](zh-cn/pre-publish-script/demo.md)
+  - [内置 pipe,variable](zh-cn/pre-publish-script/built_in.md)
   - [拓展](zh-cn/pre-publish-script/expand.md)
   - [示例](zh-cn/pre-publish-script/demo.md)
 
