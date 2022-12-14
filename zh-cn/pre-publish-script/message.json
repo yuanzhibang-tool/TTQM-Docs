@@ -1,0 +1,6 @@
+{
+    "user_variable1": "{{$user_variable1}}",
+    "user_variable2": "{{$user_variable2|user_variable_pipe1:'3'}}",
+    "user_variable3": "{{$user_variable3}}",
+    "user_variable4": "{{$user_variable4}}"
+}
