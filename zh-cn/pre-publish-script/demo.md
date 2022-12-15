@@ -349,7 +349,7 @@ module.exports = {
 <!-- tab:前置脚本 -->
 
 ```javascript
-// test the topic is contain the subTopic
+// test the topic is contain the sub-topic
 const isSubTopic = (topic, subTopic) => {
   const topicArray = topic.split('/');
   const subTopicArray = subTopic.split('/');
