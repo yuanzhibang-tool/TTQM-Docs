@@ -1,6 +1,6 @@
-// the module uuid is built in, please read uuid docs: https://www.npmjs.com/package/uuid
+// the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
 var { v4: uuidv4 } = require('uuid');
-// the module mockjs is built in, please read mockjs docs: http://mockjs.com/examples.html
+// the module mockjs is built-in, please read mockjs docs: http://mockjs.com/examples.html
 var mockjs = require('mockjs');
 // if you need to use other modules, you can install other modules via npm, please read the doc: https://doc.ttqm.app/#/en/question/how-to-add-support-modules
 
@@ -31,7 +31,7 @@ module.exports = {
     },
     pipe: {
         // pipe is used to process the full message body
-        // leafNodeToString is a built in pipe, covert all leaf node to string, the value is not used, you can set the value with null;
+        // leafNodeToString is a built-in pipe, covert all leaf node to string, the value is not used, you can set the value with null;
         leafNodeToString: null,
         addUserStringToRootNode: (publishMessage) => {
             try {
