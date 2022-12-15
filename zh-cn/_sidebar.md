@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 - [更新日志](zh-cn/release-note/default.md)
+
 - [开发前必读](zh-cn/before-develop/default.md)
   - [总览](zh-cn/before-develop/summary.md)
   - [概念](zh-cn/before-develop/concept.md)
@@ -11,8 +12,8 @@
   - [能力](zh-cn/pre-publish-script/ability.md)
   - [使用](zh-cn/pre-publish-script/usage.md)
   - [内置 pipe,variable](zh-cn/pre-publish-script/built_in.md)
-  - [拓展](zh-cn/pre-publish-script/expand.md)
   - [示例](zh-cn/pre-publish-script/demo.md)
+  - [调试](zh-cn/pre-publish-script/debug.md)
 
 - [图表](zh-cn/chart/default.md)
 
