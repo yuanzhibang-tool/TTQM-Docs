@@ -347,23 +347,53 @@ module.exports = {
 <!-- tab:前置脚本 -->
 
 ```javascript
-var crypto = require('crypto');
+// test the topic is contain the subTopic
+const isSubTopic = (topic, subTopic) => {
+  const topicArray = topic.split('/');
+  const subTopicArray = subTopic.split('/');
+  for (let index = 0; index < subTopicArray.length; index++) {
+    const topicIdxValue = topicArray[index];
+    const subTopicIdxValue = subTopicArray[index];
+    if (topicIdxValue === '#') {
+      return true;
+    }
+    if (topicIdxValue !== subTopicIdxValue && topicIdxValue !== '+') {
+      return false;
+    }
+  }
+  return true;
+};
+
+// parse topic which is `key1/value1/key2/value2` format to an object like {key1:value1,key2:value2}
+const parseKeyValueTopic = (topic) => {
+  // parse topic with /
+  const topicArray = topic.split('/');
+  if (topicArray.length % 2 === 1) {
+    throw new Error('topic not key value format string');
+  }
+  const map = {};
+  const keyLength = topicArray.length / 2;
+  for (let index = 0; index < keyLength; index++) {
+    const key = topicArray[2 * index];
+    const value = topicArray[2 * index + 1];
+    map[key] = value;
+  }
+  return map;
+};
+
 module.exports = {
   pipe: {
-    addSignInfo: (publishMessage) => {
+    messageTopicFilter: (publishMessage) => {
       try {
-        var messageString = publishMessage.message;
-        var messageObject = JSON.parse(messageString);
-        var guid = messageObject.guid;
-        var currentTime = messageObject.current_time;
-        var secretKey = 'c479942357f195d9818';
-        var signString = `{${guid}}.{${currentTime}}.{${secretKey}}`;
-        var shasum = crypto.createHash('sha1');
-        shasum.update(signString);
-        var sign = shasum.digest('hex');
-        messageObject.sign = sign;
-        // you need return the message in string format
-        return JSON.stringify(messageObject);
+        // process the publishMessage if the publishMessage.topic is sub-topic of 'device_type/+/device_sn/+'
+        if (isSubTopic('device_type/+/device_sn/+', publishMessage.topic)) {
+          const messageObject = JSON.parse(messageString);
+          // do something !!!
+          return JSON.stringify(messageObject);
+        } else {
+          const messageString = publishMessage.message;
+          return messageString;
+        }
       } catch (error) {
         // if any error is thrown, return the original message of publishMessage
         return publishMessage.message;
