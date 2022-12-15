@@ -23,6 +23,7 @@
   - [配置](zh-cn/chart/option.md)
   - [脚本](zh-cn/chart/script.md)
   - [示例](zh-cn/chart/demo.md)
+  - [调试](zh-cn/chart/debug.md)
 
 - [用户脚本](zh-cn/user-script/default.md)
 
