@@ -1,14 +1,6 @@
-### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串)
+### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=demo-1
 
 <!-- tabs:start -->
-
-<!-- tab:前置脚本 -->
-
-```javascript
-// only the built-in variables and variables pipes are used!
-module.exports = {};
-```
-
 <!-- tab:模板消息 -->
 
 ```json
@@ -20,6 +12,13 @@ module.exports = {};
     "y": 3.0
   }
 }
+```
+
+<!-- tab:前置脚本 -->
+
+```javascript
+// only the built-in variables and variables pipes are used!
+module.exports = {};
 ```
 
 <!-- tab:输出 -->
@@ -37,9 +36,21 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 2.将消息所有叶子节点转换为字符串
+### 2.将消息所有叶子节点转换为字符串 :id=demo-2
 
 <!-- tabs:start -->
+<!-- tab:模板消息 -->
+
+```json
+{
+  "guid": "{{$uuid}}",
+  "current_time": "{{$unixSecond|string}}",
+  "data": {
+    "x": 1.0,
+    "y": 3.0
+  }
+}
+```
 
 <!-- tab:前置脚本 -->
 
@@ -52,19 +63,6 @@ module.exports = {
     leafNodeToString: null,
   },
 };
-```
-
-<!-- tab:模板消息 -->
-
-```json
-{
-  "guid": "{{$uuid}}",
-  "current_time": "{{$unixSecond|string}}",
-  "data": {
-    "x": 1.0,
-    "y": 3.0
-  }
-}
 ```
 
 ---
@@ -86,16 +84,9 @@ module.exports = {
 
 ---
 
-### 3.获取当前格式化时间
+### 3.获取当前格式化时间 :id=demo-3
 
 <!-- tabs:start -->
-
-<!-- tab:前置脚本 -->
-
-```javascript
-// only the built-in variables and variables pipes are used!
-module.exports = {};
-```
 
 <!-- tab:模板消息 -->
 
@@ -107,6 +98,13 @@ module.exports = {};
     "y": 3.0
   }
 }
+```
+
+<!-- tab:前置脚本 -->
+
+```javascript
+// only the built-in variables and variables pipes are used!
+module.exports = {};
 ```
 
 ---
@@ -127,9 +125,22 @@ module.exports = {};
 
 ---
 
-### 4.对消息内容加签,来实现服务器消息安全验证
+### 4.对消息内容加签,来实现服务器消息安全验证 :id=demo-4
 
 <!-- tabs:start -->
+
+<!-- tab:模板消息 -->
+
+```json
+{
+  "guid": "{{$uuid}}",
+  "current_time": "{{$unixSecond|string}}",
+  "data": {
+    "x": 1.0,
+    "y": 3.0
+  }
+}
+```
 
 <!-- tab:前置脚本 -->
 
@@ -160,21 +171,6 @@ module.exports = {
 };
 ```
 
-<!-- tab:模板消息 -->
-
-```json
-{
-  "guid": "{{$uuid}}",
-  "current_time": "{{$unixSecond|string}}",
-  "data": {
-    "x": 1.0,
-    "y": 3.0
-  }
-}
-```
-
----
-
 <!-- tab:输出 -->
 
 ```json
@@ -193,9 +189,21 @@ module.exports = {
 
 ---
 
-### 5.使用公钥证书加密消息体,并返回加密消息体
+### 5.使用证书,公钥,私钥加解密消息体 :id=demo-5
 
 <!-- tabs:start -->
+<!-- tab:模板消息 -->
+
+```json
+{
+  "guid": "{{$uuid}}",
+  "current_time": "{{$unixSecond|string}}",
+  "data": {
+    "x": 1.0,
+    "y": 3.0
+  }
+}
+```
 
 <!-- tab:前置脚本 -->
 
@@ -301,21 +309,6 @@ module.exports = {
 };
 ```
 
-<!-- tab:模板消息 -->
-
-```json
-{
-  "guid": "{{$uuid}}",
-  "current_time": "{{$unixSecond|string}}",
-  "data": {
-    "x": 1.0,
-    "y": 3.0
-  }
-}
-```
-
----
-
 <!-- tab:输出 -->
 
 ```json
@@ -334,9 +327,22 @@ module.exports = {
 
 ---
 
-### 6.根据 `topic` 对消息进行过滤处理
+### 6.根据 `topic` 对消息进行过滤处理 :id=demo-6
 
 <!-- tabs:start -->
+
+<!-- tab:模板消息 -->
+
+```json
+{
+  "guid": "{{$uuid}}",
+  "current_time": "{{$unixSecond|string}}",
+  "data": {
+    "x": 1.0,
+    "y": 3.0
+  }
+}
+```
 
 <!-- tab:前置脚本 -->
 
@@ -367,21 +373,6 @@ module.exports = {
 };
 ```
 
-<!-- tab:模板消息 -->
-
-```json
-{
-  "guid": "{{$uuid}}",
-  "current_time": "{{$unixSecond|string}}",
-  "data": {
-    "x": 1.0,
-    "y": 3.0
-  }
-}
-```
-
----
-
 <!-- tab:输出 -->
 
 ```json
@@ -400,9 +391,20 @@ module.exports = {
 
 ---
 
-### 7.自定义拓展`variable`和`pipe`
+### 7.自定义拓展`variable`和`pipe` :id=demo-7
 
 <!-- tabs:start -->
+
+<!-- tab:模板消息 -->
+
+```json
+{
+  "user_variable1": "{{$user_variable1}}",
+  "user_variable2": "{{$user_variable2|user_variable_pipe1:'3'}}",
+  "user_variable3": "{{$user_variable3}}",
+  "user_variable4": "{{$user_variable4}}"
+}
+```
 
 <!-- tab:前置脚本 -->
 
@@ -458,19 +460,6 @@ module.exports = {
     },
   },
 };
-```
-
----
-
-<!-- tab:模板消息 -->
-
-```json
-{
-  "user_variable1": "{{$user_variable1}}",
-  "user_variable2": "{{$user_variable2|user_variable_pipe1:'3'}}",
-  "user_variable3": "{{$user_variable3}}",
-  "user_variable4": "{{$user_variable4}}"
-}
 ```
 
 <!-- tab:输出 -->
