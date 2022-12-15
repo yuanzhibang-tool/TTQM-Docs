@@ -18,10 +18,10 @@ _使用 nvm:_
 SET NVM_NODEJS_ORG_MIRROR=https://mirrors.ustc.edu.cn/node/
 # 列出node版本
 nvm list-remote
-# 安装16.9.1版本的 node
-nvm install 16.9.1
-# 切换到16.9.1版本的 node
-nvm use 16.9.1
+# 安装16.19.0版本的 node
+nvm install 16.19.0
+# 切换到16.19.0版本的 node
+nvm use 16.19.0
 ```
 
 ### macOS
@@ -57,10 +57,10 @@ brew install nvm
 export NVM_NODEJS_ORG_MIRROR=https://mirrors.ustc.edu.cn/node/
 # 列出node版本
 nvm list-remote
-# 安装16.9.1版本的 node
-nvm install 16.9.1
-# 切换到16.9.1版本的 node
-nvm use 16.9.1
+# 安装16.19.0版本的 node
+nvm install 16.19.0
+# 切换到16.19.0版本的 node
+nvm use 16.19.0
 ```
 
 ### Linux
@@ -87,8 +87,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_NODEJS_ORG_MIRROR=https://mirrors.ustc.edu.cn/node/
 # 列出node版本
 nvm list-remote
-# 安装16.9.1版本的 node
-nvm install 16.9.1
-# 切换到16.9.1版本的 node
-nvm use 16.9.1
+# 安装16.19.0版本的 node
+nvm install 16.19.0
+# 切换到16.19.0版本的 node
+nvm use 16.19.0
 ```

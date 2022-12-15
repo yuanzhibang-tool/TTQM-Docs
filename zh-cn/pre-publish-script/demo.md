@@ -1,3 +1,5 @@
+!>如果您想在前置脚本中使用更多的第三方库,请参照[如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)
+
 ### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=demo-1
 
 <!-- tabs:start -->
