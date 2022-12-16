@@ -10,8 +10,8 @@
   "guid": "{{$uuid}}",
   "current_time": "{{$unixSecond|string}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -30,8 +30,8 @@ module.exports = {};
   "guid": "b2357f1c-4799-495d-9818-a6b72816ffa3",
   "current_time": "1671014349",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -48,8 +48,8 @@ module.exports = {};
   "guid": "{{$uuid}}",
   "current_time": "{{$unixSecond|string}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -76,8 +76,8 @@ module.exports = {
   "guid": "b2357f1c-4799-495d-9818-a6b72816ffa3",
   "current_time": "1671014349",
   "data": {
-    "x": "1.0",
-    "y": "3.0"
+    "x": "1.1",
+    "y": "3.1"
   }
 }
 ```
@@ -96,8 +96,8 @@ module.exports = {
 {
   "current_time": "{{$|date:'yyyy-MM-DD HH:mm:ss'}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -117,8 +117,8 @@ module.exports = {};
 {
   "current_time": "2022-12-14 15:36:13",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -138,8 +138,8 @@ module.exports = {};
   "guid": "{{$uuid}}",
   "current_time": "{{$unixSecond|string}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -177,13 +177,13 @@ module.exports = {
 
 ```json
 {
-  "guid": "b2357f1c-4799-495d-9818-a6b72816ffa3",
-  "current_time": "1671014349",
+  "guid": "edb36c29-05e0-41ae-94c0-27b4076305ec",
+  "current_time": "1671178225",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   },
-  "sign": "2357f1c-4799-495d-9818-a6b72816ffa3"
+  "sign": "922011f4b3491cf1ee474ec02ff4a894b8654ce9"
 }
 ```
 
@@ -201,8 +201,8 @@ module.exports = {
   "guid": "{{$uuid}}",
   "current_time": "{{$unixSecond|string}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -313,16 +313,8 @@ module.exports = {
 
 <!-- tab:输出 -->
 
-```json
-{
-  "guid": "b2357f1c-4799-495d-9818-a6b72816ffa3",
-  "current_time": "1671014349",
-  "data": {
-    "x": 1.0,
-    "y": 3.0
-  },
-  "sign": "2357f1c-4799-495d-9818-a6b72816ffa3"
-}
+```plain text
+AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs8VxfRBEldYJ384B7Vt5fLMjSH3cTwduhJZINzK2XFP57ASGaYU9GwHnYnzS/jC5bMQEDwjB94TuSITTS7JaBN5tuMgjitqkIXlji7KyqFhBnuWEjbnWeub0uLp1rev+yowe+YtmzNoZFzBy8x4t9zLBDDgBpQRiJLEVa01W2dStImilAqgfbFInhkAbBwVS8Cv4z7evA25xruflZcjFHPgM3ocdudDF51xQEPysl05QymQ40poOI9sLuoYDFDe9ZmprrhQ==
 ```
 
 <!-- tabs:end -->
@@ -340,8 +332,8 @@ module.exports = {
   "guid": "{{$uuid}}",
   "current_time": "{{$unixSecond|string}}",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   }
 }
 ```
@@ -412,8 +404,8 @@ module.exports = {
   "guid": "b2357f1c-4799-495d-9818-a6b72816ffa3",
   "current_time": "1671014349",
   "data": {
-    "x": 1.0,
-    "y": 3.0
+    "x": 1.1,
+    "y": 3.1
   },
   "sign": "2357f1c-4799-495d-9818-a6b72816ffa3"
 }
