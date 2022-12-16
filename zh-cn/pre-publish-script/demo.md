@@ -509,3 +509,7 @@ module.exports = {
 ```
 
 <!-- tabs:end -->
+
+---
+
+!>更多内置`pipe`和`variable`请参照[内置 pipe,variable](zh-cn/pre-publish-script/built_in)
