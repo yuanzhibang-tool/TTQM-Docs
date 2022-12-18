@@ -2,7 +2,7 @@
 
 !>脚本的运作和客户端是独立的,脚本可以在客户端连接之前启动
 
-### 脚本支持的客户端事件监听
+### 脚本支持的客户端事件监听 :id=1
 
 | 事件              | 描述                     | 参数                     | 备注 |
 | ----------------- | ------------------------ | ------------------------ | ---- |
@@ -18,7 +18,7 @@
 
 ---
 
-### 脚本支持的用户图表操作事件监听
+### 脚本支持的用户图表操作事件监听 :id=2
 
 | 事件                | 描述                                     | 参数 | 备注 |
 | ------------------- | ---------------------------------------- | ---- | ---- |
@@ -27,7 +27,7 @@
 
 ---
 
-### 脚本更新图标数据的方式
+### 脚本更新图标数据的方式 :id=3
 
 通过调用内置函数`updateChartViewData`来更新图表,可以进行数据的单次单数据更新,也可进行单次多组数据更新,数据更新将会按照传入的顺序更新
 
@@ -56,7 +56,7 @@ interface ChartViewModuleUpdateData {
 
 ---
 
-### chartViewData.targetPath
+### chartViewData.targetPath :id=4
 
 !>targetPath 用来标记操作的目标位置,是数组格式,每一个元素代表对应层级的键,为空数组`[]`则代表配置的根节点
 
@@ -113,14 +113,14 @@ module.exports = option;
 
 ---
 
-### 使用参考代码
+### 使用参考代码 :id=5
 
 > 更多使用示例,请参考[图表>示例](zh-cn/chart/demo)
 
 **1.单次更新单个目标数据**
 
 <!-- tabs:start -->
-<!-- tab:原始配置 -->
+<!-- tab:配置 -->
 
 ```javascript
 var option = {
@@ -153,7 +153,7 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab:更新脚本 -->
+<!-- tab:脚本 -->
 
 ```javascript
 var chartViewData = {
@@ -205,7 +205,7 @@ module.exports = option;
 **1.单次更新多个目标数据**
 
 <!-- tabs:start -->
-<!-- tab:原始配置 -->
+<!-- tab:配置 -->
 
 ```javascript
 var option = {
@@ -238,7 +238,7 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab:更新脚本 -->
+<!-- tab:脚本 -->
 
 ```javascript
 var chartViewDatas = [
