@@ -15,7 +15,10 @@ var chartViewData = {
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 updateChartViewData(chartViewData);
-module.exports = {};
+module.exports = {
+  onMessage: (topic, payload, packet) => {},
+  onPublish: (topic, payload, packet) => {},
+};
 ```
 
 <!-- tab:配置 -->
