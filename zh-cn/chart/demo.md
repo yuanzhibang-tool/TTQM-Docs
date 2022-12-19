@@ -2,7 +2,7 @@
 
 !>如果您要查看图表配置示例,请按照[图表>配置](zh-cn/chart/option)中的操作来获取图表配置示例
 
-### 1.监听事件,并更新数据
+### 1.监听事件,并更新数据 :id=1
 
 <!-- tabs:start -->
 
@@ -87,7 +87,7 @@ module.exports = option;
 
 ---
 
-### 2.替换数据
+### 2.替换数据 :id=2
 
 <!-- tabs:start -->
 
@@ -170,7 +170,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 3.替换多组数据
+### 3.替换多组数据 :id=3
 
 <!-- tabs:start -->
 
@@ -253,7 +253,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 4.删除数据
+### 4.删除数据 :id=4
 
 <!-- tabs:start -->
 
@@ -336,7 +336,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 5.增加数据值
+### 5.增加数据值 :id=5
 
 <!-- tabs:start -->
 
@@ -419,7 +419,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 6.减少数据值
+### 6.减少数据值 :id=6
 
 <!-- tabs:start -->
 
@@ -502,7 +502,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 7.数组附加(array_append_start)
+### 7.数组附加(array_append_start) :id=7
 
 <!-- tabs:start -->
 
@@ -585,7 +585,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 8.数组合并(array_merge_start)
+### 8.数组合并(array_merge_start) :id=8
 
 <!-- tabs:start -->
 
@@ -668,7 +668,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 9.object 合并(object_merge)
+### 9.object 合并(object_merge) :id=9
 
 <!-- tabs:start -->
 
@@ -751,7 +751,7 @@ module.exports = option;
 
 <!-- tabs:end -->
 
-### 10.替换整个配置
+### 10.替换整个配置 :id=10
 
 <!-- tabs:start -->
 
