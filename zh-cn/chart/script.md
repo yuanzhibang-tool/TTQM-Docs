@@ -35,15 +35,15 @@
 
 ```javascript
 declare enum ChartViewModuleDataActionType {
-    ARRAY_APPEND_START = "array_append_start",  //将传入的data以元素的形式附加到配置目标位置原数组的头部
-    ARRAY_APPEND_END = "array_append_end", //将传入的data以元素的形式附加到配置目标位置原数组的尾部
-    ARRAY_MERGE_START = "array_merge_start", //将传入的data(必须是数组)中的所有元素合并到配置目标位置原数组的头部
-    ARRAY_MERGE_END = "array_merge_end", //将传入的data(必须是数组)中的所有元素合并到原数组的头部
-    OBJECT_MERGE = "object_merge",  //将传入的object和原object进行合并操作,形成一个新的object
-    DELETE = "delete", //将配置目标位置的元素清除
-    REPLACE = "replace", //将配置目标位置的元素替换为传入的data
-    INCREASE = "increase", //将配置目标位置的元素进行加操作
-    DECREASE = "decrease" //将配置目标位置的元素进行减操作
+    ARRAY_APPEND_START = "array_append_start",  //将传入的data以元素的形式附加到配置目标位置原数组的头部,data为对应的需要append的数组
+    ARRAY_APPEND_END = "array_append_end", //将传入的data以元素的形式附加到配置目标位置原数组的尾部,data为对应的需要append的数组
+    ARRAY_MERGE_START = "array_merge_start", //将传入的data(必须是数组)中的所有元素合并到配置目标位置原数组的头部,data为对应的需要merge的数组
+    ARRAY_MERGE_END = "array_merge_end", //将传入的data(必须是数组)中的所有元素合并到原数组的头部,data为对应的需要merge的数组
+    OBJECT_MERGE = "object_merge",  //将传入的object和原object进行合并操作,形成一个新的object,data为对应的需要merge的object
+    DELETE = "delete", //将配置目标位置的元素清除,无需设置data
+    REPLACE = "replace", //将配置目标位置的元素替换为传入的data,data为需要替换的目标元素
+    INCREASE = "increase", //将配置目标位置的元素进行加操作,data为对应需要increase的步长
+    DECREASE = "decrease" //将配置目标位置的元素进行减操作,data为对应需要decrease的步长
 }
 
 interface ChartViewModuleUpdateData {

@@ -117,6 +117,7 @@ setInterval(() => {
     data: data,
     version: 1,
   };
+  // 通过内置函数updateChartViewData更新图表数据
   updateChartViewData(returnData);
   console.log('script debug info!');
 }, 1000);
