@@ -31,7 +31,7 @@
   - [能力](zh-cn/user-script/ability.md)
   - [使用](zh-cn/user-script/usage.md)
   - [示例](zh-cn/user-script/demo.md)
-  - [拓展](zh-cn/user-script/demo.md)
+  - [调试](zh-cn/user-script/debug.md)
 
 - [常见问题?](zh-cn/question/default.md)
   - [如何安装指定版本的 node?](zh-cn/question/how-to-install-node-version-specified.md)
