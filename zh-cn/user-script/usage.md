@@ -1,103 +1,26 @@
-> 本部分说明如何使用图表
+> 用户脚本可以通过监听客户端事件,发送消息,来实现更加复杂的功能,例如:调试设备间的协议,模拟 `IOT` 设备,模拟服务端程序,批量消息发送,消息投递,永久化等.
 
-#### 图表分为两个部分,一个部分是配置,另外一部分是图表脚本
-
-![在设置中输出](../_media/chart-view-usage-1.jpg ':size=600')
+![用户脚本1](_media/usage/1.jpg ':size=600')
 
 ---
 
-### 1.图表配置
+### 1.创建或者打开已创建的用户脚本
 
-> 图表配置用来初始化图表的配置,可以通过导出配置`object`也可以导出一个`Promise`,在`resolve`中返回图表配置,更多配置相关的使用,请参考[图表>配置](zh-cn/chart/option)
+**点击用户脚本按钮**
 
-!>注意:图表配置必须在 10s 内返回配置,否则将会被强制终止.
+![用户脚本2](_media/usage/2.jpg ':size=400')
 
-<!-- tabs:start -->
-<!-- tab:同步返回 -->
+**打开**
 
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = option;
-```
-
-<!-- tab:异步返回 -->
-
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = new Promise((resolve, reject) => {
-  resolve(option);
-});
-```
-
-<!-- tab:初始化图表 -->
-
-![Chart Option](../_media/chart-option.jpg ':size=500')
-
-<!-- tabs:end -->
-
-!>更多图表配置,请参照[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line),TTQM 图表兼容[Apache Echart](https://echarts.apache.org/zh/index.html)数百种配置类型
-
-![EChart Demo](../_media/echart-demo.jpg ':size=500')
+![用户脚本3](_media/usage/3.jpg ':size=300')
 
 ---
 
-### 2.图表脚本
+### 2.脚本
 
-> 用来响应`mqtt`客户端,以及图表事件来返回图标数据更新的内容,来实现图表和数据联动
+> 用来响应`mqtt`客户端以及脚本事件来进行对应操作
 
-!>脚本不会自动退出,即使没有操作也会一直执行
+!>脚本不会自动退出,即使没有操作也会一直执行,所以可以作为常驻内存应用,支持同时运行多个用户脚本,例如,一个用来永久化消息投递,一个用于模拟`iot`设备,一个用于模拟服务器端程序,
 
 ```javascript
 setInterval(() => {
@@ -148,13 +71,13 @@ module.exports = {
 
 ---
 
-### 3.运行图表脚本
+### 4.运行图表脚本
 
 ![运行图表脚本](../_media/chart-view-usage-2.jpg ':size=600')
 
 ---
 
-### 4.最小化,最大化,和关闭
+### 5.最小化,最大化,和关闭
 
 !>最大化,将会隐藏 左侧的配置,JavaScript 和控制台
 
