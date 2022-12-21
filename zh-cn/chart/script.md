@@ -4,25 +4,28 @@
 
 ### 脚本支持的客户端事件监听 :id=1
 
-| 事件              | 描述                     | 参数                     | 备注 |
-| ----------------- | ------------------------ | ------------------------ | ---- |
-| `onConnect`       | 当客户端连接上时触发     | `connack`                | 无   |
-| `onMessage`       | 当客户端收到消息时触发   | `topic, payload, packet` | 无   |
-| `onReconnect`     | 当客户端重连时触发       | 无                       | 无   |
-| `onDisconnect`    | 当客户端断开时触发       | `packet`                 | 无   |
-| `onClose`         | 当客户端关闭时触发       | 无                       | 无   |
-| `onEnd`           | 当客户端被中止时触发     | 无                       | 无   |
-| `onError`         | 当客户端出现错误时触发   | `error`                  | 无   |
-| `onPacketSend`    | 当客户端发送包完成时触发 | `packet`                 | 无   |
-| `onPacketReceive` | 当客户端收到包时触发     | `packet`                 | 无   |
+| 事件              | 描述                       | 参数                     | 备注 |
+| ----------------- | -------------------------- | ------------------------ | ---- |
+| `onConnect`       | 当客户端连接上时触发       | `connack`                | 无   |
+| `onMessage`       | 当客户端收到消息时触发     | `topic, payload, packet` | 无   |
+| `onReconnect`     | 当客户端重连时触发         | 无                       | 无   |
+| `onDisconnect`    | 当客户端断开时触发         | `packet`                 | 无   |
+| `onClose`         | 当客户端关闭时触发         | 无                       | 无   |
+| `onEnd`           | 当客户端被中止时触发       | 无                       | 无   |
+| `onError`         | 当客户端出现错误时触发     | `error`                  | 无   |
+| `onPacketSend`    | 当客户端发送包完成时触发   | `packet`                 | 无   |
+| `onPublish`       | 当客户端发送消息成功时触发 | `topic, message, opts`   | 无   |
+| `onPacketReceive` | 当客户端收到包时触发       | `packet`                 | 无   |
 
 ---
 
 ### 脚本支持的用户图表操作事件监听 :id=2
 
+![脚本支持的用户图表操作事件监听](_media/script/1.jpg ':size=600')
+
 | 事件                | 描述                                     | 参数 | 备注 |
 | ------------------- | ---------------------------------------- | ---- | ---- |
-| `onModuleReset`     | 当用户点击图表菜单中的重置图表菜单时触发 | 无   | 无   |
+| `onModuleUserReset` | 当用户点击图表菜单中的重置图表菜单时触发 | 无   | 无   |
 | `onModuleUserClear` | 当用户点击图表菜单中的清空图表菜单时触发 | 无   | 无   |
 
 ---
@@ -246,11 +249,13 @@ var chartViewDatas = [
     targetPath: ['series', 'data'],
     action: 'replace',
     data: [1, 2, 3, 4, 5, 6, 7],
+    version: 1,
   },
   {
     targetPath: ['series', 'data', 0],
     action: 'replace',
     data: 9,
+    version: 1,
   },
 ];
 updateChartViewData(chartViewData);
