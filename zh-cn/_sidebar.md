@@ -30,6 +30,7 @@
   - [概念](zh-cn/user-script/concept.md)
   - [能力](zh-cn/user-script/ability.md)
   - [使用](zh-cn/user-script/usage.md)
+  - [事件以及内置函数](zh-cn/user-script/event-function.md)
   - [示例](zh-cn/user-script/demo.md)
   - [调试](zh-cn/user-script/debug.md)
 
