@@ -2,7 +2,7 @@
 
 ### 1.监听客户端连接事件,并发布在线消息 :id=1
 
-!>具体的监听事件描述,请参考[图表>脚本](zh-cn/user-script/event-function)
+!>具体的监听事件描述,请参考[用户脚本>脚本事件以及内置函数](zh-cn/user-script/event-function)
 
 ```javascript
 module.exports = {
@@ -16,7 +16,57 @@ module.exports = {
     console.log(`recieved topic:${topic}`);
   },
   onWillExit: () => {
-    // 脚本退出前执行,有2秒的时间可以操作,例如保存数据
+    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+    console.log('onWillExit');
+  },
+};
+```
+
+---
+
+### 2.过滤 `topic` 信息 :id=2
+
+!>具体的监听事件描述,请参考[用户脚本>脚本事件以及内置函数](zh-cn/user-script/event-function)
+
+```javascript
+const { TopicUtil } = require('@ttqm/ttqm-support');
+module.exports = {
+  onMessage: (topic, payload, packet) => {
+    // 过滤topic
+    if (TopicUtil.isSubTopic('version/1/device_type/2/devic_id/+', topic)) {
+      // do something!!!
+      const topicMap = TopicUtil.parseKeyValueTopic(topic);
+      console.log(`filter topic:${topic}`);
+      console.log(`device id:${topicMap.devic_id}`);
+    }
+  },
+  onWillExit: () => {
+    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+    console.log('onWillExit');
+  },
+};
+```
+
+---
+
+### 3.记录数据并写入文件
+
+!> 只能将数据写入到脚本数据文件夹以及脚本临时数据文件夹
+
+```javascript
+const { TopicUtil } = require('@ttqm/ttqm-support');
+module.exports = {
+  onMessage: (topic, payload, packet) => {
+    // 过滤topic
+    if (TopicUtil.isSubTopic('version/1/device_type/2/devic_id/+', topic)) {
+      // do something!!!
+      const topicMap = TopicUtil.parseKeyValueTopic(topic);
+      console.log(`filter topic:${topic}`);
+      console.log(`device id:${topicMap.devic_id}`);
+    }
+  },
+  onWillExit: () => {
+    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
     console.log('onWillExit');
   },
 };

@@ -903,25 +903,10 @@ module.exports = {};
 
 ```javascript
 // test the topic is contain the sub-topic
-const isSubTopic = (topic, subTopic) => {
-  const topicArray = topic.split('/');
-  const subTopicArray = subTopic.split('/');
-  for (let index = 0; index < subTopicArray.length; index++) {
-    const topicIdxValue = topicArray[index];
-    const subTopicIdxValue = subTopicArray[index];
-    if (topicIdxValue === '#') {
-      return true;
-    }
-    if (topicIdxValue !== subTopicIdxValue && topicIdxValue !== '+') {
-      return false;
-    }
-  }
-  return true;
-};
-
+const { TopicUtil } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    if (isSubTopic('device_type/+/device_id/+', topic)) {
+    if (TopicUtil.isSubTopic('device_type/+/device_id/+', topic)) {
       var chartViewData = {
         targetPath: ['series', 'data', 0],
         action: 'increase',

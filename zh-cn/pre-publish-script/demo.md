@@ -147,7 +147,8 @@ module.exports = {};
 <!-- tab:前置脚本 -->
 
 ```javascript
-var crypto = require('crypto');
+const { EncryptUtil } = require('@ttqm/ttqm-support');
+
 module.exports = {
   pipe: {
     addSignInfo: (publishMessage) => {
@@ -158,9 +159,7 @@ module.exports = {
         var currentTime = messageObject.current_time;
         var secretKey = 'c479942357f195d9818';
         var signString = `{${guid}}.{${currentTime}}.{${secretKey}}`;
-        var shasum = crypto.createHash('sha1');
-        shasum.update(signString);
-        var sign = shasum.digest('hex');
+        var sign = EncryptUtil.getHash(signString, 'sha1');
         messageObject.sign = sign;
         // you need return the message in string format
         return JSON.stringify(messageObject);
@@ -210,67 +209,7 @@ module.exports = {
 <!-- tab:前置脚本 -->
 
 ```javascript
-const crypto = require('crypto');
-
-// encrypt with cert in pem format
-const certEncrypt = (certPem, stringContent) => {
-  const cert = new crypto.X509Certificate(certPem);
-  const publicKey = cert.publicKey;
-  // encrypt and covert to base64 encode
-  const encryptedBase64 = crypto
-    .publicEncrypt(publicKey, stringContent)
-    .toString('base64');
-  return encryptedBase64;
-};
-
-// decrypt with cert in pem format
-const certDecrypt = (certPem, encyptedBase64Content) => {
-  const cert = new crypto.X509Certificate(certPem);
-  const publicKey = cert.publicKey;
-  const encyptedContent = Buffer.from(encyptedBase64Content, 'base64');
-  const decryptContent = crypto
-    .publicDecrypt(publicKey, encyptedContent)
-    .toString();
-  return decryptContent;
-};
-
-// encrypt with public key in pem format
-const publicKeyEncrypt = (publicKeyPem, stringContent) => {
-  const publicKey = crypto.createPublicKey(publicKeyPem);
-  // encrypt and covert to base64 encode
-  const encryptedBase64 = crypto
-    .publicEncrypt(publicKey, stringContent)
-    .toString('base64');
-  return encryptedBase64;
-};
-
-// decrypt with public key in pem format
-const publicKeyDecrypt = (publicKeyPem, encyptedBase64Content) => {
-  const publicKey = createPublicKey(publicKeyPem);
-  const encyptedContent = Buffer.from(encyptedBase64Content, 'base64');
-  const decryptContent = publicDecrypt(publicKey, encyptedContent).toString();
-  return decryptContent;
-};
-
-// encrypt with private key in pem format
-const privateKeyEncrypt = (privateKeyPem, stringContent) => {
-  const privateKey = crypto.createPrivateKey(privateKeyPem);
-  // encrypt and covert to base64 encode
-  const encryptedBase64 = crypto
-    .privateEncrypt(privateKey, stringContent)
-    .toString('base64');
-  return encryptedBase64;
-};
-
-// decrypt with private key in pem format
-const privateKeyDecrypt = (privateKeyPem, encyptedBase64Content) => {
-  const privateKey = crypto.createPrivateKey(privateKeyPem);
-  const encyptedContent = Buffer.from(encyptedBase64Content, 'base64');
-  const decryptContent = crypto
-    .privateDecrypt(privateKey, encyptedContent)
-    .toString();
-  return decryptContent;
-};
+const { CertUtil } = require('@ttqm/ttqm-support');
 
 var certPem = `-----BEGIN CERTIFICATE-----
 MIIDWzCCAkOgAwIBAgIURzmUxeH8mb5B7eWBKrxBi0k4ZCgwDQYJKoZIhvcNAQEL
@@ -299,7 +238,7 @@ module.exports = {
       try {
         var messageString = publishMessage.message;
         // encrypt message string with the cert in pem format
-        var encyptedContent = certEncrypt(certPem, messageString);
+        var encyptedContent = CertUtil.certEncrypt(certPem, messageString, 100);
         // you need return the message in string format
         return encyptedContent;
       } catch (error) {
@@ -341,46 +280,20 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 <!-- tab:前置脚本 -->
 
 ```javascript
-// test the topic is contain the sub-topic
-const isSubTopic = (topic, subTopic) => {
-  const topicArray = topic.split('/');
-  const subTopicArray = subTopic.split('/');
-  for (let index = 0; index < subTopicArray.length; index++) {
-    const topicIdxValue = topicArray[index];
-    const subTopicIdxValue = subTopicArray[index];
-    if (topicIdxValue === '#') {
-      return true;
-    }
-    if (topicIdxValue !== subTopicIdxValue && topicIdxValue !== '+') {
-      return false;
-    }
-  }
-  return true;
-};
-
-// parse topic which is `key1/value1/key2/value2` format to an object like {key1:value1,key2:value2}
-const parseKeyValueTopic = (topic) => {
-  // parse topic with /
-  const topicArray = topic.split('/');
-  if (topicArray.length % 2 === 1) {
-    throw new Error('topic not key value format string');
-  }
-  const map = {};
-  const keyLength = topicArray.length / 2;
-  for (let index = 0; index < keyLength; index++) {
-    const key = topicArray[2 * index];
-    const value = topicArray[2 * index + 1];
-    map[key] = value;
-  }
-  return map;
-};
+// require the build-in support module
+const { TopicUtil } = require('@ttqm/ttqm-support');
 
 module.exports = {
   pipe: {
     messageTopicFilter: (publishMessage) => {
       try {
         // process the publishMessage if the publishMessage.topic is sub-topic of 'device_type/+/device_sn/+'
-        if (isSubTopic('device_type/+/device_sn/+', publishMessage.topic)) {
+        if (
+          TopicUtil.isSubTopic(
+            'device_type/+/device_sn/+',
+            publishMessage.topic
+          )
+        ) {
           const messageObject = JSON.parse(messageString);
           // do something !!!
           return JSON.stringify(messageObject);
