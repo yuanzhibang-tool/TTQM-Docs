@@ -54,19 +54,21 @@ module.exports = {
 !> 只能将数据写入到脚本数据文件夹以及脚本临时数据文件夹
 
 ```javascript
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { FileUtil } = require('@ttqm/ttqm-support');
+const messageCountMap = {};
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    // 过滤topic
-    if (TopicUtil.isSubTopic('version/1/device_type/2/devic_id/+', topic)) {
-      // do something!!!
-      const topicMap = TopicUtil.parseKeyValueTopic(topic);
-      console.log(`filter topic:${topic}`);
-      console.log(`device id:${topicMap.devic_id}`);
+    if (!messageCountMap[topic]) {
+      messageCountMap[topic] = 0;
     }
+    messageCountMap[topic] = messageCountMap[topic] + 1;
+    console.log(messageCountMap[topic]);
   },
   onWillExit: () => {
-    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+    // 保存数据
+    const saveData = JSON.stringify(messageCountMap);
+    const filePath = FileUtil.getScriptDataPath('messageCountMap.json');
+    FileUtil.createStringFileSync(filePath, saveData);
     console.log('onWillExit');
   },
 };
