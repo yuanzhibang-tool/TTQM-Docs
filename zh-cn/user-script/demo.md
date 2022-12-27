@@ -73,3 +73,26 @@ module.exports = {
   },
 };
 ```
+
+---
+
+### 4.手动退出脚本
+
+!>手动退出脚本不会触发`onWillExit`事件
+
+```javascript
+const { FileUtil } = require('@ttqm/ttqm-support');
+const messageCountMap = {};
+module.exports = {
+  onMessage: (topic, payload, packet) => {
+    exit();
+  },
+  onWillExit: () => {
+    // onWillExit will not emit if use exit() function
+    const saveData = JSON.stringify(messageCountMap);
+    const filePath = FileUtil.getScriptDataPath('messageCountMap.json');
+    FileUtil.createStringFileSync(filePath, saveData);
+    console.log('onWillExit');
+  },
+};
+```
