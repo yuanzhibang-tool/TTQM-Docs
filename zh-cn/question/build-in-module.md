@@ -118,22 +118,12 @@ var originalText = bytes.toString(CryptoJS.enc.Utf8);
 console.log(originalText); // 'my message'
 ```
 
-### 6.`CryptoJs` :id=6
+### 6.`ttqm-support` :id=6
 
-**用法示例,更多用法请参照[CryptoJs](https://cryptojs.gitbook.io/docs/)**
+> 该模块提供一些 `TTQM` 常用的一些帮助类
 
 ```javascript
-var CryptoJS = require('crypto-js');
-
-// Encrypt
-var ciphertext = CryptoJS.AES.encrypt(
-  'my message',
-  'secret key 123'
-).toString();
-
-// Decrypt
-var bytes = CryptoJS.AES.decrypt(ciphertext, 'secret key 123');
-var originalText = bytes.toString(CryptoJS.enc.Utf8);
-
-console.log(originalText); // 'my message'
+const { FileUtil } = require('@ttqm/ttqm-support');
+const filePath = FileUtil.getScriptTmpDataPath('messageCountMap.json');
+FileUtil.createStringFileSync(filePath, '{}');
 ```
