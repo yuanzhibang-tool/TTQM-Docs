@@ -6,11 +6,11 @@
 
 1. 图表配置必须在 10s 内返回配置,否则将会被强制终止.
 2. 不支持`jQuery`模块,如果示例中有网络请求,请参照[常见问题?>如何添加脚本依赖库?](zh-cn/question/build-in-module?id=_1),进行接口方法的替换
-3. 不支持对图标添加自定义事件
+3. 不支持对图表添加自定义事件
 
 ---
 
-### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图标类型
+### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型
 
 ![选择图表类型](../_media/select-chart-view-option.jpg ':size=700')
 
@@ -36,7 +36,7 @@
 
 ---
 
-### 4.保存并运行,即可看到初始化的图标
+### 4.保存并运行,即可看到初始化的图表
 
 ![导出配置代码](../_media/chart-view-option-save-run.jpg ':size=700')
 
