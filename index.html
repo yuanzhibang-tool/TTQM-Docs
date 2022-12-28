@@ -43,16 +43,16 @@
         if (first_hash !== 'zh-cn' && first_hash !== 'en' && first_hash !== 'zh-tw') {
             var user_lang = localStorage.getItem('K_USER_LANGUAGE');
             if (user_lang) {
-                location.href = `#/${user_lang}/guide`;
+                location.href = `#/${user_lang}/before-develop/summary`;
             } else {
                 var navigator_lang = navigator.language;
                 if (navigator_lang == 'zh' || navigator_lang == 'zh-Hans') {
-                    location.href = `#/zh-cn/guide`;
+                    location.href = `#/zh-cn/before-develop/summary`;
                 } else if (navigator_lang == 'zh-Hant') {
-                    location.href = `#/zh-tw/guide`;
+                    location.href = `#/zh-tw/before-develop/summary`;
                 }
                 else {
-                    location.href = `#/en/guide`;
+                    location.href = `#/en/before-develop/summary`;
                 }
             }
 
@@ -84,13 +84,13 @@
             logo: '/_media/icon.png',
             loadSidebar: true,
             alias: {
-                '/': 'en/guide.md',
-                '/zh-tw/': 'zh-tw/guide.md',
-                '/zh-cn/': 'zh-cn/guide.md',
-                '/en/': 'en/guide.md',
-                '/zh-tw': 'zh-tw/guide.md',
-                '/zh-cn': 'zh-cn/guide.md',
-                '/en': 'en/guide.md',
+                '/': 'en/before-develop/summary.md',
+                '/zh-tw/': 'zh-tw/before-develop/summary.md',
+                '/zh-cn/': 'zh-cn/before-develop/summary.md',
+                '/en/': 'en/before-develop/summary.md',
+                '/zh-tw': 'zh-tw/before-develop/summary.md',
+                '/zh-cn': 'zh-cn/before-develop/summary.md',
+                '/en': 'en/before-develop/summary.md',
             },
             externalLinkTarget: '_blank',
             externalLinkRel: 'noopener',
