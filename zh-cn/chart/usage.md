@@ -1,6 +1,6 @@
 > 图表分为两个部分,一个部分是配置,另外一部分是图表脚本,配置用来配置图表的初始化配置,脚本用来更新图表,实现图表数据联动
 
-![配置和脚本](../_media/chart-view-usage-1.jpg ':size=600')
+![配置和脚本](_media/usage/1.jpg ':size=600')
 
 ---
 
@@ -8,11 +8,11 @@
 
 **点击图表按钮**
 
-![图表1](_media/usage_1.jpg ':size=400')
+![图表1](_media/usage/2.jpg ':size=400')
 
 **打开**
 
-![图表1](_media/usage_3.jpg ':size=300')
+![图表1](_media/usage/3.jpg ':size=300')
 
 ---
 
@@ -93,13 +93,13 @@ module.exports = new Promise((resolve, reject) => {
 
 <!-- tab:初始化图表 -->
 
-![Chart Option](../_media/chart-option.jpg ':size=500')
+![Chart Option](_media/usage/4.jpg ':size=500')
 
 <!-- tabs:end -->
 
 !>更多图表配置,请参照[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line),TTQM 图表兼容[Apache Echart](https://echarts.apache.org/zh/index.html)数百种配置类型
 
-![EChart Demo](../_media/echart-demo.jpg ':size=500')
+![EChart Demo](_media/usage/5.jpg ':size=500')
 
 ---
 
@@ -160,7 +160,7 @@ module.exports = {
 
 ### 4.运行图表脚本 :id=4
 
-![运行图表脚本](../_media/chart-view-usage-2.jpg ':size=600')
+![运行图表脚本](_media/usage/6.jpg ':size=600')
 
 ---
 
@@ -172,8 +172,8 @@ module.exports = {
 
 !>点击关闭,将会关闭图表,停止更新和对应脚本
 
-![最小化,最大化,和关闭](../_media/chart-view-usage-3.jpg ':size=600')
+![最小化,最大化,和关闭](_media/usage/7.jpg ':size=600')
 
 !>您可以在图表列表里点击对应的动态图标来恢复最小化的图表
 
-![最小化,最大化,和关闭](../_media/chart-view-usage-4.jpg ':size=600')
+![最小化,最大化,和关闭](_media/usage/8.jpg ':size=600')

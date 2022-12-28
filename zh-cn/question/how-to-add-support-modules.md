@@ -6,7 +6,7 @@
 
 > 在`应用 > 设置`中复制`cd命令`
 
-![复制命令](../_media/copy-cd-support-modules-dir-cmd.png ':size=500')
+![复制命令](_media/how-to-add-support-modules/1.png ':size=500')
 
 ---
 

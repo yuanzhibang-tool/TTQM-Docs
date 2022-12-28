@@ -4,10 +4,10 @@
 
 **1.脚本中打印输出,点击发送,在`控制台`查看脚本中输出的内容**
 
-![模板变量](../_media/pre-publish-script-debug-1.jpg ':size=700')
+![模板变量](_media/debug/1.jpg ':size=700')
 
 ---
 
 **2.在`测试结果`中查看处理后的消息内容**
 
-![模板变量](../_media/pre-publish-script-debug-2.jpg ':size=700')
+![模板变量](_media/debug/2.jpg ':size=700')

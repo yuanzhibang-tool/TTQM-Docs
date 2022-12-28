@@ -12,13 +12,13 @@
 
 ### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型 :id=1
 
-![选择图表类型](../_media/select-chart-view-option.jpg ':size=700')
+![选择图表类型](_media/option/1.jpg ':size=700')
 
 ---
 
 ### 2.复制对应的配置脚本 :id=2
 
-![复制对应的配置脚本](../_media/chart-option-copy-code.jpg ':size=700')
+![复制对应的配置脚本](_media/option/2.jpg ':size=700')
 
 ---
 
@@ -28,17 +28,17 @@
 
 !>因为配置中使用了`echarts`,所以必须在开头导入`echarts`,以在代码中使用
 
-![添加变量声明](../_media/chart-view-option-add-prefix.jpg ':size=700')
+![添加变量声明](_media/option/3.jpg ':size=700')
 
 **导出配置代码**
 
-![导出配置代码](../_media/chart-view-option-add-subfix.jpg ':size=700')
+![导出配置代码](_media/option/4.jpg ':size=700')
 
 ---
 
 ### 4.保存并运行,即可看到初始化的图表 :id=4
 
-![导出配置代码](../_media/chart-view-option-save-run.jpg ':size=700')
+![导出配置代码](_media/option/5.jpg ':size=700')
 
 ---
 
@@ -609,6 +609,6 @@ module.exports = new Promise((resolve, reject) => {
 
 <!-- tab:初始化图表 -->
 
-![Chart Option](../_media/chart-view-option-demo.jpg ':size=600')
+![Chart Option](_media/option/6.jpg ':size=600')
 
 <!-- tabs:end -->
