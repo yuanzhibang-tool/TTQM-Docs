@@ -1,6 +1,6 @@
 !>如果您想在前置脚本中使用更多的第三方库,请参照[如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)
 
-### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=demo-1
+### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=1
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -38,7 +38,7 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 2.将消息所有叶子节点转换为字符串 :id=demo-2
+### 2.将消息所有叶子节点转换为字符串 :id=2
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -86,7 +86,7 @@ module.exports = {
 
 ---
 
-### 3.获取当前格式化时间 :id=demo-3
+### 3.获取当前格式化时间 :id=3
 
 <!-- tabs:start -->
 
@@ -127,7 +127,7 @@ module.exports = {};
 
 ---
 
-### 4.对消息内容加签,来实现服务器消息安全验证 :id=demo-4
+### 4.对消息内容加签,来实现服务器消息安全验证 :id=4
 
 <!-- tabs:start -->
 
@@ -190,7 +190,7 @@ module.exports = {
 
 ---
 
-### 5.使用证书,公钥,私钥加解密消息体 :id=demo-5
+### 5.使用证书,公钥,私钥加解密消息体 :id=5
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -260,7 +260,7 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 
 ---
 
-### 6.根据 `topic` 对消息进行过滤处理 :id=demo-6
+### 6.根据 `topic` 对消息进行过滤处理 :id=6
 
 <!-- tabs:start -->
 
@@ -328,7 +328,7 @@ module.exports = {
 
 ---
 
-### 7.自定义拓展`variable`和`pipe` :id=demo-7
+### 7.自定义拓展`variable`和`pipe` :id=7
 
 <!-- tabs:start -->
 

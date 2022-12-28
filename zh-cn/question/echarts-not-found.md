@@ -4,7 +4,7 @@
 
 ---
 
-### 解决方式,在最上方导入`echart`
+### 解决方式,在最上方导入`echart` :id=1
 
 ![Resolve Echart Not Found](../_media/echarts-not-found-2.jpg ':size=600')
 

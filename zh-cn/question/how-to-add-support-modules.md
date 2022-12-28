@@ -2,13 +2,15 @@
 
 ---
 
-### 1.命令行中切换到安装模块路径
+### 1.命令行中切换到安装模块路径 :id=1
 
 > 在`应用 > 设置`中复制`cd命令`
 
 ![复制命令](../_media/copy-cd-support-modules-dir-cmd.png ':size=500')
 
-2.安装需要使用到的库,例如需要使用到`lodash`
+---
+
+### 2.安装需要使用到的库,例如需要使用到`lodash` :id=2
 
 ```bash
 # 粘贴第一步中复制的命令
@@ -21,7 +23,7 @@ npm install lodash
 npm install lodash --registry=https://registry.npmmirror.com
 ```
 
-3.即可在脚本中使用
+### 3.即可在脚本中使用 :id=3
 
 ```javascript
 var _ = require('lodash');

@@ -118,7 +118,7 @@ var originalText = bytes.toString(CryptoJS.enc.Utf8);
 console.log(originalText); // 'my message'
 ```
 
-### 6.`CryptoJs` :id=5
+### 6.`CryptoJs` :id=6
 
 **用法示例,更多用法请参照[CryptoJs](https://cryptojs.gitbook.io/docs/)**
 

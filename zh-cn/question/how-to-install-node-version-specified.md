@@ -1,6 +1,6 @@
 > 如果您需要使用到多版本,请使用 `nvm` 进行多版本 `node` 管理
 
-### Windows
+### Windows :id=1
 
 _直接安装:_
 
@@ -24,7 +24,7 @@ nvm install 16.19.0
 nvm use 16.19.0
 ```
 
-### macOS
+### macOS :id=2
 
 _直接安装:_
 
@@ -63,7 +63,7 @@ nvm install 16.19.0
 nvm use 16.19.0
 ```
 
-### Linux
+### Linux :id=3
 
 _shell 安装_
 

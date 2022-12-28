@@ -10,19 +10,19 @@
 
 ---
 
-### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型
+### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型 :id=1
 
 ![选择图表类型](../_media/select-chart-view-option.jpg ':size=700')
 
 ---
 
-### 2.复制对应的配置脚本
+### 2.复制对应的配置脚本 :id=2
 
 ![复制对应的配置脚本](../_media/chart-option-copy-code.jpg ':size=700')
 
 ---
 
-### 3.粘贴到图表配置脚本中,代码最上面面添加变量声明,结尾添加导出配置代码
+### 3.粘贴到图表配置脚本中,代码最上面面添加变量声明,结尾添加导出配置代码 :id=3
 
 **添加变量声明**
 
@@ -36,13 +36,13 @@
 
 ---
 
-### 4.保存并运行,即可看到初始化的图表
+### 4.保存并运行,即可看到初始化的图表 :id=4
 
 ![导出配置代码](../_media/chart-view-option-save-run.jpg ':size=700')
 
 ---
 
-### 5.完整配置代码
+### 5.完整配置代码 :id=5
 
 <!-- tabs:start -->
 
