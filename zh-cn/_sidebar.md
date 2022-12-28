@@ -35,7 +35,12 @@
   - [调试](zh-cn/user-script/debug.md)
 
 - [常见问题?](zh-cn/question/default.md)
+
   - [如何安装指定版本的 node?](zh-cn/question/how-to-install-node-version-specified.md)
   - [有哪些内置的脚本依赖库?](zh-cn/question/build-in-module.md)
   - [如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)
   - [图标配置脚本 echart 模块未找到错误](zh-cn/question/echarts-not-found.md)
+
+- [隐私政策 & 服务协议](zh-cn/terms-of-service-privacy-policy/default.md)
+  - [隐私政策](zh-cn/terms-of-service-privacy-policy/privacy-policy.md)
+  - [服务协议](zh-cn/terms-of-service-privacy-policy/terms-of-service.md)
