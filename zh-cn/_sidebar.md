@@ -45,6 +45,7 @@
   - [如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)
   - [图表配置脚本 echart 模块未找到错误](zh-cn/question/echarts-not-found.md)
   - [脚本可操作的文件目录有哪些?](zh-cn/question/script-data-dir.md)
+  - [其他问题?](zh-cn/question/other.md)
 
 - [隐私政策 & 服务协议](zh-cn/terms-of-service-privacy-policy/default.md)
   - [隐私政策](zh-cn/terms-of-service-privacy-policy/privacy-policy.md)
