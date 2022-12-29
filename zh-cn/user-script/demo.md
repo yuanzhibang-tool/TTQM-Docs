@@ -96,3 +96,7 @@ module.exports = {
   },
 };
 ```
+
+---
+
+!>更多脚本示例,请参照[通用脚本示例](zh-cn/other/common-script-demo.md)

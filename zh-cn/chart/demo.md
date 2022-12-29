@@ -995,3 +995,7 @@ module.exports = {
 !>以上为当两个事件均触发一次后,并且`onMessage`的 `topic` 比中后的配置
 
 <!-- tabs:end -->
+
+---
+
+!>更多脚本示例,请参照[通用脚本示例](zh-cn/other/common-script-demo.md)
