@@ -40,7 +40,7 @@ _brew 安装_
 
 ```shell
 # 安装brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://static.yuanzhibang.com/script/Homebrew/install.sh)"
 # 安装node 16
 brew install node@16
 ```
@@ -82,7 +82,7 @@ _nvm 安装_
 3. 使用`nvm use` 设置使用的`node`版本
 
 ```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://static.yuanzhibang.com/script/nvm/v0.39.1/install.sh | bash
 # 如果安装比较慢请设置国内源
 export NVM_NODEJS_ORG_MIRROR=https://mirrors.ustc.edu.cn/node/
 # 列出node版本

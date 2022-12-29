@@ -34,6 +34,10 @@
   - [示例](zh-cn/user-script/demo.md)
   - [调试](zh-cn/user-script/debug.md)
 
+- [其他](zh-cn/other/default.md)
+
+  - [通用脚本示例](zh-cn/other/common-script-demo.md)
+
 - [常见问题?](zh-cn/question/default.md)
 
   - [如何安装指定版本的 node?](zh-cn/question/how-to-install-node-version-specified.md)
