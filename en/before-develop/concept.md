@@ -1,15 +1,15 @@
-!> 本章节说明了一些涉及 `TTQM` 开发中使用到的概念,例如前置脚本,图表,用户脚本等.
+!> This chapter explains some concepts used in the development of `TTQM`, such as front scripts, charts, user scripts, etc.
 
-### 前置脚本(Pre-Publish Script) :id=1
+### Pre-Publish Script :id=1
 
-> 是指使用脚本在发送消息之前对要发送的消息进行模板替换,变量替换等操作,然后再进行发送,例如:替换发送消息中的`时间`,`unix时间戳`,`uuid`等,用户可以通过内置的`变量(variable)`,`变量管道(variable pipe)`,`管道(pipe)`进行处理,用户自己也可对`变量(variable)`,`变量管道(variable pipe)`,`管道(pipe)`进行拓展,详见[前置脚本](en/pre-publish-script/default.md)
+> Refers to the use of scripts to perform template replacement, variable replacement, and other operations on the message to be sent before sending the message, and then send it, for example: replacing `time`, `unix timestamp`, `uuid`, etc. in the sent message, Users can process through the built-in `variable`,`variable pipe`,`pipe`, and users can also use `variable`,`variable pipe` , `Pipeline (pipe)` for expansion, see [pre-publish script](en/pre-publish-script/default.md) for details
 
-!>注意:`变量管道variable_pipe`和`管道pipe`的概念的区别在于,`变量管道variable_pipe`用以处理单个模板变量,而`管道pipe`用以处理整个消息体
+!>Note: The difference between `variable pipe variable_pipe` and `pipe pipe` is that `variable pipe variable_pipe` is used to process a single template variable, while `pipe pipe` is used to process the entire message body
 
-### 图表(Chart View) :id=2
+### Chart View :id=2
 
-> 通过对收到的消息进行数据统计或处理,实现图形化分析和处理,例如:对`MQTT`服务器收到的心电,血氧设备的数据进行心电波形绘制;对一定数量的设备在线数量进行统计等.
+> Realize graphical analysis and processing through data statistics or processing of received messages, for example: draw ECG waveforms for ECG and blood oxygen device data received by `MQTT` server; online for a certain number of devices statistics etc.
 
-### 用户脚本(User Script) :id=3
+### User Script :id=3
 
-> 通过用户脚本,运行一个常驻的用户微程序,来实现对复杂功能的调试,例如:调试设备间的协议,模拟 `IoT` 设备, 模拟服务端程序,批量消息发送,消息投递,永久化等.
+> Through user scripts, run a resident user microprogram to realize the debugging of complex functions, such as: debugging protocols between devices, simulating `IoT` devices, simulating server programs, batch message sending, message delivery, and persistence Wait.

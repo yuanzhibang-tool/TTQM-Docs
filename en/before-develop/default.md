@@ -1,9 +1,9 @@
-> 介绍开发前需要了解的注意事项,概念,以及提供能够实现的能力描述
+> Introduce the precautions and concepts that need to be understood before development, and provide a description of the capabilities that can be realized
 
 ---
 
-| 序号 | 标题                                     | 描述                             |
-| ---- | ---------------------------------------- | -------------------------------- |
-| 1    | [总览](en/before-develop/summary.md)     | `TTQM` 使用中一些整体信息        |
-| 2    | [概念](en/before-develop/concept.md)     | 介绍 `TTQM` 使用过程中的相关概念 |
-| 3    | [应用能力](en/before-develop/ability.md) | 介绍`TTQM`的应用能力             |
+| No. | Title                                   | Description                                     |
+| --- | --------------------------------------- | ----------------------------------------------- |
+| 1   | [Summary](en/before-develop/summary.md) | Some general information about `TTQM` usage     |
+| 2   | [Concept](en/before-develop/concept.md) | Introduce related concepts in the use of `TTQM` |
+| 3   | [Ability](en/before-develop/ability.md) | Introduce the application ability of `TTQM`     |

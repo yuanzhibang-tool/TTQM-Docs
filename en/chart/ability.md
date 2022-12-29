@@ -1,10 +1,10 @@
-| 序号 | 能力                                                                                                                          |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 支持众多的图表类型,柱状图,饼状图,玫瑰图等类型,具体请[参考链接](https://echarts.apache.org/examples/zh/index.html)             |
-| 2    | 兼容 `Apache Echarts` 配置, 配置项需要进行一些调整,具体参考 [图表>配置](en/chart/option.md)                                   |
-| 3    | 支持图表交互                                                                                                                  |
-| 4    | 支持数据源的整体和局部更新 [图表>脚本](en/chart/script.md)                                                                    |
-| 5    | 支持监听`MQTT`客户端事件以及图表事件来实现不同的图表更新,例如: 客户端连接上,断开等,具体请参考 [图表>脚本](en/chart/script.md) |
-| 6    | 支持同时绘制多图表                                                                                                            |
-| 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](en/question/how-to-add-support-modules.md) |
-| 8    | 可以通过 `console` 来实现打印调试                                                                                             |
+| No. | Capability                                                                                                                                                                                       |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Supports many types of charts, such as histograms, pie charts, rose charts, etc. For details, please [reference link](https://echarts.apache.org/examples/zh/index.html)                         |
+| 2   | Compatible with `Apache Echarts` configuration, configuration items need to be adjusted, please refer to [Chart>Configuration](en/chart/option.md)                                               |
+| 3   | Support chart interaction                                                                                                                                                                        |
+| 4   | Support overall and partial update of data sources [Chart>Script](en/chart/script.md)                                                                                                            |
+| 5   | Support monitoring `MQTT` client events and chart events to achieve different chart updates, such as: client connection, disconnection, etc., please refer to [Chart>Script](en/chart/script.md) |
+| 6   | Support drawing multiple charts at the same time                                                                                                                                                 |
+| 7   | Support adding third-party `node modules` to enrich script functions, please refer to [FAQ>How to add script dependency library?](en/question/how-to-add-support-modules.md)                     |
+| 8   | You can print and debug through `console`                                                                                                                                                        |

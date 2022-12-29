@@ -1,1 +1,1 @@
-> 通过对收到的消息进行数据统计或处理,实现图形化分析和处理,例如:对`MQTT`服务器收到的心电,血氧设备的数据进行心电波形绘制;对一定数量的设备在线数量进行统计等.
+> Realize graphical analysis and processing through data statistics or processing of received messages, for example: draw ECG waveforms for ECG and blood oxygen device data received by `MQTT` server; online for a certain number of devices statistics etc.

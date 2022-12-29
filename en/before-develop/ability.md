@@ -1,44 +1,44 @@
-> 通过 `前置脚本(Pre-Publish Script)` `图表(Chart View)` `用户脚本(User Script)` 可以极大的拓展`TTQM`的能力,以丰富其适用的场景
+> Through `Pre-Publish Script`, `Chart View` `User Script`, you can greatly expand the capabilities of `TTQM` to enrich its applicable scenarios
 
 ---
 
-### `前置脚本(Pre-Publish Script)` :id=1
+### Pre-Publish Script :id=1
 
-| 序号 | 能力                                                                                                                                                                                                                                                  |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 可以使用内置的`变量(variable)`来替换发送消息中的模板变量                                                                                                                                                                                              |
-| 2    | 可以使用内置的`变量管道(variable pipe)`来实现对变量的处理,如转换为数字,转换为字符串,所有变量管道将会按照顺序执行,上一个处理的返回值将会作为下一个的输入值                                                                                             |
-| 3    | 可以使用`管道(pipe)`对整个消息体进行处理,管道将会按照顺序执行,上一个处理的返回值将会作为下一个的输入值                                                                                                                                                |
-| 4    | 可以添加自定义的`变量(variable)`,自定义的变量可以是`function`,这时将会把返回值作为处理后的变量,也可以是字符串,数字等变量,将会直接作为变量返回. `function`的第一个参数将会传入整个消息体,具体的使用请参照 [前置脚本](en/pre-publish-script/default.md) |
-| 5    | 可以添加自定义的 `变量管道(variable pipe)`,其为`function`类型,将会传入整个消息体和需要传入的参数,将返回值作为模板变量                                                                                                                                 |
-| 6    | 可以添加自定义的`pipe`,用来处理整个消息体,并返回新的消息体                                                                                                                                                                                            |
-| 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](en/question/how-to-add-support-modules.md)                                                                                                                         |
-| 8    | 可以通过 `console` 来实现打印调试                                                                                                                                                                                                                     |
-
----
-
-### `图表(Chart View)` :id=2
-
-| 序号 | 能力                                                                                                                          |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 支持众多的图表类型,柱状图,饼状图,玫瑰图等类型,具体请[参考链接](https://echarts.apache.org/examples/zh/index.html)             |
-| 2    | 兼容 `Apache Echarts` 配置, 配置项需要进行一些调整,具体参考 [图表>配置](en/chart/option.md)                                   |
-| 3    | 支持图表交互                                                                                                                  |
-| 4    | 支持数据源的整体和局部更新 [图表>脚本](en/chart/script.md)                                                                    |
-| 5    | 支持监听`MQTT`客户端事件以及图表事件来实现不同的图表更新,例如: 客户端连接上,断开等,具体请参考 [图表>脚本](en/chart/script.md) |
-| 6    | 支持同时绘制多图表                                                                                                            |
-| 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](en/question/how-to-add-support-modules.md) |
-| 8    | 可以通过 `console` 来实现打印调试                                                                                             |
+| No. | Capability                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | You can use the built-in `variable` to replace template variables in sending messages                                                                                                                                                                                                                                                                                                                                        |
+| 2   | You can use the built-in `variable pipe (variable pipe)` to realize the processing of variables, such as converting to numbers, converting to strings, all variable pipes will be executed in order, and the return value of the previous processing will be used as next input value                                                                                                                                        |
+| 3   | You can use `pipe` to process the entire message body, the pipe will be executed in order, and the return value of the previous processing will be used as the input value of the next                                                                                                                                                                                                                                       |
+| 4   | You can add custom `variable(variable)`. The custom variable can be `function`. At this time, the return value will be used as the processed variable, or it can be a variable such as a string or a number. It will be Return it directly as a variable. The first parameter of `function` will pass in the entire message body. For specific usage, please refer to [Pre-publish script](en/pre-publish-script/default.md) |
+| 5   | You can add a custom `variable pipe (variable pipe)`, which is of `function` type, and will pass in the entire message body and the parameters that need to be passed in, and use the return value as a template variable                                                                                                                                                                                                    |
+| 6   | You can add a custom `pipe` to process the entire message body and return a new message body                                                                                                                                                                                                                                                                                                                                 |
+| 7   | Support adding third-party `node modules` to enrich script functions, please refer to [FAQ>How to add script dependency library?](en/question/how-to-add-support-modules.md)                                                                                                                                                                                                                                                 |
+| 8   | You can print and debug through `console`                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ---
 
-### `用户脚本(User Script)` :id=3
+### Chart :id=2
 
-| 序号 | 能力                                                                                                                          |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 支持同时运行多个脚本                                                                                                          |
-| 2    | 支持监听处理`MQTT`客户端事件                                                                                                  |
-| 3    | 支持发布消息                                                                                                                  |
-| 4    | 可以模拟 `IoT` 设备, 模拟服务端程序,以及其他端设备                                                                            |
-| 5    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](en/question/how-to-add-support-modules.md) |
-| 6    | 可以通过 `console` 来实现打印调试                                                                                             |
+| No. | Capability                                                                                                                                                                                       |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Supports many types of charts, such as histograms, pie charts, rose charts, etc. For details, please [reference link](https://echarts.apache.org/examples/zh/index.html)                         |
+| 2   | Compatible with `Apache Echarts` configuration, configuration items need to be adjusted, please refer to [Chart>Configuration](en/chart/option.md)                                               |
+| 3   | Support chart interaction                                                                                                                                                                        |
+| 4   | Support overall and partial update of data sources [Chart>Script](en/chart/script.md)                                                                                                            |
+| 5   | Support monitoring `MQTT` client events and chart events to achieve different chart updates, such as: client connection, disconnection, etc., please refer to [Chart>Script](en/chart/script.md) |
+| 6   | Support drawing multiple charts at the same time                                                                                                                                                 |
+| 7   | Support adding third-party `node modules` to enrich script functions, please refer to [FAQ>How to add script dependency library?](en/question/how-to-add-support-modules.md)                     |
+| 8   | You can print and debug through `console`                                                                                                                                                        |
+
+---
+
+### User Script :id=3
+
+| No. | Capability                                                                                                                                                                   |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Support running multiple scripts at the same time                                                                                                                            |
+| 2   | Support listening and processing `MQTT` client events                                                                                                                        |
+| 3   | Support release news                                                                                                                                                         |
+| 4   | Can simulate `IoT` devices, simulate server programs, and other end devices                                                                                                  |
+| 5   | Support adding third-party `node modules` to enrich script functions, please refer to [FAQ>How to add script dependency library?](en/question/how-to-add-support-modules.md) |
+| 6   | You can print and debug through `console`                                                                                                                                    |

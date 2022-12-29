@@ -1,11 +1,11 @@
-> 通过对收到的消息进行数据统计或处理,实现图形化分析和处理
+> Realize graphical analysis and processing through data statistics or processing of received messages
 
-| 序号 | 标题                        | 描述                         |
-| ---- | --------------------------- | ---------------------------- |
-| 1    | [概念](en/chart/concept.md) | 介绍图表使用中一些相关的概念 |
-| 2    | [能力](en/chart/ability.md) | 介绍图表能够实现的能力       |
-| 3    | [使用](en/chart/usage.md)   | 介绍图表的使用               |
-| 4    | [配置](en/chart/option.md)  | 介绍图表配置相关的用法       |
-| 5    | [脚本](en/chart/script.md)  | 介绍图表脚本相关的用法       |
-| 6    | [示例](en/chart/demo.md)    | 提供一些图表的使用示例       |
-| 7    | [调试](en/chart/debug.md)   | 介绍如何进行图表的调试       |
+| No. | Title                               | Description                                          |
+| --- | ----------------------------------- | ---------------------------------------------------- |
+| 1   | [Concept](en/chart/concept.md)      | Introduce some related concepts in the use of charts |
+| 2   | [Ability](en/chart/ability.md)      | Introduces the capabilities that charts can achieve  |
+| 3   | [Usage](en/chart/usage.md)          | Introduce the usage of the chart                     |
+| 4   | [Configuration](en/chart/option.md) | Introduce usage related to chart configuration       |
+| 5   | [Script](en/chart/script.md)        | Introduce usage related to chart scripts             |
+| 6   | [Example](en/chart/demo.md)         | Provide some usage examples of charts                |
+| 7   | [Debug](en/chart/debug.md)          | Introduce how to debug the chart                     |
