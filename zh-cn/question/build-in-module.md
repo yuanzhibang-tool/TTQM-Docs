@@ -122,8 +122,316 @@ console.log(originalText); // 'my message'
 
 > 该模块提供一些 `TTQM` 常用的一些帮助类
 
+<!-- tabs:start -->
+
+<!-- tab:FileUtil -->
+
+```javascript
+/**
+ *  文件hash类型
+ */
+export declare enum FileHashType {
+    MD5 = "md5",
+    SHA1 = "sha1",
+    SHA256 = "sha256",
+    SHA512 = "sha512"
+}
+
+// 操作文件的工具类
+export declare class FileUtil {
+    /**
+     * 根据相对路径获取脚本数据的完整路径
+     * @param [relativePath] 需要拼接的相对路径
+     * @returns 完整的路径
+     */
+    static getScriptDataPath(relativePath?: string): string;
+    /**
+     * 根据相对路径获取脚本临时数据的完整路径
+     * @param [relativePath] 需要拼接的相对路径
+     * @returns 完整的路径
+     */
+    static getScriptTmpDataPath(relativePath?: string): string;
+    /**
+     * 以同步方式创建目录
+     * @param path 创建目录的路径
+     */
+    static createDirSync(path: string): void;
+    /**
+     * 异步获取文件的hash值
+     * @param path 文件的路径
+     * @param [hashName] 可用的hash名称参照FileHashType, eg. md5 sha1 sha256 sha512
+     * @returns 返回一个Promise<string>
+     */
+    static getFileHash(path: string, hashName?: FileHashType): Promise<string>;
+    /**
+     * 同步检测路径是否存在
+     * @param path 对应的路径
+     * @returns boolean true 如果存在, false 不存在
+     */
+    static existSync(path: string): boolean;
+    /**
+     * 同步检测对应的路径是否是目录
+     * @param path 对应的路径
+     * @returns  boolean 是文件夹返回true,否则返回false
+     */
+    static isDirSync(path: string): boolean;
+    /**
+     * 同步创建字符串文件
+     * @param path 文件的路径
+     * @param content 文本内容
+     */
+    static createStringFileSync(path: string, content: string): void;
+    /**
+     * 同步向文件追加文本内容
+     * @param path 文件路径
+     * @param content 追加的字符串内容
+     */
+    static appendStringFileSync(path: string, content: string): void;
+    /**
+     * 同步读取文件内容
+     * @param path 文件路径
+     * @returns 文本内容utf8编码
+     */
+    static readStringFileSync(path: string): string;
+    /**
+     * 同步移除目录或文件
+     * @param path 对应的路径
+     */
+    static removeSync(path: string): void;
+}
+
+```
+
+<!-- tab:EncryptUtil -->
+
+```javascript
+export declare class EncryptUtil {
+    /**
+     * 获取文本hash
+     * @param content 文本内容
+     * @param [hashName] 有效的hash名称, 例如. sha1 md5 sha256 sha512.
+     * @returns hash字符串
+     */
+    static getHash(content: string, hashName?: string): string;
+}
+
+```
+
+<!-- tab:TopicUtil -->
+
+```javascript
+export declare class TopicUtil {
+    /**
+     * 检测是否是子topic
+     * @param topic 要检测的topic
+     * @param subTopic 要检测的子topic
+     * @returns boolean 是子主题的话返回true,否则返回false
+     */
+    static isSubTopic(topic: any, subTopic: any): boolean;
+    /**
+     * 解析 `key1/value1/key2/value2` 的字符串到 object {key1:value1,key2:value2}
+     * @param topic 要解析的topic字符串
+     * @returns 一个类似{key1:value1,key2:value2}的object
+     */
+    static parseKeyValueTopic(topic: any): object;
+}
+
+```
+
+<!-- tab:CertUtil -->
+
+```javascript
+export declare class CertUtil {
+    /**
+     * 通过私钥加密数据
+     * @param privateKeyPem pem格式的私钥
+     * @param stringContent 要加密的内容
+     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
+     * @returns 加密后的内容并转化为base64
+     */
+    static privateKeyEncrypt(privateKeyPem: string, stringContent: any, chunkSize: number): string;
+    /**
+     * 通过私钥解密
+     * @param privateKeyPem pem格式的私钥
+     * @param encyptedBase64Content 加密后的内容,为base64格式
+     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
+     * @returns 解密后的数据为utf8编码
+     */
+    static privateKeyDecrypt(privateKeyPem: string, encyptedBase64Content: any, chunkSize: number): string;
+    /**
+     * 通过证书加密数据
+     * @param privateKeyPem pem格式的证书
+     * @param stringContent 要加密的内容
+     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
+     * @returns 加密后的内容并转化为base64
+     */
+    static certEncrypt(certPem: string, stringContent: any, chunkSize: number): string;
+    /**
+     * 通过证书解密
+     * @param privateKeyPem pem格式的证书
+     * @param encyptedBase64Content 加密后的内容,为base64格式
+     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
+     * @returns 解密后的数据为utf8编码
+     */
+    static certDecrypt(certPem: string, encyptedBase64Content: string, chunkSize: number): string;
+    /**
+     * 通过公钥加密数据
+     * @param privateKeyPem pem格式的公钥
+     * @param stringContent 要加密的内容
+     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
+     * @returns 加密后的内容并转化为base64
+     */
+    static publicKeyEncrypt(publicKeyPem: string, stringContent: any, chunkSize: number): string;
+    /**
+     * 通过公钥解密
+     * @param privateKeyPem pem格式的公钥
+     * @param encyptedBase64Content 加密后的内容,为base64格式
+     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
+     * @returns 解密后的数据为utf8编码
+     */
+    static publicKeyDecrypt(publicKeyPem: string, encyptedBase64Content: string, chunkSize: number): string;
+    /**
+     * 获取证书最大可加密的单片大小,单位为字节
+     * @param certPem pem格式的证书
+     * @returns 证书最大可加密的单片大小,单位为字节
+     */
+    static getCertEncryptMaxChunkSize(certPem: string): number;
+    /**
+     * 获取证书加密后的内容大小,单位为字节,不管要加密的内容大小,同一证书加密后的内容长度都是一样的
+     * @param certPem pem格式的证书
+     * @returns 证书最大可加密的单片大小,单位为字节
+     */
+    static getCertEncryptContentSize(certPem: string): number;
+    /**
+     * 获取公钥最大可加密的单片大小,单位为字节
+     * @param certPem pem格式的公钥
+     * @returns 公钥最大可加密的单片大小,单位为字节
+     */
+    static getPublicKeyEncryptMaxChunkSize(publicKeyPem: string): number;
+    /**
+     * 获取公钥加密后的内容大小,单位为字节,不管要加密的内容大小,同一公钥加密后的内容长度都是一样的
+     * @param certPem pem格式的证书
+     * @returns 证书最大可加密的单片大小,单位为字节
+     */
+    static getPublicKeyEncryptContentSize(publicKeyPem: string): number;
+    /**
+     * 获取私钥最大可加密的单片大小,单位为字节
+     * @param certPem pem格式的私钥
+     * @returns 私钥最大可加密的单片大小,单位为字节
+     */
+    static getPrivateKeyEncryptMaxChunkSize(privateKeyPem: string): number;
+    /**
+     * 获取私钥加密后的内容大小,单位为字节,不管要加密的内容大小,同一私钥加密后的内容长度都是一样的
+     * @param certPem pem格式的私钥
+     * @returns 私钥最大可加密的单片大小,单位为字节
+     */
+    static getPrivateKeyEncryptContentSize(privateKeyPem: string): number;
+}
+
+```
+
+<!-- tabs:end -->
+
+**示例**
+
+<!-- tabs:start -->
+
+<!-- tab:FileUtil -->
+
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
-const filePath = FileUtil.getScriptTmpDataPath('messageCountMap.json');
-FileUtil.createStringFileSync(filePath, '{}');
+const filePath = FileUtil.getScriptDataPath('test.json');
+// 检测文件是否存在
+const exist = FileUtil.existSync(filePath);
+// exist: true or false
+// 异步获取文件hash
+FileUtil.getFileHash(filePath)
+  .then((hash) => {
+    // file hash: 1a3b83275511958c51d057b84a3eba009d043e2a
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+// 获取文件内容
+const fileContent = FileUtil.readStringFileSync(filePath);
 ```
+
+<!-- tab:EncryptUtil -->
+
+```javascript
+const { EncryptUtil } = require('@ttqm/ttqm-support');
+const stringContent = '1';
+const stringHashSha1 = EncryptUtil.getHash(stringContent, 'sha1');
+// stringHashSha1: 356a192b7913b04c54574d18c28d46e6395428ab
+```
+
+<!-- tab:TopicUtil -->
+
+```javascript
+const { TopicUtil } = require('@ttqm/ttqm-support');
+// 检测子topic
+const subTopic = 'device_type/1/device_id/123456';
+const isSubTopic = TopicUtil.isSubTopic('device_type/+/device_id/+', subTopic);
+// isSubTopic: true
+const subTopic1 = 'device_type/1/device_sn/123456';
+const isSubTopic1 = TopicUtil.isSubTopic(
+  'device_type/+/device_id/+',
+  subTopic1
+);
+// isSubTopic1: false
+
+// 解析topic
+const subTopicInfo = TopicUtil.parseKeyValueTopic(subTopic);
+// subTopicInfo = {
+//   device_type: 1,
+//   device_id: 123456,
+// };
+
+const deviceType = subTopicInfo.device_type;
+const deviceId = subTopicInfo.device_id;
+
+// deviceType:1
+// deviceId:123456
+```
+
+<!-- tab:CertUtil -->
+
+```javascript
+const { CertUtil } = require('@ttqm/ttqm-support');
+
+const certPem = `-----BEGIN CERTIFICATE-----
+MIIDWzCCAkOgAwIBAgIURzmUxeH8mb5B7eWBKrxBi0k4ZCgwDQYJKoZIhvcNAQEL
+BQAwPTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMSEwHwYDVQQKDBhJbnRlcm5l
+dCBXaWRnaXRzIFB0eSBMdGQwHhcNMjIxMjE1MDMzOTQ2WhcNMzIxMjEyMDMzOTQ2
+WjA9MQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExITAfBgNVBAoMGEludGVybmV0
+IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+ALcBud38LRL8lQDfvuz3cDM3jEQiG1NdPf0GEscolPSOyZQQe0h1KwcTePilD7gc
+848r22Ug/BzkLNtNzSGQgARizk8KHctu9yejCRmjAArm+xwSdBQGqFm+NXN3zka0
+rObzIxJbdW590bVfPfrOKR1fKrFqkwAYr6ktnVO3CSjsc5UIJphhlMnHLSHjt9b9
+jKW2a2WgOGHFAXspSlsOiCXHyGGYXPVYHOe5Q+Z5P6SxxWHA6oeIH9oy+QnXRGV4
+AiPqlzeCvTTypHlLmdZZmkz+93dNqroARY+3zsSIYe0CWnun30r9GAjdkek1vkr9
+0voEmxjZSAqJgcEakuDVVDkCAwEAAaNTMFEwHQYDVR0OBBYEFGLs3WNbcTW1MsRd
+0nR6hU9z2rECMB8GA1UdIwQYMBaAFGLs3WNbcTW1MsRd0nR6hU9z2rECMA8GA1Ud
+EwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAEPW2cMqXTR3JDnvPenA+B4S
+q/cGJfKr9eooK6t62CdgN3HhZYFH9+V8tF44hIyrOguxK2duwq7EWNIRqqlF3HAT
+MqjCWZ/Z8wXtvcBNrDueZhhlWksQ1cITFJzJnw4ImycsxTyqVaq1UOodZDyygiQc
+kxrjgqSi9uXAQUuKzqN6Mas2AHUPWEB+YRJz5aLBuGIX7hi5sfoQ4kbHMu6jRaug
+4CErzSD1pdQTo7SKyoQXg9UdjdgxgBpWQFltFBG1shl1sr1nxIClZbtr7AXxYlK3
+tXKYeZ4ucHFd7rlOjORpbliWa9A0sjvm7Klic2Pbd6jp2PqdR4EK6Tn5e8S7Sng=
+-----END CERTIFICATE-----`;
+// 证书加密数据
+const stringContent = '1';
+const encyptedContent = CertUtil.certEncrypt(certPem, stringContent, 100);
+
+// encyptedContent= 'gry5Igwi70krwImI6yURaDXeJXKew/BjhMLzAFLl7VgliwHkSbqX/9+zeUwCvK4lE7P4LrfdZeSdHZSC61rZ6E7HFCxuSo/1GAyivT2gDQgkQmzQ+1Q7VzHGgm26GJubSpyaZFGLlaKEkDZjJSZpQEkE9rujU3dX34am19H2pWhARdg53xDq1nqGG5d2TNqLLhtDpXTxL08KKk2CKx/oXcjc1ab0/cDqjJoHbkHavOPSKTRHXrcK2Ug+CKx4QPH3qZMNWeEqK6D4QLyXOG7IbJSlqlYOqvz/Lr6AP6lS8BKz+2QFuLzR4hpolxWwhttD31EL1kiWRN79vwp3pB7Ycw==''
+
+// 获取证书最大可加密的chunk size
+const maxChunkSize = CertUtil.getCertEncryptMaxChunkSize(certPem);
+// maxChunkSize=214
+
+// 获取证书加密后的内容字节数,也就是解密需要传入的chunk size
+const encryptedChunkSize = CertUtil.getCertEncryptContentSize(certPem);
+// encryptedChunkSize=512
+```
+
+<!-- tabs:end -->
