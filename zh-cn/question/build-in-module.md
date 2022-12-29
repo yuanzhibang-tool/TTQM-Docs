@@ -340,20 +340,52 @@ export declare class CertUtil {
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
-const filePath = FileUtil.getScriptDataPath('test.json');
+const filePath = FileUtil.getScriptDataPath('test.txt');
 // 检测文件是否存在
 const exist = FileUtil.existSync(filePath);
-// exist: true or false
+console.log(exist);
+// exist = false
+// 写入文件
+FileUtil.createStringFileSync(filePath, 'test content');
 // 异步获取文件hash
 FileUtil.getFileHash(filePath)
   .then((hash) => {
-    // file hash: 1a3b83275511958c51d057b84a3eba009d043e2a
+    console.log(hash);
+    // hash = '1eebdf4fdc9fc7bf283031b93f9aef3338de9052'
+    // 停止脚本
+    exit();
   })
   .catch((err) => {
     console.error(err);
   });
 // 获取文件内容
 const fileContent = FileUtil.readStringFileSync(filePath);
+console.log(fileContent);
+// fileContent = 'test content'
+```
+
+!>同步获取文件 hash,所有代码都必须使用`async`函数包裹
+
+```javascript
+const { FileUtil } = require('@ttqm/ttqm-support');
+
+const main = async () => {
+  const filePath = FileUtil.getScriptDataPath('test.txt');
+  // 检测文件是否存在
+  const exist = FileUtil.existSync(filePath);
+  console.log(exist);
+  // exist = false
+  // 写入文件
+  FileUtil.createStringFileSync(filePath, 'test content');
+  // 异步获取文件hash
+  const fileHash = await FileUtil.getFileHash(filePath);
+  console.log(fileHash);
+  // 获取文件内容
+  const fileContent = FileUtil.readStringFileSync(filePath);
+  console.log(fileContent);
+  // fileContent = 'test content'
+};
+main();
 ```
 
 <!-- tab:EncryptUtil -->
@@ -362,6 +394,7 @@ const fileContent = FileUtil.readStringFileSync(filePath);
 const { EncryptUtil } = require('@ttqm/ttqm-support');
 const stringContent = '1';
 const stringHashSha1 = EncryptUtil.getHash(stringContent, 'sha1');
+console.log(stringHashSha1);
 // stringHashSha1: 356a192b7913b04c54574d18c28d46e6395428ab
 ```
 
@@ -372,13 +405,15 @@ const { TopicUtil } = require('@ttqm/ttqm-support');
 // 检测子topic
 const subTopic = 'device_type/1/device_id/123456';
 const isSubTopic = TopicUtil.isSubTopic('device_type/+/device_id/+', subTopic);
-// isSubTopic: true
+console.log(isSubTopic);
+// isSubTopic = true
 const subTopic1 = 'device_type/1/device_sn/123456';
 const isSubTopic1 = TopicUtil.isSubTopic(
   'device_type/+/device_id/+',
   subTopic1
 );
-// isSubTopic1: false
+console.log(isSubTopic1);
+// isSubTopic1 = false
 
 // 解析topic
 const subTopicInfo = TopicUtil.parseKeyValueTopic(subTopic);
@@ -387,11 +422,14 @@ const subTopicInfo = TopicUtil.parseKeyValueTopic(subTopic);
 //   device_id: 123456,
 // };
 
+console.log(subTopicInfo);
+
 const deviceType = subTopicInfo.device_type;
 const deviceId = subTopicInfo.device_id;
-
-// deviceType:1
-// deviceId:123456
+console.log(deviceType);
+console.log(deviceId);
+// deviceType=1
+// deviceId=123456
 ```
 
 <!-- tab:CertUtil -->
@@ -422,15 +460,17 @@ tXKYeZ4ucHFd7rlOjORpbliWa9A0sjvm7Klic2Pbd6jp2PqdR4EK6Tn5e8S7Sng=
 // 证书加密数据
 const stringContent = '1';
 const encyptedContent = CertUtil.certEncrypt(certPem, stringContent, 100);
-
-// encyptedContent= 'gry5Igwi70krwImI6yURaDXeJXKew/BjhMLzAFLl7VgliwHkSbqX/9+zeUwCvK4lE7P4LrfdZeSdHZSC61rZ6E7HFCxuSo/1GAyivT2gDQgkQmzQ+1Q7VzHGgm26GJubSpyaZFGLlaKEkDZjJSZpQEkE9rujU3dX34am19H2pWhARdg53xDq1nqGG5d2TNqLLhtDpXTxL08KKk2CKx/oXcjc1ab0/cDqjJoHbkHavOPSKTRHXrcK2Ug+CKx4QPH3qZMNWeEqK6D4QLyXOG7IbJSlqlYOqvz/Lr6AP6lS8BKz+2QFuLzR4hpolxWwhttD31EL1kiWRN79vwp3pB7Ycw==''
+console.log(encyptedContent);
+// encyptedContent= 'YaEtVr5Ct3inafRqWwW9Z9U2q4F0xnjNU7I83va9oixKsfy9DZThVGv2O9CZxOM0THfBbMVNwVnY0xTFZz0ZlzRotJVmlPZ5NZSnLGMxq/nnAt9ujcGUXBeChavjbn6QmAnRuvQs3jgjNPDhqPgVM430xluo2LLVA1xo22Krg4EasswNW6XQ5ZHW3+9apf1GwpQnvp8Mrk9UMwZ8rFfI55aMm6nWP/rPnrC3Q5xav6amMVFWFEUF7hBNEWgCdD22KPzmoSM2tLtrRlEejDOjX09hkvCrM3K+vHGOPrTmN+N05lUJ5jh1t0P4U3rm/1rYHC8OA95SHCem9/k9Rv9kaA=='
 
 // 获取证书最大可加密的chunk size
 const maxChunkSize = CertUtil.getCertEncryptMaxChunkSize(certPem);
+console.log(maxChunkSize);
 // maxChunkSize=214
 
 // 获取证书加密后的内容字节数,也就是解密需要传入的chunk size
 const encryptedChunkSize = CertUtil.getCertEncryptContentSize(certPem);
+console.log(encryptedChunkSize);
 // encryptedChunkSize=512
 ```
 
