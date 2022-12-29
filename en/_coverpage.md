@@ -2,13 +2,13 @@
 
 ![logo](_media/icon.svg)
 
-# Ape's Stick Documentation
+# 猿之棒文档
 
-> Developer Tools Platform!
+> 开发者工具平台!
 
-- Open platform application development
-- Expansion development
-- Tool shop
+- 开放平台应用开发
+- 拓展开发
+- 工具商店
 
 <a href="https://github.com/yuanzhibang-tool/TTQM-Docs/" target="_blank">GitHub</a>
-[Get started!](get_started)
+[开始吧!](get_started)

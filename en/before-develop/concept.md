@@ -1,20 +1,15 @@
-!> This chapter explains some concepts used in the development of Yuanzhibang Apps, such as binary, extension, etc.
+!> 本章节说明了一些涉及 `TTQM` 开发中使用到的概念,例如前置脚本,图表,用户脚本等.
 
-### Open App
+### 前置脚本(Pre-Publish Script) :id=1
 
-> Refers to the applications submitted on the Yuanzhibang Open Platform, including:
+> 是指使用脚本在发送消息之前对要发送的消息进行模板替换,变量替换等操作,然后再进行发送,例如:替换发送消息中的`时间`,`unix时间戳`,`uuid`等,用户可以通过内置的`变量(variable)`,`变量管道(variable pipe)`,`管道(pipe)`进行处理,用户自己也可对`变量(variable)`,`变量管道(variable pipe)`,`管道(pipe)`进行拓展,详见[前置脚本](en/pre-publish-script/default.md)
 
-1. Referencing web applications developed by third parties.
-2. Open platform applications developed by developers themselves.
+!>注意:`变量管道variable_pipe`和`管道pipe`的概念的区别在于,`变量管道variable_pipe`用以处理单个模板变量,而`管道pipe`用以处理整个消息体
 
-### Binary
+### 图表(Chart View) :id=2
 
-> Yuanzhibang `js bridge` namespace [`native`](/#/en/open-app-develop/js-api-native ' :ignore') api supports management binary packaged exe file, such as the command line `exe` on `windows`, `macOS` or `linux` command line applications, for security reasons, these binaries need to be submitted on the open platform and only can be used after review. Please ensure the security of the binaries. Do not obtain user privacy and security-related content without the consent of the user, and spread viruses, Trojan horses, and illegal binary. Expand upload After passing the review, it will be automatically distributed after user invocation.
+> 通过对收到的消息进行数据统计或处理,实现图形化分析和处理,例如:对`MQTT`服务器收到的心电,血氧设备的数据进行心电波形绘制;对一定数量的设备在线数量进行统计等.
 
-### Extension
+### 用户脚本(User Script) :id=3
 
-> By using `node.js` to develop applications with rich native capabilities, it provides more abundant capabilities for open applications, and extension development has its own specifications. For details, please refer to [Extension Development](/#/en/extension-develop/default ' :ignore') chapter
-
-### Public Extension
-
-> In order to facilitate the development of developers, Yuanzhibang provides some extensions to speedup the development, developers can run directly through `yzb.native.run`.
+> 通过用户脚本,运行一个常驻的用户微程序,来实现对复杂功能的调试,例如:调试设备间的协议,模拟 `IoT` 设备, 模拟服务端程序,批量消息发送,消息投递,永久化等.
