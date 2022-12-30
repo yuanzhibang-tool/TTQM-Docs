@@ -99,4 +99,4 @@ module.exports = {
 
 ---
 
-!>For more script examples, please refer to [Common Script Example](en/other/common-script-demo.md)
+!>For more script demos, please refer to [Other>Common Script Demo](en/other/common-script-demo.md)

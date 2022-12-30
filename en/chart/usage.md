@@ -1,12 +1,12 @@
-> The chart is divided into two parts, one part is the configuration, the other part is the chart script, the configuration is used to configure the initial configuration of the chart, and the script is used to update the chart and realize the linkage of chart data
+> The Chart has two parts, one part is the option, the other part is the chart script, the option is used to configure the initial option of the chart, and the script is used to update the chart data.
 
-![Configuration and scripts](_media/usage/1.jpg ':size=600')
+![option and scripts](_media/usage/1.jpg ':size=600')
 
 ---
 
 ### 1. Create or open the created chart :id=1
 
-**click the chart button**
+**Click the chart button**
 
 ![Chart 1](_media/usage/2.jpg ':size=400')
 
@@ -16,14 +16,47 @@
 
 ---
 
-### 2. Chart configuration :id=2
+### 2. Chart Option :id=2
 
-> Chart configuration is used to initialize the configuration of the chart. You can export the configuration `object` or export a `Promise`, and return the chart configuration in `resolve`. For more configuration related usage, please refer to [Chart>Configuration](en /chart/option)
+> Chart Option Script is used to initialize the option of the chart. You can use build-in function `setOption`, export the option `object` or export a `Promise` which resolve the chart option. For more option related usage, please refer to [Chart>option](en/chart/option).
 
-!>Note: The chart configuration must return to the configuration within 10s, otherwise it will be forcibly terminated.
+!>Note: The chart option must return to the option within 10s, otherwise it will be forcibly terminated.
 
 <!-- tabs: start -->
-<!-- tab: synchronous return -->
+<!-- tab: Use Function -->
+
+```javascript
+var option = {
+  xAxis: {
+    type: 'category',
+    data: [
+      'Device-1',
+      'Device-2',
+      'Device-3',
+      'Device-4',
+      'Device-5',
+      'Device-6',
+      'Device-7',
+    ],
+  },
+  yAxis: {
+    type: 'value',
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 120],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)',
+      },
+    },
+  ],
+};
+setOption(option);
+```
+
+<!-- tab: Synchronous Return -->
 
 ```javascript
 var option = {
@@ -56,7 +89,7 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab: asynchronous return -->
+<!-- tab: Asynchronous Return -->
 
 ```javascript
 var option = {
@@ -91,23 +124,23 @@ module.exports = new Promise((resolve, reject) => {
 });
 ```
 
-<!-- tab: Initialize the chart -->
+<!-- tab: Inited Chart -->
 
 ![Chart Option](_media/usage/4.jpg ':size=500')
 
 <!-- tabs: end -->
 
-!>For more chart configurations, please refer to [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line), TTQM charts are compatible with [Apache Echart](https:/ /echarts.apache.org/en/index.html) hundreds of configuration types
+!>For more chart options, please refer to [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line), TTQM Chart are compatible with [Apache Echart](https://echarts.apache.org/en/index.html) hundreds of chart types.
 
 ![EChart Demo](_media/usage/5.jpg ':size=500')
 
 ---
 
-### 3. Chart script :id=3
+### 3. Chart Script :id=3
 
-> It is used to respond to the `mqtt` client, and the chart event to return the content of the chart data update, to realize the linkage between the chart and the data
+> It is used to listen to the `mqtt` client and the Chart event and update the chart data.
 
-!> The script will not exit automatically, it will always be executed even if there is no operation
+> !> The script will not exit automatically, it will always be executed even if there is no operation
 
 ```javascript
 setInterval(() => {
@@ -158,22 +191,22 @@ module.exports = {
 
 ---
 
-### 4. Run the chart script :id=4
+### 4. Run the Chart Script :id=4
 
 ![Run chart script](_media/usage/6.jpg ':size=600')
 
 ---
 
-### 5. Minimize, maximize, and close :id=5
+### 5. Minimize, Maximize, and Close :id=5
 
-!>Maximize, will hide the configuration, JavaScript and console on the left
+!>Maximize, will hide the Option, JavaScript and Console Tabs on the left.
 
-!>Minimize, the graph will be hidden
+!>Minimize, the Chart window will be hidden.
 
-!>Click Close to close the chart, stop updating and corresponding scripts
+!>Click Close to close the Chart window and stop the script.
 
 ![minimize, maximize, and close](_media/usage/7.jpg ':size=600')
 
-!>You can click the corresponding dynamic icon in the chart list to restore the minimized chart
+!>You can click the dynamic icon in the Chart List to restore the minimized Chart
 
 ![minimize, maximize, and close](_media/usage/8.jpg ':size=600')

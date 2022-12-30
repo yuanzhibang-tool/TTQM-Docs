@@ -1,52 +1,54 @@
-> The chart configuration is used to initialize the chart configuration, which can be configured through the built-in function `setOption`, or by exporting the configuration `object` or exporting a `Promise`, and returning the chart configuration in `resolve`
+> The chart option is used to initialize the chart option, you can set use the built-in function `setOption`, or by exporting the option `object` or exporting a `Promise` which resolve the chart option.
 
 ---
 
-!> Note: The configuration script has some restrictions, since the operating environment is `node.js`, and it is separated from the chart, please note that there are a few restrictions
+!> Note: The option script has some restrictions, since the environment is `node.js`, and it is separated from the chart view, please note that there are a few restrictions below,
 
-1. The chart configuration must return to the configuration within 10s, otherwise it will be forcibly terminated.
-2. The `jQuery` module is not supported. If there is a network request in the example, please refer to [FAQ?>How to add a script dependency library?](en/question/build-in-module?id=_1) to implement the interface method replace
+1. The chart option must return to the option within 10s, otherwise it will be forcibly terminated.
+2. The `jQuery $` module is not supported. If there is a network request in the example, please refer to [FAQ?>How to add a script dependency library?](en/question/build-in-module?id=_1) to implement the network request with `axios`.
 3. Adding custom events to charts is not supported
 
 ---
 
-### 1. Find the type of chart you need to use, please select the chart you want to use in [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line) type :id=1
+### 1. Find the type of chart you need to use :id=1
+
+> Please select the chart you want to use in [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line) type
 
 ![Select chart type](_media/option/1.jpg ':size=700')
 
 ---
 
-### 2. Copy the corresponding configuration script :id=2
+### 2. Copy the option script :id=2
 
-![Copy the corresponding configuration script](_media/option/2.jpg ':size=700')
+![Copy the corresponding option script](_media/option/2.jpg ':size=700')
 
 ---
 
-### 3. Paste it into the chart configuration script, add the variable declaration at the top of the code, and add the export configuration code at the end :id=3
+### 3. Paste it into the chart option script, add the variable declaration at the top of the code, and add the export option code at the end :id=3
 
 **Add variable declaration**
 
-!> Because `echarts` is used in the configuration, `echarts` must be imported at the beginning to use in the code
+!> Because `echarts` is used in the option, `echarts` must be imported at the beginning to use in the code
 
 ![Add variable declaration](_media/option/3.jpg ':size=700')
 
-**Export configuration code**
+**Export option code**
 
-![Export configuration code](_media/option/4.jpg ':size=700')
+![Export option code](_media/option/4.jpg ':size=700')
 
 ---
 
 ### 4. Save and run, you can see the initialized chart :id=4
 
-![Export configuration code](_media/option/5.jpg ':size=700')
+![Export option code](_media/option/5.jpg ':size=700')
 
 ---
 
-### 5. Complete configuration code :id=5
+### 5. Complete option script code :id=5
 
 <!-- tabs:start -->
 
-<!-- tab:Set via function -->
+<!-- tab:Use Functionn -->
 
 ```javascript
 const echarts = require('echarts');
@@ -233,7 +235,7 @@ const option = {
 setOption(option);
 ```
 
-<!-- tab:Synchronous return option -->
+<!-- tab:Synchronous Return -->
 
 ```javascript
 const echarts = require('echarts');
@@ -419,7 +421,7 @@ const option = {
 module.exports = option;
 ```
 
-<!-- tab:Asynchronous return option -->
+<!-- tab:Asynchronous Return -->
 
 ```javascript
 const echarts = require('echarts');
@@ -607,7 +609,7 @@ module.exports = new Promise((resolve, reject) => {
 });
 ```
 
-<!-- tab:init the chart -->
+<!-- tab:Inited chart -->
 
 ![Chart Option](_media/option/6.jpg ':size=600')
 

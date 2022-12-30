@@ -1,1 +1,1 @@
-> Realize graphical analysis and processing through data statistics or processing of received messages, for example: draw ECG waveforms for ECG and blood oxygen device data received by `MQTT` server; online for a certain number of devices statistics etc.
+> Realize the graphical analysis of data using the received data, for example: use the received ECG data to draw the ECG waveform, use the received blood oxygen data to draw the blood oxygen waveform; analyze the number of online devices, etc.
