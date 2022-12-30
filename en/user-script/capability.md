@@ -1,4 +1,4 @@
-| No. | Capability                                                                                                                                                                   |
+| No. | Capcapability                                                                                                                                                                |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | Support running multiple scripts at the same time                                                                                                                            |
 | 2   | Support listening and processing `MQTT` client events                                                                                                                        |

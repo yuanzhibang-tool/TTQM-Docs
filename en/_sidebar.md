@@ -2,14 +2,14 @@
 
 - [Changelog](en/release-note/default.md)
 
-- [Before Development](en/before-develop/default.md)
-  - [Summary](en/before-develop/summary.md)
-  - [Concept](en/before-develop/concept.md)
-  - [Ability](en/before-develop/ability.md)
+- [Before Use](en/before-use/default.md)
+  - [Summary](en/before-use/summary.md)
+  - [Concept](en/before-use/concept.md)
+  - [Capability](en/before-use/capability.md)
 - [Pre-Publish Script](en/pre-publish-script/default.md)
 
   - [Concept](en/pre-publish-script/concept.md)
-  - [Ability](en/pre-publish-script/ability.md)
+  - [Capability](en/pre-publish-script/capability.md)
   - [Usage](en/pre-publish-script/usage.md)
   - [Built-in pipe, variable](en/pre-publish-script/built_in.md)
   - [Demo](en/pre-publish-script/demo.md)
@@ -18,7 +18,7 @@
 - [Chart](en/chart/default.md)
 
   - [Concept](en/chart/concept.md)
-  - [Ability](en/chart/ability.md)
+  - [Capability](en/chart/capability.md)
   - [Usage](en/chart/usage.md)
   - [Option](en/chart/option.md)
   - [Script](en/chart/script.md)
@@ -28,7 +28,7 @@
 - [User Script](en/user-script/default.md)
 
   - [Concept](en/user-script/concept.md)
-  - [Ability](en/user-script/ability.md)
+  - [Capability](en/user-script/capability.md)
   - [Usage](en/user-script/usage.md)
   - [Events and Built-in Functions](en/user-script/event-function.md)
   - [Demo](en/user-script/demo.md)

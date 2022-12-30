@@ -5,7 +5,7 @@
 | 序号 | 标题                                                    | 描述                                       |
 | ---- | ------------------------------------------------------- | ------------------------------------------ |
 | 1    | [概念](zh-cn/user-script/concept.md)                    | 介绍用户脚本使用中一些相关的概念           |
-| 2    | [能力](zh-cn/user-script/ability.md)                    | 介绍用户脚本能够实现的能力                 |
+| 2    | [能力](zh-cn/user-script/capability.md)                 | 介绍用户脚本能够实现的能力                 |
 | 3    | [使用](zh-cn/user-script/usage.md)                      | 介绍用户脚本的使用                         |
 | 4    | [事件以及内置函数](zh-cn/user-script/event-function.md) | 介绍用户脚本支持的`回调事件`以及`内置函数` |
 | 5    | [示例](zh-cn/user-script/demo.md)                       | 提供一些用户脚本的使用示例                 |

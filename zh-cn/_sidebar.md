@@ -2,14 +2,14 @@
 
 - [更新日志](zh-cn/release-note/default.md)
 
-- [开发前必读](zh-cn/before-develop/default.md)
-  - [总览](zh-cn/before-develop/summary.md)
-  - [概念](zh-cn/before-develop/concept.md)
-  - [应用能力](zh-cn/before-develop/ability.md)
+- [使用前必读](zh-cn/before-use/default.md)
+  - [总览](zh-cn/before-use/summary.md)
+  - [概念](zh-cn/before-use/concept.md)
+  - [应用能力](zh-cn/before-use/capability.md)
 - [前置脚本](zh-cn/pre-publish-script/default.md)
 
   - [概念](zh-cn/pre-publish-script/concept.md)
-  - [能力](zh-cn/pre-publish-script/ability.md)
+  - [能力](zh-cn/pre-publish-script/capability.md)
   - [使用](zh-cn/pre-publish-script/usage.md)
   - [内置 pipe,variable](zh-cn/pre-publish-script/built_in.md)
   - [示例](zh-cn/pre-publish-script/demo.md)
@@ -18,7 +18,7 @@
 - [图表](zh-cn/chart/default.md)
 
   - [概念](zh-cn/chart/concept.md)
-  - [能力](zh-cn/chart/ability.md)
+  - [能力](zh-cn/chart/capability.md)
   - [使用](zh-cn/chart/usage.md)
   - [配置](zh-cn/chart/option.md)
   - [脚本](zh-cn/chart/script.md)
@@ -28,7 +28,7 @@
 - [用户脚本](zh-cn/user-script/default.md)
 
   - [概念](zh-cn/user-script/concept.md)
-  - [能力](zh-cn/user-script/ability.md)
+  - [能力](zh-cn/user-script/capability.md)
   - [使用](zh-cn/user-script/usage.md)
   - [事件以及内置函数](zh-cn/user-script/event-function.md)
   - [示例](zh-cn/user-script/demo.md)

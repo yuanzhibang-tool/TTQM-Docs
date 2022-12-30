@@ -5,7 +5,7 @@
 | 序号 | 标题                                                       | 描述                                                           |
 | ---- | ---------------------------------------------------------- | -------------------------------------------------------------- |
 | 1    | [概念](zh-cn/pre-publish-script/concept.md)                | 介绍前置脚本使用中一些相关的概念                               |
-| 2    | [能力](zh-cn/pre-publish-script/ability.md)                | 介绍前置脚本能够实现的能力                                     |
+| 2    | [能力](zh-cn/pre-publish-script/capability.md)             | 介绍前置脚本能够实现的能力                                     |
 | 3    | [使用](zh-cn/pre-publish-script/usage.md)                  | 介绍前置脚本的使用,以及拓展 `pipe`,`variable`                  |
 | 4    | [内置 pipe,variable](zh-cn/pre-publish-script/built_in.md) | 介绍前置脚本支持的内置 `pipe`,`variable`                       |
 | 5    | [示例](zh-cn/pre-publish-script/demo.md)                   | 提供一些前置脚本的使用示例,包含拓展以及内置的`pipe`,`variable` |

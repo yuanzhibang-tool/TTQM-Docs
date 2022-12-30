@@ -7,8 +7,8 @@
 | `date` | Get the current time in `YYYY-MM-DD HH:mm:ss` format | `2022-12-12 23:12:32` |
 | `unixSecond` | current `unix` timestamp, in seconds, `int` number format |`1670861452` |
 | `unixMillisecond` | current `unix` timestamp in milliseconds, `int` number format |`1670861452123` |
-| `unixMillisecondFloat` | The current `unix` timestamp, in seconds, accurate to 3 decimal places, a number of `float` type |`1670861452.123` |
-| `uuid` | Generate a string in `uuid v4` format, all lowercase | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`|
+| `unixMillisecondFloat` | The current `unix` timestamp, in seconds, correct to 3 decimal places, a number of `float` type |`1670861452.123` |
+| `uuid` | Generate a string in `uuid v4` format, in lowercase | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`|
 
 ---
 
@@ -35,4 +35,4 @@
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `leafNodeToString` | Convert all leaf nodes in `json` format to `string`, return the original information without processing if it is not in `json` format |
 
-!>Leaf node, refers to the last level of `json` tree
+!>Leaf node is the node which does not have a child in `json` tree

@@ -1,6 +1,6 @@
-| No. | Capability                                                                                                                                                                                       |
+| No. | Capcapability                                                                                                                                                                                    |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | Supports many types of charts, such as histograms, pie charts, rose charts, etc. For details, please [reference link](https://echarts.apache.org/examples/zh/index.html)                         |
+| 1   | Supports many types of charts, such as histograms, pie charts, rose charts, etc. For details, please [reference link](https://echarts.apache.org/examples/en/index.html)                         |
 | 2   | Compatible with `Apache Echarts` configuration, configuration items need to be adjusted, please refer to [Chart>Configuration](en/chart/option.md)                                               |
 | 3   | Support chart interaction                                                                                                                                                                        |
 | 4   | Support overall and partial update of data sources [Chart>Script](en/chart/script.md)                                                                                                            |

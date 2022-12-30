@@ -10,7 +10,7 @@
 
 ---
 
-### 1. Find the type of chart you need to use, please select the chart you want to use in [Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line) type :id=1
+### 1. Find the type of chart you need to use, please select the chart you want to use in [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line) type :id=1
 
 ![Select chart type](_media/option/1.jpg ':size=700')
 

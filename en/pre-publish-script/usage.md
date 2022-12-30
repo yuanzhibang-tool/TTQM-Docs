@@ -1,4 +1,4 @@
-> Debugging and using pre-scripts
+> Using and expanding `Pre-Publish Script`
 
 ---
 
@@ -6,19 +6,25 @@
 
 ![Template variable](../../_media/variable.png ':size=500')
 
-1. Template variables must be wrapped with `{{}}`. If it is a string of `json` type, it needs to be wrapped with `""` double quotes outside. Strings that are not `json` do not need to use `""` double quote wrap
+1. Template variables must be wrapped with `{{}}`. If the messages is a string of `json` type, it needs to be wrapped with `""` double quotes outside. Messages that are not `json` do not need to use `""` double quote wrap.
 
-2. The template variable must start with `$`, and the first part is marked as the variable name. If there is no corresponding variable in the pre-script or built-in, or if you want to get the variable directly from `variable_pipe`, you can just use a `$` flag
+2. The template variable must start with `$`, and the first part is marked as the variable name. If there is no corresponding variable in the pre-script or built-in, or if you want to get the variable directly from `variable pipe`, you can just use a `$`.
 
-3. Use `|` between variables (`variable`) and multiple variable pipes (`variable_pipe`)
+3. Use `|` between variables (`variable`) and multiple variable pipes (`variable pipe`)
 
-4. If `variable_pipe` has parameters, use `:` to separate the pipe name and variables, and multiple parameters must be separated by commas, and the parameters must be wrapped in `''` single quotes
+4. If `variable pipe` has parameters, use `:` to separate the pipe name and it's paramaters, and multiple parameters must be separated by commas, and the parameters must be wrapped with `''` single quotes.
 
 ---
 
-### 2. Use template variables in messages, support ordinary string messages and `json` format messages :id=2
+### 2. Use template variables in messages :id=2
+
+!>support non-json string messages and `json` string messages
 
 **`json` input message (no custom `variable` and `pipe` used)**
+
+<!-- tabs:start -->
+
+<!-- tab: Template Message -->
 
 ```json
 {
@@ -28,7 +34,7 @@
 }
 ```
 
-**Output message**
+<!-- tab: Output -->
 
 ```json
 {
@@ -37,6 +43,8 @@
   "current_date": "2022-12-14 15:36:13" //1. Get the time in yyyy-MM-DD HH:mm:ss format
 }
 ```
+
+<!-- tabs:end -->
 
 ---
 

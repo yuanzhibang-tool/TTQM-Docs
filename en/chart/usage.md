@@ -97,7 +97,7 @@ module.exports = new Promise((resolve, reject) => {
 
 <!-- tabs: end -->
 
-!>For more chart configurations, please refer to [Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line), TTQM charts are compatible with [Apache Echart](https:/ /echarts.apache.org/zh/index.html) hundreds of configuration types
+!>For more chart configurations, please refer to [Chart Demo](https://echarts.apache.org/examples/en/index.html#chart-type-line), TTQM charts are compatible with [Apache Echart](https:/ /echarts.apache.org/en/index.html) hundreds of configuration types
 
 ![EChart Demo](_media/usage/5.jpg ':size=500')
 

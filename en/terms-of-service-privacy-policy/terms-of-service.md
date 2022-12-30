@@ -42,7 +42,7 @@ In view of the above, the user understands and agrees that:
 
 3.4.1 Without the consent of us and relevant obligees, users are not allowed to reverse engineer, decompile or disassemble the above-mentioned functions, software and services; or material to publish, broadcast, rewrite or republish for broadcast or publication, directly or indirectly, in any medium, or for any other purpose;
 
-3.4.2 Under the premise of making reasonable commercial efforts, we shall not in any form compensate you for the delay, inaccuracy, error, omission or any damages arising from the above-mentioned functions, software, services and the contents contained therein. User or any third party assumes no liability;
+3.4.2 Under the premise of making reasonable commercial efforts, we shall not in any form compensate you for the delay, inaccuracy, error, omission or any damages arising from the above-mentioned functions, software, services and the contents contained therein. User or any third party assumes no licapability;
 
 3.4.3 We do not make any guaranteed or joint promises or guarantees for any of the functions, software, services or content provided by the above-mentioned third parties. Solve it by yourself, we will not bear any responsibility;
 

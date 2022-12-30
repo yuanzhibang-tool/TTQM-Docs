@@ -43,16 +43,16 @@
         if (first_hash !== 'zh-cn' && first_hash !== 'en' && first_hash !== 'zh-tw') {
             var user_lang = localStorage.getItem('K_USER_LANGUAGE');
             if (user_lang) {
-                location.href = `#/${user_lang}/before-develop/summary`;
+                location.href = `#/${user_lang}/before-use/summary`;
             } else {
                 var navigator_lang = navigator.language;
                 if (navigator_lang == 'zh' || navigator_lang == 'zh-Hans') {
-                    location.href = `#/zh-cn/before-develop/summary`;
+                    location.href = `#/zh-cn/before-use/summary`;
                 } else if (navigator_lang == 'zh-Hant') {
-                    location.href = `#/zh-tw/before-develop/summary`;
+                    location.href = `#/zh-tw/before-use/summary`;
                 }
                 else {
-                    location.href = `#/en/before-develop/summary`;
+                    location.href = `#/en/before-use/summary`;
                 }
             }
 
@@ -84,13 +84,13 @@
             logo: '/_media/icon.png',
             loadSidebar: true,
             alias: {
-                '/': 'en/before-develop/summary.md',
-                '/zh-tw/': 'zh-tw/before-develop/summary.md',
-                '/zh-cn/': 'zh-cn/before-develop/summary.md',
-                '/en/': 'en/before-develop/summary.md',
-                '/zh-tw': 'zh-tw/before-develop/summary.md',
-                '/zh-cn': 'zh-cn/before-develop/summary.md',
-                '/en': 'en/before-develop/summary.md',
+                '/': 'en/before-use/summary.md',
+                '/zh-tw/': 'zh-tw/before-use/summary.md',
+                '/zh-cn/': 'zh-cn/before-use/summary.md',
+                '/en/': 'en/before-use/summary.md',
+                '/zh-tw': 'zh-tw/before-use/summary.md',
+                '/zh-cn': 'zh-cn/before-use/summary.md',
+                '/en': 'en/before-use/summary.md',
             },
             externalLinkTarget: '_blank',
             externalLinkRel: 'noopener',
