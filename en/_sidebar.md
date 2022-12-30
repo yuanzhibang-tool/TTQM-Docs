@@ -30,7 +30,7 @@
   - [Concept](en/user-script/concept.md)
   - [Capability](en/user-script/capability.md)
   - [Usage](en/user-script/usage.md)
-  - [Events and Built-in Functions](en/user-script/event-function.md)
+  - [Event & built-in Function](en/user-script/event-function.md)
   - [Demo](en/user-script/demo.md)
   - [Debug](en/user-script/debug.md)
 
