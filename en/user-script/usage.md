@@ -1,40 +1,40 @@
-> 用户脚本可以通过监听客户端事件,发送消息,来实现更加复杂的功能,例如:调试设备间的协议,模拟 `IoT` 设备,模拟服务端程序,批量消息发送,消息投递,永久化等.
+> User scripts can implement more complex functions by listening to client events and sending messages, such as: debugging protocols between devices, simulating `IoT` devices, simulating server programs, batch message sending, message delivery, persistence, etc.
 
-![用户脚本1](_media/usage/1.jpg ':size=600')
-
----
-
-### 1.创建或者打开已创建的用户脚本 :id=1
-
-**点击用户脚本按钮**
-
-![用户脚本2](_media/usage/2.jpg ':size=400')
-
-**打开**
-
-![用户脚本3](_media/usage/3.jpg ':size=300')
+![UserScript 1](_media/usage/1.jpg ':size=600')
 
 ---
 
-### 2.脚本 :id=2
+### 1. Create or open the created user script :id=1
 
-> 用来响应`mqtt`客户端以及脚本事件来进行对应操作
+**click the userscript button**
 
-!>脚本不会自动退出,即使没有操作也会一直执行,所以可以作为常驻内存应用,支持同时运行多个用户脚本,例如,一个用来永久化消息投递,一个用于模拟`iot`设备,一个用于模拟服务器端程序,
+![UserScript 2](_media/usage/2.jpg ':size=400')
+
+**Open**
+
+![UserScript 3](_media/usage/3.jpg ':size=300')
+
+---
+
+### 2. Script :id=2
+
+> Used to respond to `mqtt` client and script events to perform corresponding operations
+
+!> The script will not exit automatically, and will continue to execute even if there is no operation, so it can be used as a resident memory application to support running multiple user scripts at the same time, for example, one for permanent message delivery, and one for simulating `iot` devices , one is used to simulate the server-side program,
 
 ```javascript
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
-    // 使用内置函数publish发布在线主题消息
+    // Use the built-in function publish to publish online topic messages
     publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
-    // 打印topic
+    // print topic
     console.log(`recieved topic:${topic}`);
   },
   onWillExit: () => {
-    // 脚本退出前执行,有2秒的时间可以操作,例如保存数据
+    // Execute before the script exits, there are 2 seconds to operate, such as saving data
     console.log('onWillExit');
   },
 };
@@ -42,20 +42,20 @@ module.exports = {
 
 ---
 
-### 3.运行图表脚本 :id=3
+### 3. Run the chart script :id=3
 
-![运行脚本](_media/usage/4.jpg ':size=600')
+![Run script](_media/usage/4.jpg ':size=600')
 
 ---
 
-### 4.最小化,和关闭 :id=4
+### 4. Minimize and close :id=4
 
-!>最小化,脚本编辑窗口将会隐藏,最小化后,脚本将会继续运行
+!>Minimize, the script editing window will be hidden, after minimizing, the script will continue to run
 
-!>点击关闭,将会关闭脚本编辑窗口,并停止脚本执行
+!>Click Close to close the script editing window and stop script execution
 
-![最小化和关闭](_media/usage/5.jpg ':size=600')
+![Minimize and close](_media/usage/5.jpg ':size=600')
 
-!>您可以在脚本列表里点击对应的动态图标来恢复最小化的脚本窗口
+!>You can click the corresponding dynamic icon in the script list to restore the minimized script window
 
-![恢复窗口](_media/usage/6.jpg ':size=600')
+![Restore window](_media/usage/6.jpg ':size=600')

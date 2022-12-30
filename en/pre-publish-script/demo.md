@@ -1,9 +1,9 @@
-!>如果您想在前置脚本中使用更多的第三方库,请参照[如何添加脚本依赖库?](en/question/how-to-add-support-modules.md)
+!>If you want to use more third-party libraries in the pre-script, please refer to [How to add script dependencies?](en/question/how-to-add-support-modules.md)
 
-### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=1
+### 1. Generate `uuid` and `unix` timestamps (accurate to seconds, and return a string) :id=1
 
-<!-- tabs:start -->
-<!-- tab:模板消息 -->
+<!-- tabs: start -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -16,14 +16,14 @@
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
-// only the built-in variables and variables pipes are used!
+// only the built-in variables and variable pipes are used!
 module.exports = {};
 ```
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -36,12 +36,12 @@ module.exports = {};
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
-### 2.将消息所有叶子节点转换为字符串 :id=2
+### 2. Convert all leaf nodes of the message to strings :id=2
 
-<!-- tabs:start -->
-<!-- tab:模板消息 -->
+<!-- tabs: start -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -54,14 +54,14 @@ module.exports = {};
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
-// only the built-in variables and variables pipes are used!
+// only the built-in variables and variable pipes are used!
 module.exports = {
   pipe: {
     // pipe is used to process the full message body
-    // leafNodeToString is a built-in pipe, covert all leaf node to string, the value is not used,you can set the value with null;
+    // leafNodeToString is a built-in pipe, covert all leaf nodes to string, the value is not used, you can set the value with null;
     leafNodeToString: null,
   },
 };
@@ -69,7 +69,7 @@ module.exports = {
 
 ---
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -82,15 +82,15 @@ module.exports = {
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
 ---
 
-### 3.获取当前格式化时间 :id=3
+### 3. Get the current formatted time :id=3
 
-<!-- tabs:start -->
+<!-- tabs: start -->
 
-<!-- tab:模板消息 -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -102,16 +102,16 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
-// only the built-in variables and variables pipes are used!
+// only the built-in variables and variable pipes are used!
 module.exports = {};
 ```
 
 ---
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -123,15 +123,15 @@ module.exports = {};
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
 ---
 
-### 4.对消息内容加签,来实现服务器消息安全验证 :id=4
+### 4. Sign the content of the message to achieve server message security verification :id=4
 
-<!-- tabs:start -->
+<!-- tabs: start -->
 
-<!-- tab:模板消息 -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -144,7 +144,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
 const { EncryptUtil } = require('@ttqm/ttqm-support');
@@ -172,7 +172,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -186,14 +186,14 @@ module.exports = {
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
 ---
 
-### 5.使用证书,公钥,私钥加解密消息体 :id=5
+### 5. Use the certificate, public key, and private key to encrypt and decrypt the message body :id=5
 
-<!-- tabs:start -->
-<!-- tab:模板消息 -->
+<!-- tabs: start -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -206,7 +206,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
 const { CertUtil } = require('@ttqm/ttqm-support');
@@ -250,7 +250,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab:Console -->
 
 ```plain text
 AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs8VxfRBEldYJ384B7Vt5fLMjSH3cTwduhJZINzK2XFP57ASGaYU9GwHnYnzS/jC5bMQEDwjB94TuSITTS7JaBN5tuMgjitqkIXlji7KyqFhBnuWEjbnWeub0uLp1rev+yowe+YtmzNoZFzBy8x4t9zLBDDgBpQRiJLEVa01W2dStImilAqgfbFInhkAbBwVS8Cv4z7evA25xruflZcjFHPgM3ocdudDF51xQEPysl05QymQ40poOI9sLuoYDFDe9ZmprrhQ==
@@ -260,11 +260,11 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 
 ---
 
-### 6.根据 `topic` 对消息进行过滤处理 :id=6
+### 6. Filter messages according to `topic` :id=6
 
-<!-- tabs:start -->
+<!-- tabs: start -->
 
-<!-- tab:模板消息 -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -277,7 +277,7 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
 // require the build-in support module
@@ -310,7 +310,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -324,15 +324,15 @@ module.exports = {
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
 ---
 
-### 7.自定义拓展`variable`和`pipe` :id=7
+### 7. Custom extension `variable` and `pipe` :id=7
 
-<!-- tabs:start -->
+<!-- tabs: start -->
 
-<!-- tab:模板消息 -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -343,7 +343,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
@@ -381,7 +381,7 @@ module.exports = {
   },
   pipe: {
     // pipe is used to process the full message body
-    // leafNodeToString is a built-in pipe, covert all leaf node to string, the value is not used, you can set the value with null;
+    // leafNodeToString is a built-in pipe, covert all leaf nodes to string, the value is not used, you can set the value with null;
     leafNodeToString: null,
     addUserStringToRootNode: (publishMessage) => {
       try {
@@ -399,7 +399,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -421,12 +421,12 @@ module.exports = {
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
 ---
 
-!>更多内置`pipe`和`variable`请参照[内置 pipe,variable](en/pre-publish-script/built_in)
+!>For more built-in `pipe` and `variable`, please refer to [built-in pipe, variable](en/pre-publish-script/built_in)
 
 ---
 
-!>更多脚本示例,请参照[通用脚本示例](en/other/common-script-demo.md)
+!>For more script examples, please refer to [Common Script Example](en/other/common-script-demo.md)

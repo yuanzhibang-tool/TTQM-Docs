@@ -1,12 +1,12 @@
-!>内置的所有库都可以在所有脚本中使用,包含前置脚本,图表配置脚本,图表脚本,用户脚本
+!> All built-in libraries can be used in all scripts, including pre-scripts, chart configuration scripts, chart scripts, user scripts
 
-> TTQM 内置了一些库,如网络请求等,具体支持的库在下放列出来,当然您也可以自己安装拓展库,具体请参照 [常见问题?>如何添加脚本依赖库?](en/question/how-to-add-support-modules.md)
+> TTQM has some built-in libraries, such as network requests, etc. The specific supported libraries are listed below. Of course, you can also install the extended library yourself. For details, please refer to [FAQ?> How to add script-dependent libraries?](en/question/ how-to-add-support-modules.md)
 
 ---
 
-### 1.网络请求库`axios` :id=1
+### 1. Network request library `axios` :id=1
 
-**用法示例,更多用法请参照[axios](https://www.npmjs.com/package/axios)**
+**Usage example, for more usage, please refer to [axios](https://www.npmjs.com/package/axios)**
 
 ```javascript
 const axios = require('axios');
@@ -43,9 +43,9 @@ axios
 
 ---
 
-### 2.uuid 生成库`uuid` :id=2
+### 2. uuid generation library `uuid` :id=2
 
-**用法示例,更多用法请参照[uuid](https://www.npmjs.com/package/uuid)**
+**Usage example, for more usage, please refer to [uuid](https://www.npmjs.com/package/uuid)**
 
 ```javascript
 const { v4: uuidv4 } = require('uuid');
@@ -54,9 +54,9 @@ uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 ---
 
-### 3.时间日期工具库`Moment.js` :id=3
+### 3. Time and date tool library `Moment.js` :id=3
 
-**用法示例,更多用法请参照[Moment.js](https://momentjs.com/docs/)**
+**Usage example, please refer to [Moment.js](https://momentjs.com/docs/) for more usage**
 
 ```javascript
 var moment = require('moment');
@@ -66,9 +66,9 @@ const dateString = moment().format(format); // ⇨ '2022-12-12 00:01:23'
 
 ---
 
-### 4.模拟数据生成库`Mock.js` :id=4
+### 4. Simulation data generation library `Mock.js` :id=4
 
-**用法示例,更多用法请参照[Mock.js](https://github.com/nuysoft/Mock/wiki)**
+**Usage example, for more usage, please refer to [Mock.js](https://github.com/nuysoft/Mock/wiki)**
 
 ```javascript
 var mockjs = require('mockjs');
@@ -84,25 +84,25 @@ var mockData = mockjs.mock({
 });
 
 // {
-//   "list":[
-//     {
-//       "id": "1"
-//     },
-//     {
-//       "id": "2"
-//     },
-//     {
-//       "id": "3"
-//     }
-//   ]
+// "list":[
+// {
+// "id": "1"
+// },
+// {
+// "id": "2"
+// },
+// {
+// "id": "3"
+// }
+// ]
 // }
 ```
 
 ---
 
-### 5.加密库`CryptoJs` :id=5
+### 5. Encryption library `CryptoJs` :id=5
 
-**用法示例,更多用法请参照[CryptoJs](https://cryptojs.gitbook.io/docs/)**
+**Usage example, please refer to [CryptoJs](https://cryptojs.gitbook.io/docs/) for more usage**
 
 ```javascript
 var CryptoJS = require('crypto-js');
@@ -120,9 +120,9 @@ var originalText = bytes.toString(CryptoJS.enc.Utf8);
 console.log(originalText); // 'my message'
 ```
 
-### 6.`ttqm-support` :id=6
+### 6. `ttqm-support` :id=6
 
-> 该模块提供一些 `TTQM` 常用的一些帮助类
+> This module provides some helper classes commonly used by `TTQM`
 
 <!-- tabs:start -->
 
@@ -334,7 +334,7 @@ export declare class CertUtil {
 
 <!-- tabs:end -->
 
-**示例**
+**Demo**
 
 <!-- tabs:start -->
 
@@ -343,46 +343,46 @@ export declare class CertUtil {
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
 const filePath = FileUtil.getScriptDataPath('test.txt');
-// 检测文件是否存在
+// Check if the file exists
 const exist = FileUtil.existSync(filePath);
 console.log(exist);
-// exist = false
-// 写入文件
+// exists = false
+// write to file
 FileUtil.createStringFileSync(filePath, 'test content');
-// 异步获取文件hash
+// get file hash asynchronously
 FileUtil.getFileHash(filePath)
   .then((hash) => {
     console.log(hash);
     // hash = '1eebdf4fdc9fc7bf283031b93f9aef3338de9052'
-    // 停止脚本
+    // stop script
     exit();
   })
   .catch((err) => {
     console.error(err);
   });
-// 获取文件内容
+// get file content
 const fileContent = FileUtil.readStringFileSync(filePath);
 console.log(fileContent);
 // fileContent = 'test content'
 ```
 
-!>同步获取文件 hash,所有代码都必须使用`async`函数包裹
+!>Get file hash synchronously, all codes must be wrapped with `async` function
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
 
 const main = async () => {
   const filePath = FileUtil.getScriptDataPath('test.txt');
-  // 检测文件是否存在
+  // Check if the file exists
   const exist = FileUtil.existSync(filePath);
   console.log(exist);
-  // exist = false
-  // 写入文件
+  // exists = false
+  // write to file
   FileUtil.createStringFileSync(filePath, 'test content');
-  // 异步获取文件hash
+  // get file hash asynchronously
   const fileHash = await FileUtil.getFileHash(filePath);
   console.log(fileHash);
-  // 获取文件内容
+  // get file content
   const fileContent = FileUtil.readStringFileSync(filePath);
   console.log(fileContent);
   // fileContent = 'test content'
@@ -404,7 +404,7 @@ console.log(stringHashSha1);
 
 ```javascript
 const { TopicUtil } = require('@ttqm/ttqm-support');
-// 检测子topic
+// detect subtopic
 const subTopic = 'device_type/1/device_id/123456';
 const isSubTopic = TopicUtil.isSubTopic('device_type/+/device_id/+', subTopic);
 console.log(isSubTopic);
@@ -417,7 +417,7 @@ const isSubTopic1 = TopicUtil.isSubTopic(
 console.log(isSubTopic1);
 // isSubTopic1 = false
 
-// 解析topic
+// parse topic
 const subTopicInfo = TopicUtil.parseKeyValueTopic(subTopic);
 // subTopicInfo = {
 //   device_type: 1,
@@ -459,18 +459,18 @@ kxrjgqSi9uXAQUuKzqN6Mas2AHUPWEB+YRJz5aLBuGIX7hi5sfoQ4kbHMu6jRaug
 4CErzSD1pdQTo7SKyoQXg9UdjdgxgBpWQFltFBG1shl1sr1nxIClZbtr7AXxYlK3
 tXKYeZ4ucHFd7rlOjORpbliWa9A0sjvm7Klic2Pbd6jp2PqdR4EK6Tn5e8S7Sng=
 -----END CERTIFICATE-----`;
-// 证书加密数据
+// certificate encrypted data
 const stringContent = '1';
 const encyptedContent = CertUtil.certEncrypt(certPem, stringContent, 100);
 console.log(encyptedContent);
 // encyptedContent= 'YaEtVr5Ct3inafRqWwW9Z9U2q4F0xnjNU7I83va9oixKsfy9DZThVGv2O9CZxOM0THfBbMVNwVnY0xTFZz0ZlzRotJVmlPZ5NZSnLGMxq/nnAt9ujcGUXBeChavjbn6QmAnRuvQs3jgjNPDhqPgVM430xluo2LLVA1xo22Krg4EasswNW6XQ5ZHW3+9apf1GwpQnvp8Mrk9UMwZ8rFfI55aMm6nWP/rPnrC3Q5xav6amMVFWFEUF7hBNEWgCdD22KPzmoSM2tLtrRlEejDOjX09hkvCrM3K+vHGOPrTmN+N05lUJ5jh1t0P4U3rm/1rYHC8OA95SHCem9/k9Rv9kaA=='
 
-// 获取证书最大可加密的chunk size
+// get the maximum encrypted chunk size of the certificate
 const maxChunkSize = CertUtil.getCertEncryptMaxChunkSize(certPem);
 console.log(maxChunkSize);
 // maxChunkSize=214
 
-// 获取证书加密后的内容字节数,也就是解密需要传入的chunk size
+// Get the number of bytes of content encrypted by the certificate, which is the chunk size that needs to be passed in for decryption
 const encryptedChunkSize = CertUtil.getCertEncryptContentSize(certPem);
 console.log(encryptedChunkSize);
 // encryptedChunkSize=512

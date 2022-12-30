@@ -1,151 +1,151 @@
-**_版本:`20221229`_**
+**_Version:`20221229`_**
 
 ---
 
-`TTQM`（以及下文提到的“我们”、“我们的”或“本 app”）是由主体公司北京戴夫健康科技有限公司提供的产品。
+`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company Beijing Dave Health Technology Co., Ltd.
 
-产品： `TTQM`提供的服务和产品.
+Products: Services and products offered by `TTQM`.
 
-如果您决定使用我们产品提供的服务，本协议用于告知我们对于用户的隐私如何收集、使用和披露。
+If you decide to use the services provided by our products, this agreement is used to inform us how to collect, use and disclose user privacy.
 
-如果您选择使用我们提供的服务，则表示您同意收集和使用与此政策相关的信息。我们收集的个人信息用于提供和改进服务。除非本隐私政策中另有说明，否则我们不会与任何人一起使用或分享您的信息。
+If you choose to use our services, you agree to the collection and use of information related to this policy. The personal information we collect is used to provide and improve the service. We will not use or share your information with anyone except as described in this Privacy Policy.
 
-除非本隐私政策另有规定，否则本隐私政策中使用的术语与我们的服务协议具有相同的含义，可在本 APP 中访问。
+Unless otherwise specified in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as our Service Agreement, which can be accessed in this APP.
 
-### 1、收集信息
+### 1. Collect information
 
-我们收集您提供给我们的部分或全部信息， 以及您使用网站和应用程序的数据， 但我们将主要使用收集的数据为您提供满意的服务， 并提高您的使用体验。
+We collect some or all of the information you provide to us, as well as your website and application data, but we will mainly use the collected data to provide you with satisfactory services and improve your experience.
 
-#### 1.1、设备和技术信息的收集
+#### 1.1. Collection of equipment and technical information
 
-我们可能会收集您使用我们的应用程序所需的数据， 我们可以维护和分析应用程序的功能, 并对应用程序的内容进行个性化设置。
+We may collect the data you need to use our application, we can maintain and analyze the function of the application, and personalize the content of the application.
 
-我们可能会从第三方平台,例如谷歌,苹果,Github 平台通过您的授权获取到您的电子邮箱等信息,来实现诸如登录,账户管理,发送通知邮件等功能,我们未经您的同意,不会与第三方分享您的这些数据.
+We may obtain your email address and other information from third-party platforms, such as Google, Apple, and Github platforms through your authorization, to implement functions such as login, account management, and sending notification emails. Without your consent, we will not Your data will be shared with third parties.
 
-我们自动获得有关您的设备的某些信息，包括 IP 地址，国家法典，时区会话开始/停止时间；IDFVs，语言；网络状态 (无线等)，浏览器插件类型和版本；平台，SDK 版本，时间戳；技术设备信息 (如设备型号和名称、操作系统名称和版本、CPU 信息、存储大小、屏幕大小、固件、应用程序的软件 API 密钥标识符、推送通知令牌。虽然这些信息(如 IDFV、IP 地址)可能唯一地标识您的设备，但此信息并没有亲自识别您。某些立法 (如美国) 可以将您的设备唯一标识为个人信息的信息处理。
+We automatically obtain certain information about your device, including IP address, country code, time zone session start/stop times; IDFVs, language; network status (wireless, etc.), browser plugin types and versions; platform, SDK version, time of day stamp; technical device information (such as device model and name, operating system name and version, CPU information, storage size, screen size, firmware, software API key identifier for applications, push notification tokens. While such information (such as IDFV , IP address) may uniquely identify your device, but this information does not personally identify you. Certain legislation (such as the United States) may uniquely identify your device as information processing of personal information.
 
-#### 1.2、常规个人信息收集
+#### 1.2. Routine collection of personal information
 
-在使用我们的服务时，我们可能会要求您向我们提供可用于联系或识别您的某些个人身份信息（“个人数据”），个人身份信息可能包括但不限于：
+When using our services, we may ask you to provide us with certain personally identifiable information ("Personal Data") that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
 
-1.手机号码
+1. Mobile phone number
 
-2.电子邮件地址
+2. Email address
 
-3.所在住址详细信息
+3. Details of your address
 
-2、如何使用收集的信息
+4. How to use the collected information
 
-我们将收集的数据用于以下其中的部分或全部目的：
+We use the collected data for some or all of the following purposes:
 
-1.提供和维护服务
+1. Provision and Maintenance of Services
 
-2.通知您有关我们服务的更改
+2. To notify you about changes to our services
 
-3.允许您在选择时参与我们服务的互动功能
+3. To allow you to participate in interactive features of our services when you choose
 
-4.为客户提供关怀和支持
+4. Provide care and support to customers
 
-5.提供分析或有价值的信息，以便我们改进服务
+5. Provide analysis or valuable information so that we can improve our services
 
-6.监控服务的使用情况
+6. Monitoring usage of the Services
 
-7.检测，预防和解决技术问题
+7. Detecting, preventing and resolving technical issues
 
-8.当您通过移动设备访问服务时，我们可能会自动收集某些信息，包括但不限于您使用的移动设备类型，移动设备唯一 ID，移动设备的 IP 地址，移动设备操作系统，您使用的移动互联网浏览器的类型，唯一的设备标识符和其他诊断数据（“使用数据”）。
+8. When you access the service through a mobile device, we may automatically collect certain information, including but not limited to the type of mobile device you use, the unique ID of the mobile device, the IP address of the mobile device, the operating system of the mobile device, the Type of mobile internet browser, unique device identifiers and other diagnostic data (“Usage Data”).
 
-9.实现你的账户管理等功能
+9. Realize your account management and other functions
 
-### 3、信息存储
+### 3. Information storage
 
-#### 3.1、数据安全
+#### 3.1. Data Security
 
-数据的安全性对我们很重要，但请记住，没有任何安全措施是完美的或不可渗透的。虽然我们努力使用商业上可接受的方式来保护您的个人数据，但我们无法保证其绝对的安全性。
+The security of your data is important to us, but remember that no security measure is perfect or impenetrable. Although we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.
 
-#### 3.2、数据传输
+#### 3.2. Data transmission
 
-您的信息（包括个人数据）可能会被转移到您所在州，省，国家或其他政府管辖范围之外的计算机上，并且这些计算机的数据保护法可能与您所在司法管辖区的数据保护法不同。
+Your information, including Personal Data, may be transferred to computers located outside of your state, province, country or other governmental jurisdiction and which may have data protection laws that differ from those in your jurisdiction .
 
-如果您位于中国境外并选择向我们提供信息，请注意我们将数据（包括个人数据）传输到中国并在中国处理。
+If you are located outside of China and choose to provide information to us, please be aware that we transfer the data, including Personal Data, to and process it in China.
 
-您同意本隐私政策，然后提交此类信息即表示您同意该方式。
+Your consent to this Privacy Policy and then submitting such information constitutes your consent to that.
 
-#### 3.3、数据披露
+#### 3.3. Data disclosure
 
-我们可能会真诚地披露您的个人资料，相信此类行为是必要的：
+We may disclose your personal data in the good faith belief that such action is necessary to:
 
-1.履行法律义务
+1. Fulfillment of legal obligations
 
-2.保护和捍卫本软件的权利或财产
+2. To protect and defend the rights or property of this software
 
-3.防止或调查与服务相关的可能的不当行为
+3. To prevent or investigate possible wrongdoing in connection with the Services
 
-4.保护服务或公众用户的人身安全
+4. To protect the personal safety of the service or public users
 
-5.配合公权力机构进行调查
+5. Cooperate with public authorities in investigations
 
-#### 3.4、服务供应商
+#### 3.4. Service Providers
 
-我们可能雇用第三方（公司或个人）来促进我们的服务（“服务提供商”）。第三方代表我们提供服务，执行相关服务或协助我们分析服务的使用方式。 第三方只能代表我们访问您的个人数据以执行这些任务，并且有义务不将其用于任何其他目的。
+We may employ third parties (companies or individuals) to facilitate our Services ("Service Providers"). Third parties provide the Services on our behalf, perform related services or assist us in analyzing how the Services are used. Third parties can only access your personal data to perform these tasks on our behalf and are obliged not to use it for any other purpose.
 
-#### 3.5、链接到其他网站
+#### 3.5. Links to other websites
 
-我们的服务可能包含指向非我们运营的其他网站的链接。如果您点击第三方链接，您将被引导至该第三方的网站。我们强烈建议您查看您访问的每个站点的隐私政策。 我们无法控制任何第三方网站或服务的内容，隐私政策或做法，也不承担任何责任。
+Our Services may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third-party's website. We strongly encourage you to review the privacy policy of each site you visit. We have no control over, and are not responsible for, the content, privacy policies or practices of any third-party sites or services.
 
-### 4、删除信息
+### 4. Delete information
 
-当不再需要信息时，我们将使用合理的措施删除它，以保护信息不被未经授权的访问或使用。用户上传的内容如果涉嫌黄色、暴力不受欢迎内容我们将有权进行删除，用户可以在发现模块进行举报。
+When information is no longer required, we will delete it using reasonable efforts to protect the information from unauthorized access or use. If the content uploaded by the user is suspected of being pornographic, violent and unwelcome, we have the right to delete it, and the user can report it in the discovery module.
 
-### 5、保护信息
+### 5. Protect information
 
-我们已经实施了合理的安全措施，以保障收集信息的机密性、安全性和完整性，并防止未经授权的访问和使用违反本隐私政策的信息。虽然我们采取合理的努力，以保障您的信息在我们维护时依然安全，但请注意，没有任何安全措施是绝对安全的。
+We have implemented reasonable security measures to safeguard the confidentiality, security and integrity of the information we collect and to prevent unauthorized access and use of the information in violation of this Privacy Policy. While we take reasonable efforts to keep your information secure while we maintain it, please be aware that no security measure is absolutely secure.
 
-#### 6、与儿童有关的信息资料收集
+#### 6. Collection of information related to children
 
-我们非常重视对未成年人个人信息的保护。如果你是 14 周岁以下的未成年人，在使用我们的服务前，应确保事先取得监护人的同意，如果你是已满 14 不满 18 岁的未成年人，在使用我们服务前，应确保事先取得本人或监护人的同意。如果我们得知已收集了 14 周岁以下儿童的个人资料，我们会采取一切合理步骤，尽快删除有关资料。如果您知道您的孩子在未经您同意的情况下向我们提供了个人信息, 请与我们联系。
+We attach great importance to the protection of minors' personal information. If you are a minor under the age of 14, you should obtain the consent of your guardian in advance before using our services; Consent of the person or guardian. If we learn that we have collected personal data from a child under the age of 14, we will take all reasonable steps to delete the data as soon as possible. If you become aware that your child has provided us with personal information without your consent, please contact us.
 
-### 7、cookie 技术
+### 7. Cookie technology
 
-我们使用 cookie 和类似的跟踪技术来跟踪我们服务上的活动并保留某些信息。
+We use cookies and similar tracking technologies to track activity on our Services and to retain certain information.
 
-Cookie 是包含少量数据的文件，可能包含匿名唯一标识符。Cookie 会从网站发送到您的浏览器并存储在您的设备上。还使用其他跟踪技术比如信标，标签和脚本等，用于收集和跟踪信息以及改进和分析我们的服务。
+Cookies are files containing small amounts of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. We also use other tracking technologies such as beacons, tags and scripts to collect and track information and improve and analyze our services.
 
-您可以指示您的浏览器拒绝所有 cookie 或指示何时发送 cookie。但是，如果您不接受 cookie，您可能无法使用我们服务的某些部分。
+You can instruct your browser to refuse all cookies or to indicate when cookies are sent. However, if you do not accept cookies, you may not be able to use some parts of our Services.
 
-我们使用的 Cookie 示例：
+Examples of cookies we use:
 
-会话 Cookie。我们使用 Session Cookies 来运营我们的服务。
+Session cookies. We use Session Cookies to operate our services.
 
-偏好 Cookie。我们使用首选项 Cookie 来记住您的偏好和各种设置。
+Preference cookies. We use preference cookies to remember your preferences and various settings.
 
-安全 Cookies。出于安全考虑，我们使用安全 Cookie。
+Security Cookies. For security reasons, we use secure cookies.
 
-### 8、第三方服务条款
+### 8. Third-party terms of service
 
-- 位置服务
+- location services
 
-我们产品未使用 Gps 定位权限
+Our product does not use GPS location permission
 
-- 广告服务
+- Advertising Services
 
-我们产品暂未使用第三方广告服务, 如果我们使用了广告服务,我们会在此处更新广告相关隐私协议.
+Our products do not use third-party advertising services. If we use advertising services, we will update the advertising-related privacy agreement here.
 
-### 9、退出
+### 9. Exit
 
-根据本隐私政策，您可以从您的每台设备上卸载所有应用程序并停止使用本服务，从而永远自由地选择不参与将来在软件内收集您的个人信息。
+In accordance with this Privacy Policy, you may permanently and freely opt-out of future collection of your personal information within the software by uninstalling all applications from each of your devices and ceasing to use the Service.
 
-### 10、支持
+### 10. Support
 
-如果您对本隐私政策有任何疑问，请联系我们：
+If you have any questions about this Privacy Policy, please contact us:
 
-通过邮件：[developer@yuanzhibang.com](mailto:consumer-service@yuanzhibang.com)
+By mail: [developer@yuanzhibang.com](mailto:consumer-service@yuanzhibang.com)
 
-### 11、对此隐私策略的更改
+### 11. Changes to this Privacy Policy
 
-我们可能会不时更新我们的隐私政策。我们将通过在此页面上发布新的隐私政策来通知您任何更改。
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
 
-建议您定期查看本隐私政策以了解任何变更。本隐私政策的更改在此页面上发布时生效。
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when posted on this page.
 
-### 12、其他
+### 12. Others
 
-#### 1.如果本协议的非中文语言版本内容与中文版本内容有差异，以中文版本为准
+#### 1. If there is any discrepancy between the content of the non-Chinese language version and the Chinese version of this agreement, the Chinese version shall prevail

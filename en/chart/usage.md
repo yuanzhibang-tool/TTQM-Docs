@@ -1,29 +1,29 @@
-> 图表分为两个部分,一个部分是配置,另外一部分是图表脚本,配置用来配置图表的初始化配置,脚本用来更新图表,实现图表数据联动
+> The chart is divided into two parts, one part is the configuration, the other part is the chart script, the configuration is used to configure the initial configuration of the chart, and the script is used to update the chart and realize the linkage of chart data
 
-![配置和脚本](_media/usage/1.jpg ':size=600')
-
----
-
-### 1.创建或者打开已创建的图表 :id=1
-
-**点击图表按钮**
-
-![图表1](_media/usage/2.jpg ':size=400')
-
-**打开**
-
-![图表1](_media/usage/3.jpg ':size=300')
+![Configuration and scripts](_media/usage/1.jpg ':size=600')
 
 ---
 
-### 2.图表配置 :id=2
+### 1. Create or open the created chart :id=1
 
-> 图表配置用来初始化图表的配置,可以通过导出配置`object`也可以导出一个`Promise`,在`resolve`中返回图表配置,更多配置相关的使用,请参考[图表>配置](en/chart/option)
+**click the chart button**
 
-!>注意:图表配置必须在 10s 内返回配置,否则将会被强制终止.
+![Chart 1](_media/usage/2.jpg ':size=400')
 
-<!-- tabs:start -->
-<!-- tab:同步返回 -->
+**Open**
+
+![Chart 1](_media/usage/3.jpg ':size=300')
+
+---
+
+### 2. Chart configuration :id=2
+
+> Chart configuration is used to initialize the configuration of the chart. You can export the configuration `object` or export a `Promise`, and return the chart configuration in `resolve`. For more configuration related usage, please refer to [Chart>Configuration](en /chart/option)
+
+!>Note: The chart configuration must return to the configuration within 10s, otherwise it will be forcibly terminated.
+
+<!-- tabs: start -->
+<!-- tab: synchronous return -->
 
 ```javascript
 var option = {
@@ -56,7 +56,7 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab:异步返回 -->
+<!-- tab: asynchronous return -->
 
 ```javascript
 var option = {
@@ -91,59 +91,59 @@ module.exports = new Promise((resolve, reject) => {
 });
 ```
 
-<!-- tab:初始化图表 -->
+<!-- tab: Initialize the chart -->
 
 ![Chart Option](_media/usage/4.jpg ':size=500')
 
-<!-- tabs:end -->
+<!-- tabs: end -->
 
-!>更多图表配置,请参照[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line),TTQM 图表兼容[Apache Echart](https://echarts.apache.org/zh/index.html)数百种配置类型
+!>For more chart configurations, please refer to [Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line), TTQM charts are compatible with [Apache Echart](https:/ /echarts.apache.org/zh/index.html) hundreds of configuration types
 
 ![EChart Demo](_media/usage/5.jpg ':size=500')
 
 ---
 
-### 3.图表脚本 :id=3
+### 3. Chart script :id=3
 
-> 用来响应`mqtt`客户端,以及图表事件来返回图表数据更新的内容,来实现图表和数据联动
+> It is used to respond to the `mqtt` client, and the chart event to return the content of the chart data update, to realize the linkage between the chart and the data
 
-!>脚本不会自动退出,即使没有操作也会一直执行
+!> The script will not exit automatically, it will always be executed even if there is no operation
 
 ```javascript
 setInterval(() => {
-  // 可通过过滤topic，实现对应chart数据更新
+  // You can update the corresponding chart data by filtering the topic
   const randomRange = (min, max) => {
-    // min最小值，max最大值
+    // Min minimum value, max maximum value
     return Math.floor(Math.random() * (max - min)) + min;
   };
   const data = [];
   for (let i = 0; i < 7; i++) {
     data.push(randomRange(100, 500));
   }
-  // 修改多项使用 [{...}, {...}, {...}] 格式
+  // Modify multiple items using the format [{...}, {...}, {...}]
   const returnData = {
     targetPath: ['series', 0, 'data'],
     action: 'replace',
     data: data,
     version: 1,
   };
-  // 通过内置函数updateChartViewData更新图表数据
+  // Update the chart data through the built-in function updateChartViewData
   updateChartViewData(returnData);
   console.log('script debug info!');
 }, 1000);
 
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    // 可通过过滤topic，实现对应chart数据更新
+    // You can update the corresponding chart data by filtering the topic
     const randomRange = (min, max) => {
-      // min最小值，max最大值
+      // Min minimum value, max maximum value
       return Math.floor(Math.random() * (max - min)) + min;
     };
     const data = [];
     for (let i = 0; i < 7; i++) {
       data.push(randomRange(100, 500));
     }
-    // 修改多项使用 [{...}, {...}, {...}] 格式
+    // Modify multiple items using the format [{...}, {...}, {...}]
     const returnData = {
       targetPath: ['series', 0, 'data'],
       action: 'replace',
@@ -158,22 +158,22 @@ module.exports = {
 
 ---
 
-### 4.运行图表脚本 :id=4
+### 4. Run the chart script :id=4
 
-![运行图表脚本](_media/usage/6.jpg ':size=600')
+![Run chart script](_media/usage/6.jpg ':size=600')
 
 ---
 
-### 5.最小化,最大化,和关闭 :id=5
+### 5. Minimize, maximize, and close :id=5
 
-!>最大化,将会隐藏 左侧的配置,JavaScript 和控制台
+!>Maximize, will hide the configuration, JavaScript and console on the left
 
-!>最小化,图表将会隐藏
+!>Minimize, the graph will be hidden
 
-!>点击关闭,将会关闭图表,停止更新和对应脚本
+!>Click Close to close the chart, stop updating and corresponding scripts
 
-![最小化,最大化,和关闭](_media/usage/7.jpg ':size=600')
+![minimize, maximize, and close](_media/usage/7.jpg ':size=600')
 
-!>您可以在图表列表里点击对应的动态图标来恢复最小化的图表
+!>You can click the corresponding dynamic icon in the chart list to restore the minimized chart
 
-![最小化,最大化,和关闭](_media/usage/8.jpg ':size=600')
+![minimize, maximize, and close](_media/usage/8.jpg ':size=600')

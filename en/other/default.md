@@ -1,5 +1,5 @@
-> 一些其他的使用说明
+> some other usage instructions
 
-| 序号 | 标题                                           | 描述                                                |
-| ---- | ---------------------------------------------- | --------------------------------------------------- |
-| 1    | [通用脚本示例](en/other/common-script-demo.md) | 介绍一些通用脚本示例,这些示例在任何脚本中都可以使用 |
+| No. | Title                                                | Description                                                         |
+| --- | ---------------------------------------------------- | ------------------------------------------------------------------- |
+| 1   | [Common script demo](en/other/common-script-demo.md) | Introduce some common script demos, which can be used in any script |

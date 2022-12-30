@@ -1,13 +1,13 @@
-> 前置脚本支持通过打印进行调试,您可以通过`测试发送`功能来调试前置脚本,测试发送不会真实的发送消息
+> The pre-script supports debugging by printing, you can debug the pre-script through the `test send` function, the test send will not actually send the message
 
 ---
 
-**1.脚本中打印输出,点击发送,在`控制台`查看脚本中输出的内容**
+**1. Print the output in the script, click send, and view the output in the script in the `console`**
 
-![模板变量](_media/debug/1.jpg ':size=700')
+![template variable](_media/debug/1.jpg ':size=700')
 
 ---
 
-**2.在`测试结果`中查看处理后的消息内容**
+**2. View the processed message content in `Test Results`**
 
-![模板变量](_media/debug/2.jpg ':size=700')
+![template variable](_media/debug/2.jpg ':size=700')

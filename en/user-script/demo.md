@@ -1,22 +1,22 @@
-> 本部分用来示例用户脚本的使用
+> This section is used to demonstrate the use of user scripts
 
-### 1.监听客户端连接事件,并发布在线消息 :id=1
+### 1. Listen to client connection events and publish online messages :id=1
 
-!>具体的监听事件描述,请参考[用户脚本>脚本事件以及内置函数](en/user-script/event-function)
+!>For specific monitoring event descriptions, please refer to [User Script>Script Events and Built-in Functions](en/user-script/event-function)
 
 ```javascript
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
-    // 发布在线主题消息
+    // publish online topic message
     publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
-    // 打印topic
+    // print topic
     console.log(`recieved topic:${topic}`);
   },
   onWillExit: () => {
-    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+    // Execute before the script exits, there is 1 second to operate, such as saving data
     console.log('onWillExit');
   },
 };
@@ -24,24 +24,24 @@ module.exports = {
 
 ---
 
-### 2.过滤 `topic` 信息 :id=2
+### 2. Filter `topic` information :id=2
 
-!>具体的监听事件描述,请参考[用户脚本>脚本事件以及内置函数](en/user-script/event-function)
+!>For specific monitoring event descriptions, please refer to [User Script>Script Events and Built-in Functions](en/user-script/event-function)
 
 ```javascript
 const { TopicUtil } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    // 过滤topic
+    // filter topic
     if (TopicUtil.isSubTopic('version/1/device_type/2/devic_id/+', topic)) {
-      // do something!!!
+      //do something!!!
       const topicMap = TopicUtil.parseKeyValueTopic(topic);
       console.log(`filter topic:${topic}`);
       console.log(`device id:${topicMap.devic_id}`);
     }
   },
   onWillExit: () => {
-    // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+    // Execute before the script exits, there is 1 second to operate, such as saving data
     console.log('onWillExit');
   },
 };
@@ -49,9 +49,9 @@ module.exports = {
 
 ---
 
-### 3.记录数据并写入文件 :id=3
+### 3. Record data and write to file :id=3
 
-!> 只能将数据写入到脚本数据文件夹以及脚本临时数据文件夹
+!> Can only write data to script data folder and script temp data folder
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -65,7 +65,7 @@ module.exports = {
     console.log(messageCountMap[topic]);
   },
   onWillExit: () => {
-    // 保存数据
+    // save data
     const saveData = JSON.stringify(messageCountMap);
     const filePath = FileUtil.getScriptDataPath('messageCountMap.json');
     FileUtil.createStringFileSync(filePath, saveData);
@@ -76,9 +76,9 @@ module.exports = {
 
 ---
 
-### 4.手动退出脚本 :id=4
+### 4. Exit the script manually :id=4
 
-!>手动退出脚本不会触发`onWillExit`事件
+!> Exiting the script manually does not fire the `onWillExit` event
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -99,4 +99,4 @@ module.exports = {
 
 ---
 
-!>更多脚本示例,请参照[通用脚本示例](en/other/common-script-demo.md)
+!>For more script examples, please refer to [Common Script Example](en/other/common-script-demo.md)

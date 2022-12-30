@@ -1,12 +1,12 @@
-> 前置脚本,用来在发送前对发送的消息进行处理,实际发送的内容为处理后的脚本内容
+> Pre-script, used to process the sent message before sending, the actual sent content is the processed script content
 
-!>注意:前置脚本开启后,该连接下,所有形式发送的消息,如手动发送,以及通过前置脚本发送的消息都会被前置脚本处理
+!> Note: After the pre-script is enabled, all messages sent under the connection, such as those sent manually, and messages sent through the pre-script will be processed by the pre-script
 
-| 序号 | 标题                                                    | 描述                                                           |
-| ---- | ------------------------------------------------------- | -------------------------------------------------------------- |
-| 1    | [概念](en/pre-publish-script/concept.md)                | 介绍前置脚本使用中一些相关的概念                               |
-| 2    | [能力](en/pre-publish-script/ability.md)                | 介绍前置脚本能够实现的能力                                     |
-| 3    | [使用](en/pre-publish-script/usage.md)                  | 介绍前置脚本的使用,以及拓展 `pipe`,`variable`                  |
-| 4    | [内置 pipe,variable](en/pre-publish-script/built_in.md) | 介绍前置脚本支持的内置 `pipe`,`variable`                       |
-| 5    | [示例](en/pre-publish-script/demo.md)                   | 提供一些前置脚本的使用示例,包含拓展以及内置的`pipe`,`variable` |
-| 6    | [调试](en/pre-publish-script/debug.md)                  | 介绍如何进行前置脚本的调试                                     |
+| No. | Title                                                       | Description                                                                                              |
+| --- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 1   | [Concept](en/pre-publish-script/concept.md)                 | Introduce some related concepts in the use of pre-publish scripts                                        |
+| 2   | [Ability](en/pre-publish-script/ability.md)                 | Introduces the capabilities that pre-publish scripts can achieve                                         |
+| 3   | [Usage](en/pre-publish-script/usage.md)                     | Introduce the use of pre-publish scripts, and expand `pipe`,`variable`                                   |
+| 4   | [built-in pipe,variable](en/pre-publish-script/built_in.md) | Introduce the built-in `pipe`,`variable` supported by the pre-publish script                             |
+| 5   | [Example](en/pre-publish-script/demo.md)                    | Provide some examples of using pre-publish scripts, including extensions and built-in `pipe`, `variable` |
+| 6   | [Debug](en/pre-publish-script/debug.md)                     | Introduce how to debug the pre-publish script                                                            |

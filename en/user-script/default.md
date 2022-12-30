@@ -1,12 +1,12 @@
-> 通过用户脚本,运行一个常驻的用户微程序,来实现对复杂功能的调试,例如:调试设备间的协议,模拟 `IoT` 设备, 模拟服务端程序,批量消息发送,消息投递,永久化等.该部分文档包含如下内容
+> Through user scripts, run a resident user microprogram to realize the debugging of complex functions, such as: debugging protocols between devices, simulating `IoT` devices, simulating server programs, batch message sending, message delivery, and persistence etc. This part of the document contains the following content
 
 ---
 
-| 序号 | 标题                                                 | 描述                                       |
-| ---- | ---------------------------------------------------- | ------------------------------------------ |
-| 1    | [概念](en/user-script/concept.md)                    | 介绍用户脚本使用中一些相关的概念           |
-| 2    | [能力](en/user-script/ability.md)                    | 介绍用户脚本能够实现的能力                 |
-| 3    | [使用](en/user-script/usage.md)                      | 介绍用户脚本的使用                         |
-| 4    | [事件以及内置函数](en/user-script/event-function.md) | 介绍用户脚本支持的`回调事件`以及`内置函数` |
-| 5    | [示例](en/user-script/demo.md)                       | 提供一些用户脚本的使用示例                 |
-| 6    | [调试](en/user-script/debug.md)                      | 介绍如何进行用户脚本的调试                 |
+| No. | Title                                                             | Description                                                                    |
+| --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1   | [Concept](en/user-script/concept.md)                              | Introduce some related concepts in the use of user scripts                     |
+| 2   | [Ability](en/user-script/ability.md)                              | Introduces the capabilities that user scripts can achieve                      |
+| 3   | [Usage](en/user-script/usage.md)                                  | Introduces the usage of user scripts                                           |
+| 4   | [Events and built-in functions](en/user-script/event-function.md) | Introduce `callback events` and `built-in functions` supported by user scripts |
+| 5   | [Example](en/user-script/demo.md)                                 | Provide some usage examples of user scripts                                    |
+| 6   | [Debug](en/user-script/debug.md)                                  | Introduce how to debug user scripts                                            |

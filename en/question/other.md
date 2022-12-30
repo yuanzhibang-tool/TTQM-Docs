@@ -1,3 +1,3 @@
-> 如果您还有其他问题,请点击上方导航栏的`联系我们`,或者发送邮件到`developer@yuanzhibang.com`,或者在[Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm)提问,我们会及时回答
+> If you have any other questions, please click `Contact Us` in the navigation bar above, or send an email to `developer@yuanzhibang.com`, or [Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm) questions, we will promptly answer
 
-!>问题支持简体中文,繁体中文,以及英语
+!>Questions support Simplified Chinese, Traditional Chinese, and English

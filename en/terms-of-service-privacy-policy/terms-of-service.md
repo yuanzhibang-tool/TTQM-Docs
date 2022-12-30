@@ -1,109 +1,109 @@
-**_版本:`20221229`_**
+**_Version:`20221229`_**
 
 ---
 
-### 1. 特别提示
+### 1. Special Tips
 
 #### 1.1
 
-`TTQM`（以及下文提到的“我们”、“我们的”或“本 app”）是由主体公司北京戴夫健康科技有限公司提供的产品。
+`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company Beijing Dave Health Technology Co., Ltd.
 
-产品： `TTQM`提供的服务和产品.
+Products: Services and products offered by `TTQM`.
 
-### 2. 使用规则
+### 2. Rules of use
 
-用户在使用本软件及其服务过程中，必须遵循以下原则:
+Users must abide by the following principles when using the software and its services:
 
-2.1 不得违反法律法规及相关国际条约或规则;
+2.1 Do not violate laws and regulations and relevant international treaties or rules;
 
-2.2 不得侵犯任何个人、企业事业单位或社会团体的合法权益，包括但不限于专利权、著作权、商标权，或姓名权、名称权、名誉权、荣誉权、肖像权、隐私权等;
+2.2 Do not infringe upon the legitimate rights and interests of any individual, enterprise, institution or social group, including but not limited to patent rights, copyrights, trademark rights, or rights to name, name, reputation, honor, portrait, privacy, etc.;
 
-2.3 不得以任何方式损害本产品及其关联公司的商誉或信誉等合法权益;
+2.3 Do not in any way damage the legitimate rights and interests of this product and its affiliated companies such as goodwill or reputation;
 
-2.4 不得为其他任何非法目的而使用本软件及其服务;
+2.4 Do not use the software and its services for any other illegal purposes;
 
-### 3. 知识产权
+### 3. Intellectual property rights
 
 #### 3.1
 
-我们是`TTQM`产品及其服务的所有权及知识产权权利人。
+We are the ownership and intellectual property right holders of `TTQM` products and services.
 
 #### 3.2
 
-前述信息内容包括但不限于程序代码、版面框架、数据资料、账号、文字、图片、图形、图表、音频、视频等，除按照法律法规规定应由相关权利人享有权利的内容以外。
+The aforementioned information content includes but is not limited to program codes, layout frameworks, data materials, account numbers, text, pictures, graphics, charts, audio, video, etc., except for content that should be enjoyed by relevant obligees in accordance with laws and regulations.
 
 #### 3.3
 
-用户在使用本产品过程中，可能会使用到由第三方提供的功能、软件或服务，用户除遵守本协议相关规定以外，还应遵守第三方相关规定，并尊重第三方权利人对其功能、软件、服务及其所包含内容的相关权利。
+During the use of this product, the user may use functions, software or services provided by a third party. In addition to complying with the relevant provisions of this agreement, the user shall also abide by the relevant provisions of the third party, and respect the rights of the third party to its functions, software or services. Rights in Software, Services, and Content Contained in It.
 
 #### 3.4
 
-鉴于以上，用户理解并同意：
+In view of the above, the user understands and agrees that:
 
-3.4.1 未经我们及相关权利人同意，用户不得对上述功能、软件、服务进行反向工程 （reverse engineer）、反向编译（decompile）或反汇编（disassemble）等；同时，不得将上述内容或资料在任何媒体直接或间接发布、播放、出于播放或发布目的而改写或再发行，或者用于其他任何目的；
+3.4.1 Without the consent of us and relevant obligees, users are not allowed to reverse engineer, decompile or disassemble the above-mentioned functions, software and services; or material to publish, broadcast, rewrite or republish for broadcast or publication, directly or indirectly, in any medium, or for any other purpose;
 
-3.4.2 在尽商业上的合理努力的前提下，我们并不就上述功能、软件、服务及其所包含内容的延误、不准确、错误、遗漏或由此产生的任何损害，以任何形式向用户或任何第三方承担任何责任；
+3.4.2 Under the premise of making reasonable commercial efforts, we shall not in any form compensate you for the delay, inaccuracy, error, omission or any damages arising from the above-mentioned functions, software, services and the contents contained therein. User or any third party assumes no liability;
 
-3.4.3 我们并不对上述任何由第三方提供的功能、软件、服务或内容进行任何保证性的、或连带性的承诺或担保，由此产生的任何纠纷、争议或损害，由用户与第三方自行解决，我们不承担任何责任；
+3.4.3 We do not make any guaranteed or joint promises or guarantees for any of the functions, software, services or content provided by the above-mentioned third parties. Solve it by yourself, we will not bear any responsibility;
 
-### 4. 隐私保护
+### 4. Privacy Protection
 
 #### 4.1
 
-保护用户隐私和其他个人信息是我们一项基本政策，具体内容详见[隐私政策](en/terms-of-service-privacy-policy/privacy-policy.md)。
+Protecting user privacy and other personal information is a basic policy of ours. For details, please refer to [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md).
 
-### 5. 免责声明
+### 5. Disclaimer
 
 #### 5.1
 
-用户在使用本产品和服务的过程中应遵守国家法律法规及政策规定，因其使用而产生的行为后果由用户自行承担。
+Users should abide by national laws, regulations and policies in the process of using this product and service, and the behavioral consequences arising from their use shall be borne by the users themselves.
 
 #### 5.2
 
-鉴于外部链接指向的网页内容非由我方实际控制，因此我们无法保证为向用户提供便利而设置的外部链接的准确性和完整性。
+Since the content of the web pages pointed to by external links is not under our actual control, we cannot guarantee the accuracy and completeness of the external links set up for the convenience of users.
 
 #### 5.3
 
-对于因不可抗力或我们不能控制的原因造成的产品服务中断或其它缺陷，我们不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。
+We do not assume any responsibility for product service interruption or other defects caused by force majeure or reasons beyond our control, but we will try our best to reduce the losses and impacts caused to users.
 
 #### 5.4
 
-我们对向用户提供的产品及服务依法承担相关责任，但法律另有规定或另有约定的除外。
+We are responsible for the products and services we provide to users in accordance with the law, unless otherwise stipulated by law or otherwise agreed.
 
 #### 5.5
 
-用户知悉并同意，因为您在使用中用到的第三方库造成的损失,将由您自身承担相关损失和责任.
+The user understands and agrees that you will bear the relevant losses and responsibilities for the losses caused by the third-party libraries you use in your use.
 
-### 6. 协议修改
+### 6. Protocol modification
 
 #### 6.1
 
-我们有权随时修改本协议的任何条款，一旦本协议的内容发生变动，我们会在此页面更新. 请恕我们将不进行一一通知.
+We have the right to modify any terms of this agreement at any time. Once the content of this agreement changes, we will update this page. Please forgive us for not notifying them one by one.
 
 #### 6.2
 
-如果您不同意我们对本协议相关条款所做的修改，用户有权停止使用本产品及服务。如果用户继续使用本产品以及相关服务，则视为用户接受我们对本协议相关条款所做的修改。
+If you do not agree with the modification we have made to the relevant terms of this agreement, the user has the right to stop using this product and service. If the user continues to use this product and related services, it shall be deemed that the user accepts the modifications we have made to the relevant terms of this agreement.
 
-### 7. 法律适用
+### 7. APPLICABLE LAWS
 
 #### 7.1
 
-本协议的订立、执行和解释及争议的解决均应适用中华人民共和国大陆地区法律。
+The conclusion, execution and interpretation of this agreement and the settlement of disputes shall be governed by the laws of the mainland of the People's Republic of China.
 
 #### 7.2
 
-如双方就本协议内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，任何一方均可向北京市大兴区人民法院提起诉讼。
+If any dispute arises between the two parties regarding the content of this agreement or its implementation, the two parties shall try their best to resolve it through friendly negotiation; if the negotiation fails, either party may file a lawsuit in the People's Court of Daxing District, Beijing.
 
-### 8. 其他规定
+### 8. Other regulations
 
 #### 8.1
 
-如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。
+If any provision of this agreement is wholly or partially invalid or unenforceable for any reason, the remaining provisions of this agreement shall still be valid and binding.
 
 #### 8.2
 
-本协议中的标题仅为方便而设，在解释本协议时应被忽略，不能作为本协议条款解释的依据。
+Headings in this agreement are for convenience only and shall be ignored when interpreting this agreement and shall not be used as a basis for interpretation of the terms of this agreement.
 
 #### 8.3
 
-如果本协议的非中文语言版本内容与简体中文版本内容有差异，以简体中文版本为主。
+If there is any discrepancy between the non-Chinese language version of this agreement and the simplified Chinese version, the simplified Chinese version shall prevail.

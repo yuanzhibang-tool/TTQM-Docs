@@ -1,38 +1,38 @@
 ---
 
-### 内置的 `变量 variable`  :id=1
+### Built-in `variable` :id=1
 
-| 名称   | 说明                                    | 例子 |
-| ------ | --------------------------------------- |------- |
-| `date` | 获取当前`YYYY-MM-DD HH:mm:ss`格式的时间 | `2022-12-12 23:12:32` | 
-| `unixSecond` | 当前的`unix`时间戳,单位为秒,`int`数字格式 |`1670861452` | 
-| `unixMillisecond` | 当前的`unix`时间戳,单位为毫秒,`int`数字格式 |`1670861452123` | 
-| `unixMillisecondFloat` | 当前的`unix`时间戳,单位为秒,精确到3位小数,为`float`类型的数字 |`1670861452.123` | 
-| `uuid` | 生成`uuid v4` 格式的字符串,为全部小写 | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`| 
-
----
-
-### 内置的 `变量管道 variable pipe` :id=2
-
-| 名称               | 参数                                                                                                                          | 说明                                                                                                                                           |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `date`             | 一个参数,为`format`                                                                                                           | 用来输出格式化时间,`format`支持 `YYYY-MM-DD HH:mm:ss`类型,更多支持的格式请参考 [Moment.js](https://momentjs.com/docs/#/parsing/string-format/) |
-| `nullToEmpty`      | 无参数                                                                                                                        | 将`null`和`undefined`转换为空字符串                                                                                                            |
-| `notStringToEmpty` | 无参数                                                                                                                        | 将非字符串变量转换为空字符串                                                                                                                   |
-| `int`              | 一个参数,为`type`(可选),支持`floor`,`ceil`,`round`,`trunc`,不传递,默认为`trunc`                                               | 将数字转换为`int`格式,参数用以进行转换`int`采用的换算方法                                                                                      |
-| `float`            | 两个参数,第一个为`precision`精确度,支持 `int` 类型,第二个参数为 `type`可选`floor`,`ceil`,`round`,`trunc`,不传递,默认为`trunc` | 将数字转换根据精确度转换为浮点值                                                                                                               |
-| `number`           | 无                                                                                                                            | 将数字类型的字符串转换为`Number`类型,非数字类型字符串直接返回不处理                                                                            |
-| `string`           | 无                                                                                                                            | 将其他类型变量转换为字符串                                                                                                                     |
-| `json`             | 无                                                                                                                            | 使用`JSON.stringify()`对变量进行处理                                                                                                           |
-| `uppercase`        | 无                                                                                                                            | 将字符串转换为大写                                                                                                                             |
-| `lowercase`        | 无                                                                                                                            | 将字符串转换为小写                                                                                                                             |
+| Name | Description | Example |
+| ------ | ------------------------------------------ |-- ----- |
+| `date` | Get the current time in `YYYY-MM-DD HH:mm:ss` format | `2022-12-12 23:12:32` |
+| `unixSecond` | current `unix` timestamp, in seconds, `int` number format |`1670861452` |
+| `unixMillisecond` | current `unix` timestamp in milliseconds, `int` number format |`1670861452123` |
+| `unixMillisecondFloat` | The current `unix` timestamp, in seconds, accurate to 3 decimal places, a number of `float` type |`1670861452.123` |
+| `uuid` | Generate a string in `uuid v4` format, all lowercase | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`|
 
 ---
 
-### 内置的 `管道 pipe` :id=3
+### Built-in `variable pipe` :id=2
 
-| 名称               | 说明                                                                           |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `leafNodeToString` | 将`json`格式的所有叶子节点转换为`string`,非`json`格式则返回原来的信息,不做处理 |
+| Name               | Parameters                                                                                                                                                                          | Description                                                                                                                                                                               |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `date`             | A parameter, `format`                                                                                                                                                               | used to output formatted time, `format` supports `YYYY-MM-DD HH:mm:ss` type, for more supported formats, please refer to [Moment.js] (https://momentjs.com/docs/#/parsing/string-format/) |
+| `nullToEmpty`      | No arguments                                                                                                                                                                        | Convert `null` and `undefined` to empty strings                                                                                                                                           |
+| `notStringToEmpty` | no arguments                                                                                                                                                                        | convert a non-string variable to an empty string                                                                                                                                          |
+| `int`              | A parameter, which is `type` (optional), supports `floor`, `ceil`, `round`, `trunc`, not passed, the default is `trunc`                                                             | convert the number to `int` format, the parameters are used to convert the conversion method adopted by `int`                                                                             |
+| `float`            | Two parameters, the first is `precision` accuracy, supports `int` type, the second parameter is `type` optional `floor`, `ceil`, `round`, `trunc` , not passed, defaults to `trunc` | converts numbers to floating point values according to precision                                                                                                                          |
+| `number`           | None                                                                                                                                                                                | Convert numeric type strings to `Number` type, return non-numeric type strings directly and ignore                                                                                        |
+| `string`           | None                                                                                                                                                                                | Convert other type variables to strings                                                                                                                                                   |
+| `json`             | None                                                                                                                                                                                | Use `JSON.stringify()` to process variables                                                                                                                                               |
+| `uppercase`        | None                                                                                                                                                                                | Convert string to uppercase                                                                                                                                                               |
+| `lowercase`        | None                                                                                                                                                                                | Convert string to lowercase                                                                                                                                                               |
 
-!>叶子节点,指的是 `json` 树的最后一级
+---
+
+### Built-in `pipe` :id=3
+
+| Name               | Description                                                                                                                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `leafNodeToString` | Convert all leaf nodes in `json` format to `string`, return the original information without processing if it is not in `json` format |
+
+!>Leaf node, refers to the last level of `json` tree

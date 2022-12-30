@@ -1,7 +1,0 @@
-Yuanzhibang development can be divided into three parts in total. The first part is web development, which implement different functions through the `js` interface. The second part is server development. It interacts with the OAuth server through the api, obtains data such as user-related data, and obtains authorized `token`. The third part is extension development, please refer to the [Extension Development](/#/en/extension-develop/default ':ignore') chapter for details.
-
-| Section  | Content               | Description                                                                                                                                                                         |
-| -------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Part I   | Web Development       | Used to implement different interactive functions with the client through the `js bridge` interface.                                                                                |
-| Part II  | Server Development    | Interact with Yuanzhibang's oauth server through the api, obtain data such as user-related resources and general resources, and obtain authorization `token` and other operations.  |
-| Part III | Expansion Development | Through extensions,you can implement native functions endowed by node. For details, please refer to the [Extension Development](/#/en/extension-develop/default ':ignore') chapter. |

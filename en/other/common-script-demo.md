@@ -1,69 +1,69 @@
-> 一些通用脚本示例,这些示例在`TTQM`任何脚本中都可以使用
+> Some generic script examples that can be used in any `TTQM` script
 
-### 1.同步使用异步方法 :id=1
+### 1. Use asynchronous method synchronously :id=1
 
-!>一些时候,可能需要同步返回一些异步(返回`Promise`)返回的数据,本示例用来展示如何同步获取异步返回的数据
+!>Sometimes, it may be necessary to synchronously return some asynchronous (return `Promise`) returned data, this example is used to show how to synchronously obtain asynchronously returned data
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
 
-// 整个方法体都需要使用`async () => {}`包裹
+// The entire method body needs to be wrapped with `async () => {}`
 const main = async () => {
   const filePath = FileUtil.getScriptDataPath('test.txt');
-  // 检测文件是否存在
+  // Check if the file exists
   const exist = FileUtil.existSync(filePath);
   console.log(exist);
-  // exist = false
-  // 写入文件
+  // exists = false
+  // write to file
   FileUtil.createStringFileSync(filePath, 'test content');
-  // 添加await,来时先同步返回
+  // Add await, return synchronously when coming
   const fileHash = await FileUtil.getFileHash(filePath);
   console.log(fileHash);
-  // 获取文件内容
+  // get file content
   const fileContent = FileUtil.readStringFileSync(filePath);
   console.log(fileContent);
   // fileContent = 'test content'
 };
-// 调用main函数
+// call the main function
 main();
 ```
 
-### 2.使用证书加解密,文件操作,字符串计算`hash`
+### 2. Use certificate encryption and decryption, file operation, string calculation `hash`
 
-!>请查看[有哪些内置的脚本依赖库?](en/question/build-in-module?id=_6)
+!> Please check [What are the built-in script dependencies?](en/question/build-in-module?id=_6)
 
 ---
 
-### 3.定时重复执行某些操作
+### 3. Repeat certain operations regularly
 
 ```javascript
-// 第二个参数单位为毫秒,每1s执行特定操作
+// The unit of the second parameter is milliseconds, and a specific operation is performed every 1s
 let times = 0;
 const intervId = setInterval(() => {
   console.log('interval action');
   times++;
   if (times == 4) {
-    // 清理定时器
+    // clear timer
     clearInterval(intervId);
   }
 }, 1000);
 
-// 'interval action'将会输出四次
+// 'interval action' will output four times
 ```
 
 ---
 
-### 4.延迟执行某些操作
+### 4. Delay execution of certain operations
 
 ```javascript
-// 第二个参数单位为毫秒,4s后执行特定操作
+// The second parameter unit is milliseconds, perform specific operations after 4s
 const timeoutId = setTimeout(() => {
   console.log('timeout action');
 }, 4000);
-// 清理延迟执行,清理后,延迟将不会执行
+// Clean up delay execution, after cleanup, delay will not be executed
 clearTimeout(timeoutId);
 ```
 
 ---
 
-!>其他更多示例,请参照[有哪些内置的脚本依赖库?](en/question/build-in-module)
+!> For more examples, please refer to [What are the built-in script dependencies?] (en/question/build-in-module)

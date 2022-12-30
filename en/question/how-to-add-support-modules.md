@@ -1,29 +1,29 @@
-!>您必须在安装第三方依赖之前,请确保您的电脑已经安装了`node环境`,没有安装的话,请根据文档安装[如何安装指定版本的 node?](en/question/how-to-install-node-version-specified.md)
+!>Before you install third-party dependencies, please make sure that your computer has installed the `node environment`. If not, please install it according to the document [How to install the specified version of node?](en/question/how-to- install-node-version-specified.md)
 
 ---
 
-### 1.命令行中切换到安装模块路径 :id=1
+### 1. Switch to the installation module path in the command line :id=1
 
-> 在`应用 > 设置`中复制`cd命令`
+> Copy the `cd command` in `Applications > Settings`
 
-![复制命令](_media/how-to-add-support-modules/1.jpg ':size=500')
+![Copy command](_media/how-to-add-support-modules/1.jpg ':size=500')
 
 ---
 
-### 2.安装需要使用到的库,例如需要使用到`lodash` :id=2
+### 2. Install the library you need to use, for example, you need to use `lodash` :id=2
 
 ```bash
-# 粘贴第一步中复制的命令
-cd /第三方支持模块路径
+# Paste the command copied in the first step
+cd /Third party support module path
 
-# 安装lodash库
+# Install the lodash library
 npm install lodash
 
-# !如果中国大陆安装较慢,请指定源
+# ! If the installation in mainland China is slow, please specify the source
 npm install lodash --registry=https://registry.npmmirror.com
 ```
 
-### 3.即可在脚本中使用 :id=3
+### 3. It can be used in the script :id=3
 
 ```javascript
 var _ = require('lodash');

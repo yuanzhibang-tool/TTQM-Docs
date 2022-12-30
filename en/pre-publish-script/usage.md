@@ -1,24 +1,24 @@
-> 调试和使用前置脚本
+> Debugging and using pre-scripts
 
 ---
 
-### 1.模板变量语法 :id=1
+### 1. Template variable syntax :id=1
 
-![模板变量](../../_media/variable.png ':size=500')
+![Template variable](../../_media/variable.png ':size=500')
 
-1.模板变量必须使用 `{{}}`进行包裹,如果是`json`类型的字符串,外部还需要使用`""`双引号包裹,非`json`的字符串无需使用`""`双引号包裹
+1. Template variables must be wrapped with `{{}}`. If it is a string of `json` type, it needs to be wrapped with `""` double quotes outside. Strings that are not `json` do not need to use `""` double quote wrap
 
-2.模板变量必须以使用`$`开头,第一部分标记为变量名,如果前置脚本或者内置中没有没有对应的变量,或者想从`变量管道(variable_pipe)`直接获取变量,则可以只使用一个`$`标识
+2. The template variable must start with `$`, and the first part is marked as the variable name. If there is no corresponding variable in the pre-script or built-in, or if you want to get the variable directly from `variable_pipe`, you can just use a `$` flag
 
-3.变量(`variable`)和多个变量管道(`variable_pipe`)之间使用`|`分割
+3. Use `|` between variables (`variable`) and multiple variable pipes (`variable_pipe`)
 
-4.如果`变量管道(variable_pipe)`有参数,则使用`:`分割管道名和变量,有多个参数必须使用逗号分割,参数必须使用`''`单引号包裹
+4. If `variable_pipe` has parameters, use `:` to separate the pipe name and variables, and multiple parameters must be separated by commas, and the parameters must be wrapped in `''` single quotes
 
 ---
 
-### 2.在消息中使用模板变量,支持普通字符串消息以及 `json` 格式消息 :id=2
+### 2. Use template variables in messages, support ordinary string messages and `json` format messages :id=2
 
-**`json` 输入消息(没有用到自定义`variable`和`pipe`)**
+**`json` input message (no custom `variable` and `pipe` used)**
 
 ```json
 {
@@ -28,23 +28,23 @@
 }
 ```
 
-**输出消息**
+**Output message**
 
 ```json
 {
-  "uuid": "AF105855-049B-4543-916D-05F87D72CFB3", //1.生成一个uuid;2.并全部转换为大写
-  "unix_millisecond_float": "1671003373.7", //1.获取当前unix时间戳,毫秒为小数格式;2.以round形式取1位小数精度;3.将数字转换为字符串
-  "current_date": "2022-12-14 15:36:13" //1.获取yyyy-MM-DD HH:mm:ss格式的时间
+  "uuid": "AF105855-049B-4543-916D-05F87D72CFB3", //1. Generate a uuid; 2. Convert all to uppercase
+  "unix_millisecond_float": "1671003373.7", //1. Get the current unix timestamp, milliseconds in decimal format; 2. Take 1 decimal precision in round form; 3. Convert the number to a string
+  "current_date": "2022-12-14 15:36:13" //1. Get the time in yyyy-MM-DD HH:mm:ss format
 }
 ```
 
 ---
 
-### 3.自定义 `variable` 和 `pipe` :id=3
+### 3. Customize `variable` and `pipe` :id=3
 
-<!-- tabs:start -->
+<!-- tabs: start -->
 
-<!-- tab:前置脚本 -->
+<!-- tab: pre-script -->
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
@@ -82,7 +82,7 @@ module.exports = {
   },
   pipe: {
     // pipe is used to process the full message body
-    // leafNodeToString is a built-in pipe, covert all leaf node to string, the value is not used, you can set the value with null;
+    // leafNodeToString is a built-in pipe, covert all leaf nodes to string, the value is not used, you can set the value with null;
     leafNodeToString: null,
     addUserStringToRootNode: (publishMessage) => {
       try {
@@ -102,7 +102,7 @@ module.exports = {
 
 ---
 
-<!-- tab:模板消息 -->
+<!-- tab: template message -->
 
 ```json
 {
@@ -113,7 +113,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:输出 -->
+<!-- tab: output -->
 
 ```json
 {
@@ -135,4 +135,4 @@ module.exports = {
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->

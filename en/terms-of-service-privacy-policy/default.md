@@ -1,8 +1,8 @@
-> 包含隐私政策和服务协议
+> Contains Privacy Policy and Service Agreement
 
 ---
 
-| 序号 | 标题                                                               | 描述         |
-| ---- | ------------------------------------------------------------------ | ------------ |
-| 1    | [隐私政策](en/terms-of-service-privacy-policy/privacy-policy.md)   | 产品隐私政策 |
-| 2    | [服务协议](en/terms-of-service-privacy-policy/terms-of-service.md) | 产品服务协议 |
+| No. | Title                                                                       | Description               |
+| --- | --------------------------------------------------------------------------- | ------------------------- |
+| 1   | [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md)      | Product Privacy Policy    |
+| 2   | [Service Agreement](en/terms-of-service-privacy-policy/terms-of-service.md) | Product Service Agreement |

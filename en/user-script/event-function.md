@@ -1,37 +1,37 @@
-> 用户脚本用来通过响应当前客户端的`MQTT`消息以及客户端事件来实现相关业务
+> User scripts are used to implement related services by responding to `MQTT` messages of the current client and client events
 
-!>用户脚本的运作和客户端是独立的,脚本可以在客户端连接之前启动,并可常驻内存运行
+!>The operation of the user script is independent of the client, the script can be started before the client connects, and can run in resident memory
 
-### 用户脚本支持的客户端事件监听 :id=1
+### Client event monitoring supported by user scripts :id=1
 
-| 事件              | 描述                       | 参数                     | 备注 |
-| ----------------- | -------------------------- | ------------------------ | ---- |
-| `onConnect`       | 当客户端连接上时触发       | `connack`                | 无   |
-| `onMessage`       | 当客户端收到消息时触发     | `topic, payload, packet` | 无   |
-| `onReconnect`     | 当客户端重连时触发         | 无                       | 无   |
-| `onDisconnect`    | 当客户端断开时触发         | `packet`                 | 无   |
-| `onClose`         | 当客户端关闭时触发         | 无                       | 无   |
-| `onEnd`           | 当客户端被中止时触发       | 无                       | 无   |
-| `onError`         | 当客户端出现错误时触发     | `error`                  | 无   |
-| `onPacketSend`    | 当客户端发送包完成时触发   | `packet`                 | 无   |
-| `onPublish`       | 当客户端发送消息成功时触发 | `topic, message, opts`   | 无   |
-| `onPacketReceive` | 当客户端收到包时触发       | `packet`                 | 无   |
-
----
-
-### 用户脚本支持的脚本事件监听 :id=2
-
-| 事件         | 描述             | 参数 | 备注                                 |
-| ------------ | ---------------- | ---- | ------------------------------------ |
-| `onWillExit` | 当脚本退出时触发 | 无   | 脚本有 2 秒钟的时间去处理数据,如保存 |
+| Event             | Description                                        | Parameters               | Remarks |
+| ----------------- | -------------------------------------------------- | ------------------------ | ------- |
+| `onConnect`       | Fired when a client connects                       | `connack`                | None    |
+| `onMessage`       | Fired when the client receives a message           | `topic, payload, packet` | None    |
+| `onReconnect`     | Triggered when the client reconnects               | None                     | None    |
+| `onDisconnect`    | Fired when a client disconnects                    | `packet`                 | None    |
+| `onClose`         | Fired when the client is closed                    | None                     | None    |
+| `onEnd`           | Fired when the client is terminated                | None                     | None    |
+| `onError`         | Fired when the client encounters an error          | `error`                  | None    |
+| `onPacketSend`    | Fired when the client finishes sending a packet    | `packet`                 | None    |
+| `onPublish`       | Fired when the client successfully sends a message | `topic, message, opts`   | None    |
+| `onPacketReceive` | Fired when the client receives a packet            | `packet`                 | None    |
 
 ---
 
-### 用户脚本支持的内置函数 :id=3
+### Script event monitoring supported by user scripts :id=2
 
-| 函数      | 描述                 | 参数                   | 备注 |
-| --------- | -------------------- | ---------------------- | ---- |
-| `publish` | 发送消息             | `topic, message, opts` | 无   |
-| `exit`    | 手动退出当前用户脚本 | 无                     | 无   |
+| Event        | Description                     | Parameters | Remarks                                                  |
+| ------------ | ------------------------------- | ---------- | -------------------------------------------------------- |
+| `onWillExit` | Triggered when the script exits | None       | The script has 2 seconds to process data, such as saving |
+
+---
+
+### Built-in functions supported by user scripts :id=3
+
+| Function  | Description                           | Parameters             | Remarks |
+| --------- | ------------------------------------- | ---------------------- | ------- |
+| `publish` | send message                          | `topic, message, opts` | None    |
+| `exit`    | Manually exit the current user script | None                   | None    |
 
 ---

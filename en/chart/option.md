@@ -1,52 +1,52 @@
-> 图表配置用来初始化图表的配置,可以通过内置函数`setOption`配置,也可以通过导出配置`object`或者导出一个`Promise`,在`resolve`中返回图表配置
+> The chart configuration is used to initialize the chart configuration, which can be configured through the built-in function `setOption`, or by exporting the configuration `object` or exporting a `Promise`, and returning the chart configuration in `resolve`
 
 ---
 
-!>注意:配置脚本有一些限制,由于运行环境是`node.js`,而且是和图表分离的所欲请注意有一下几点限制
+!> Note: The configuration script has some restrictions, since the operating environment is `node.js`, and it is separated from the chart, please note that there are a few restrictions
 
-1. 图表配置必须在 10s 内返回配置,否则将会被强制终止.
-2. 不支持`jQuery`模块,如果示例中有网络请求,请参照[常见问题?>如何添加脚本依赖库?](en/question/build-in-module?id=_1),进行接口方法的替换
-3. 不支持对图表添加自定义事件
-
----
-
-### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型 :id=1
-
-![选择图表类型](_media/option/1.jpg ':size=700')
+1. The chart configuration must return to the configuration within 10s, otherwise it will be forcibly terminated.
+2. The `jQuery` module is not supported. If there is a network request in the example, please refer to [FAQ?>How to add a script dependency library?](en/question/build-in-module?id=_1) to implement the interface method replace
+3. Adding custom events to charts is not supported
 
 ---
 
-### 2.复制对应的配置脚本 :id=2
+### 1. Find the type of chart you need to use, please select the chart you want to use in [Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line) type :id=1
 
-![复制对应的配置脚本](_media/option/2.jpg ':size=700')
-
----
-
-### 3.粘贴到图表配置脚本中,代码最上面面添加变量声明,结尾添加导出配置代码 :id=3
-
-**添加变量声明**
-
-!>因为配置中使用了`echarts`,所以必须在开头导入`echarts`,以在代码中使用
-
-![添加变量声明](_media/option/3.jpg ':size=700')
-
-**导出配置代码**
-
-![导出配置代码](_media/option/4.jpg ':size=700')
+![Select chart type](_media/option/1.jpg ':size=700')
 
 ---
 
-### 4.保存并运行,即可看到初始化的图表 :id=4
+### 2. Copy the corresponding configuration script :id=2
 
-![导出配置代码](_media/option/5.jpg ':size=700')
+![Copy the corresponding configuration script](_media/option/2.jpg ':size=700')
 
 ---
 
-### 5.完整配置代码 :id=5
+### 3. Paste it into the chart configuration script, add the variable declaration at the top of the code, and add the export configuration code at the end :id=3
+
+**Add variable declaration**
+
+!> Because `echarts` is used in the configuration, `echarts` must be imported at the beginning to use in the code
+
+![Add variable declaration](_media/option/3.jpg ':size=700')
+
+**Export configuration code**
+
+![Export configuration code](_media/option/4.jpg ':size=700')
+
+---
+
+### 4. Save and run, you can see the initialized chart :id=4
+
+![Export configuration code](_media/option/5.jpg ':size=700')
+
+---
+
+### 5. Complete configuration code :id=5
 
 <!-- tabs:start -->
 
-<!-- tab:通过函数配置 -->
+<!-- tab:Set via function -->
 
 ```javascript
 const echarts = require('echarts');
@@ -229,11 +229,11 @@ const option = {
     },
   ],
 };
-// 通过内置函数setOption进行配置
+// Set via the built-in function setOption
 setOption(option);
 ```
 
-<!-- tab:通过同步返回配置 -->
+<!-- tab:Synchronous return option -->
 
 ```javascript
 const echarts = require('echarts');
@@ -419,7 +419,7 @@ const option = {
 module.exports = option;
 ```
 
-<!-- tab:通过异步返回配置 -->
+<!-- tab:Asynchronous return option -->
 
 ```javascript
 const echarts = require('echarts');
@@ -607,7 +607,7 @@ module.exports = new Promise((resolve, reject) => {
 });
 ```
 
-<!-- tab:初始化图表 -->
+<!-- tab:init the chart -->
 
 ![Chart Option](_media/option/6.jpg ':size=600')
 
