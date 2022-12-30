@@ -1,25 +1,23 @@
-> User scripts are used to implement related services by responding to `MQTT` messages of the current client and client events
+### Client event supported by user scripts :id=1
 
-!>The operation of the user script is independent of the client, the script can be started before the client connects, and can run in resident memory
-
-### Client event monitoring supported by user scripts :id=1
-
-| Event             | Description                                        | Parameters               | Note |
-| ----------------- | -------------------------------------------------- | ------------------------ | ---- |
-| `onConnect`       | Fired when a client connects                       | `connack`                | None |
-| `onMessage`       | Fired when the client receives a message           | `topic, payload, packet` | None |
-| `onReconnect`     | Triggered when the client reconnects               | None                     | None |
-| `onDisconnect`    | Fired when a client disconnects                    | `packet`                 | None |
-| `onClose`         | Fired when the client is closed                    | None                     | None |
-| `onEnd`           | Fired when the client is terminated                | None                     | None |
-| `onError`         | Fired when the client encounters an error          | `error`                  | None |
-| `onPacketSend`    | Fired when the client finishes sending a packet    | `packet`                 | None |
-| `onPublish`       | Fired when the client successfully sends a message | `topic, message, opts`   | None |
-| `onPacketReceive` | Fired when the client receives a packet            | `packet`                 | None |
+| Event             | Description                                                              | Parameters               | Note |
+| ----------------- | ------------------------------------------------------------------------ | ------------------------ | ---- |
+| `onConnect`       | Emited when the client connected                                         | `connack`                | None |
+| `onMessage`       | Emited when the client receives a message                                | `topic, payload, packet` | None |
+| `onReconnect`     | Emited when the client reconnect                                         | None                     | None |
+| `onDisconnect`    | Emitted after receiving disconnect packet from broker. MQTT 5.0 feature. | `packet`                 | None |
+| `onClose`         | Emited when the client is closed                                         | None                     | None |
+| `onEnd`           | Emited when the client is closed                                         | None                     | None |
+| `onError`         | Emited when the client encounters an error                               | `error`                  | None |
+| `onPacketSend`    | Emited when the client finishes sending a packet                         | `packet`                 | None |
+| `onPublish`       | Emited when the client successfully sends a message                      | `topic, message, opts`   | None |
+| `onPacketReceive` | Emited when the client receives a packet                                 | `packet`                 | None |
 
 ---
 
-### Script event monitoring supported by user scripts :id=2
+---
+
+### Script event supported by User Script :id=2
 
 | Event        | Description                     | Parameters | Note                                                     |
 | ------------ | ------------------------------- | ---------- | -------------------------------------------------------- |
@@ -27,11 +25,11 @@
 
 ---
 
-### Built-in functions supported by user scripts :id=3
+### Built-in functions supported by User Script :id=3
 
 | Function  | Description                           | Parameters             | Note |
 | --------- | ------------------------------------- | ---------------------- | ---- |
-| `publish` | send message                          | `topic, message, opts` | None |
+| `publish` | Publish message                       | `topic, message, opts` | None |
 | `exit`    | Manually exit the current user script | None                   | None |
 
 ---

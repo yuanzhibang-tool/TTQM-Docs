@@ -1,5 +1,5 @@
-> some other usage instructions
+> Some other informations
 
-| No. | Title                                                | Description                                                         |
-| --- | ---------------------------------------------------- | ------------------------------------------------------------------- |
-| 1   | [Common script demo](en/other/common-script-demo.md) | Introduce some common script demos, which can be used in any script |
+| No. | Title                                                | Description                                                       |
+| --- | ---------------------------------------------------- | ----------------------------------------------------------------- |
+| 1   | [Common Script Demo](en/other/common-script-demo.md) | Provide some common script demos, which can be used in any script |
