@@ -1,38 +1,38 @@
 ---
 
-### 内置的 `变量 variable`  :id=1
+### 內置的 `變量 variable`  :id=1
 
-| 名称   | 说明                                    | 例子 |
+| 名稱   | 說明                                    | 例子 |
 | ------ | --------------------------------------- |------- |
-| `date` | 获取当前`YYYY-MM-DD HH:mm:ss`格式的时间 | `2022-12-12 23:12:32` | 
-| `unixSecond` | 当前的`unix`时间戳,单位为秒,`int`数字格式 |`1670861452` | 
-| `unixMillisecond` | 当前的`unix`时间戳,单位为毫秒,`int`数字格式 |`1670861452123` | 
-| `unixMillisecondFloat` | 当前的`unix`时间戳,单位为秒,精确到3位小数,为`float`类型的数字 |`1670861452.123` | 
-| `uuid` | 生成`uuid v4` 格式的字符串,为全部小写 | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`| 
+| `date` | 獲取當前`YYYY-MM-DD HH:mm:ss`格式的時間 | `2022-12-12 23:12:32` | 
+| `unixSecond` | 當前的`unix`時間戳,單位為秒,`int`數字格式 |`1670861452` | 
+| `unixMillisecond` | 當前的`unix`時間戳,單位為毫秒,`int`數字格式 |`1670861452123` | 
+| `unixMillisecondFloat` | 當前的`unix`時間戳,單位為秒,精確到3位小數,為`float`類型的數字 |`1670861452.123` | 
+| `uuid` | 生成`uuid v4` 格式的字符串,為全部小寫 | `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`| 
 
 ---
 
-### 内置的 `变量管道 variable pipe` :id=2
+### 內置的 `變量管道 variable pipe` :id=2
 
-| 名称               | 参数                                                                                                                          | 说明                                                                                                                                           |
+| 名稱               | 參數                                                                                                                          | 說明                                                                                                                                           |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `date`             | 一个参数,为`format`                                                                                                           | 用来输出格式化时间,`format`支持 `YYYY-MM-DD HH:mm:ss`类型,更多支持的格式请参考 [Moment.js](https://momentjs.com/docs/#/parsing/string-format/) |
-| `nullToEmpty`      | 无参数                                                                                                                        | 将`null`和`undefined`转换为空字符串                                                                                                            |
-| `notStringToEmpty` | 无参数                                                                                                                        | 将非字符串变量转换为空字符串                                                                                                                   |
-| `int`              | 一个参数,为`type`(可选),支持`floor`,`ceil`,`round`,`trunc`,不传递,默认为`trunc`                                               | 将数字转换为`int`格式,参数用以进行转换`int`采用的换算方法                                                                                      |
-| `float`            | 两个参数,第一个为`precision`精确度,支持 `int` 类型,第二个参数为 `type`可选`floor`,`ceil`,`round`,`trunc`,不传递,默认为`trunc` | 将数字转换根据精确度转换为浮点值                                                                                                               |
-| `number`           | 无                                                                                                                            | 将数字类型的字符串转换为`Number`类型,非数字类型字符串直接返回不处理                                                                            |
-| `string`           | 无                                                                                                                            | 将其他类型变量转换为字符串                                                                                                                     |
-| `json`             | 无                                                                                                                            | 使用`JSON.stringify()`对变量进行处理                                                                                                           |
-| `uppercase`        | 无                                                                                                                            | 将字符串转换为大写                                                                                                                             |
-| `lowercase`        | 无                                                                                                                            | 将字符串转换为小写                                                                                                                             |
+| `date`             | 一個參數,為`format`                                                                                                           | 用來輸出格式化時間,`format`支持 `YYYY-MM-DD HH:mm:ss`類型,更多支持的格式請參考 [Moment.js](https://momentjs.com/docs/#/parsing/string-format/) |
+| `nullToEmpty`      | 無參數                                                                                                                        | 將`null`和`undefined`轉換為空字符串                                                                                                            |
+| `notStringToEmpty` | 無參數                                                                                                                        | 將非字符串變量轉換為空字符串                                                                                                                   |
+| `int`              | 一個參數,為`type`(可選),支持`floor`,`ceil`,`round`,`trunc`,不傳遞,默認為`trunc`                                               | 將數字轉換為`int`格式,參數用以進行轉換`int`採用的換算方法                                                                                      |
+| `float`            | 兩個參數,第一個為`precision`精確度,支持 `int` 類型,第二個參數為 `type`可選`floor`,`ceil`,`round`,`trunc`,不傳遞,默認為`trunc` | 將數字轉換根據精確度轉換為浮點值                                                                                                               |
+| `number`           | 無                                                                                                                            | 將數字類型的字符串轉換為`Number`類型,非數字類型字符串直接返回不處理                                                                            |
+| `string`           | 無                                                                                                                            | 將其他類型變量轉換為字符串                                                                                                                     |
+| `json`             | 無                                                                                                                            | 使用`JSON.stringify()`對變量進行處理                                                                                                           |
+| `uppercase`        | 無                                                                                                                            | 將字符串轉換為大寫                                                                                                                             |
+| `lowercase`        | 無                                                                                                                            | 將字符串轉換為小寫                                                                                                                             |
 
 ---
 
-### 内置的 `管道 pipe` :id=3
+### 內置的 `管道 pipe` :id=3
 
-| 名称               | 说明                                                                           |
+| 名稱               | 說明                                                                           |
 | ------------------ | ------------------------------------------------------------------------------ |
-| `leafNodeToString` | 将`json`格式的所有叶子节点转换为`string`,非`json`格式则返回原来的信息,不做处理 |
+| `leafNodeToString` | 將`json`格式的所有葉子節點轉換為`string`,非`json`格式則返回原來的信息,不做處理 |
 
-!>叶子节点,指的是 `json` 树中没有子节点的节点
+!>葉子節點,指的是 `json` 樹中沒有子節點的節點

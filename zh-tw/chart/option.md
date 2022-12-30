@@ -1,68 +1,68 @@
-> 图表配置用来初始化图表的配置,可以通过内置函数`setOption`配置,也可以通过导出配置`object`或者导出一个`Promise`,在`resolve`中返回图表配置
+> 圖表配置用來初始化圖表的配置,可以通過內置函數`setOption`配置,也可以通過導出配置`object`或者導出一個`Promise`,在`resolve`中返回圖表配置
 
 ---
 
-!>注意:配置脚本有一些限制,由于运行环境是`node.js`,而且是和图表分离的所欲请注意有一下几点限制
+!>注意:配置腳本有一些限制,由於運行環境是`node.js`,而且是和圖表分離的所欲請注意有一下幾點限制
 
-1. 图表配置必须在 10s 内返回配置,否则将会被强制终止.
-2. 不支持`jQuery`模块,如果示例中有网络请求,请参照[常见问题?>如何添加脚本依赖库?](zh-cn/question/build-in-module?id=_1),进行接口方法的替换
-3. 不支持对图表添加自定义事件
-
----
-
-### 1.查找自己需要使用的图表类型,请在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)选择需要使用到的图表类型 :id=1
-
-![选择图表类型](_media/option/1.jpg ':size=700')
+1. 圖表配置必須在 10s 內返回配置,否則將會被強制終止.
+2. 不支持`jQuery`模塊,如果示例中有網絡請求,請參照[常見問題?>如何添加腳本依賴庫?](zh-tw/question/build-in-module?id=_1),進行接口方法的替換
+3. 不支持對圖表添加自定義事件
 
 ---
 
-### 2.复制对应的配置脚本 :id=2
+### 1.查找自己需要使用的圖表類型,請在[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line)選擇需要使用到的圖表類型 :id=1
 
-![复制对应的配置脚本](_media/option/2.jpg ':size=700')
-
----
-
-### 3.粘贴到图表配置脚本中,代码最上面面添加变量声明,结尾添加导出配置代码 :id=3
-
-**添加变量声明**
-
-!>因为配置中使用了`echarts`,所以必须在开头导入`echarts`,以在代码中使用
-
-![添加变量声明](_media/option/3.jpg ':size=700')
-
-**导出配置代码**
-
-![导出配置代码](_media/option/4.jpg ':size=700')
+![選擇圖表類型](_media/option/1.jpg ":size=700")
 
 ---
 
-### 4.保存并运行,即可看到初始化的图表 :id=4
+### 2.複製對應的配置腳本 :id=2
 
-![导出配置代码](_media/option/5.jpg ':size=700')
+![複製對應的配置腳本](_media/option/2.jpg ":size=700")
 
 ---
 
-### 5.完整配置代码 :id=5
+### 3.粘貼到圖表配置腳本中,代碼最上面面添加變量聲明,結尾添加導出配置代碼 :id=3
+
+**添加變量聲明**
+
+!>因為配置中使用了`echarts`,所以必須在開頭導入`echarts`,以在代碼中使用
+
+![添加變量聲明](_media/option/3.jpg ":size=700")
+
+**導出配置代碼**
+
+![導出配置代碼](_media/option/4.jpg ":size=700")
+
+---
+
+### 4.保存並運行,即可看到初始化的圖表 :id=4
+
+![導出配置代碼](_media/option/5.jpg ":size=700")
+
+---
+
+### 5.完整配置代碼 :id=5
 
 <!-- tabs:start -->
 
-<!-- tab:通过函数配置 -->
+<!-- tab:通過函數配置 -->
 
 ```javascript
-const echarts = require('echarts');
+const echarts = require("echarts");
 const option = {
-  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  color: ["#80FFA5", "#00DDFF", "#37A2FF", "#FF0087", "#FFBF00"],
   tooltip: {
-    trigger: 'axis',
+    trigger: "axis",
     axisPointer: {
-      type: 'cross',
+      type: "cross",
       label: {
-        backgroundColor: '#6a7985',
+        backgroundColor: "#6a7985",
       },
     },
   },
   legend: {
-    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+    data: ["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"],
   },
   toolbox: {
     feature: {
@@ -70,28 +70,28 @@ const option = {
     },
   },
   grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
+    left: "3%",
+    right: "4%",
+    bottom: "3%",
     containLabel: true,
   },
   xAxis: [
     {
-      type: 'category',
+      type: "category",
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     },
   ],
   yAxis: [
     {
-      type: 'value',
+      type: "value",
     },
   ],
   series: [
     {
-      name: 'Line 1',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 1",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -102,23 +102,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(128, 255, 165)',
+            color: "rgb(128, 255, 165)",
           },
           {
             offset: 1,
-            color: 'rgb(1, 191, 236)',
+            color: "rgb(1, 191, 236)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [140, 232, 101, 264, 90, 340, 250],
     },
     {
-      name: 'Line 2',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 2",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -129,23 +129,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(0, 221, 255)',
+            color: "rgb(0, 221, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(77, 119, 255)',
+            color: "rgb(77, 119, 255)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [120, 282, 111, 234, 220, 340, 310],
     },
     {
-      name: 'Line 3',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 3",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -156,23 +156,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(55, 162, 255)',
+            color: "rgb(55, 162, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(116, 21, 219)',
+            color: "rgb(116, 21, 219)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [320, 132, 201, 334, 190, 130, 220],
     },
     {
-      name: 'Line 4',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 4",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -183,23 +183,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 0, 135)',
+            color: "rgb(255, 0, 135)",
           },
           {
             offset: 1,
-            color: 'rgb(135, 0, 157)',
+            color: "rgb(135, 0, 157)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 402, 231, 134, 190, 230, 120],
     },
     {
-      name: 'Line 5',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 5",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -207,49 +207,49 @@ const option = {
       showSymbol: false,
       label: {
         show: true,
-        position: 'top',
+        position: "top",
       },
       areaStyle: {
         opacity: 0.8,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 191, 0)',
+            color: "rgb(255, 191, 0)",
           },
           {
             offset: 1,
-            color: 'rgb(224, 62, 76)',
+            color: "rgb(224, 62, 76)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 302, 181, 234, 210, 290, 150],
     },
   ],
 };
-// 通过内置函数setOption进行配置
+// 通過內置函數setOption進行配置
 setOption(option);
 ```
 
-<!-- tab:通过同步返回配置 -->
+<!-- tab:通過同步返回配置 -->
 
 ```javascript
-const echarts = require('echarts');
+const echarts = require("echarts");
 const option = {
-  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  color: ["#80FFA5", "#00DDFF", "#37A2FF", "#FF0087", "#FFBF00"],
   tooltip: {
-    trigger: 'axis',
+    trigger: "axis",
     axisPointer: {
-      type: 'cross',
+      type: "cross",
       label: {
-        backgroundColor: '#6a7985',
+        backgroundColor: "#6a7985",
       },
     },
   },
   legend: {
-    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+    data: ["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"],
   },
   toolbox: {
     feature: {
@@ -257,28 +257,28 @@ const option = {
     },
   },
   grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
+    left: "3%",
+    right: "4%",
+    bottom: "3%",
     containLabel: true,
   },
   xAxis: [
     {
-      type: 'category',
+      type: "category",
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     },
   ],
   yAxis: [
     {
-      type: 'value',
+      type: "value",
     },
   ],
   series: [
     {
-      name: 'Line 1',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 1",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -289,23 +289,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(128, 255, 165)',
+            color: "rgb(128, 255, 165)",
           },
           {
             offset: 1,
-            color: 'rgb(1, 191, 236)',
+            color: "rgb(1, 191, 236)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [140, 232, 101, 264, 90, 340, 250],
     },
     {
-      name: 'Line 2',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 2",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -316,23 +316,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(0, 221, 255)',
+            color: "rgb(0, 221, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(77, 119, 255)',
+            color: "rgb(77, 119, 255)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [120, 282, 111, 234, 220, 340, 310],
     },
     {
-      name: 'Line 3',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 3",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -343,23 +343,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(55, 162, 255)',
+            color: "rgb(55, 162, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(116, 21, 219)',
+            color: "rgb(116, 21, 219)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [320, 132, 201, 334, 190, 130, 220],
     },
     {
-      name: 'Line 4',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 4",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -370,23 +370,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 0, 135)',
+            color: "rgb(255, 0, 135)",
           },
           {
             offset: 1,
-            color: 'rgb(135, 0, 157)',
+            color: "rgb(135, 0, 157)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 402, 231, 134, 190, 230, 120],
     },
     {
-      name: 'Line 5',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 5",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -394,23 +394,23 @@ const option = {
       showSymbol: false,
       label: {
         show: true,
-        position: 'top',
+        position: "top",
       },
       areaStyle: {
         opacity: 0.8,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 191, 0)',
+            color: "rgb(255, 191, 0)",
           },
           {
             offset: 1,
-            color: 'rgb(224, 62, 76)',
+            color: "rgb(224, 62, 76)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 302, 181, 234, 210, 290, 150],
     },
@@ -419,23 +419,23 @@ const option = {
 module.exports = option;
 ```
 
-<!-- tab:通过异步返回配置 -->
+<!-- tab:通過異步返回配置 -->
 
 ```javascript
-const echarts = require('echarts');
+const echarts = require("echarts");
 const option = {
-  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  color: ["#80FFA5", "#00DDFF", "#37A2FF", "#FF0087", "#FFBF00"],
   tooltip: {
-    trigger: 'axis',
+    trigger: "axis",
     axisPointer: {
-      type: 'cross',
+      type: "cross",
       label: {
-        backgroundColor: '#6a7985',
+        backgroundColor: "#6a7985",
       },
     },
   },
   legend: {
-    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+    data: ["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"],
   },
   toolbox: {
     feature: {
@@ -443,28 +443,28 @@ const option = {
     },
   },
   grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
+    left: "3%",
+    right: "4%",
+    bottom: "3%",
     containLabel: true,
   },
   xAxis: [
     {
-      type: 'category',
+      type: "category",
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     },
   ],
   yAxis: [
     {
-      type: 'value',
+      type: "value",
     },
   ],
   series: [
     {
-      name: 'Line 1',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 1",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -475,23 +475,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(128, 255, 165)',
+            color: "rgb(128, 255, 165)",
           },
           {
             offset: 1,
-            color: 'rgb(1, 191, 236)',
+            color: "rgb(1, 191, 236)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [140, 232, 101, 264, 90, 340, 250],
     },
     {
-      name: 'Line 2',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 2",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -502,23 +502,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(0, 221, 255)',
+            color: "rgb(0, 221, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(77, 119, 255)',
+            color: "rgb(77, 119, 255)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [120, 282, 111, 234, 220, 340, 310],
     },
     {
-      name: 'Line 3',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 3",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -529,23 +529,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(55, 162, 255)',
+            color: "rgb(55, 162, 255)",
           },
           {
             offset: 1,
-            color: 'rgb(116, 21, 219)',
+            color: "rgb(116, 21, 219)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [320, 132, 201, 334, 190, 130, 220],
     },
     {
-      name: 'Line 4',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 4",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -556,23 +556,23 @@ const option = {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 0, 135)',
+            color: "rgb(255, 0, 135)",
           },
           {
             offset: 1,
-            color: 'rgb(135, 0, 157)',
+            color: "rgb(135, 0, 157)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 402, 231, 134, 190, 230, 120],
     },
     {
-      name: 'Line 5',
-      type: 'line',
-      stack: 'Total',
+      name: "Line 5",
+      type: "line",
+      stack: "Total",
       smooth: true,
       lineStyle: {
         width: 0,
@@ -580,23 +580,23 @@ const option = {
       showSymbol: false,
       label: {
         show: true,
-        position: 'top',
+        position: "top",
       },
       areaStyle: {
         opacity: 0.8,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgb(255, 191, 0)',
+            color: "rgb(255, 191, 0)",
           },
           {
             offset: 1,
-            color: 'rgb(224, 62, 76)',
+            color: "rgb(224, 62, 76)",
           },
         ]),
       },
       emphasis: {
-        focus: 'series',
+        focus: "series",
       },
       data: [220, 302, 181, 234, 210, 290, 150],
     },
@@ -607,8 +607,8 @@ module.exports = new Promise((resolve, reject) => {
 });
 ```
 
-<!-- tab:初始化图表 -->
+<!-- tab:初始化圖表 -->
 
-![Chart Option](_media/option/6.jpg ':size=600')
+![Chart Option](_media/option/6.jpg ":size=600")
 
 <!-- tabs:end -->

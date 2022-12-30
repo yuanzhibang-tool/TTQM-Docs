@@ -1,12 +1,12 @@
-> 前置脚本,用来在发送前对发送的消息进行处理,实际发送的内容为处理后的脚本内容
+> 前置腳本,用來在發送前對發送的消息進行處理,實際發送的內容為處理後的腳本內容
 
-!>注意:前置脚本开启后,该连接下,所有形式发送的消息,如手动发送,以及通过前置脚本发送的消息都会被前置脚本处理
+!>注意:前置腳本開啟後,該連接下,所有形式發送的消息,如手動發送,以及通過前置腳本發送的消息都會被前置腳本處理
 
-| 序号 | 标题                                                       | 描述                                                           |
+| 序號 | 標題                                                       | 描述                                                           |
 | ---- | ---------------------------------------------------------- | -------------------------------------------------------------- |
-| 1    | [概念](zh-cn/pre-publish-script/concept.md)                | 介绍前置脚本使用中一些相关的概念                               |
-| 2    | [能力](zh-cn/pre-publish-script/capability.md)             | 介绍前置脚本能够实现的能力                                     |
-| 3    | [使用](zh-cn/pre-publish-script/usage.md)                  | 介绍前置脚本的使用,以及拓展 `pipe`,`variable`                  |
-| 4    | [内置 pipe,variable](zh-cn/pre-publish-script/built_in.md) | 介绍前置脚本支持的内置 `pipe`,`variable`                       |
-| 5    | [示例](zh-cn/pre-publish-script/demo.md)                   | 提供一些前置脚本的使用示例,包含拓展以及内置的`pipe`,`variable` |
-| 6    | [调试](zh-cn/pre-publish-script/debug.md)                  | 介绍如何进行前置脚本的调试                                     |
+| 1    | [概念](zh-tw/pre-publish-script/concept.md)                | 介紹前置腳本使用中一些相關的概念                               |
+| 2    | [能力](zh-tw/pre-publish-script/capability.md)             | 介紹前置腳本能夠實現的能力                                     |
+| 3    | [使用](zh-tw/pre-publish-script/usage.md)                  | 介紹前置腳本的使用,以及拓展 `pipe`,`variable`                  |
+| 4    | [內置 pipe,variable](zh-tw/pre-publish-script/built_in.md) | 介紹前置腳本支持的內置 `pipe`,`variable`                       |
+| 5    | [示例](zh-tw/pre-publish-script/demo.md)                   | 提供一些前置腳本的使用示例,包含拓展以及內置的`pipe`,`variable` |
+| 6    | [調試](zh-tw/pre-publish-script/debug.md)                  | 介紹如何進行前置腳本的調試                                     |

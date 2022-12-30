@@ -1,10 +1,10 @@
-| 序号 | 能力                                                                                                                             |
+| 序號 | 能力                                                                                                                             |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | 支持众多的图表类型,柱状图,饼状图,玫瑰图等类型,具体请[参考链接](https://echarts.apache.org/examples/zh/index.html)                |
-| 2    | 兼容 `Apache Echarts` 配置, 配置项需要进行一些调整,具体参考 [图表>配置](zh-cn/chart/option.md)                                   |
-| 3    | 支持图表交互                                                                                                                     |
-| 4    | 支持数据源的整体和局部更新 [图表>脚本](zh-cn/chart/script.md)                                                                    |
-| 5    | 支持监听`MQTT`客户端事件以及图表事件来实现不同的图表更新,例如: 客户端连接上,断开等,具体请参考 [图表>脚本](zh-cn/chart/script.md) |
-| 6    | 支持同时绘制多图表                                                                                                               |
-| 7    | 支持添加第三方 `node modules`来丰富脚本功能, 请参考 [常见问题>如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md) |
-| 8    | 可以通过 `console` 来实现打印调试                                                                                                |
+| 1    | 支持眾多的圖表類型,柱狀圖,餅狀圖,玫瑰圖等類型,具體請[參考鏈接](https://echarts.apache.org/examples/zh/index.html)                |
+| 2    | 兼容 `Apache Echarts` 配置, 配置項需要進行一些調整,具體參考 [圖表>配置](zh-tw/chart/option.md)                                   |
+| 3    | 支持圖表交互                                                                                                                     |
+| 4    | 支持數據源的整體和局部更新 [圖表>腳本](zh-tw/chart/script.md)                                                                    |
+| 5    | 支持監聽`MQTT`客戶端事件以及圖表事件來實現不同的圖表更新,例如: 客戶端連接上,斷開等,具體請參考 [圖表>腳本](zh-tw/chart/script.md) |
+| 6    | 支持同時繪製多圖表                                                                                                               |
+| 7    | 支持添加第三方 `node modules`來豐富腳本功能, 請參考 [常見問題>如何添加腳本依賴庫?](zh-tw/question/how-to-add-support-modules.md) |
+| 8    | 可以通過 `console` 來實現打印調試                                                                                                |

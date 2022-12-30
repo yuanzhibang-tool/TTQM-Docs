@@ -1,3 +1,3 @@
-> 如果您还有其他问题,请点击上方导航栏的`联系我们`,或者发送邮件到`developer@yuanzhibang.com`,或者在[Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm)提问,我们会及时回答
+> 如果您還有其他問題,請點擊上方導航欄的`聯繫我們`,或者發送郵件到`developer@yuanzhibang.com`,或者在[Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm)提問,我們會及時回答
 
-!>问题支持简体中文,繁体中文,以及英语
+!>問題支持簡體中文,繁體中文,以及英語

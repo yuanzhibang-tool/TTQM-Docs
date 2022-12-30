@@ -1,9 +1,9 @@
-> 介绍使用前需要了解的注意事项,概念,以及提供应用的能力描述
+> 介紹使用前需要了解的注意事項,概念,以及提供應用的能力描述
 
 ---
 
-| 序号 | 标题                                       | 描述                             |
+| 序號 | 標題                                       | 描述                             |
 | ---- | ------------------------------------------ | -------------------------------- |
-| 1    | [总览](zh-cn/before-use/summary.md)        | `TTQM` 使用中一些整体信息        |
-| 2    | [概念](zh-cn/before-use/concept.md)        | 介绍 `TTQM` 使用过程中的相关概念 |
-| 3    | [应用能力](zh-cn/before-use/capability.md) | 介绍`TTQM`的应用能力             |
+| 1    | [總覽](zh-tw/before-use/summary.md)        | `TTQM` 使用中一些整體信息        |
+| 2    | [概念](zh-tw/before-use/concept.md)        | 介紹 `TTQM` 使用過程中的相關概念 |
+| 3    | [應用能力](zh-tw/before-use/capability.md) | 介紹`TTQM`的應用能力             |

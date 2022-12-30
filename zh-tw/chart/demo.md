@@ -1,35 +1,35 @@
-> 本部分用来示例如何使用脚本更新图表配置
+> 本部分用來示例如何使用腳本更新圖表配置
 
-!>如果您要查看图表配置示例,请按照[图表>配置](zh-cn/chart/option)中的操作来获取图表配置示例
+!>如果您要查看圖表配置示例,請按照[圖表>配置](zh-tw/chart/option)中的操作來獲取圖表配置示例
 
 ---
 
-### 1.监听事件,并更新数据 :id=1
+### 1.監聽事件,並更新數據 :id=1
 
-!>具体的监听事件描述,请参考[图表>脚本](zh-cn/chart/script)
+!>具體的監聽事件描述,請參考[圖表>腳本](zh-tw/chart/script)
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 module.exports = {
   onMessage: (topic, payload, packet) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 0],
-      action: 'increase',
+      targetPath: ["series", "data", 0],
+      action: "increase",
       data: 1,
     };
-    // data中的第一个元素加1
+    // data中的第一個元素加1
     updateChartViewData(chartViewData);
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 1],
-      action: 'increase',
+      targetPath: ["series", "data", 1],
+      action: "increase",
       data: 1,
     };
-    // data中的第二个元素加1
+    // data中的第二個元素加1
     updateChartViewData(chartViewData);
   },
 };
@@ -67,7 +67,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -99,22 +99,22 @@ module.exports = {
 }
 ```
 
-!>以上为当两个事件均触发一次后对应的目标数据
+!>以上為當兩個事件均觸發一次後對應的目標數據
 
 <!-- tabs:end -->
 
 ---
 
-### 2.替换数据 :id=2
+### 2.替換數據 :id=2
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data'],
-  action: 'replace',
+  targetPath: ["series", "data"],
+  action: "replace",
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 updateChartViewData(chartViewData);
@@ -153,7 +153,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -187,23 +187,23 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 3.一次替换多组数据 :id=3
+### 3.一次替換多組數據 :id=3
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'replace',
+  targetPath: ["series", "data"],
+  action: "replace",
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'replace',
-  data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
+  targetPath: ["xAxis", "data"],
+  action: "replace",
+  data: ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
 };
 
 updateChartViewData([chartViewData1, chartViewData2]);
@@ -242,7 +242,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -276,21 +276,21 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 4.删除数据 :id=4
+### 4.刪除數據 :id=4
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data', 0],
-  action: 'delete',
+  targetPath: ["series", "data", 0],
+  action: "delete",
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data', 0],
-  action: 'delete',
+  targetPath: ["xAxis", "data", 0],
+  action: "delete",
 };
 updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
@@ -328,7 +328,7 @@ module.exports = {};
 };
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -361,16 +361,16 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 5.增加数据值 :id=5
+### 5.增加數據值 :id=5
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data', 6],
-  action: 'increase',
+  targetPath: ["series", "data", 6],
+  action: "increase",
   data: 2,
 };
 updateChartViewData(chartViewData);
@@ -409,7 +409,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -443,16 +443,16 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 6.减少数据值 :id=6
+### 6.減少數據值 :id=6
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data', 6],
-  action: 'decrease',
+  targetPath: ["series", "data", 6],
+  action: "decrease",
   data: 2,
 };
 updateChartViewData(chartViewData);
@@ -491,7 +491,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -525,23 +525,23 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 7.数组附加(array_append_end) :id=7
+### 7.數組附加(array_append_end) :id=7
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'array_append_end',
+  targetPath: ["series", "data"],
+  action: "array_append_end",
   data: 1,
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'array_append_end',
-  data: 'Device-8',
+  targetPath: ["xAxis", "data"],
+  action: "array_append_end",
+  data: "Device-8",
 };
 
 updateChartViewData(chartViewData);
@@ -580,7 +580,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -615,23 +615,23 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 8.数组合并(array_merge_end) :id=8
+### 8.數組合併(array_merge_end) :id=8
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'array_merge_end',
+  targetPath: ["series", "data"],
+  action: "array_merge_end",
   data: [1, 2],
 };
 
 var chartViewData1 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'array_merge_end',
-  data: ['Device-8', 'Device-9'],
+  targetPath: ["xAxis", "data"],
+  action: "array_merge_end",
+  data: ["Device-8", "Device-9"],
 };
 
 updateChartViewData(chartViewData);
@@ -670,7 +670,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -706,26 +706,26 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 9.object 合并(object_merge) :id=9
+### 9.object 合併(object_merge) :id=9
 
-!>`object_merge`仅仅会对`object`的根属性进行合并,如果存在相同的属性则会被替换掉
+!>`object_merge`僅僅會對`object`的根屬性進行合併,如果存在相同的屬性則會被替換掉
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  targetPath: [], //对根节点进行操作
-  action: 'object_merge',
+  targetPath: [], //對根節點進行操作
+  action: "object_merge",
   data: {
-    // yAxis值将会被整体替换掉
+    // yAxis值將會被整體替換掉
     yAxis: {
-      type: 'value',
-      title: 'yAxis',
+      type: "value",
+      title: "yAxis",
     },
-    // 该属性会被添加到配置里
-    title: 'Chart Title',
+    // 該屬性會被添加到配置裡
+    title: "Chart Title",
   },
 };
 updateChartViewData(chartViewData);
@@ -764,7 +764,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -802,32 +802,32 @@ module.exports = {};
 
 ---
 
-### 10.替换整个配置 :id=10
+### 10.替換整個配置 :id=10
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  // 对整个根节点进行操作
+  // 對整個根節點進行操作
   targetPath: [],
-  action: 'replace',
+  action: "replace",
   data: {
     xAxis: {
-      type: 'category',
-      data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
+      type: "category",
+      data: ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
     },
     yAxis: {
-      type: 'value',
+      type: "value",
     },
     series: [
       {
         data: [1, 2, 3, 4, 5, 6, 7],
-        type: 'bar',
+        type: "bar",
         showBackground: true,
         backgroundStyle: {
-          color: 'rgba(150, 140, 120, 0.4)',
+          color: "rgba(150, 140, 120, 0.4)",
         },
       },
     ],
@@ -869,7 +869,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -897,34 +897,34 @@ module.exports = {};
 
 ---
 
-### 11.过滤 topic 并更新数据 :id=11
+### 11.過濾 topic 並更新數據 :id=11
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 // test the topic is contain the sub-topic
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { TopicUtil } = require("@ttqm/ttqm-support");
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    if (TopicUtil.isSubTopic('device_type/+/device_id/+', topic)) {
+    if (TopicUtil.isSubTopic("device_type/+/device_id/+", topic)) {
       var chartViewData = {
-        targetPath: ['series', 'data', 0],
-        action: 'increase',
+        targetPath: ["series", "data", 0],
+        action: "increase",
         data: 1,
       };
-      // data中的第一个元素加1
+      // data中的第一個元素加1
       updateChartViewData(chartViewData);
     }
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 1],
-      action: 'increase',
+      targetPath: ["series", "data", 1],
+      action: "increase",
       data: 1,
     };
-    // data中的第二个元素加1
+    // data中的第二個元素加1
     updateChartViewData(chartViewData);
   },
 };
@@ -962,7 +962,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 {
@@ -994,10 +994,10 @@ module.exports = {
 }
 ```
 
-!>以上为当两个事件均触发一次后,并且`onMessage`的 `topic` 比中后的配置
+!>以上為當兩個事件均觸發一次後,並且`onMessage`的 `topic` 比中後的配置
 
 <!-- tabs:end -->
 
 ---
 
-!>更多脚本示例,请参照[通用脚本示例](zh-cn/other/common-script-demo.md)
+!>更多腳本示例,請參照[通用腳本示例](zh-tw/other/common-script-demo.md)

@@ -1,6 +1,6 @@
-!>如果您想在前置脚本中使用更多的第三方库,请参照[如何添加脚本依赖库?](zh-cn/question/how-to-add-support-modules.md)
+!>如果您想在前置腳本中使用更多的第三方庫,請參照[如何添加腳本依賴庫?](zh-tw/question/how-to-add-support-modules.md)
 
-### 1.生成 `uuid`和 `unix` 时间戳(精确到秒,并返回字符串) :id=1
+### 1.生成 `uuid`和 `unix` 時間戳(精確到秒,並返回字符串) :id=1
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -16,14 +16,14 @@
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // only the built-in variables and variables pipes are used!
 module.exports = {};
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -38,7 +38,7 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 2.将消息所有叶子节点转换为字符串 :id=2
+### 2.將消息所有葉子節點轉換為字符串 :id=2
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -54,7 +54,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // only the built-in variables and variables pipes are used!
@@ -69,7 +69,7 @@ module.exports = {
 
 ---
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -86,7 +86,7 @@ module.exports = {
 
 ---
 
-### 3.获取当前格式化时间 :id=3
+### 3.獲取當前格式化時間 :id=3
 
 <!-- tabs:start -->
 
@@ -102,7 +102,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // only the built-in variables and variables pipes are used!
@@ -111,7 +111,7 @@ module.exports = {};
 
 ---
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -127,7 +127,7 @@ module.exports = {};
 
 ---
 
-### 4.对消息内容加签,来实现服务器消息安全验证 :id=4
+### 4.對消息內容加簽,來實現服務器消息安全驗證 :id=4
 
 <!-- tabs:start -->
 
@@ -144,10 +144,10 @@ module.exports = {};
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
-const { EncryptUtil } = require('@ttqm/ttqm-support');
+const { EncryptUtil } = require("@ttqm/ttqm-support");
 
 module.exports = {
   pipe: {
@@ -157,9 +157,9 @@ module.exports = {
         var messageObject = JSON.parse(messageString);
         var guid = messageObject.guid;
         var currentTime = messageObject.current_time;
-        var secretKey = 'c479942357f195d9818';
+        var secretKey = "c479942357f195d9818";
         var signString = `{${guid}}.{${currentTime}}.{${secretKey}}`;
-        var sign = EncryptUtil.getHash(signString, 'sha1');
+        var sign = EncryptUtil.getHash(signString, "sha1");
         messageObject.sign = sign;
         // you need return the message in string format
         return JSON.stringify(messageObject);
@@ -172,7 +172,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -190,7 +190,7 @@ module.exports = {
 
 ---
 
-### 5.使用证书,公钥,私钥加解密消息体 :id=5
+### 5.使用證書,公鑰,私鑰加解密消息體 :id=5
 
 <!-- tabs:start -->
 <!-- tab:模板消息 -->
@@ -206,10 +206,10 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
-const { CertUtil } = require('@ttqm/ttqm-support');
+const { CertUtil } = require("@ttqm/ttqm-support");
 
 var certPem = `-----BEGIN CERTIFICATE-----
 MIIDWzCCAkOgAwIBAgIURzmUxeH8mb5B7eWBKrxBi0k4ZCgwDQYJKoZIhvcNAQEL
@@ -250,7 +250,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```plain text
 AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs8VxfRBEldYJ384B7Vt5fLMjSH3cTwduhJZINzK2XFP57ASGaYU9GwHnYnzS/jC5bMQEDwjB94TuSITTS7JaBN5tuMgjitqkIXlji7KyqFhBnuWEjbnWeub0uLp1rev+yowe+YtmzNoZFzBy8x4t9zLBDDgBpQRiJLEVa01W2dStImilAqgfbFInhkAbBwVS8Cv4z7evA25xruflZcjFHPgM3ocdudDF51xQEPysl05QymQ40poOI9sLuoYDFDe9ZmprrhQ==
@@ -260,7 +260,7 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 
 ---
 
-### 6.根据 `topic` 对消息进行过滤处理 :id=6
+### 6.根據 `topic` 對消息進行過濾處理 :id=6
 
 <!-- tabs:start -->
 
@@ -277,11 +277,11 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // require the build-in support module
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { TopicUtil } = require("@ttqm/ttqm-support");
 
 module.exports = {
   pipe: {
@@ -290,7 +290,7 @@ module.exports = {
         // process the publishMessage if the publishMessage.topic is sub-topic of 'device_type/+/device_sn/+'
         if (
           TopicUtil.isSubTopic(
-            'device_type/+/device_sn/+',
+            "device_type/+/device_sn/+",
             publishMessage.topic
           )
         ) {
@@ -310,7 +310,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -328,7 +328,7 @@ module.exports = {
 
 ---
 
-### 7.自定义拓展`variable`和`pipe` :id=7
+### 7.自定義拓展`variable`和`pipe` :id=7
 
 <!-- tabs:start -->
 
@@ -343,20 +343,20 @@ module.exports = {
 }
 ```
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
-var { v4: uuidv4 } = require('uuid');
+var { v4: uuidv4 } = require("uuid");
 // the module mockjs is built-in, please read mockjs docs: http://mockjs.com/examples.html
-var mockjs = require('mockjs');
+var mockjs = require("mockjs");
 // if you need to use other modules, you can install other modules via npm, please read the doc: https://doc.ttqm.app/#/en/question/how-to-add-support-modules
 
 // generate mock data
 var mockData = mockjs.mock({
-  'list|3': [
+  "list|3": [
     {
-      'id|+1': 1,
+      "id|+1": 1,
     },
   ],
 });
@@ -364,7 +364,7 @@ module.exports = {
   variable: {
     // the variable can be a function(must return a value sync and can not be a Promise) or a value
     user_variable1() {
-      return '432';
+      return "432";
     },
     user_variable2: 107,
     user_variable3: uuidv4(),
@@ -387,7 +387,7 @@ module.exports = {
       try {
         var messageString = publishMessage.message;
         var messageObject = JSON.parse(messageString);
-        messageObject.test_user_string = 'test_user_string_value';
+        messageObject.test_user_string = "test_user_string_value";
         // you need return the message in string format
         return JSON.stringify(messageObject);
       } catch (error) {
@@ -399,7 +399,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {
@@ -425,8 +425,8 @@ module.exports = {
 
 ---
 
-!>更多内置`pipe`和`variable`请参照[内置 pipe,variable](zh-cn/pre-publish-script/built_in)
+!>更多內置`pipe`和`variable`請參照[內置 pipe,variable](zh-tw/pre-publish-script/built_in)
 
 ---
 
-!>更多脚本示例,请参照[通用脚本示例](zh-cn/other/common-script-demo.md)
+!>更多腳本示例,請參照[通用腳本示例](zh-tw/other/common-script-demo.md)

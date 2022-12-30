@@ -1,59 +1,59 @@
-> 脚本用来通过对当前客户端的`MQTT`消息以及客户端事件进行联动,来实现对图表的更新,例如,统计不同`TOPIC`类型消息的数量,占比.对收到的心电数据处理后,进行绘图,来调试数据是否正确显示
+> 腳本用來通過對當前客戶端的`MQTT`消息以及客戶端事件進行聯動,來實現對圖表的更新,例如,統計不同`TOPIC`類型消息的數量,佔比.對收到的心電數據處理後,進行繪圖,來調試數據是否正確顯示
 
-!>脚本的运作和客户端是独立的,脚本可以在客户端连接之前启动
+!>腳本的運作和客戶端是獨立的,腳本可以在客戶端連接之前啟動
 
-### 脚本支持的客户端事件监听 :id=1
+### 腳本支持的客戶端事件監聽 :id=1
 
-| 事件              | 描述                       | 参数                     | 备注 |
+| 事件              | 描述                       | 參數                     | 備註 |
 | ----------------- | -------------------------- | ------------------------ | ---- |
-| `onConnect`       | 当客户端连接上时触发       | `connack`                | 无   |
-| `onMessage`       | 当客户端收到消息时触发     | `topic, payload, packet` | 无   |
-| `onReconnect`     | 当客户端重连时触发         | 无                       | 无   |
-| `onDisconnect`    | 当客户端断开时触发         | `packet`                 | 无   |
-| `onClose`         | 当客户端关闭时触发         | 无                       | 无   |
-| `onEnd`           | 当客户端被中止时触发       | 无                       | 无   |
-| `onError`         | 当客户端出现错误时触发     | `error`                  | 无   |
-| `onPacketSend`    | 当客户端发送包完成时触发   | `packet`                 | 无   |
-| `onPublish`       | 当客户端发送消息成功时触发 | `topic, message, opts`   | 无   |
-| `onPacketReceive` | 当客户端收到包时触发       | `packet`                 | 无   |
+| `onConnect`       | 當客戶端連接上時觸發       | `connack`                | 無   |
+| `onMessage`       | 當客戶端收到消息時觸發     | `topic, payload, packet` | 無   |
+| `onReconnect`     | 當客戶端重連時觸發         | 無                       | 無   |
+| `onDisconnect`    | 當客戶端斷開時觸發         | `packet`                 | 無   |
+| `onClose`         | 當客戶端關閉時觸發         | 無                       | 無   |
+| `onEnd`           | 當客戶端被中止時觸發       | 無                       | 無   |
+| `onError`         | 當客戶端出現錯誤時觸發     | `error`                  | 無   |
+| `onPacketSend`    | 當客戶端發送包完成時觸發   | `packet`                 | 無   |
+| `onPublish`       | 當客戶端發送消息成功時觸發 | `topic, message, opts`   | 無   |
+| `onPacketReceive` | 當客戶端收到包時觸發       | `packet`                 | 無   |
 
 ---
 
-### 脚本支持的用户图表操作事件监听 :id=2
+### 腳本支持的用戶圖表操作事件監聽 :id=2
 
-![脚本支持的用户图表操作事件监听](_media/script/1.jpg ':size=600')
+![腳本支持的用戶圖表操作事件監聽](_media/script/1.jpg ":size=600")
 
-| 事件                | 描述                                     | 参数 | 备注 |
+| 事件                | 描述                                     | 參數 | 備註 |
 | ------------------- | ---------------------------------------- | ---- | ---- |
-| `onModuleUserReset` | 当用户点击图表菜单中的重置图表菜单时触发 | 无   | 无   |
-| `onModuleUserClear` | 当用户点击图表菜单中的清空图表菜单时触发 | 无   | 无   |
+| `onModuleUserReset` | 當用戶點擊圖表菜單中的重置圖表菜單時觸發 | 無   | 無   |
+| `onModuleUserClear` | 當用戶點擊圖表菜單中的清空圖表菜單時觸發 | 無   | 無   |
 
 ---
 
-### 脚本更新图表数据的方式 :id=3
+### 腳本更新圖表數據的方式 :id=3
 
-通过调用内置函数`updateChartViewData`来更新图表,可以进行数据的单次单数据更新,也可进行单次多组数据更新,数据更新将会按照传入的顺序更新
+通過調用內置函數`updateChartViewData`來更新圖表,可以進行數據的單次單數據更新,也可進行單次多組數據更新,數據更新將會按照傳入的順序更新
 
-`updateChartViewData`函数只有一个参数`chartViewData`,参数的定义如下
+`updateChartViewData`函數只有一個參數`chartViewData`,參數的定義如下
 
 ```javascript
 declare enum ChartViewModuleDataActionType {
-    ARRAY_APPEND_START = "array_append_start",  //将传入的data以元素的形式附加到配置目标位置原数组的头部,data为对应的需要append的数组
-    ARRAY_APPEND_END = "array_append_end", //将传入的data以元素的形式附加到配置目标位置原数组的尾部,data为对应的需要append的数组
-    ARRAY_MERGE_START = "array_merge_start", //将传入的data(必须是数组)中的所有元素合并到配置目标位置原数组的头部,data为对应的需要merge的数组
-    ARRAY_MERGE_END = "array_merge_end", //将传入的data(必须是数组)中的所有元素合并到原数组的头部,data为对应的需要merge的数组
-    OBJECT_MERGE = "object_merge",  //将传入的object和原object进行合并操作,形成一个新的object,data为对应的需要merge的object
-    DELETE = "delete", //将配置目标位置的元素清除,无需设置data
-    REPLACE = "replace", //将配置目标位置的元素替换为传入的data,data为需要替换的目标元素
-    INCREASE = "increase", //将配置目标位置的元素进行加操作,data为对应需要increase的步长
-    DECREASE = "decrease" //将配置目标位置的元素进行减操作,data为对应需要decrease的步长
+    ARRAY_APPEND_START = "array_append_start",  //將傳入的data以元素的形式附加到配置目標位置原數組的頭部,data為對應的需要append的數組
+    ARRAY_APPEND_END = "array_append_end", //將傳入的data以元素的形式附加到配置目標位置原數組的尾部,data為對應的需要append的數組
+    ARRAY_MERGE_START = "array_merge_start", //將傳入的data(必須是數組)中的所有元素合併到配置目標位置原數組的頭部,data為對應的需要merge的數組
+    ARRAY_MERGE_END = "array_merge_end", //將傳入的data(必須是數組)中的所有元素合併到原數組的頭部,data為對應的需要merge的數組
+    OBJECT_MERGE = "object_merge",  //將傳入的object和原object進行合併操作,形成一個新的object,data為對應的需要merge的object
+    DELETE = "delete", //將配置目標位置的元素清除,無需設置data
+    REPLACE = "replace", //將配置目標位置的元素替換為傳入的data,data為需要替換的目標元素
+    INCREASE = "increase", //將配置目標位置的元素進行加操作,data為對應需要increase的步長
+    DECREASE = "decrease" //將配置目標位置的元素進行減操作,data為對應需要decrease的步長
 }
 
 interface ChartViewModuleUpdateData {
-  targetPath: Array<any>; //用以标记需要更新的目标位置
-  action: ChartViewModuleDataActionType; //用于标记更新的方式
-  data?: any; //需要更新的目标数据,特定的更新操作不需要传入data,如删除
-  version: number; //恒为1
+  targetPath: Array<any>; //用以標記需要更新的目標位置
+  action: ChartViewModuleDataActionType; //用於標記更新的方式
+  data?: any; //需要更新的目標數據,特定的更新操作不需要傳入data,如刪除
+  version: number; //恆為1
 }
 ```
 
@@ -61,52 +61,52 @@ interface ChartViewModuleUpdateData {
 
 ### chartViewData.targetPath :id=4
 
-!>targetPath 用来标记操作的目标位置,是数组格式,每一个元素代表对应层级的键,为空数组`[]`则代表配置的根节点
+!>targetPath 用來標記操作的目標位置,是數組格式,每一個元素代表對應層級的鍵,為空數組`[]`則代表配置的根節點
 
 **示例**
 
 ```javascript
 var option = {
-  // 根节点对应的targetPath=[]
+  // 根節點對應的targetPath=[]
   xAxis: {
-    // 本节点对应的targetPath=['xAxis']
-    type: 'category',
-    // 本节点对应的targetPath=['xAxis','type']
+    // 本節點對應的targetPath=['xAxis']
+    type: "category",
+    // 本節點對應的targetPath=['xAxis','type']
     data: [
-      // 本节点对应的targetPath=['xAxis','data']
-      'Device-1',
-      // 本节点对应的targetPath=['xAxis','data',0]
-      'Device-2',
-      // 本节点对应的targetPath=['xAxis','data',1]
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
+      // 本節點對應的targetPath=['xAxis','data']
+      "Device-1",
+      // 本節點對應的targetPath=['xAxis','data',0]
+      "Device-2",
+      // 本節點對應的targetPath=['xAxis','data',1]
+      "Device-3",
+      "Device-4",
+      "Device-5",
+      "Device-6",
+      "Device-7",
     ],
   },
   yAxis: {
-    // 本节点对应的targetPath=['yAxis']
-    type: 'value',
-    // 本节点对应的targetPath=['yAxis','type']
+    // 本節點對應的targetPath=['yAxis']
+    type: "value",
+    // 本節點對應的targetPath=['yAxis','type']
   },
   series: [
-    // 本节点对应的targetPath=['series']
+    // 本節點對應的targetPath=['series']
     {
-      // 本节点对应的targetPath=['series', 0]
+      // 本節點對應的targetPath=['series', 0]
       data: [
-        // 本节点对应的targetPath=['series', 0,'data']
+        // 本節點對應的targetPath=['series', 0,'data']
         120,
-        // 本节点对应的targetPath=['series', 0,'data',0]
+        // 本節點對應的targetPath=['series', 0,'data',0]
         200,
-        // 本节点对应的targetPath=['series', 0,'data',1]
+        // 本節點對應的targetPath=['series', 0,'data',1]
         150, 80, 70, 110, 120,
       ],
-      type: 'bar',
-      // 本节点对应的targetPath=['series', 0,'type']
+      type: "bar",
+      // 本節點對應的targetPath=['series', 0,'type']
       showBackground: true,
       backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
+        color: "rgba(180, 180, 180, 0.2)",
       },
     },
   ],
@@ -116,11 +116,11 @@ module.exports = option;
 
 ---
 
-### 使用参考代码 :id=5
+### 使用參考代碼 :id=5
 
-> 更多使用示例,请参考[图表>示例](zh-cn/chart/demo)
+> 更多使用示例,請參考[圖表>示例](zh-tw/chart/demo)
 
-**1.单次更新单个目标数据**
+**1.單次更新單個目標數據**
 
 <!-- tabs:start -->
 <!-- tab:配置 -->
@@ -128,27 +128,27 @@ module.exports = option;
 ```javascript
 var option = {
   xAxis: {
-    type: 'category',
+    type: "category",
     data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
+      "Device-1",
+      "Device-2",
+      "Device-3",
+      "Device-4",
+      "Device-5",
+      "Device-6",
+      "Device-7",
     ],
   },
   yAxis: {
-    type: 'value',
+    type: "value",
   },
   series: [
     {
       data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
+      type: "bar",
       showBackground: true,
       backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
+        color: "rgba(180, 180, 180, 0.2)",
       },
     },
   ],
@@ -156,44 +156,44 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data'],
-  action: 'replace',
+  targetPath: ["series", "data"],
+  action: "replace",
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 var option = {
   xAxis: {
-    type: 'category',
+    type: "category",
     data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
+      "Device-1",
+      "Device-2",
+      "Device-3",
+      "Device-4",
+      "Device-5",
+      "Device-6",
+      "Device-7",
     ],
   },
   yAxis: {
-    type: 'value',
+    type: "value",
   },
   series: [
     {
       data: [1, 2, 3, 4, 5, 6, 7],
-      type: 'bar',
+      type: "bar",
       showBackground: true,
       backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
+        color: "rgba(180, 180, 180, 0.2)",
       },
     },
   ],
@@ -205,7 +205,7 @@ module.exports = option;
 
 ---
 
-**1.单次更新多个目标数据**
+**1.單次更新多個目標數據**
 
 <!-- tabs:start -->
 <!-- tab:配置 -->
@@ -213,27 +213,27 @@ module.exports = option;
 ```javascript
 var option = {
   xAxis: {
-    type: 'category',
+    type: "category",
     data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
+      "Device-1",
+      "Device-2",
+      "Device-3",
+      "Device-4",
+      "Device-5",
+      "Device-6",
+      "Device-7",
     ],
   },
   yAxis: {
-    type: 'value',
+    type: "value",
   },
   series: [
     {
       data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
+      type: "bar",
       showBackground: true,
       backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
+        color: "rgba(180, 180, 180, 0.2)",
       },
     },
   ],
@@ -241,19 +241,19 @@ var option = {
 module.exports = option;
 ```
 
-<!-- tab:脚本 -->
+<!-- tab:腳本 -->
 
 ```javascript
 var chartViewDatas = [
   {
-    targetPath: ['series', 'data'],
-    action: 'replace',
+    targetPath: ["series", "data"],
+    action: "replace",
     data: [1, 2, 3, 4, 5, 6, 7],
     version: 1,
   },
   {
-    targetPath: ['series', 'data', 0],
-    action: 'replace',
+    targetPath: ["series", "data", 0],
+    action: "replace",
     data: 9,
     version: 1,
   },
@@ -262,32 +262,32 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:目標配置 -->
 
 ```javascript
 var option = {
   xAxis: {
-    type: 'category',
+    type: "category",
     data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
+      "Device-1",
+      "Device-2",
+      "Device-3",
+      "Device-4",
+      "Device-5",
+      "Device-6",
+      "Device-7",
     ],
   },
   yAxis: {
-    type: 'value',
+    type: "value",
   },
   series: [
     {
       data: [9, 2, 3, 4, 5, 6, 7],
-      type: 'bar',
+      type: "bar",
       showBackground: true,
       backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
+        color: "rgba(180, 180, 180, 0.2)",
       },
     },
   ],

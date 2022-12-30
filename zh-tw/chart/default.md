@@ -1,11 +1,11 @@
-> 通过对收到的消息进行数据统计或处理,实现图形化分析和处理
+> 通過對收到的消息進行數據統計或處理,實現圖形化分析和處理
 
-| 序号 | 标题                              | 描述                         |
+| 序號 | 標題                              | 描述                         |
 | ---- | --------------------------------- | ---------------------------- |
-| 1    | [概念](zh-cn/chart/concept.md)    | 介绍图表使用中一些相关的概念 |
-| 2    | [能力](zh-cn/chart/capability.md) | 介绍图表能够实现的能力       |
-| 3    | [使用](zh-cn/chart/usage.md)      | 介绍图表的使用               |
-| 4    | [配置](zh-cn/chart/option.md)     | 介绍图表配置相关的用法       |
-| 5    | [脚本](zh-cn/chart/script.md)     | 介绍图表脚本相关的用法       |
-| 6    | [示例](zh-cn/chart/demo.md)       | 提供一些图表的使用示例       |
-| 7    | [调试](zh-cn/chart/debug.md)      | 介绍如何进行图表的调试       |
+| 1    | [概念](zh-tw/chart/concept.md)    | 介紹圖表使用中一些相關的概念 |
+| 2    | [能力](zh-tw/chart/capability.md) | 介紹圖表能夠實現的能力       |
+| 3    | [使用](zh-tw/chart/usage.md)      | 介紹圖表的使用               |
+| 4    | [配置](zh-tw/chart/option.md)     | 介紹圖表配置相關的用法       |
+| 5    | [腳本](zh-tw/chart/script.md)     | 介紹圖表腳本相關的用法       |
+| 6    | [示例](zh-tw/chart/demo.md)       | 提供一些圖表的使用示例       |
+| 7    | [調試](zh-tw/chart/debug.md)      | 介紹如何進行圖表的調試       |

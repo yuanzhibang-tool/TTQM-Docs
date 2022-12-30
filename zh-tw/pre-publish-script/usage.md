@@ -1,24 +1,24 @@
-> 使用和拓展前置脚本
+> 使用和拓展前置腳本
 
 ---
 
-### 1.模板变量语法 :id=1
+### 1.模板變量語法 :id=1
 
-![模板变量](../../_media/variable.png ':size=500')
+![模板變量](../../_media/variable.png ":size=500")
 
-1.模板变量必须使用 `{{}}`进行包裹,如果是`json`类型的字符串,外部还需要使用`""`双引号包裹,非`json`的字符串无需使用`""`双引号包裹
+1.模板變量必須使用 `{{}}`進行包裹,如果是`json`類型的字符串,外部還需要使用`""`雙引號包裹,非`json`的字符串無需使用`""`雙引號包裹
 
-2.模板变量必须以使用`$`开头,第一部分标记为变量名,如果前置脚本或者内置中没有没有对应的变量,或者想从`变量管道(variable_pipe)`直接获取变量,则可以只使用一个`$`标识
+2.模板變量必須以使用`$`開頭,第一部分標記為變量名,如果前置腳本或者內置中沒有沒有對應的變量,或者想從`變量管道(variable_pipe)`直接獲取變量,則可以只使用一個`$`標識
 
-3.变量(`variable`)和多个变量管道(`variable_pipe`)之间使用`|`分割
+3.變量(`variable`)和多個變量管道(`variable_pipe`)之間使用`|`分割
 
-4.如果`变量管道(variable_pipe)`有参数,则使用`:`分割管道名和变量,有多个参数必须使用逗号分割,参数必须使用`''`单引号包裹
+4.如果`變量管道(variable_pipe)`有參數,則使用`:`分割管道名和變量,有多個參數必須使用逗號分割,參數必須使用`''`單引號包裹
 
 ---
 
-### 2.在消息中使用模板变量,支持普通字符串消息以及 `json` 格式消息 :id=2
+### 2.在消息中使用模板變量,支持普通字符串消息以及 `json` 格式消息 :id=2
 
-**`json` 输入消息(没有用到自定义`variable`和`pipe`)**
+**`json` 輸入消息(沒有用到自定義`variable`和`pipe`)**
 
 <!-- tabs:start -->
 
@@ -32,13 +32,13 @@
 }
 ```
 
-<!-- tab: 输出 -->
+<!-- tab: 輸出 -->
 
 ```json
 {
-  "uuid": "AF105855-049B-4543-916D-05F87D72CFB3", //1.生成一个uuid;2.并全部转换为大写
-  "unix_millisecond_float": "1671003373.7", //1.获取当前unix时间戳,毫秒为小数格式;2.以round形式取1位小数精度;3.将数字转换为字符串
-  "current_date": "2022-12-14 15:36:13" //1.获取yyyy-MM-DD HH:mm:ss格式的时间
+  "uuid": "AF105855-049B-4543-916D-05F87D72CFB3", //1.生成一個uuid;2.並全部轉換為大寫
+  "unix_millisecond_float": "1671003373.7", //1.獲取當前unix時間戳,毫秒為小數格式;2.以round形式取1位小數精度;3.將數字轉換為字符串
+  "current_date": "2022-12-14 15:36:13" //1.獲取yyyy-MM-DD HH:mm:ss格式的時間
 }
 ```
 
@@ -46,24 +46,24 @@
 
 ---
 
-### 3.自定义 `variable` 和 `pipe` :id=3
+### 3.自定義 `variable` 和 `pipe` :id=3
 
 <!-- tabs:start -->
 
-<!-- tab:前置脚本 -->
+<!-- tab:前置腳本 -->
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
-var { v4: uuidv4 } = require('uuid');
+var { v4: uuidv4 } = require("uuid");
 // the module mockjs is built-in, please read mockjs docs: http://mockjs.com/examples.html
-var mockjs = require('mockjs');
+var mockjs = require("mockjs");
 // if you need to use other modules, you can install other modules via npm, please read the doc: https://doc.ttqm.app/#/en/question/how-to-add-support-modules
 
 // generate mock data
 var mockData = mockjs.mock({
-  'list|3': [
+  "list|3": [
     {
-      'id|+1': 1,
+      "id|+1": 1,
     },
   ],
 });
@@ -71,7 +71,7 @@ module.exports = {
   variable: {
     // the variable can be a function(must return a value sync and can not be a Promise) or a value
     user_variable1() {
-      return '432';
+      return "432";
     },
     user_variable2: 107,
     user_variable3: uuidv4(),
@@ -94,7 +94,7 @@ module.exports = {
       try {
         var messageString = publishMessage.message;
         var messageObject = JSON.parse(messageString);
-        messageObject.test_user_string = 'test_user_string_value';
+        messageObject.test_user_string = "test_user_string_value";
         // you need return the message in string format
         return JSON.stringify(messageObject);
       } catch (error) {
@@ -119,7 +119,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:输出 -->
+<!-- tab:輸出 -->
 
 ```json
 {

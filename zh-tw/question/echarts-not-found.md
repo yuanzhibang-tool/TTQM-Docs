@@ -1,17 +1,17 @@
-!>当您使用图表获取配置脚本时,有可能会遇到`echarts`模块未导入的问题,如下图所示
+!>當您使用圖表獲取配置腳本時,有可能會遇到`echarts`模塊未導入的問題,如下圖所示
 
-![Echart Not Found](_media/echarts-not-found/1.jpg ':size=600')
-
----
-
-### 解决方式,在最上方导入`echart` :id=1
-
-![Resolve Echart Not Found](_media/echarts-not-found/2.jpg ':size=600')
+![Echart Not Found](_media/echarts-not-found/1.jpg ":size=600")
 
 ---
 
-**代码**
+### 解決方式,在最上方導入`echart` :id=1
+
+![Resolve Echart Not Found](_media/echarts-not-found/2.jpg ":size=600")
+
+---
+
+**代碼**
 
 ```javascript
-const echarts = require('echarts');
+const echarts = require("echarts");
 ```
