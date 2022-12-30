@@ -19,7 +19,7 @@
 
 ---
 
-### User chart operation event monitoring supported by scripts: id=2
+### User chart operation event monitoring supported by scripts :id=2
 
 ![Script-supported user graph operation event monitoring](_media/script/1.jpg ':size=600')
 
