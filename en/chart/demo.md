@@ -1,14 +1,16 @@
-> 本部分用来示例如何使用脚本更新图表配置
+> This section is used to illustrate how to use scripts to update chart configuration
 
-!>如果您要查看图表配置示例,请按照[图表>配置](en/chart/option)中的操作来获取图表配置示例
+!> If you want to see chart configuration examples, please follow [Charts > Configuration] (en/chart/option) to get chart configuration examples
 
-### 1.监听事件,并更新数据 :id=1
+---
 
-!>具体的监听事件描述,请参考[图表>脚本](en/chart/script)
+### 1. Listen to events and update data :id=1
+
+!>For specific monitoring event descriptions, please refer to [Chart>Script](en/chart/script)
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 module.exports = {
@@ -18,7 +20,7 @@ module.exports = {
       action: 'increase',
       data: 1,
     };
-    // data中的第一个元素加1
+    // Add 1 to the first element in data
     updateChartViewData(chartViewData);
   },
   onPublish: (topic, message, opts) => {
@@ -27,13 +29,13 @@ module.exports = {
       action: 'increase',
       data: 1,
     };
-    // data中的第二个元素加1
+    // Add 1 to the second element in data
     updateChartViewData(chartViewData);
   },
 };
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -65,7 +67,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -97,17 +99,17 @@ module.exports = {
 }
 ```
 
-!>以上为当两个事件均触发一次后对应的目标数据
+!>The above is the option after both events are triggered once
 
 <!-- tabs:end -->
 
 ---
 
-### 2.替换数据 :id=2
+### 2.Replace data :id=2
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData = {
@@ -119,7 +121,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -151,7 +153,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -185,11 +187,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 3.一次替换多组数据 :id=3
+### 3.Replace multiple sets of data at once :id=3
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData1 = {
@@ -208,7 +210,7 @@ updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -240,7 +242,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -274,11 +276,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 4.删除数据 :id=4
+### 4.Delete data :id=4
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData1 = {
@@ -294,7 +296,7 @@ updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -326,7 +328,7 @@ module.exports = {};
 };
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -359,11 +361,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 5.增加数据值 :id=5
+### 5.Increase data value :id=5
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData = {
@@ -375,7 +377,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -407,7 +409,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -441,11 +443,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 6.减少数据值 :id=6
+### 6.Decrease data value :id=6
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData = {
@@ -457,7 +459,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -489,7 +491,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -523,11 +525,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 7.数组附加(array_append_end) :id=7
+### 7.Append data to the end of array(array_append_end) :id=7
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData1 = {
@@ -546,7 +548,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -578,7 +580,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -613,11 +615,11 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 8.数组合并(array_merge_end) :id=8
+### 8.Array merge(array_merge_end) :id=8
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData1 = {
@@ -636,7 +638,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -668,7 +670,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -704,25 +706,25 @@ module.exports = {};
 
 <!-- tabs:end -->
 
-### 9.object 合并(object_merge) :id=9
+### 9.Object merge(object_merge) :id=9
 
-!>`object_merge`仅仅会对`object`的根属性进行合并,如果存在相同的属性则会被替换掉
+!>`object_merge` will only merge the root properties of `object`, if the same attribute exists, it will be replaced
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData = {
-  targetPath: [], //对根节点进行操作
+  targetPath: [], // Operate on the root node
   action: 'object_merge',
   data: {
-    // yAxis值将会被整体替换掉
+    // The yAxis value will be replaced as a whole
     yAxis: {
       type: 'value',
       title: 'yAxis',
     },
-    // 该属性会被添加到配置里
+    // This property will be added to the configuration
     title: 'Chart Title',
   },
 };
@@ -730,7 +732,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -762,7 +764,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -800,11 +802,11 @@ module.exports = {};
 
 ---
 
-### 10.替换整个配置 :id=10
+### 10.Replace the whole option :id=10
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 var chartViewData = {
@@ -835,7 +837,7 @@ updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -867,7 +869,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -895,11 +897,11 @@ module.exports = {};
 
 ---
 
-### 11.过滤 topic 并更新数据 :id=11
+### 11.Filter topic and update data :id=11
 
 <!-- tabs:start -->
 
-<!-- tab:脚本 -->
+<!-- tab:Script -->
 
 ```javascript
 // test the topic is contain the sub-topic
@@ -912,7 +914,7 @@ module.exports = {
         action: 'increase',
         data: 1,
       };
-      // data中的第一个元素加1
+      // Add 1 to the first element in data
       updateChartViewData(chartViewData);
     }
   },
@@ -922,13 +924,13 @@ module.exports = {
       action: 'increase',
       data: 1,
     };
-    // data中的第二个元素加1
+    // Add 1 to the second element in data
     updateChartViewData(chartViewData);
   },
 };
 ```
 
-<!-- tab:原配置 -->
+<!-- tab:Original Option -->
 
 ```javascript
 {
@@ -960,7 +962,7 @@ module.exports = {
 }
 ```
 
-<!-- tab:目标配置 -->
+<!-- tab:Target Option -->
 
 ```javascript
 {
@@ -992,10 +994,10 @@ module.exports = {
 }
 ```
 
-!>以上为当两个事件均触发一次后,并且`onMessage`的 `topic` 比中后的配置
+!>The above is the option after the two events are triggered once, and the `topic` of `onMessage` meets the conditions
 
 <!-- tabs:end -->
 
 ---
 
-!>更多脚本示例,请参照[通用脚本示例](en/other/common-script-demo.md)
+!>For more script demos, please refer to [Common Script Demo](en/other/common-script-demo.md)
