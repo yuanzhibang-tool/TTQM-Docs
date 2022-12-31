@@ -30,7 +30,7 @@
   - [Concept](en/user-script/concept.md)
   - [Capability](en/user-script/capability.md)
   - [Usage](en/user-script/usage.md)
-  - [Events and Built-in Functions](en/user-script/event-function.md)
+  - [Event & built-in Function](en/user-script/event-function.md)
   - [Demo](en/user-script/demo.md)
   - [Debug](en/user-script/debug.md)
 
@@ -41,7 +41,7 @@
 - [FAQ?](en/question/default.md)
 
   - [How to install a specified version of node?](en/question/how-to-install-node-version-specified.md)
-  - [Build in Module?](en/question/build-in-module.md)
+  - [Build-in Modules?](en/question/build-in-module.md)
   - [How to add script third-party modules?](en/question/how-to-add-support-modules.md)
   - [Error: echart is not defined](en/question/echarts-not-found.md)
   - [What dirs can the script operate on?](en/question/script-data-dir.md)

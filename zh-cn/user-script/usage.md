@@ -42,7 +42,7 @@ module.exports = {
 
 ---
 
-### 3.运行图表脚本 :id=3
+### 3.运行脚本 :id=3
 
 ![运行脚本](_media/usage/4.jpg ':size=600')
 

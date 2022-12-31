@@ -18,4 +18,4 @@
 
 ### User Script :id=3
 
-> Run a simple script to realize the debugging of complex functions, such as: debugging protocols between devices, simulating `IoT` devices, simulating server programs, batch message publishing, message delivery, and persistence, etc.
+> Run a simple script to realize the debugging of complex functions, such as: debugging communication protocols between devices, simulating `IoT` devices, simulating server programs, batch message publishing, message delivery, and persistence, etc.

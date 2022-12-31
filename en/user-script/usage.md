@@ -1,4 +1,4 @@
-> User scripts can implement more complex functions by listening to client events and sending messages, such as: debugging protocols between devices, simulating `IoT` devices, simulating server programs, batch message sending, message delivery, persistence, etc.
+> User scripts can implement more complex functions by listening to client events and publishing messages, such as: debugging communication protocols between devices, simulating `IoT` devices, simulating server programs, batch message publishing, message delivery, persistence, etc.
 
 ![UserScript 1](_media/usage/1.jpg ':size=600')
 
@@ -6,7 +6,7 @@
 
 ### 1. Create or open the created user script :id=1
 
-**click the userscript button**
+**Click the user script button**
 
 ![UserScript 2](_media/usage/2.jpg ':size=400')
 
@@ -18,9 +18,9 @@
 
 ### 2. Script :id=2
 
-> Used to respond to `mqtt` client and script events to perform corresponding operations
+> Listen to client and script events to perform corresponding operations.
 
-!> The script will not exit automatically, and will continue to execute even if there is no operation, so it can be used as a resident memory application to support running multiple user scripts at the same time, for example, one for permanent message delivery, and one for simulating `iot` devices , one is used to simulate the server-side program,
+!> The script will not exit automatically, and will continue even if there is no operation, so it can be used as a resident memory application. You can run multiple user scripts at the same time, for example, one for message delivery, one for simulating `iot` devices ,and the another one for simulating the server-side application,
 
 ```javascript
 module.exports = {
@@ -42,20 +42,20 @@ module.exports = {
 
 ---
 
-### 3. Run the chart script :id=3
+### 3. Run the script :id=3
 
 ![Run script](_media/usage/4.jpg ':size=600')
 
 ---
 
-### 4. Minimize and close :id=4
+### 4. Minimize and Close :id=4
 
-!>Minimize, the script editing window will be hidden, after minimizing, the script will continue to run
+!>Minimize, the script editing window will be hidden, after minimizing, the script will continue running.
 
-!>Click Close to close the script editing window and stop script execution
+!>Click Close to close the script editing window and stop the running script
 
 ![Minimize and close](_media/usage/5.jpg ':size=600')
 
-!>You can click the corresponding dynamic icon in the script list to restore the minimized script window
+!>You can click the dynamic icon in the script list to restore the minimized script window
 
 ![Restore window](_media/usage/6.jpg ':size=600')

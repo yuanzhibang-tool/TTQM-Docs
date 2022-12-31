@@ -1,9 +1,9 @@
 !>If you want to use more third-party libraries in the pre-script, please refer to [How to add script dependencies?](en/question/how-to-add-support-modules.md)
 
-### 1. Generate `uuid` and `unix` timestamps (accurate to seconds, and return a string) :id=1
+### 1. Generate `uuid` and `unix` timestamp (accurate to second, and return a string) :id=1
 
 <!-- tabs: start -->
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -16,14 +16,14 @@
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 // only the built-in variables and variable pipes are used!
 module.exports = {};
 ```
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -41,7 +41,7 @@ module.exports = {};
 ### 2. Convert all leaf nodes of the message to strings :id=2
 
 <!-- tabs: start -->
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -54,7 +54,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 // only the built-in variables and variable pipes are used!
@@ -69,7 +69,7 @@ module.exports = {
 
 ---
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -90,7 +90,7 @@ module.exports = {
 
 <!-- tabs: start -->
 
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -102,7 +102,7 @@ module.exports = {
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 // only the built-in variables and variable pipes are used!
@@ -111,7 +111,7 @@ module.exports = {};
 
 ---
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -127,11 +127,11 @@ module.exports = {};
 
 ---
 
-### 4. Sign the content of the message to achieve server message security verification :id=4
+### 4. Add sign to the content of the message for server message security verification :id=4
 
 <!-- tabs: start -->
 
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -144,7 +144,7 @@ module.exports = {};
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 const { EncryptUtil } = require('@ttqm/ttqm-support');
@@ -172,7 +172,7 @@ module.exports = {
 };
 ```
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -193,7 +193,7 @@ module.exports = {
 ### 5. Use the certificate, public key, and private key to encrypt and decrypt the message body :id=5
 
 <!-- tabs: start -->
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -206,7 +206,7 @@ module.exports = {
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 const { CertUtil } = require('@ttqm/ttqm-support');
@@ -250,7 +250,7 @@ module.exports = {
 };
 ```
 
-<!-- tab:Console -->
+<!-- tab:Output -->
 
 ```plain text
 AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs8VxfRBEldYJ384B7Vt5fLMjSH3cTwduhJZINzK2XFP57ASGaYU9GwHnYnzS/jC5bMQEDwjB94TuSITTS7JaBN5tuMgjitqkIXlji7KyqFhBnuWEjbnWeub0uLp1rev+yowe+YtmzNoZFzBy8x4t9zLBDDgBpQRiJLEVa01W2dStImilAqgfbFInhkAbBwVS8Cv4z7evA25xruflZcjFHPgM3ocdudDF51xQEPysl05QymQ40poOI9sLuoYDFDe9ZmprrhQ==
@@ -260,11 +260,11 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 
 ---
 
-### 6. Filter messages according to `topic` :id=6
+### 6. Filter messages by `topic` :id=6
 
 <!-- tabs: start -->
 
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -277,7 +277,7 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 // require the build-in support module
@@ -310,7 +310,7 @@ module.exports = {
 };
 ```
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -328,11 +328,11 @@ module.exports = {
 
 ---
 
-### 7. Custom extension `variable` and `pipe` :id=7
+### 7. Custom `variable` and `pipe` :id=7
 
 <!-- tabs: start -->
 
-<!-- tab: template message -->
+<!-- tab: Message -->
 
 ```json
 {
@@ -343,7 +343,7 @@ module.exports = {
 }
 ```
 
-<!-- tab: pre-script -->
+<!-- tab: Script -->
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
@@ -399,7 +399,7 @@ module.exports = {
 };
 ```
 
-<!-- tab: output -->
+<!-- tab: Output -->
 
 ```json
 {
@@ -429,4 +429,4 @@ module.exports = {
 
 ---
 
-!>For more script examples, please refer to [Common Script Example](en/other/common-script-demo.md)
+!>For more script demos, please refer to [Other>Common Script Demo](en/other/common-script-demo.md)

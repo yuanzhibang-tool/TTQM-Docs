@@ -1,12 +1,12 @@
-> This section is used to illustrate how to use scripts to update chart configuration
+> This section is used to show how to use scripts to update chart option.
 
-!> If you want to see chart configuration examples, please follow [Charts > Configuration] (en/chart/option) to get chart configuration examples
+!> If you want to see chart option examples, please follow [Charts>Option](en/chart/option) to get chart option examples
 
 ---
 
-### 1. Listen to events and update data :id=1
+### 1. Listen for events and update data :id=1
 
-!>For specific monitoring event descriptions, please refer to [Chart>Script](en/chart/script)
+!>For event details, please refer to [Chart>Script](en/chart/script)
 
 <!-- tabs:start -->
 

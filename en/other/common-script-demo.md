@@ -1,13 +1,13 @@
-> Some generic script examples that can be used in any `TTQM` script
+> Some common script demos that can be used in any `TTQM` script
 
 ### 1. Use asynchronous method synchronously :id=1
 
-!>Sometimes, it may be necessary to synchronously return some asynchronous (return `Promise`) returned data, this example is used to show how to synchronously obtain asynchronously returned data
+!>Sometimes, it may be necessary to synchronously return some asynchronous (return `Promise`) returned data, this demo is used to show how to synchronously get asynchronously returned data
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
 
-// The entire method body needs to be wrapped with `async () => {}`
+// The all code needs to be wrapped with `async () => {}`
 const main = async () => {
   const filePath = FileUtil.getScriptDataPath('test.txt');
   // Check if the file exists
@@ -16,7 +16,7 @@ const main = async () => {
   // exists = false
   // write to file
   FileUtil.createStringFileSync(filePath, 'test content');
-  // Add await, return synchronously when coming
+  // add await, return synchronously
   const fileHash = await FileUtil.getFileHash(filePath);
   console.log(fileHash);
   // get file content
@@ -28,13 +28,13 @@ const main = async () => {
 main();
 ```
 
-### 2. Use certificate encryption and decryption, file operation, string calculation `hash`
+### 2. Use certificate encryption and decryption, file operation,getting string `hash`
 
-!> Please check [What are the built-in script dependencies?](en/question/build-in-module?id=_6)
+!> Please see [FAQ?>Build-in Modules?](en/question/build-in-module?id=_6)
 
 ---
 
-### 3. Repeat certain operations regularly
+### 3. Repeat regularly
 
 ```javascript
 // The unit of the second parameter is milliseconds, and a specific operation is performed every 1s
@@ -53,17 +53,17 @@ const intervId = setInterval(() => {
 
 ---
 
-### 4. Delay execution of certain operations
+### 4. Delay
 
 ```javascript
-// The second parameter unit is milliseconds, perform specific operations after 4s
+// The second parameter unit is milliseconds, perform after 4s
 const timeoutId = setTimeout(() => {
   console.log('timeout action');
 }, 4000);
-// Clean up delay execution, after cleanup, delay will not be executed
+// Clean up delay, after cleanup, delay function will not be executed
 clearTimeout(timeoutId);
 ```
 
 ---
 
-!> For more examples, please refer to [What are the built-in script dependencies?] (en/question/build-in-module)
+!> For more build-in module usage demos, please refer to [FAQ?>Build-in Modules?](en/question/build-in-module)

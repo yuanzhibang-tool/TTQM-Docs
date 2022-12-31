@@ -1,8 +1,8 @@
-> This section is used to demonstrate the use of user scripts
+> Demos of User Script
 
-### 1. Listen to client connection events and publish online messages :id=1
+### 1. Listen to Client events and publish online messages :id=1
 
-!>For specific monitoring event descriptions, please refer to [User Script>Script Events and Built-in Functions](en/user-script/event-function)
+!>For event details, please refer to [User Script>Event & built-in Function](en/user-script/event-function)
 
 ```javascript
 module.exports = {
@@ -24,9 +24,7 @@ module.exports = {
 
 ---
 
-### 2. Filter `topic` information :id=2
-
-!>For specific monitoring event descriptions, please refer to [User Script>Script Events and Built-in Functions](en/user-script/event-function)
+### 2. Filter `topic` :id=2
 
 ```javascript
 const { TopicUtil } = require('@ttqm/ttqm-support');
@@ -51,7 +49,7 @@ module.exports = {
 
 ### 3. Record data and write to file :id=3
 
-!> Can only write data to script data folder and script temp data folder
+!> Can only write data to script data folder and script temp data folder, more detail please see [FAQ?>What dirs can the script operate on?](en/question/script-data-dir.md)
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -78,7 +76,7 @@ module.exports = {
 
 ### 4. Exit the script manually :id=4
 
-!> Exiting the script manually does not fire the `onWillExit` event
+!> Exiting the script manually does not emit the `onWillExit` event
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -99,4 +97,4 @@ module.exports = {
 
 ---
 
-!>For more script examples, please refer to [Common Script Example](en/other/common-script-demo.md)
+!>For more script demos, please refer to [Other>Common Script Demo](en/other/common-script-demo.md)
