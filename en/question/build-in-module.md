@@ -1,12 +1,12 @@
-!> All built-in libraries can be used in all scripts, including pre-scripts, chart configuration scripts, chart scripts, user scripts
+!> All built-in modules can be used in all scripts, including `Pre-Publish Script`, `Chart Option Script`, `Chart Script`, `User Script`
 
-> TTQM has some built-in libraries, such as network requests, etc. The specific supported libraries are listed below. Of course, you can also install the extended library yourself. For details, please refer to [FAQ?> How to add script-dependent libraries?](en/question/ how-to-add-support-modules.md)
+> TTQM has some built-in modules, such as network requests, etc. The build-in modules are listed below. Of course, you can also install the third-party modules yourself. For details, please refer to [FAQ?> How to add script third-party modules?](en/question/how-to-add-support-modules.md)
 
 ---
 
 ### 1. Network request library `axios` :id=1
 
-**Usage example, for more usage, please refer to [axios](https://www.npmjs.com/package/axios)**
+> Usage demo, for more usage, please refer to [axios](https://www.npmjs.com/package/axios)
 
 ```javascript
 const axios = require('axios');
@@ -45,7 +45,7 @@ axios
 
 ### 2. uuid generation library `uuid` :id=2
 
-**Usage example, for more usage, please refer to [uuid](https://www.npmjs.com/package/uuid)**
+> Usage demo, for more usage, please refer to [uuid](https://www.npmjs.com/package/uuid)
 
 ```javascript
 const { v4: uuidv4 } = require('uuid');
@@ -56,7 +56,7 @@ uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 ### 3. Time and date tool library `Moment.js` :id=3
 
-**Usage example, please refer to [Moment.js](https://momentjs.com/docs/) for more usage**
+> Usage demo, please refer to [Moment.js](https://momentjs.com/docs/) for more usage
 
 ```javascript
 var moment = require('moment');
@@ -66,9 +66,9 @@ const dateString = moment().format(format); // ⇨ '2022-12-12 00:01:23'
 
 ---
 
-### 4. Simulation data generation library `Mock.js` :id=4
+### 4. Mock data library `Mock.js` :id=4
 
-**Usage example, for more usage, please refer to [Mock.js](https://github.com/nuysoft/Mock/wiki)**
+> Usage demo, for more usage, please refer to [Mock.js](https://github.com/nuysoft/Mock/wiki)
 
 ```javascript
 var mockjs = require('mockjs');
@@ -84,17 +84,16 @@ var mockData = mockjs.mock({
 });
 
 // {
-// "list":[
-// {
-// "id": "1"
-// },
-// {
-// "id": "2"
-// },
-// {
-// "id": "3"
-// }
-// ]
+// 	"list": [{
+// 			"id": "1"
+// 		},
+// 		{
+// 			"id": "2"
+// 		},
+// 		{
+// 			"id": "3"
+// 		}
+// 	]
 // }
 ```
 
@@ -102,7 +101,7 @@ var mockData = mockjs.mock({
 
 ### 5. Encryption library `CryptoJs` :id=5
 
-**Usage example, please refer to [CryptoJs](https://cryptojs.gitbook.io/docs/) for more usage**
+**Usage demo, please refer to [CryptoJs](https://cryptojs.gitbook.io/docs/) for more usage**
 
 ```javascript
 var CryptoJS = require('crypto-js');
@@ -122,7 +121,7 @@ console.log(originalText); // 'my message'
 
 ### 6. `ttqm-support` :id=6
 
-> This module provides some helper classes commonly used by `TTQM`
+> This module provides some util classes frequently in by `TTQM`
 
 <!-- tabs:start -->
 
@@ -130,7 +129,7 @@ console.log(originalText); // 'my message'
 
 ```javascript
 /**
- *  文件hash类型
+ *  file hash type
  */
 export declare enum FileHashType {
     MD5 = "md5",
@@ -138,70 +137,67 @@ export declare enum FileHashType {
     SHA256 = "sha256",
     SHA512 = "sha512"
 }
-
-// 操作文件的工具类
 export declare class FileUtil {
     /**
-     * 根据相对路径获取脚本数据的完整路径
-     * @param [relativePath] 需要拼接的相对路径
-     * @returns 完整的路径
+     * Gets script data path with relative path
+     * @param [subPath] the relative path
+     * @returns the full absolute path
      */
     static getScriptDataPath(relativePath?: string): string;
     /**
-     * 根据相对路径获取脚本临时数据的完整路径
-     * @param [relativePath] 需要拼接的相对路径
-     * @returns 完整的路径
+     * Gets script tmp data path with relative path
+     * @param [subPath] the relative path
+     * @returns the full absolute path
      */
     static getScriptTmpDataPath(relativePath?: string): string;
     /**
-     * 以同步方式创建目录
-     * @param path 创建目录的路径
+     * Creates dir sync
+     * @param path the path
      */
     static createDirSync(path: string): void;
     /**
-     * 异步获取文件的hash值
-     * @param path 文件的路径
-     * @param [hashName] 可用的hash名称参照FileHashType, eg. md5 sha1 sha256 sha512
-     * @returns 返回一个Promise<string>
+     * Gets file hash asynchronously
+     * @param path the file path
+     * @param [hashName] a valid hash name, eg. md5 sha1 sha256 sha512
+     * @returns a Promise which resolves to the file hash
      */
     static getFileHash(path: string, hashName?: FileHashType): Promise<string>;
     /**
-     * 同步检测路径是否存在
-     * @param path 对应的路径
-     * @returns boolean true 如果存在, false 不存在
+     * Check if the path exists sync
+     * @param path the path
+     * @returns boolean true if the path exists, false otherwise
      */
     static existSync(path: string): boolean;
     /**
-     * 同步检测对应的路径是否是目录
-     * @param path 对应的路径
-     * @returns  boolean 是文件夹返回true,否则返回false
+     * Check if the path is dir sync
+     * @param path the path
+     * @returns  boolean true if the path is dir, false otherwise
      */
     static isDirSync(path: string): boolean;
     /**
-     * 同步创建字符串文件
-     * @param path 文件的路径
-     * @param content 文本内容
+     * Creates string file sync
+     * @param path the file path
+     * @param content the string content
      */
     static createStringFileSync(path: string, content: string): void;
     /**
-     * 同步向文件追加文本内容
-     * @param path 文件路径
-     * @param content 追加的字符串内容
+     * Append string to a file sync
+     * @param path the file path
+     * @param content the string content
      */
     static appendStringFileSync(path: string, content: string): void;
     /**
-     * 同步读取文件内容
-     * @param path 文件路径
-     * @returns 文本内容utf8编码
+     * Reads string file sync
+     * @param path the file path
+     * @returns  the string of the file in utf8 format
      */
     static readStringFileSync(path: string): string;
     /**
-     * 同步移除目录或文件
-     * @param path 对应的路径
+     * Removes file or dir sync
+     * @param path the path
      */
     static removeSync(path: string): void;
 }
-
 ```
 
 <!-- tab:EncryptUtil -->
@@ -209,14 +205,13 @@ export declare class FileUtil {
 ```javascript
 export declare class EncryptUtil {
     /**
-     * 获取文本hash
-     * @param content 文本内容
-     * @param [hashName] 有效的hash名称, 例如. sha1 md5 sha256 sha512.
-     * @returns hash字符串
+     * Gets hash of string
+     * @param content the string content
+     * @param [hashName] a valid hash name, eg. sha1 md5 sha256.
+     * @returns the hash in hex
      */
     static getHash(content: string, hashName?: string): string;
 }
-
 ```
 
 <!-- tab:TopicUtil -->
@@ -224,19 +219,20 @@ export declare class EncryptUtil {
 ```javascript
 export declare class TopicUtil {
     /**
-     * 检测是否是子topic
-     * @param topic 要检测的topic
-     * @param subTopic 要检测的子topic
-     * @returns boolean 是子主题的话返回true,否则返回false
+     * Check if it is a subtopic of the provided topic
+     * @param topic the topic
+     * @param subTopic the subtopic to check
+     * @returns boolean true if it is a subtopic
      */
     static isSubTopic(topic: any, subTopic: any): boolean;
     /**
-     * 解析 `key1/value1/key2/value2` 的字符串到 object {key1:value1,key2:value2}
-     * @param topic 要解析的topic字符串
-     * @returns 一个类似{key1:value1,key2:value2}的object
+     * parse topic which is `key1/value1/key2/value2` format to an object like {key1:value1,key2:value2}
+     * @param topic the topic to parse
+     * @returns an object containing the key and value
      */
     static parseKeyValueTopic(topic: any): object;
 }
+
 
 ```
 
@@ -245,91 +241,90 @@ export declare class TopicUtil {
 ```javascript
 export declare class CertUtil {
     /**
-     * 通过私钥加密数据
-     * @param privateKeyPem pem格式的私钥
-     * @param stringContent 要加密的内容
-     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
-     * @returns 加密后的内容并转化为base64
+     * encrypt via private key
+     * @param privateKeyPem private key in pem format
+     * @param stringContent data to be encrypted which in string format
+     * @param chunkSize  the chunk size of the string content
+     * @returns encrypted content in base64 format
      */
     static privateKeyEncrypt(privateKeyPem: string, stringContent: any, chunkSize: number): string;
     /**
-     * 通过私钥解密
-     * @param privateKeyPem pem格式的私钥
-     * @param encyptedBase64Content 加密后的内容,为base64格式
-     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
-     * @returns 解密后的数据为utf8编码
+     * decrypt via private key
+     * @param privateKeyPem private key in pem format
+     * @param encyptedBase64Content encrypted content in base64 format
+     * @param chunkSize the chunk size of the encypted content
+     * @returns decrypted string in string utf8
      */
     static privateKeyDecrypt(privateKeyPem: string, encyptedBase64Content: any, chunkSize: number): string;
     /**
-     * 通过证书加密数据
-     * @param privateKeyPem pem格式的证书
-     * @param stringContent 要加密的内容
-     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
-     * @returns 加密后的内容并转化为base64
+     * encrypt via cert
+     * @param certPem cert in pem format
+     * @param stringContent data to be encrypted which in string format
+     * @param chunkSize  the chunk size of the string content
+     * @returns encrypted content in base64 format
      */
     static certEncrypt(certPem: string, stringContent: any, chunkSize: number): string;
     /**
-     * 通过证书解密
-     * @param privateKeyPem pem格式的证书
-     * @param encyptedBase64Content 加密后的内容,为base64格式
-     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
-     * @returns 解密后的数据为utf8编码
+     * decrypt via cert
+     * @param certPem cert in pem format
+     * @param encyptedBase64Content encrypted content in base64 format
+     * @param chunkSize the chunk size of the encypted content
+     * @returns decrypted string in string utf8
      */
     static certDecrypt(certPem: string, encyptedBase64Content: string, chunkSize: number): string;
     /**
-     * 通过公钥加密数据
-     * @param privateKeyPem pem格式的公钥
-     * @param stringContent 要加密的内容
-     * @param chunkSize  分片的大小,单位为字节,由于证书加密,单个内容是有限制的,所以需要分片加密,最大加密大小,请参考getEncryptMaxChunkSize相关方法
-     * @returns 加密后的内容并转化为base64
+     * encrypt via public key
+     * @param publicKeyPem public key in pem format
+     * @param stringContent data to be encrypted which in string format
+     * @param chunkSize  the chunk size of the string content
+     * @returns encrypted content in base64 format
      */
     static publicKeyEncrypt(publicKeyPem: string, stringContent: any, chunkSize: number): string;
     /**
-     * 通过公钥解密
-     * @param privateKeyPem pem格式的公钥
-     * @param encyptedBase64Content 加密后的内容,为base64格式
-     * @param chunkSize 解密分片大小,单位为字节,获取方法请参考getEncryptContentSize相关方法
-     * @returns 解密后的数据为utf8编码
+     * encrypt via public key
+     * @param publicKeyPem public key in pem format
+     * @param encyptedBase64Content encrypted content in base64 format
+     * @param chunkSize  the chunk size of the string content
+     * @returns decrypted string in string utf8
      */
     static publicKeyDecrypt(publicKeyPem: string, encyptedBase64Content: string, chunkSize: number): string;
     /**
-     * 获取证书最大可加密的单片大小,单位为字节
-     * @param certPem pem格式的证书
-     * @returns 证书最大可加密的单片大小,单位为字节
+     * Get cert encrypt max chunk size
+     * @param certPem cert in pem format
+     * @returns cert encrypt max chunk size
      */
     static getCertEncryptMaxChunkSize(certPem: string): number;
     /**
-     * 获取证书加密后的内容大小,单位为字节,不管要加密的内容大小,同一证书加密后的内容长度都是一样的
-     * @param certPem pem格式的证书
-     * @returns 证书最大可加密的单片大小,单位为字节
+     * Get cert encrypt content size
+     * @param certPem cert in pem format
+     * @returns cert encrypt content size
      */
     static getCertEncryptContentSize(certPem: string): number;
     /**
-     * 获取公钥最大可加密的单片大小,单位为字节
-     * @param certPem pem格式的公钥
-     * @returns 公钥最大可加密的单片大小,单位为字节
+     * Get public key encrypt max chunk size
+     * @param publicKeyPem public key in pem format
+     * @returns public key encrypt max chunk size
      */
     static getPublicKeyEncryptMaxChunkSize(publicKeyPem: string): number;
     /**
-     * 获取公钥加密后的内容大小,单位为字节,不管要加密的内容大小,同一公钥加密后的内容长度都是一样的
-     * @param certPem pem格式的证书
-     * @returns 证书最大可加密的单片大小,单位为字节
+     * Get public key encrypt content size
+     * @param publicKeyPem public key in pem format
+     * @returns public key encrypt content size
      */
     static getPublicKeyEncryptContentSize(publicKeyPem: string): number;
     /**
-     * 获取私钥最大可加密的单片大小,单位为字节
-     * @param certPem pem格式的私钥
-     * @returns 私钥最大可加密的单片大小,单位为字节
+     * Get private key encrypt max chunk size
+     * @param privateKeyPem private key in pem format
+     * @returns private key encrypt max chunk size
      */
     static getPrivateKeyEncryptMaxChunkSize(privateKeyPem: string): number;
     /**
-     * 获取私钥加密后的内容大小,单位为字节,不管要加密的内容大小,同一私钥加密后的内容长度都是一样的
-     * @param certPem pem格式的私钥
-     * @returns 私钥最大可加密的单片大小,单位为字节
+     * Get private key encrypt content size
+     * @param privateKeyPem private key in pem format
+     * @returns private key encrypt content size
      */
     static getPrivateKeyEncryptContentSize(privateKeyPem: string): number;
 }
-
 ```
 
 <!-- tabs:end -->
@@ -397,7 +392,7 @@ const { EncryptUtil } = require('@ttqm/ttqm-support');
 const stringContent = '1';
 const stringHashSha1 = EncryptUtil.getHash(stringContent, 'sha1');
 console.log(stringHashSha1);
-// stringHashSha1: 356a192b7913b04c54574d18c28d46e6395428ab
+// stringHashSha1 = 356a192b7913b04c54574d18c28d46e6395428ab
 ```
 
 <!-- tab:TopicUtil -->
@@ -465,7 +460,7 @@ const encyptedContent = CertUtil.certEncrypt(certPem, stringContent, 100);
 console.log(encyptedContent);
 // encyptedContent= 'YaEtVr5Ct3inafRqWwW9Z9U2q4F0xnjNU7I83va9oixKsfy9DZThVGv2O9CZxOM0THfBbMVNwVnY0xTFZz0ZlzRotJVmlPZ5NZSnLGMxq/nnAt9ujcGUXBeChavjbn6QmAnRuvQs3jgjNPDhqPgVM430xluo2LLVA1xo22Krg4EasswNW6XQ5ZHW3+9apf1GwpQnvp8Mrk9UMwZ8rFfI55aMm6nWP/rPnrC3Q5xav6amMVFWFEUF7hBNEWgCdD22KPzmoSM2tLtrRlEejDOjX09hkvCrM3K+vHGOPrTmN+N05lUJ5jh1t0P4U3rm/1rYHC8OA95SHCem9/k9Rv9kaA=='
 
-// get the maximum encrypted chunk size of the certificate
+// get the maximum chunk size of the certificate encyryption
 const maxChunkSize = CertUtil.getCertEncryptMaxChunkSize(certPem);
 console.log(maxChunkSize);
 // maxChunkSize=214
