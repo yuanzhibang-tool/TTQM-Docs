@@ -4,19 +4,21 @@
 
 ### 1.模板變量語法 :id=1
 
-![模板變量](../../_media/variable.png ":size=500")
+![模板變量](../../_media/variable.png ':size=500')
 
 1.模板變量必須使用 `{{}}`進行包裹,如果是`json`類型的字符串,外部還需要使用`""`雙引號包裹,非`json`的字符串無需使用`""`雙引號包裹
 
-2.模板變量必須以使用`$`開頭,第一部分標記為變量名,如果前置腳本或者內置中沒有沒有對應的變量,或者想從`變量管道(variable_pipe)`直接獲取變量,則可以只使用一個`$`標識
+2.模板變量必須以使用`$`開頭,第一部分標記為變量名,如果前置腳本或者內置中沒有沒有對應的變量,或者想從`變量管道(variable pipe)`直接獲取變量,則可以只使用一個`$`標識
 
-3.變量(`variable`)和多個變量管道(`variable_pipe`)之間使用`|`分割
+3.變量(`variable`)和多個變量管道(`variable pipe`)之間使用`|`分割
 
-4.如果`變量管道(variable_pipe)`有參數,則使用`:`分割管道名和變量,有多個參數必須使用逗號分割,參數必須使用`''`單引號包裹
+4.如果`變量管道(variable pipe)`有參數,則使用`:`分割管道名和變量,有多個參數必須使用逗號分割,參數必須使用`''`單引號包裹
 
 ---
 
-### 2.在消息中使用模板變量,支持普通字符串消息以及 `json` 格式消息 :id=2
+### 2.在消息中使用模板變量 :id=2
+
+!>支持非 json 字符串消息以及 `json` 格式消息
 
 **`json` 輸入消息(沒有用到自定義`variable`和`pipe`)**
 
@@ -54,16 +56,16 @@
 
 ```javascript
 // the module uuid is built-in, please read uuid docs: https://www.npmjs.com/package/uuid
-var { v4: uuidv4 } = require("uuid");
+var { v4: uuidv4 } = require('uuid');
 // the module mockjs is built-in, please read mockjs docs: http://mockjs.com/examples.html
-var mockjs = require("mockjs");
+var mockjs = require('mockjs');
 // if you need to use other modules, you can install other modules via npm, please read the doc: https://doc.ttqm.app/#/en/question/how-to-add-support-modules
 
 // generate mock data
 var mockData = mockjs.mock({
-  "list|3": [
+  'list|3': [
     {
-      "id|+1": 1,
+      'id|+1': 1,
     },
   ],
 });
@@ -71,7 +73,7 @@ module.exports = {
   variable: {
     // the variable can be a function(must return a value sync and can not be a Promise) or a value
     user_variable1() {
-      return "432";
+      return '432';
     },
     user_variable2: 107,
     user_variable3: uuidv4(),
@@ -94,7 +96,7 @@ module.exports = {
       try {
         var messageString = publishMessage.message;
         var messageObject = JSON.parse(messageString);
-        messageObject.test_user_string = "test_user_string_value";
+        messageObject.test_user_string = 'test_user_string_value';
         // you need return the message in string format
         return JSON.stringify(messageObject);
       } catch (error) {

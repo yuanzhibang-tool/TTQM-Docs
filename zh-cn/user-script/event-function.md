@@ -4,18 +4,18 @@
 
 ### 用户脚本支持的客户端事件监听 :id=1
 
-| 事件              | 描述                       | 参数                     | 备注 |
-| ----------------- | -------------------------- | ------------------------ | ---- |
-| `onConnect`       | 当客户端连接上时触发       | `connack`                | 无   |
-| `onMessage`       | 当客户端收到消息时触发     | `topic, payload, packet` | 无   |
-| `onReconnect`     | 当客户端重连时触发         | 无                       | 无   |
-| `onDisconnect`    | 当客户端断开时触发         | `packet`                 | 无   |
-| `onClose`         | 当客户端关闭时触发         | 无                       | 无   |
-| `onEnd`           | 当客户端被中止时触发       | 无                       | 无   |
-| `onError`         | 当客户端出现错误时触发     | `error`                  | 无   |
-| `onPacketSend`    | 当客户端发送包完成时触发   | `packet`                 | 无   |
-| `onPublish`       | 当客户端发送消息成功时触发 | `topic, message, opts`   | 无   |
-| `onPacketReceive` | 当客户端收到包时触发       | `packet`                 | 无   |
+| 事件              | 描述                                                       | 参数                     | 备注 |
+| ----------------- | ---------------------------------------------------------- | ------------------------ | ---- |
+| `onConnect`       | 当客户端连接上时触发                                       | `connack`                | 无   |
+| `onMessage`       | 当客户端收到消息时触发                                     | `topic, payload, packet` | 无   |
+| `onReconnect`     | 当客户端重连时触发                                         | 无                       | 无   |
+| `onDisconnect`    | 当接收到 `disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 无   |
+| `onClose`         | 当客户端关闭时触发                                         | 无                       | 无   |
+| `onEnd`           | 当客户端被中止时触发                                       | 无                       | 无   |
+| `onError`         | 当客户端出现错误时触发                                     | `error`                  | 无   |
+| `onPacketSend`    | 当客户端发送包完成时触发                                   | `packet`                 | 无   |
+| `onPublish`       | 当客户端发送消息成功时触发                                 | `topic, message, opts`   | 无   |
+| `onPacketReceive` | 当客户端收到包时触发                                       | `packet`                 | 无   |
 
 ---
 

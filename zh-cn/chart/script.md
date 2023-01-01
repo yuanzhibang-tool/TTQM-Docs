@@ -4,18 +4,18 @@
 
 ### 脚本支持的客户端事件监听 :id=1
 
-| 事件              | 描述                       | 参数                     | 备注 |
-| ----------------- | -------------------------- | ------------------------ | ---- |
-| `onConnect`       | 当客户端连接上时触发       | `connack`                | 无   |
-| `onMessage`       | 当客户端收到消息时触发     | `topic, payload, packet` | 无   |
-| `onReconnect`     | 当客户端重连时触发         | 无                       | 无   |
-| `onDisconnect`    | 当客户端断开时触发         | `packet`                 | 无   |
-| `onClose`         | 当客户端关闭时触发         | 无                       | 无   |
-| `onEnd`           | 当客户端被中止时触发       | 无                       | 无   |
-| `onError`         | 当客户端出现错误时触发     | `error`                  | 无   |
-| `onPacketSend`    | 当客户端发送包完成时触发   | `packet`                 | 无   |
-| `onPublish`       | 当客户端发送消息成功时触发 | `topic, message, opts`   | 无   |
-| `onPacketReceive` | 当客户端收到包时触发       | `packet`                 | 无   |
+| 事件              | 描述                                                       | 参数                     | 备注 |
+| ----------------- | ---------------------------------------------------------- | ------------------------ | ---- |
+| `onConnect`       | 当客户端连接上时触发                                       | `connack`                | 无   |
+| `onMessage`       | 当客户端收到消息时触发                                     | `topic, payload, packet` | 无   |
+| `onReconnect`     | 当客户端重连时触发                                         | 无                       | 无   |
+| `onDisconnect`    | 当接收到 `disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 无   |
+| `onClose`         | 当客户端关闭时触发                                         | 无                       | 无   |
+| `onEnd`           | 当客户端被中止时触发                                       | 无                       | 无   |
+| `onError`         | 当客户端出现错误时触发                                     | `error`                  | 无   |
+| `onPacketSend`    | 当客户端发送包完成时触发                                   | `packet`                 | 无   |
+| `onPublish`       | 当客户端发送消息成功时触发                                 | `topic, message, opts`   | 无   |
+| `onPacketReceive` | 当客户端收到包时触发                                       | `packet`                 | 无   |
 
 ---
 
@@ -32,7 +32,7 @@
 
 ### 脚本更新图表数据的方式 :id=3
 
-通过调用内置函数`updateChartViewData`来更新图表,可以进行数据的单次单数据更新,也可进行单次多组数据更新,数据更新将会按照传入的顺序更新
+通过调用内置函数`updateChartViewData`来更新图表,可以进行数据的单次单数据更新,参数为 `ChartViewModuleUpdateData` 类型,也可进行单次多数据更新,参数为`ChartViewModuleUpdateData`组成的数组`[ChartViewModuleUpdateData,ChartViewModuleUpdateData]`,数据更新将会按照数组的顺序更新
 
 `updateChartViewData`函数只有一个参数`chartViewData`,参数的定义如下
 
@@ -111,7 +111,7 @@ var option = {
     },
   ],
 };
-module.exports = option;
+setOption(option);
 ```
 
 ---
@@ -153,7 +153,7 @@ var option = {
     },
   ],
 };
-module.exports = option;
+setOption(option);
 ```
 
 <!-- tab:脚本 -->
@@ -171,7 +171,7 @@ module.exports = {};
 <!-- tab:目标配置 -->
 
 ```javascript
-var option = {
+{
   xAxis: {
     type: 'category',
     data: [
@@ -197,8 +197,7 @@ var option = {
       },
     },
   ],
-};
-module.exports = option;
+}
 ```
 
 <!-- tabs:end -->
@@ -238,7 +237,7 @@ var option = {
     },
   ],
 };
-module.exports = option;
+setOption(option);
 ```
 
 <!-- tab:脚本 -->
@@ -265,7 +264,7 @@ module.exports = {};
 <!-- tab:目标配置 -->
 
 ```javascript
-var option = {
+{
   xAxis: {
     type: 'category',
     data: [
@@ -291,8 +290,7 @@ var option = {
       },
     },
   ],
-};
-module.exports = option;
+}
 ```
 
 <!-- tabs:end -->

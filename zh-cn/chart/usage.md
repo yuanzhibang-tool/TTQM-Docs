@@ -18,11 +18,44 @@
 
 ### 2.图表配置 :id=2
 
-> 图表配置用来初始化图表的配置,可以通过导出配置`object`也可以导出一个`Promise`,在`resolve`中返回图表配置,更多配置相关的使用,请参考[图表>配置](zh-cn/chart/option)
+> 图表配置用来初始化图表的配置,可以通过内置函数`setOption`,导出配置`object`也可以导出一个`Promise`,在`resolve`中返回图表配置,更多配置相关的使用,请参考[图表>配置](zh-cn/chart/option)
 
 !>注意:图表配置必须在 10s 内返回配置,否则将会被强制终止.
 
 <!-- tabs:start -->
+<!-- tab:使用内置函数 -->
+
+```javascript
+var option = {
+  xAxis: {
+    type: 'category',
+    data: [
+      'Device-1',
+      'Device-2',
+      'Device-3',
+      'Device-4',
+      'Device-5',
+      'Device-6',
+      'Device-7',
+    ],
+  },
+  yAxis: {
+    type: 'value',
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 120],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)',
+      },
+    },
+  ],
+};
+setOption(option);
+```
+
 <!-- tab:同步返回 -->
 
 ```javascript

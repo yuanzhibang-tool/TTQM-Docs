@@ -1,6 +1,6 @@
 > 圖表分為兩個部分,一個部分是配置,另外一部分是圖表腳本,配置用來配置圖表的初始化配置,腳本用來更新圖表,實現圖表數據聯動
 
-![配置和腳本](_media/usage/1.jpg ":size=600")
+![配置和腳本](_media/usage/1.jpg ':size=600')
 
 ---
 
@@ -8,47 +8,80 @@
 
 **點擊圖表按鈕**
 
-![圖表1](_media/usage/2.jpg ":size=400")
+![圖表1](_media/usage/2.jpg ':size=400')
 
 **打開**
 
-![圖表1](_media/usage/3.jpg ":size=300")
+![圖表1](_media/usage/3.jpg ':size=300')
 
 ---
 
 ### 2.圖表配置 :id=2
 
-> 圖表配置用來初始化圖表的配置,可以通過導出配置`object`也可以導出一個`Promise`,在`resolve`中返回圖表配置,更多配置相關的使用,請參考[圖表>配置](zh-tw/chart/option)
+> 圖表配置用來初始化圖表的配置,可以通過內置函數`setOption`,導出配置`object`也可以導出一個`Promise`,在`resolve`中返回圖表配置,更多配置相關的使用,請參考[圖表>配置](zh-cn/chart/option)
 
 !>注意:圖表配置必須在 10s 內返回配置,否則將會被強制終止.
 
 <!-- tabs:start -->
+<!-- tab:使用內置函數 -->
+
+```javascript
+var option = {
+  xAxis: {
+    type: 'category',
+    data: [
+      'Device-1',
+      'Device-2',
+      'Device-3',
+      'Device-4',
+      'Device-5',
+      'Device-6',
+      'Device-7',
+    ],
+  },
+  yAxis: {
+    type: 'value',
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 120],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)',
+      },
+    },
+  ],
+};
+setOption(option);
+```
+
 <!-- tab:同步返回 -->
 
 ```javascript
 var option = {
   xAxis: {
-    type: "category",
+    type: 'category',
     data: [
-      "Device-1",
-      "Device-2",
-      "Device-3",
-      "Device-4",
-      "Device-5",
-      "Device-6",
-      "Device-7",
+      'Device-1',
+      'Device-2',
+      'Device-3',
+      'Device-4',
+      'Device-5',
+      'Device-6',
+      'Device-7',
     ],
   },
   yAxis: {
-    type: "value",
+    type: 'value',
   },
   series: [
     {
       data: [120, 200, 150, 80, 70, 110, 120],
-      type: "bar",
+      type: 'bar',
       showBackground: true,
       backgroundStyle: {
-        color: "rgba(180, 180, 180, 0.2)",
+        color: 'rgba(180, 180, 180, 0.2)',
       },
     },
   ],
@@ -61,27 +94,27 @@ module.exports = option;
 ```javascript
 var option = {
   xAxis: {
-    type: "category",
+    type: 'category',
     data: [
-      "Device-1",
-      "Device-2",
-      "Device-3",
-      "Device-4",
-      "Device-5",
-      "Device-6",
-      "Device-7",
+      'Device-1',
+      'Device-2',
+      'Device-3',
+      'Device-4',
+      'Device-5',
+      'Device-6',
+      'Device-7',
     ],
   },
   yAxis: {
-    type: "value",
+    type: 'value',
   },
   series: [
     {
       data: [120, 200, 150, 80, 70, 110, 120],
-      type: "bar",
+      type: 'bar',
       showBackground: true,
       backgroundStyle: {
-        color: "rgba(180, 180, 180, 0.2)",
+        color: 'rgba(180, 180, 180, 0.2)',
       },
     },
   ],
@@ -93,13 +126,13 @@ module.exports = new Promise((resolve, reject) => {
 
 <!-- tab:初始化圖表 -->
 
-![Chart Option](_media/usage/4.jpg ":size=500")
+![Chart Option](_media/usage/4.jpg ':size=500')
 
 <!-- tabs:end -->
 
 !>更多圖表配置,請參照[Chart Demo](https://echarts.apache.org/examples/zh/index.html#chart-type-line),TTQM 圖表兼容[Apache Echart](https://echarts.apache.org/zh/index.html)數百種配置類型
 
-![EChart Demo](_media/usage/5.jpg ":size=500")
+![EChart Demo](_media/usage/5.jpg ':size=500')
 
 ---
 
@@ -122,14 +155,14 @@ setInterval(() => {
   }
   // 修改多項使用 [{...}, {...}, {...}] 格式
   const returnData = {
-    targetPath: ["series", 0, "data"],
-    action: "replace",
+    targetPath: ['series', 0, 'data'],
+    action: 'replace',
     data: data,
     version: 1,
   };
   // 通過內置函數updateChartViewData更新圖表數據
   updateChartViewData(returnData);
-  console.log("script debug info!");
+  console.log('script debug info!');
 }, 1000);
 
 module.exports = {
@@ -145,8 +178,8 @@ module.exports = {
     }
     // 修改多項使用 [{...}, {...}, {...}] 格式
     const returnData = {
-      targetPath: ["series", 0, "data"],
-      action: "replace",
+      targetPath: ['series', 0, 'data'],
+      action: 'replace',
       data: data,
       version: 1,
     };
@@ -160,7 +193,7 @@ module.exports = {
 
 ### 4.運行圖表腳本 :id=4
 
-![運行圖表腳本](_media/usage/6.jpg ":size=600")
+![運行圖表腳本](_media/usage/6.jpg ':size=600')
 
 ---
 
@@ -172,8 +205,8 @@ module.exports = {
 
 !>點擊關閉,將會關閉圖表,停止更新和對應腳本
 
-![最小化,最大化,和關閉](_media/usage/7.jpg ":size=600")
+![最小化,最大化,和關閉](_media/usage/7.jpg ':size=600')
 
 !>您可以在圖表列表裡點擊對應的動態圖標來恢復最小化的圖表
 
-![最小化,最大化,和關閉](_media/usage/8.jpg ":size=600")
+![最小化,最大化,和關閉](_media/usage/8.jpg ':size=600')

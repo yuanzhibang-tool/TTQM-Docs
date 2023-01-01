@@ -4,18 +4,18 @@
 
 ### 用戶腳本支持的客戶端事件監聽 :id=1
 
-| 事件              | 描述                       | 參數                     | 備註 |
-| ----------------- | -------------------------- | ------------------------ | ---- |
-| `onConnect`       | 當客戶端連接上時觸發       | `connack`                | 無   |
-| `onMessage`       | 當客戶端收到消息時觸發     | `topic, payload, packet` | 無   |
-| `onReconnect`     | 當客戶端重連時觸發         | 無                       | 無   |
-| `onDisconnect`    | 當客戶端斷開時觸發         | `packet`                 | 無   |
-| `onClose`         | 當客戶端關閉時觸發         | 無                       | 無   |
-| `onEnd`           | 當客戶端被中止時觸發       | 無                       | 無   |
-| `onError`         | 當客戶端出現錯誤時觸發     | `error`                  | 無   |
-| `onPacketSend`    | 當客戶端發送包完成時觸發   | `packet`                 | 無   |
-| `onPublish`       | 當客戶端發送消息成功時觸發 | `topic, message, opts`   | 無   |
-| `onPacketReceive` | 當客戶端收到包時觸發       | `packet`                 | 無   |
+| 事件              | 描述                                                          | 參數                     | 備註 |
+| ----------------- | ------------------------------------------------------------- | ------------------------ | ---- |
+| `onConnect`       | 當客戶端連接上時觸發                                          | `connack`                | 無   |
+| `onMessage`       | 當客戶端收到消息時觸發                                        | `topic, payload, packet` | 無   |
+| `onReconnect`     | 當客戶端重連時觸發                                            | 無                       | 無   |
+| `onDisconnect`    | 當客戶端收到`disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 無   |
+| `onClose`         | 當客戶端關閉時觸發                                            | 無                       | 無   |
+| `onEnd`           | 當客戶端被中止時觸發                                          | 無                       | 無   |
+| `onError`         | 當客戶端出現錯誤時觸發                                        | `error`                  | 無   |
+| `onPacketSend`    | 當客戶端發送包完成時觸發                                      | `packet`                 | 無   |
+| `onPublish`       | 當客戶端發送消息成功時觸發                                    | `topic, message, opts`   | 無   |
+| `onPacketReceive` | 當客戶端收到包時觸發                                          | `packet`                 | 無   |
 
 ---
 

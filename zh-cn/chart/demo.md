@@ -185,7 +185,9 @@ module.exports = {};
 };
 ```
 
-<!-- tabs:end -->
+## <!-- tabs:end -->
+
+---
 
 ### 3.一次替换多组数据 :id=3
 
@@ -276,6 +278,8 @@ module.exports = {};
 
 <!-- tabs:end -->
 
+---
+
 ### 4.删除数据 :id=4
 
 <!-- tabs:start -->
@@ -361,6 +365,8 @@ module.exports = {};
 
 <!-- tabs:end -->
 
+---
+
 ### 5.增加数据值 :id=5
 
 <!-- tabs:start -->
@@ -443,6 +449,8 @@ module.exports = {};
 
 <!-- tabs:end -->
 
+---
+
 ### 6.减少数据值 :id=6
 
 <!-- tabs:start -->
@@ -524,6 +532,8 @@ module.exports = {};
 ```
 
 <!-- tabs:end -->
+
+---
 
 ### 7.数组附加(array_append_end) :id=7
 
@@ -615,6 +625,8 @@ module.exports = {};
 
 <!-- tabs:end -->
 
+---
+
 ### 8.数组合并(array_merge_end) :id=8
 
 <!-- tabs:start -->
@@ -705,6 +717,8 @@ module.exports = {};
 ```
 
 <!-- tabs:end -->
+
+---
 
 ### 9.object 合并(object_merge) :id=9
 
@@ -802,6 +816,8 @@ module.exports = {};
 
 ---
 
+---
+
 ### 10.替换整个配置 :id=10
 
 <!-- tabs:start -->
@@ -894,6 +910,8 @@ module.exports = {};
 ```
 
 <!-- tabs:end -->
+
+---
 
 ---
 
