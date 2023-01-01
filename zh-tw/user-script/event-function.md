@@ -29,9 +29,29 @@
 
 ### 用戶腳本支持的內置函數 :id=3
 
-| 函數      | 描述                 | 參數                   | 備註 |
-| --------- | -------------------- | ---------------------- | ---- |
-| `publish` | 發送消息             | `topic, message, opts` | 無   |
-| `exit`    | 手動退出當前用戶腳本 | 無                     | 無   |
+| 函數      | 描述                 | 參數                   | 備註                                                    |
+| --------- | -------------------- | ---------------------- | ------------------------------------------------------- |
+| `publish` | 發送消息             | `topic, message, opts` | `topic:string`, `message:string`, `opts` 請參考下方示例 |
+| `exit`    | 手動退出當前用戶腳本 | 無                     | 無                                                      |
 
----
+**`publish`中`opts`示例**
+
+```javascript
+{
+  qos: 2, // QoS level, Number, default 0
+  dup: false, // mark as duplicate flag, Boolean, default false
+  retain: false, // retain flag, Boolean, default false
+  properties: { // optional properties MQTT 5.0
+      payloadFormatIndicator: true, // Payload is UTF-8 Encoded Character Data or not boolean
+      messageExpiryInterval: 4321, // the lifetime of the Application Message in seconds number
+      topicAlias: 100, // value that is used to identify the Topic instead of using the Topic Name number
+      responseTopic: 'topic', // String which is used as the Topic Name for a response message string
+      correlationData: Buffer.from([1, 2, 3, 4]), // used by the sender of the Request Message to identify which request the Response Message is for when it is received binary
+      userProperties: { // he User Property is allowed to appear multiple times to represent multiple name, value pairs object
+        'test': 'test'
+      },
+      subscriptionIdentifier: 120, // representing the identifier of the subscription number
+      contentType: 'test' // String describing the content of the Application Message string
+   }
+}
+```
