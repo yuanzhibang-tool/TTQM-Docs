@@ -6,7 +6,7 @@
 
 #### 1.1
 
-`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company Beijing Dave Health Technology Co., Ltd.
+`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company David Health Co.,Ltd.
 
 Products: Services and products offered by `TTQM`.
 
@@ -92,7 +92,7 @@ The conclusion, execution and interpretation of this agreement and the settlemen
 
 #### 7.2
 
-If any dispute arises between the two parties regarding the content of this agreement or its implementation, the two parties shall try their best to resolve it through friendly negotiation; if the negotiation fails, either party may file a lawsuit in the People's Court of Daxing District, Beijing.
+If any dispute arises between the two parties regarding the content of this agreement or its implementation, the two parties shall try their best to resolve it through friendly negotiation; if the negotiation fails, either party may file a lawsuit in the People's Court of Daxing District, Beijing, China.
 
 ### 8. Other regulations
 

@@ -2,15 +2,15 @@
 
 ---
 
-`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company Beijing Dave Health Technology Co., Ltd.
+`TTQM` (and "we", "our" or "this app" mentioned below) is a product provided by the main company David Health Co.,Ltd.
 
 Products: Services and products offered by `TTQM`.
 
-If you decide to use the services provided by our products, this agreement is used to inform us how to collect, use and disclose user privacy.
+If you decide to use our services and products, this agreement is used to inform us how to collect, use and disclose user privacy.
 
-If you choose to use our services, you agree to the collection and use of information related to this policy. The personal information we collect is used to provide and improve the service. We will not use or share your information with anyone except as described in this Privacy Policy.
+If you choose to use our services and products, it means that you agree to the collection and use of information related to this policy. The personal information we collect is used to provide and improve our services and products. We will not use or share your information with anyone except as described in this Privacy Policy.
 
-Unless otherwise specified in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as our Service Agreement, which can be accessed in this APP.
+Unless otherwise specified in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as our Terms of Service, the two files can be accessed in this site.
 
 ### 1. Collect information
 
@@ -26,7 +26,7 @@ We automatically obtain certain information about your device, including IP addr
 
 #### 1.2. Routine collection of personal information
 
-When using our services, we may ask you to provide us with certain personally identifiable information ("Personal Data") that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
+When using our services or products, we may ask you to provide us with certain personally identifiable information ("Personal Data") that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
 
 1. Mobile phone number
 
@@ -132,7 +132,7 @@ Our products do not use third-party advertising services. If we use advertising 
 
 ### 9. Exit
 
-In accordance with this Privacy Policy, you may permanently and freely opt-out of future collection of your personal information within the software by uninstalling all applications from each of your devices and ceasing to use the Service.
+In accordance with this Privacy Policy, you may permanently and freely opt-out of future collection of your personal information within the software by uninstalling all applications from each of your devices and ceasing to use our Product and Service.
 
 ### 10. Support
 
@@ -142,10 +142,10 @@ By mail: [developer@yuanzhibang.com](mailto:consumer-service@yuanzhibang.com)
 
 ### 11. Changes to this Privacy Policy
 
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+We may update our Privacy Policy anytime. We will post the new Privacy Policy on this page.
 
 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when posted on this page.
 
 ### 12. Others
 
-#### 1. If there is any discrepancy between the content of the non-Chinese language version and the Chinese version of this agreement, the Chinese version shall prevail
+#### 1. If there is any discrepancy between the content of the non-Chinese language version and the simplified Chinese version of this agreement, the simplified Chinese version shall prevail.

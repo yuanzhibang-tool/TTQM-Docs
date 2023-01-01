@@ -44,9 +44,9 @@
   - [Build-in Modules?](en/question/build-in-module.md)
   - [How to add script third-party modules?](en/question/how-to-add-support-modules.md)
   - [Error: echart is not defined](en/question/echarts-not-found.md)
-  - [What dirs can the script operate on?](en/question/script-data-dir.md)
+  - [What dirs can the script manipulate?](en/question/script-data-dir.md)
   - [Other Questions?](en/question/other.md)
 
-- [Privacy Policy & Terms of Service](en/other/default.md)
+- [Privacy Policy & Terms of Service](en/terms-of-service-privacy-policy/default.md)
   - [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md)
   - [Terms of Service](en/terms-of-service-privacy-policy/terms-of-service.md)
