@@ -16,8 +16,8 @@
 module.exports = {
   onMessage: (topic, payload, packet) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 0],
-      action: 'increase',
+      targetPath: ["series", "data", 0],
+      action: "increase",
       data: 1,
     };
     // Add 1 to the first element in data
@@ -25,8 +25,8 @@ module.exports = {
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 1],
-      action: 'increase',
+      targetPath: ["series", "data", 1],
+      action: "increase",
       data: 1,
     };
     // Add 1 to the second element in data
@@ -113,8 +113,8 @@ module.exports = {
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data'],
-  action: 'replace',
+  targetPath: ["series", "data"],
+  action: "replace",
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 updateChartViewData(chartViewData);
@@ -195,15 +195,15 @@ module.exports = {};
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'replace',
+  targetPath: ["series", "data"],
+  action: "replace",
   data: [1, 2, 3, 4, 5, 6, 7],
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'replace',
-  data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
+  targetPath: ["xAxis", "data"],
+  action: "replace",
+  data: ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
 };
 
 updateChartViewData([chartViewData1, chartViewData2]);
@@ -284,13 +284,13 @@ module.exports = {};
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data', 0],
-  action: 'delete',
+  targetPath: ["series", "data", 0],
+  action: "delete",
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data', 0],
-  action: 'delete',
+  targetPath: ["xAxis", "data", 0],
+  action: "delete",
 };
 updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
@@ -369,8 +369,8 @@ module.exports = {};
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data', 6],
-  action: 'increase',
+  targetPath: ["series", "data", 6],
+  action: "increase",
   data: 2,
 };
 updateChartViewData(chartViewData);
@@ -451,8 +451,8 @@ module.exports = {};
 
 ```javascript
 var chartViewData = {
-  targetPath: ['series', 'data', 6],
-  action: 'decrease',
+  targetPath: ["series", "data", 6],
+  action: "decrease",
   data: 2,
 };
 updateChartViewData(chartViewData);
@@ -533,15 +533,15 @@ module.exports = {};
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'array_append_end',
+  targetPath: ["series", "data"],
+  action: "array_append_end",
   data: 1,
 };
 
 var chartViewData2 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'array_append_end',
-  data: 'Device-8',
+  targetPath: ["xAxis", "data"],
+  action: "array_append_end",
+  data: "Device-8",
 };
 
 updateChartViewData(chartViewData);
@@ -623,15 +623,15 @@ module.exports = {};
 
 ```javascript
 var chartViewData1 = {
-  targetPath: ['series', 'data'],
-  action: 'array_merge_end',
+  targetPath: ["series", "data"],
+  action: "array_merge_end",
   data: [1, 2],
 };
 
 var chartViewData1 = {
-  targetPath: ['xAxis', 'data'],
-  action: 'array_merge_end',
-  data: ['Device-8', 'Device-9'],
+  targetPath: ["xAxis", "data"],
+  action: "array_merge_end",
+  data: ["Device-8", "Device-9"],
 };
 
 updateChartViewData(chartViewData);
@@ -717,15 +717,15 @@ module.exports = {};
 ```javascript
 var chartViewData = {
   targetPath: [], // Operate on the root node
-  action: 'object_merge',
+  action: "object_merge",
   data: {
     // The yAxis value will be replaced as a whole
     yAxis: {
-      type: 'value',
-      title: 'yAxis',
+      type: "value",
+      title: "yAxis",
     },
     // This property will be added to the configuration
-    title: 'Chart Title',
+    title: "Chart Title",
   },
 };
 updateChartViewData(chartViewData);
@@ -810,24 +810,24 @@ module.exports = {};
 
 ```javascript
 var chartViewData = {
-  // 对整个根节点进行操作
+  // Operate on the entire root node
   targetPath: [],
-  action: 'replace',
+  action: "replace",
   data: {
     xAxis: {
-      type: 'category',
-      data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
+      type: "category",
+      data: ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
     },
     yAxis: {
-      type: 'value',
+      type: "value",
     },
     series: [
       {
         data: [1, 2, 3, 4, 5, 6, 7],
-        type: 'bar',
+        type: "bar",
         showBackground: true,
         backgroundStyle: {
-          color: 'rgba(150, 140, 120, 0.4)',
+          color: "rgba(150, 140, 120, 0.4)",
         },
       },
     ],
@@ -905,13 +905,13 @@ module.exports = {};
 
 ```javascript
 // test the topic is contain the sub-topic
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { TopicUtil } = require("@ttqm/ttqm-support");
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    if (TopicUtil.isSubTopic('device_type/+/device_id/+', topic)) {
+    if (TopicUtil.isSubTopic("device_type/+/device_id/+", topic)) {
       var chartViewData = {
-        targetPath: ['series', 'data', 0],
-        action: 'increase',
+        targetPath: ["series", "data", 0],
+        action: "increase",
         data: 1,
       };
       // Add 1 to the first element in data
@@ -920,8 +920,8 @@ module.exports = {
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
-      targetPath: ['series', 'data', 1],
-      action: 'increase',
+      targetPath: ["series", "data", 1],
+      action: "increase",
       data: 1,
     };
     // Add 1 to the second element in data
