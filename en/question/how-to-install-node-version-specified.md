@@ -74,7 +74,7 @@ _Via shell_
 
 ```shell
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-apt-get install -y nodejs # For other systems, please use the corresponding Android command
+apt-get install -y nodejs # For other systems, please use the corresponding install command
 ```
 
 _Via nvm_

@@ -72,7 +72,7 @@ _shell 安装_
 
 ```shell
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-apt-get install -y nodejs # 其他系统请使用对应的安卓命令
+apt-get install -y nodejs # 其他系统请使用对应的安装命令
 ```
 
 _nvm 安装_
