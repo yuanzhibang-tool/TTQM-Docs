@@ -72,7 +72,7 @@ _shell 安裝_
 
 ```shell
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-apt-get install -y nodejs # 其他系統請使用對應的安卓命令
+apt-get install -y nodejs # 其他系統請使用對應的安裝命令
 ```
 
 _nvm 安裝_
@@ -83,7 +83,7 @@ _nvm 安裝_
 
 ```shell
 curl -o- https://static.yuanzhibang.com/script/nvm/v0.39.1/install.sh | bash
-# 如果安裝比較慢請設置國內源
+# 如果安裝比較慢請設置加速源
 export NVM_NODEJS_ORG_MIRROR=https://mirrors.ustc.edu.cn/node/
 # 列出node版本
 nvm list-remote
