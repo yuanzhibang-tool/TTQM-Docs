@@ -18,7 +18,7 @@
 
 ### 2. Chart Option :id=2
 
-> Chart Option Script is used to initialize the option of the chart. You can use build-in function `setOption`, export the option `object` or export a `Promise` which resolve the chart option. For more option related usage, please refer to [Chart>option](en/chart/option).
+> Chart Option Script is used to initialize the option of the chart. You can use built-in function `setOption`, export the option `object` or export a `Promise` which resolve the chart option. For more option related usage, please refer to [Chart>option](en/chart/option).
 
 !>Note: The chart option must return to the option within 10s, otherwise it will be forcibly terminated.
 

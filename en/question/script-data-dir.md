@@ -8,7 +8,7 @@
 
 ![Open script data directory](_media/script-data-dir/1.jpg)
 
-**Get the corresponding path in the script. For more usages, please refer to [FAQ>Build-in Modules?](en/question/build-in-module?id=_6)**
+**Get the corresponding path in the script. For more usages, please refer to [FAQ>Built-in Modules?](en/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -26,7 +26,7 @@ FileUtil.createStringFileSync(filePath, '{}');
 
 ![Open script temporary data directory](_media/script-data-dir/2.jpg)
 
-**Get the corresponding path in the script. For more usages, please refer to [FAQ>Build-in Modules?](en/question/build-in-module?id=_6)**
+**Get the corresponding path in the script. For more usages, please refer to [FAQ>Built-in Modules?](en/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');

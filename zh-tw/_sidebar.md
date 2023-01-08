@@ -41,7 +41,7 @@
 - [常見問題?](zh-tw/question/default.md)
 
   - [如何安裝指定版本的 node?](zh-tw/question/how-to-install-node-version-specified.md)
-  - [有哪些內置的腳本依賴庫?](zh-tw/question/build-in-module.md)
+  - [有哪些內置的腳本依賴庫?](zh-tw/question/built-in-module.md)
   - [如何添加腳本依賴庫?](zh-tw/question/how-to-add-support-modules.md)
   - [圖表配置腳本 echart 模塊未找到錯誤](zh-tw/question/echarts-not-found.md)
   - [腳本可操作的文件目錄有哪些?](zh-tw/question/script-data-dir.md)

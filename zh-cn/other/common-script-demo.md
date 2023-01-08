@@ -30,7 +30,7 @@ main();
 
 ### 2.使用证书加解密,文件操作,字符串计算`hash`
 
-!>请查看[有哪些内置的脚本依赖库?](zh-cn/question/build-in-module?id=_6)
+!>请查看[有哪些内置的脚本依赖库?](zh-cn/question/built-in-module?id=_6)
 
 ---
 
@@ -66,4 +66,4 @@ clearTimeout(timeoutId);
 
 ---
 
-!>其他更多示例,请参照[有哪些内置的脚本依赖库?](zh-cn/question/build-in-module)
+!>其他更多示例,请参照[有哪些内置的脚本依赖库?](zh-cn/question/built-in-module)

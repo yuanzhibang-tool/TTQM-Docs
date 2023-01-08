@@ -5,7 +5,7 @@
 !> Note: The option script has some restrictions, since the environment is `node.js`, and it is separated from the chart view, please note that there are a few restrictions below,
 
 1. The chart option must return to the option within 10s, otherwise it will be forcibly terminated.
-2. The `jQuery $` module is not supported. If there is a network request in the example, please refer to [FAQ?>How to add a script dependency library?](en/question/build-in-module?id=_1) to implement the network request with `axios`.
+2. The `jQuery $` module is not supported. If there is a network request in the example, please refer to [FAQ?>How to add a script dependency library?](en/question/built-in-module?id=_1) to implement the network request with `axios`.
 3. Adding custom events to charts is not supported
 
 ---

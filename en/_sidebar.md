@@ -41,7 +41,7 @@
 - [FAQ?](en/question/default.md)
 
   - [How to install a specified version of node?](en/question/how-to-install-node-version-specified.md)
-  - [Build-in Modules?](en/question/build-in-module.md)
+  - [Built-in Modules?](en/question/built-in-module.md)
   - [How to add script third-party modules?](en/question/how-to-add-support-modules.md)
   - [Error: echart is not defined](en/question/echarts-not-found.md)
   - [What dirs can the script manipulate?](en/question/script-data-dir.md)

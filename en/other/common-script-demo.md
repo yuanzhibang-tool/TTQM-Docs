@@ -30,7 +30,7 @@ main();
 
 ### 2. Use certificate encryption and decryption, file operation,getting string `hash`
 
-!> Please see [FAQ?>Build-in Modules?](en/question/build-in-module?id=_6)
+!> Please see [FAQ?>Built-in Modules?](en/question/built-in-module?id=_6)
 
 ---
 
@@ -66,4 +66,4 @@ clearTimeout(timeoutId);
 
 ---
 
-!> For more build-in module usage demos, please refer to [FAQ?>Build-in Modules?](en/question/build-in-module)
+!> For more built-in module usage demos, please refer to [FAQ?>Built-in Modules?](en/question/built-in-module)

@@ -30,7 +30,7 @@ main();
 
 ### 2.使用證書加解密,文件操作,字符串計算`hash`
 
-!>請查看[有哪些內置的腳本依賴庫?](zh-tw/question/build-in-module?id=_6)
+!>請查看[有哪些內置的腳本依賴庫?](zh-tw/question/built-in-module?id=_6)
 
 ---
 
@@ -66,4 +66,4 @@ clearTimeout(timeoutId);
 
 ---
 
-!>其他更多示例,請參照[有哪些內置的腳本依賴庫?](zh-tw/question/build-in-module)
+!>其他更多示例,請參照[有哪些內置的腳本依賴庫?](zh-tw/question/built-in-module)

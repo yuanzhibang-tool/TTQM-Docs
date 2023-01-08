@@ -8,7 +8,7 @@
 
 ![打开脚本数据目录](_media/script-data-dir/1.jpg)
 
-**在脚本中获取对应目录,更多操作方法请参照[常见问题>有哪些内置的脚本依赖库?](zh-cn/question/build-in-module?id=_6)**
+**在脚本中获取对应目录,更多操作方法请参照[常见问题>有哪些内置的脚本依赖库?](zh-cn/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');
@@ -26,7 +26,7 @@ FileUtil.createStringFileSync(filePath, '{}');
 
 ![打开脚本临时数据目录](_media/script-data-dir/2.jpg)
 
-**在脚本中获取对应目录,更多操作方法请参照[常见问题>有哪些内置的脚本依赖库?](zh-cn/question/build-in-module?id=_6)**
+**在脚本中获取对应目录,更多操作方法请参照[常见问题>有哪些内置的脚本依赖库?](zh-cn/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require('@ttqm/ttqm-support');

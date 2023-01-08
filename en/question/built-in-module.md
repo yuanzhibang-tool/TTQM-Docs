@@ -1,6 +1,6 @@
 !> All built-in modules can be used in all scripts, including `Pre-Publish Script`, `Chart Option Script`, `Chart Script`, `User Script`
 
-> TTQM has some built-in modules, such as network requests, etc. The build-in modules are listed below. Of course, you can also install the third-party modules yourself. For details, please refer to [FAQ?> How to add script third-party modules?](en/question/how-to-add-support-modules.md)
+> TTQM has some built-in modules, such as network requests, etc. The built-in modules are listed below. Of course, you can also install the third-party modules yourself. For details, please refer to [FAQ?> How to add script third-party modules?](en/question/how-to-add-support-modules.md)
 
 ---
 

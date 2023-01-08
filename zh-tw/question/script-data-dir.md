@@ -8,7 +8,7 @@
 
 ![打開腳本數據目錄](_media/script-data-dir/1.jpg)
 
-**在腳本中獲取對應目錄,更多操作方法請參照[常見問題>有哪些內置的腳本依賴庫?](zh-tw/question/build-in-module?id=_6)**
+**在腳本中獲取對應目錄,更多操作方法請參照[常見問題>有哪些內置的腳本依賴庫?](zh-tw/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require("@ttqm/ttqm-support");
@@ -26,7 +26,7 @@ FileUtil.createStringFileSync(filePath, "{}");
 
 ![打開腳本臨時數據目錄](_media/script-data-dir/2.jpg)
 
-**在腳本中獲取對應目錄,更多操作方法請參照[常見問題>有哪些內置的腳本依賴庫?](zh-tw/question/build-in-module?id=_6)**
+**在腳本中獲取對應目錄,更多操作方法請參照[常見問題>有哪些內置的腳本依賴庫?](zh-tw/question/built-in-module?id=_6)**
 
 ```javascript
 const { FileUtil } = require("@ttqm/ttqm-support");

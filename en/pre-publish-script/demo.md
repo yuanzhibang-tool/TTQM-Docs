@@ -280,7 +280,7 @@ AYd66a3voCz6OhmbcAD9wdbEoexeQ34bxhX1AaOtJM9wxMRs4xkM/VXAHzM/awuQ115EQShVWB+eVrhs
 <!-- tab: Script -->
 
 ```javascript
-// require the build-in support module
+// require the built-in support module
 const { TopicUtil } = require('@ttqm/ttqm-support');
 
 module.exports = {
