@@ -18,7 +18,7 @@
 
 #### 1. Download the demo db file.
 
-[Click Me](http://localhost:3000/assets/review-data/bridge.db)
+[Click Me](https://doc.ttqm.app/assets/review-data/bridge.db)
 
 #### 2. Open the user's db path in App>Setting
 
