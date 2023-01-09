@@ -54,7 +54,7 @@
   "time": "{{$unixSecond|string}}",
   "guid": "{{$uuid}}",
   "test_message": "Hello, TTQM!",
-  "custom_variable": "{{$user_variable1|}}"
+  "custom_variable": "{{$user_variable1}}"
 }
 ```
 **Topic**
@@ -483,7 +483,7 @@ module.exports = {
   "time": "{{$unixSecond|string}}",
   "guid": "{{$uuid}}",
   "test_message": "Hello, TTQM!",
-  "custom_variable": "{{$user_variable1|}}"
+  "custom_variable": "{{$user_variable1}}"
 }
 ```
 **Topic**
