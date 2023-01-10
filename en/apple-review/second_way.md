@@ -13,7 +13,7 @@
 
 **1. Add a client of demo [MQTT](https://mqtt.org/) server.**
 
-!> You only need to input the host and the name for a new client, blow is the test MQTT Server host.
+!> You only need to input the host and the name for a new client, blow is the demo MQTT Server host.
 
 ```text
 us-mqtt.yuanzhibang.com
