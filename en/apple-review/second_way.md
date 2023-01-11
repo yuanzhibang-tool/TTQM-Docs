@@ -16,7 +16,7 @@
 !> You only need to input the host and the name for a new client, blow is the demo MQTT Server host.
 
 ```text
-us-mqtt.yuanzhibang.com
+demo.ttqm.app
 ```
 
 > The client config like this:

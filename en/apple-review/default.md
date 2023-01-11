@@ -128,7 +128,7 @@ device/123/type/event/event/online
 !> You only need to input the host and the name for a new client, blow is the test MQTT Server host.
 
 ```text
-us-mqtt.yuanzhibang.com
+demo.ttqm.app
 ```
 
 > The client config like this:
