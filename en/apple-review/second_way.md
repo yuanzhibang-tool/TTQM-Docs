@@ -62,7 +62,7 @@ device/123/type/event/event/online
 module.exports = {
     onMessage: (topic, payload, packet) => {
         if (topic !== 'device/123/type/event/event/online') {
-            return;
+            // return;
         }
         console.log(topic);
         // use random data to update the chart
