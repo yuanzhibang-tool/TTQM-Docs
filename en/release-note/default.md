@@ -1,5 +1,23 @@
-## 2022/7/01
+> show app and docs changelog
 
-### Update Content
+---
 
-- 1. Release the first version of the documentation.
+### App Changelog :id=1
+
+---
+
+#### 1.0.1
+
+
+```
+1. Add the content of the first version of the document
+```
+
+
+### Documentation Changelog :id=2
+
+#### 1.0.1
+
+```
+1. Add the content of the first version of the document
+```
