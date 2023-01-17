@@ -326,7 +326,431 @@ export declare class CertUtil {
     static getPrivateKeyEncryptContentSize(privateKeyPem: string): number;
 }
 ```
+<!-- tab:ByteUtil -->
 
+```javascript
+export declare class ByteUtil {
+    /**
+     * Buffer to byte array
+     * @param source source Buffer
+     * @returns byte array [1,2,3]
+     */
+    static bufferToByteArray(source: Buffer): Array<number>;
+    /**
+     * Byte array to buffer
+     * @param source source byte array
+     * @returns  Buffer
+     */
+    static byteArrayToBuffer(source: Array<number>): Buffer;
+    /**
+     * string To byte array with encoding
+     * @param source source string
+     * @param [encoding] 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
+     * @returns byte array
+     */
+    static stringToByteArray(source: string, encoding?: 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'): Array<number>;
+    /**
+     * Byte array to string with encoding
+     * @param byteArray input Byte Array
+     * @param [encoding] 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'
+     * @returns the string in encoding
+     */
+    static byteArrayToString(byteArray: Array<number>, encoding?: 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex'): string;
+    /**
+     * Byte array chunk
+     * @param byteArray input Byte Array
+     * @param chunkSize chunk size
+     * @returns chunked array
+     */
+    static byteArrayChunk(byteArray: Array<number>, chunkSize: number): Array<Array<number>>;
+    /**
+     * Byte array to a signed, big-endian 64-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, big-endian 64-bit integer
+     */
+    static byteArrayToBigInt64BE(byteArray: Array<number>): bigint;
+    /**
+     * Byte array to a signed, little-endian 64-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, little-endian 64-bit integer
+     */
+    static byteArrayToBigInt64LE(byteArray: Array<number>): bigint;
+    /**
+     * Byte array to an unsigned, big-endian 64-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, big-endian 64-bit integer
+     */
+    static byteArrayToBigUInt64BE(byteArray: Array<number>): bigint;
+    /**
+     * Byte array to an unsigned, little-endian 64-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, little-endian 64-bit integer
+     */
+    static byteArrayToBigUInt64LE(byteArray: Array<number>): bigint;
+    /**
+     * Byte array to a 64-bit, big-endian double
+     * @param byteArray input Byte Array
+     * @returns a 64-bit, big-endian double
+     */
+    static byteArrayToDoubleBE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a 64-bit, little-endian double
+     * @param byteArray input Byte Array
+     * @returns a 64-bit, little-endian double
+     */
+    static byteArrayToDoubleLE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a 32-bit, big-endian float
+     * @param byteArray input Byte Array
+     * @returns a 32-bit, big-endian float
+     */
+    static byteArrayToFloatBE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a 32-bit, little-endian float
+     * @param byteArray input Byte Array
+     * @returns a 32-bit, little-endian float
+     */
+    static byteArrayToFloatLE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a signed 8-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed 8-bit integer
+     */
+    static byteArrayToInt8(byteArray: Array<number>): number;
+    /**
+     * Byte array to a signed, big-endian 16-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, big-endian 16-bit integer
+     */
+    static byteArrayToInt16BE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a signed, little-endian 16-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, little-endian 16-bit integer
+     */
+    static byteArrayToInt16LE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a signed, big-endian 32-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, big-endian 32-bit integer
+     */
+    static byteArrayToInt32BE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a signed, little-endian 32-bit integer
+     * @param byteArray input Byte Array
+     * @returns a signed, little-endian 32-bit integer
+     */
+    static byteArrayToInt32LE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a big-endian, two's complement signed value supporting up to 48 bits of accuracy
+     * @param byteArray input Byte Array
+     * @returns a big-endian, two's complement signed value supporting up to 48 bits of accuracy
+     */
+    static byteArrayToIntBE(byteArray: Array<number>): number;
+    /**
+     * Byte array to a little-endian, two's complement signed value supporting up to 48 bits of accuracy.
+     * @param byteArray input Byte Array
+     * @returns a little-endian, two's complement signed value supporting up to 48 bits of accuracy.
+     */
+    static byteArrayToIntLE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned, big-endian 16-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, big-endian 16-bit integer
+     */
+    static byteArrayToUInt16BE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned, little-endian 16-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, little-endian 16-bit integer
+     */
+    static byteArrayToUInt16LE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned, big-endian 32-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, big-endian 32-bit integer
+     */
+    static byteArrayToUInt32BE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned, little-endian 32-bit integer
+     * @param byteArray input Byte Array
+     * @returns an unsigned, little-endian 32-bit integer
+     */
+    static byteArrayToUInt32LE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned big-endian integer supporting up to 48 bits of accuracy.
+     * @param byteArray input Byte Array
+     * @returns an unsigned big-endian integer supporting up to 48 bits of accuracy.
+     */
+    static byteArrayToUIntBE(byteArray: Array<number>): number;
+    /**
+     * Byte array to an unsigned, little-endian integer supporting up to 48 bits of accuracy.
+     * @param byteArray input Byte Array
+     * @returns an unsigned, little-endian integer supporting up to 48 bits of accuracy.
+     */
+    static byteArrayToUIntLE(byteArray: Array<number>): number;
+    /**
+     * Interprets buf as an array of unsigned 16-bit integers and swaps the byte order in-place. Throws ERR_INVALID_BUFFER_SIZE if buf.length is not a multiple of 2.
+     * @param byteArray input Byte Array
+     * @returns swap16 result array
+     */
+    static byteArraySwap16(byteArray: Array<number>): Array<number>;
+    /**
+     * Interprets buf as an array of unsigned 32-bit integers and swaps the byte order in-place. Throws ERR_INVALID_BUFFER_SIZE if buf.length is not a multiple of 4.
+     * @param byteArray input Byte Array
+     * @returns swap32 result array
+     */
+    static byteArraySwap32(byteArray: Array<number>): Array<number>;
+    /**
+     * Interprets buf as an array of 64-bit numbers and swaps byte order in-place. Throws ERR_INVALID_BUFFER_SIZE if buf.length is not a multiple of 8.
+     * @param byteArray input Byte Array
+     * @returns swap64 result array
+     */
+    static byteArraySwap64(byteArray: Array<number>): Array<number>;
+}
+
+```
+<!-- tab:TimeUtil -->
+
+```javascript
+export declare class TimeUtil {
+    /**
+     * Sleep for given millisecond
+     * @param ms millisecond
+     * @returns a promise
+     */
+    static sleep(ms: any): Promise<void>;
+}
+
+```
+<!-- tab:TcpClient -->
+
+```javascript
+/// <reference types="node" />
+import { Socket } from 'net';
+/**
+ * Coverts send data with type Uint8Array, Buffer,Array<number> to string,
+ * @param data
+ * @returns
+ */
+export declare function covertSendData(data: Array<number> | string | Buffer | Uint8Array): string;
+/**
+ * Tcp client event listener
+ */
+export interface TcpClientEventListener {
+    onConnect?: () => void;
+    onError?: (error: Error) => void;
+    onData?: (data: Array<number>) => void;
+    onClose?: (hadError: boolean) => void;
+    onEnd?: () => void;
+    onReady?: () => void;
+    onTimeout?: () => void;
+}
+/**
+ * Tcp client
+ */
+export declare class TcpClient {
+    host: string;
+    port: number;
+    client: Socket | null;
+    listener: TcpClientEventListener;
+    /**
+     * Creates an instance of tcp client.
+     * @param host
+     * @param port
+     * @param listener TcpClientEventListener
+     */
+    constructor(host: string, port: number, listener: TcpClientEventListener);
+    /**
+     * Connect to tcp server
+     * @returns a promise
+     */
+    connect(): Promise<void>;
+    /**
+     * Disconnect from tcp server
+     * @returns a promise
+     */
+    disconnect(): Promise<void>;
+    /**
+     * Sends data to tcp server
+     * @param data Array<number> | string | Buffer | Uint8Array
+     * @returns a promise
+     */
+    send(data: Array<number> | string | Buffer | Uint8Array): Promise<void>;
+}
+
+```
+<!-- tab:TcpServer -->
+
+```javascript
+/// <reference types="node" />
+import { Server, Socket } from 'net';
+/**
+ * Tcp socket info
+ */
+export interface TcpSocketInfo {
+    id: number;
+    name?: string;
+    socket: Socket;
+}
+/**
+ * Tcp server event listener
+ */
+export interface TcpServerEventListener {
+    onConnection?: (socketInfo: TcpSocketInfo) => void;
+    onError?: (error: Error) => void;
+    onClose?: () => void;
+    onListening?: () => void;
+    onSocketError?: (socketInfo: TcpSocketInfo, error: Error) => void;
+    onSocketData?: (socketInfo: TcpSocketInfo, data: Array<number>) => void;
+    onSocketClose?: (socketInfo: TcpSocketInfo, hadError: boolean) => void;
+}
+/**
+ * Tcp server
+ */
+export declare class TcpServer {
+    port: number;
+    server: Server | null;
+    listener: TcpServerEventListener;
+    socketInfoMap: Map<number, TcpSocketInfo>;
+    socketIndex: number;
+    /**
+     * Creates an instance of tcp server.
+     * @param port
+     * @param listener TcpServerEventListener
+     */
+    constructor(port: number, listener: TcpServerEventListener);
+    /**
+     * Starts tcp server
+     * @returns
+     */
+    start(): Promise<void>;
+    /**
+     * Stops tcp server
+     * @returns
+     */
+    stop(): Promise<void>;
+    /**
+     * Send data to tcp client
+     * @param data Array<number> | string | Buffer | Uint8Array | string
+     * @param [socketIdentity] number | string, TcpSocketInfo.id or TcpSocketInfo.name
+     * @returns a promise
+     */
+    send(data: Array<number> | string | Buffer | Uint8Array | string, socketIdentity?: number | string): Promise<void>;
+}
+
+
+```
+<!-- tab:WsClient -->
+
+```javascript
+/// <reference types="node" />
+import { WebSocket } from 'ws';
+/**
+ * Covert revieved data to Array<number>
+ * @param message revieved data
+ * @returns an Array<number>
+ */
+export declare function covertRevievedToArray(message: Buffer | ArrayBuffer | Buffer[]): number[] | undefined;
+/**
+ * ws client event listener
+ */
+export interface WsClientEventListener {
+    onOpen?: () => void;
+    onError?: (error: Error) => void;
+    onMessage?: (data: Array<number>) => void;
+    onClose?: (code: number, reason: string) => void;
+}
+/**
+ * ws client
+ */
+export declare class WsClient {
+    url: string;
+    client: WebSocket | null;
+    listener: WsClientEventListener;
+    /**
+     * Creates an instance of ws client.
+     * @param url like 'ws://0.0.0.1:2340'
+     * @param listener WsClientEventListener
+     */
+    constructor(url: string, listener: WsClientEventListener);
+    /**
+     * Connect to ws server
+     * @returns a promise
+     */
+    connect(): Promise<void>;
+    /**
+     * Disconnect from ws server
+     * @returns a promise
+     */
+    disconnect(): Promise<void>;
+    /**
+     * Send data to ws server
+     * @param message Array<number> | string | Buffer | Uint8Array
+     * @returns  a promise
+     */
+    send(message: Array<number> | string | Buffer | Uint8Array): Promise<void>;
+}
+```
+<!-- tab:WsServer -->
+```javascript
+/// <reference types="node" />
+import { WebSocketServer, WebSocket } from 'ws';
+/**
+ * Web socket info
+ */
+export interface WebSocketInfo {
+    id: number;
+    name?: string;
+    socket: WebSocket;
+}
+/**
+ * Ws server event listener
+ */
+export interface WsServerEventListener {
+    onConnection?: (socketInfo: WebSocketInfo) => void;
+    onError?: (error: Error) => void;
+    onClose?: () => void;
+    onListening?: () => void;
+    onSocketError?: (socketInfo: WebSocketInfo, error: Error) => void;
+    onSocketMessage?: (socketInfo: WebSocketInfo, data: Array<number>) => void;
+    onSocketClose?: (socketInfo: WebSocketInfo, code: number, reason: string) => void;
+}
+/**
+ * Ws server
+ */
+export declare class WsServer {
+    port: number;
+    server: WebSocketServer | null;
+    listener: WsServerEventListener;
+    socketInfoMap: Map<number, WebSocketInfo>;
+    socketIndex: number;
+    /**
+     * Create an instance of ws server.
+     * @param port
+     * @param listener WsServerEventListener
+     */
+    constructor(port: number, listener: WsServerEventListener);
+    /**
+     * Start ws server
+     * @returns
+     */
+    start(): Promise<void>;
+    /**
+     * Stop ws server
+     * @returns
+     */
+    stop(): Promise<void>;
+    /**
+     * Send data to ws client
+     * @param message Array<number> | string | Buffer | Uint8Array | string
+     * @param [socketIdentity] number | string, WebSocketInfo.id or WebSocketInfo.name
+     * @returns  a promise
+     */
+    send(message: Array<number> | string | Buffer | Uint8Array, socketIdentity?: number | string): Promise<void>;
+}
+
+```
 <!-- tabs:end -->
 
 **Demo**
@@ -469,6 +893,237 @@ console.log(maxChunkSize);
 const encryptedChunkSize = CertUtil.getCertEncryptContentSize(certPem);
 console.log(encryptedChunkSize);
 // encryptedChunkSize=512
+```
+
+<!-- tab:ByteUtil -->
+
+```javascript
+const { ByteUtil } = require('@ttqm/ttqm-support');
+
+const testString = "Hello, TTQM!";
+const testStringByteArray = ByteUtil.stringToByteArray(testString);
+console.log(testStringByteArray);
+const resultString = ByteUtil.byteArrayToString(testStringByteArray);
+console.log(resultString);
+// stop script process manually
+// 手动停止脚本运行
+// 手動停止腳本運行
+exit();
+```
+
+<!-- tab:TimeUtil -->
+
+```javascript
+const { TimeUtil, ByteUtil } = require('@ttqm/ttqm-support');
+
+const main = async () => {
+    const topic = 'version/1/type/device_cmd';
+    const cmd1 = [1, 2, 3, 4];
+    const cmd1String = ByteUtil.byteArrayToString(cmd1, 'hex');
+    console.log(cmd1String);
+    publish(topic, cmd1String, { qos: 1 });
+    console.log('publish cmd1');
+
+    // sleep 1s before next command
+    // 等待1s再发送下一条命令
+    // 等待1s再發送下一條命令
+    await TimeUtil.sleep(1000);
+    const cmd2 = [2, 3, 4, 5];
+    const cmd2String = ByteUtil.byteArrayToString(cmd2, 'base64');
+
+    console.log(cmd2String);
+    publish(topic, cmd2String, { qos: 1 });
+    console.log('publish cmd2');
+
+    // stop script process manually
+    // 手动停止脚本运行
+    // 手動停止腳本運行
+    exit();
+}
+
+main();
+```
+
+<!-- tab:TcpClient -->
+
+```javascript
+
+const { TcpClient, TopicUtil, ByteUtil } = require('@ttqm/ttqm-support');
+
+let isReady = false;
+
+const clinet = new TcpClient('0.0.0.0', 7777, {
+    onConnect: () => {
+        console.log('onOpen');
+    },
+    onError: (error) => {
+        console.log('onError', error);
+    },
+    onData: (data) => {
+        console.log('onData', data);
+    },
+    onClose: (hadError) => {
+        console.log('onClose', hadError);
+    },
+    onReady: () => {
+        isReady = true;
+        console.log('onReady')
+    }
+});
+
+clinet.connect();
+
+module.exports = {
+    onMessage: (topic, payload, packet) => {
+        const isSubTopic = TopicUtil.isSubTopic('device/123/type/event/event/online', topic);
+        console.log(isSubTopic);
+        if (isSubTopic && isReady) {
+            // the payload is byte array, covert to string by ByteUtil, more about ByteUtil please visit: https://doc.ttqm.app/#/en/question/built-in-module?id=_6
+            // 传输过来的payload为字节数组,使用ByteUtil转换为string,更多关于ByteUtil,请访问: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+            // 傳輸過來的payload為字節數組,使用ByteUtil轉換為string,更多關於ByteUtil,請訪問: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+            console.log(ByteUtil.byteArrayToString(payload))
+            clinet.send(payload);
+        }
+    },
+    onWillExit: () => {
+        // publish exit topic message before exit
+        // 在退出前发送退出消息
+        // 在退出前發送退出消息
+        publish('exit', '{"event":"exit"}', { qos: 2 });
+        console.log('on will exit');
+    }
+}
+```
+
+<!-- tab:TcpServer -->
+
+```javascript
+const { TcpServer, ByteUtil } = require('@ttqm/ttqm-support');
+// start local TCP server
+// 启动本地TCP服务器
+// 啟動本地TCP服務器
+
+const server = new TcpServer(7777, {
+    onConnection: (socketInfo) => {
+        console.log('onConnection', socketInfo);
+    },
+    onError: (error) => {
+        console.log('onError', error);
+    },
+    onClose: () => {
+        console.log('onClose');
+    },
+    onListening: () => {
+        console.log('onListening');
+    },
+    onSocketError: (socketInfo, error) => {
+        console.log('onSocketError', socketInfo, error);
+    },
+    onSocketData: (socketInfo, data) => {
+        // the data is byte array, covert to string by ByteUtil, more about ByteUtil please visit: https://doc.ttqm.app/#/en/question/built-in-module?id=_6
+        // 传输过来的data为字节数组,使用ByteUtil转换为string,更多关于ByteUtil,请访问: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+        // 傳輸過來的data為字節數組,使用ByteUtil轉換為string,更多關於ByteUtil,請訪問: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6        
+        const stringData = ByteUtil.byteArrayToString(data);
+        console.log(stringData);
+        // console.log('onSocketMessage', socketInfo, data);
+    },
+    onSocketClose: (socketInfo, hadError) => {
+        console.log('onSocketClose', socketInfo, hadError);
+    }
+});
+
+server.start();
+```
+
+<!-- tab:WsClient -->
+
+```javascript
+const { WsClient, TopicUtil } = require('@ttqm/ttqm-support');
+
+let isReady = false;
+
+const clinet = new WsClient('ws:0.0.0.0:7777', {
+    onOpen: () => {
+        console.log('onOpen');
+        isReady = true;
+    },
+    onError: (error) => {
+        console.log('onError', error);
+    },
+    onMessage: (data) => {
+        console.log('onMessage', data);
+    },
+    onClose: (code, reason) => {
+        console.log('onClose', code, reason);
+    }
+});
+clinet.connect();
+module.exports = {
+    onMessage: (topic, payload, packet) => {
+        const isSubTopic = TopicUtil.isSubTopic('device/+/type/+/event/+', topic);
+        console.log(isSubTopic);
+        if (isSubTopic && isReady) {
+            // the message is byte array, covert to string by ByteUtil, more about ByteUtil please visit: https://doc.ttqm.app/#/en/question/built-in-module?id=_6
+            // 传输过来的payload为字节数组,使用ByteUtil转换为string,更多关于ByteUtil,请访问: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+            // 傳輸過來的payload為字節數組,使用ByteUtil轉換為string,更多關於ByteUtil,請訪問: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+            console.log(ByteUtil.byteArrayToString(payload))
+            clinet.send(payload);
+        }
+    },
+    onWillExit: () => {
+        // publish exit topic message before exit
+        publish('exit', '{"event":"exit"}', { qos: 2 });
+        // !do something before exit
+        console.log('on will exit');
+    }
+}
+```
+
+<!-- tab:WsServer -->
+
+```javascript
+const { WsServer, ByteUtil } = require('@ttqm/ttqm-support');
+
+const server = new WsServer(7777, {
+    onConnection: (socketInfo) => {
+        console.log('onConnection', socketInfo);
+    },
+    onError: (error) => {
+        console.log('onError', error);
+    },
+    onClose: () => {
+        console.log('onClose');
+    },
+    onListening: () => {
+        console.log('onListening');
+    },
+    onSocketError: (socketInfo, error) => {
+        console.log('onSocketError', socketInfo, error);
+    },
+    onSocketMessage: (socketInfo, data) => {
+        console.log('onSocketMessage', socketInfo, data);
+        // the data is byte array, covert to string by ByteUtil, more about ByteUtil please visit: https://doc.ttqm.app/#/en/question/built-in-module?id=_6
+        // 传输过来的data为字节数组,使用ByteUtil转换为string,更多关于ByteUtil,请访问: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
+        // 傳輸過來的data為字節數組,使用ByteUtil轉換為string,更多關於ByteUtil,請訪問: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6        
+        const dataString = ByteUtil.byteArrayToString(data);
+        server.send(dataString, socketInfo.id);
+        publish('test_topic', dataString);
+    },
+    onSocketClose: (socketInfo, code, reason) => {
+        console.log('onSocketClose', socketInfo, code, reason);
+    }
+});
+
+server.start();
+
+module.exports = {
+    onWillExit: () => {
+        // you have 1s to do something before exiting, like saving data.
+        // 脚本退出前执行,有1秒的时间可以操作,例如保存数据
+        // 腳本退出前執行,有1秒的時間可以操作,例如保存數據
+        console.log('on will exit');
+    }
+}
 ```
 
 <!-- tabs:end -->
