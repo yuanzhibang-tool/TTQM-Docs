@@ -37,6 +37,8 @@
 - [其他](zh-tw/other/default.md)
 
   - [通用腳本示例](zh-tw/other/common-script-demo.md)
+  - [快捷鍵](zh-tw/other/keyboard-shortcuts-reference.md)
+  - [備份/恢復](zh-tw/other/backup-and-restore.md)
 
 - [常見問題?](zh-tw/question/default.md)
 

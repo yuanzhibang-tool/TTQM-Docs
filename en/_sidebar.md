@@ -37,6 +37,8 @@
 - [Other](en/other/default.md)
 
   - [Common Script Demo](en/other/common-script-demo.md)
+  - [Shortcuts](en/other/keyboard-shortcuts-reference.md)
+  - [Backup/Restore](en/other/backup-and-restore.md)
 
 - [FAQ?](en/question/default.md)
 
