@@ -21,14 +21,14 @@ demo.ttqm.app
 
 > The client config like this:
 
-![18](_media/18.jpg ':size=600')
+![18](_media/second_way/18.jpg ':size=600')
 
 ---
 
 
 **2. Connect the Server**
 
-![19](_media/19.jpg ':size=600')
+![19](_media/second_way/19.jpg ':size=600')
 
 ---
 
@@ -39,16 +39,16 @@ demo.ttqm.app
 device/123/type/event/event/online
 ```
 
-![20](_media/20.jpg ':size=600')
+![20](_media/second_way/20.jpg ':size=600')
 
 **4.Add demo `Chart`**
 
-![8](_media/8.jpg ':size=600')
+![8](_media/second_way/8.jpg ':size=600')
 ---
-![21](_media/21.jpg ':size=600')
+![21](_media/second_way/21.jpg ':size=600')
 ---
 
-![22](_media/22.jpg ':size=600')
+![22](_media/second_way/22.jpg ':size=600')
 
 ---
 
@@ -303,9 +303,9 @@ setOption(option);
 <!-- tab:Demo Chart -->
 !> The Chart will update when you click the `publish message` button.
 
-![23](_media/23.jpg ':size=600')
+![23](_media/second_way/23.jpg ':size=600')
 
-![12](_media/12.jpg ':size=600')
+![12](_media/second_way/12.jpg ':size=600')
 <!-- tabs:end -->
 
 ---
@@ -313,9 +313,9 @@ setOption(option);
 
 **5.Add demo `User Script`**
 
-![24](_media/24.jpg ':size=600')
+![24](_media/second_way/24.jpg ':size=600')
 
-![25](_media/25.jpg ':size=600')
+![25](_media/second_way/25.jpg ':size=600')
 
 ---
 
@@ -324,7 +324,7 @@ setOption(option);
 
 !> You need to save it after replacing.
 
-![27](_media/27.jpg ':size=600')
+![27](_media/second_way/27.jpg ':size=600')
 
 ```javascript
 setInterval(
@@ -347,7 +347,7 @@ module.exports = {
 
 !>The script will publish a message every half second.
 
-![26](_media/26.jpg ':size=600')
+![26](_media/second_way/26.jpg ':size=600')
 
 ---
 
@@ -356,11 +356,11 @@ module.exports = {
 <!-- tabs:start -->
 
 <!-- tab:1: Turn on -->
-![4](_media/4.jpg ':size=600')
+![4](_media/second_way/4.jpg ':size=600')
 
 ---
 
-![5](_media/5.jpg ':size=600')
+![5](_media/second_way/5.jpg ':size=600')
 <!-- tab:2: Send template message -->
 
 !> Fill the string below to message box.
@@ -379,10 +379,10 @@ module.exports = {
 device/123/type/event/event/online
 ```
 
-![6](_media/6.jpg ':size=600')
+![6](_media/second_way/6.jpg ':size=600')
 
 <!-- tab:3: The message sent -->
-![7](_media/7.jpg ':size=600')
+![7](_media/second_way/7.jpg ':size=600')
 
 <!-- tabs:end -->
 ---
