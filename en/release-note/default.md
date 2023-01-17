@@ -2,7 +2,7 @@
 
 ---
 
-### App update log :id=app
+### App Changelog :id=app
 
 ---
 
@@ -17,7 +17,7 @@
 ```
 
 
-### Documentation update log :id=doc
+### Doc Changelog :id=doc
 
 #### 1.0.1
 
