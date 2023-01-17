@@ -138,7 +138,7 @@ In accordance with this Privacy Policy, you may permanently and freely opt-out o
 
 If you have any questions about this Privacy Policy, please contact us:
 
-By mail: [developer@yuanzhibang.com](mailto:consumer-service@yuanzhibang.com)
+By mail: [support@ttqm.app](mailto:consumer-service@yuanzhibang.com)
 
 ### 10. Changes to this Privacy Policy :id=10
 

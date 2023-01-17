@@ -138,7 +138,7 @@ Cookie 是包含少量數據的文件，可能包含匿名唯一標識符。 Coo
 
 如果您對本隱私政策有任何疑問，請聯繫我們：
 
-通過郵件：[developer@yuanzhibang.com](mailto:consumer-service@yuanzhibang.com)
+通過郵件：[support@ttqm.app](mailto:consumer-service@yuanzhibang.com)
 
 ### 10、對此隱私策略的更改 :id=10
 

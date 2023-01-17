@@ -2,7 +2,7 @@
 
 - [Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm)
 - [Official Website](https://ttqm.app)
-- [Contact Us](mailto:developer@yuanzhibang.com)
+- [Contact Us](mailto:support@ttqm.app)
 
 - **[En]**
   - [En](/en/)
