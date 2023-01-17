@@ -1,6 +1,6 @@
 {
   "name": "ttqm-docs",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "TTQM, A Better MQTT Tool Documents",
   "scripts": {
     "dev": "docsify serve",
