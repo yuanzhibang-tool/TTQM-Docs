@@ -21,7 +21,6 @@
 
 |Function|Shortcut|Description|
 |---|---|---|
-|---|---|---|
 |Globally Launch `TTQM`|`Ctrl+Shit+T`| System Global |
 |Create Client|`Ctrl+N`|App Global |
 |Hide App|`Ctrl+H`|App Global |
