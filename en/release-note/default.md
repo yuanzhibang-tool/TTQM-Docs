@@ -4,10 +4,14 @@
 
 ### App Changelog :id=app
 
----
+#### 1.0.13
+
+```
+1. Add Touch Bar support.
+2. Fix bugs.
+```
 
 #### 1.0.10
-
 
 ```
 1. Add the Demo Client after first launch.
@@ -16,6 +20,7 @@
 4. Fix bugs.
 ```
 
+---
 
 ### Doc Changelog :id=doc
 
