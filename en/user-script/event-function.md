@@ -45,7 +45,7 @@
       topicAlias: 100, // value that is used to identify the Topic instead of using the Topic Name number
       responseTopic: 'topic', // String which is used as the Topic Name for a response message string
       correlationData: Buffer.from([1, 2, 3, 4]), // used by the sender of the Request Message to identify which request the Response Message is for when it is received binary
-      userProperties: { // he User Property is allowed to appear multiple times to represent multiple name, value pairs object
+      userProperties: { // the User Property is allowed to appear multiple times to represent multiple name, value pairs object
         'test': 'test'
       },
       subscriptionIdentifier: 120, // representing the identifier of the subscription number
