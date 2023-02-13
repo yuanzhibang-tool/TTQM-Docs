@@ -4,18 +4,18 @@
 
 ### 腳本支持的客戶端事件監聽 :id=1
 
-| 事件              | 描述                                                          | 參數                     | 備註 |
-| ----------------- | ------------------------------------------------------------- | ------------------------ | ---- |
-| `onConnect`       | 當客戶端連接上時觸發                                          | `connack`                | 無   |
-| `onMessage`       | 當客戶端收到消息時觸發                                        | `topic, payload, packet` | 無   |
-| `onReconnect`     | 當客戶端重連時觸發                                            | 無                       | 無   |
-| `onDisconnect`    | 當客戶端收到`disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 無   |
-| `onClose`         | 當客戶端關閉時觸發                                            | 無                       | 無   |
-| `onEnd`           | 當客戶端被中止時觸發                                          | 無                       | 無   |
-| `onError`         | 當客戶端出現錯誤時觸發                                        | `error`                  | 無   |
-| `onPacketSend`    | 當客戶端發送包完成時觸發                                      | `packet`                 | 無   |
-| `onPublish`       | 當客戶端發送消息成功時觸發                                    | `topic, message, opts`   | 無   |
-| `onPacketReceive` | 當客戶端收到包時觸發                                          | `packet`                 | 無   |
+| 事件              | 描述                                                       | 參數                     | 備註 |
+| ----------------- | ---------------------------------------------------------- | ------------------------ | ---- |
+| `onConnect`       | 當客戶端連接上時觸發                                       | `connack`                | 無   |
+| `onMessage`       | 當客戶端收到消息時觸發                                     | `topic, payload, packet` | 無   |
+| `onReconnect`     | 當客戶端重連時觸發                                         | 無                       | 無   |
+| `onDisconnect`    | 當接收到 `disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 無   |
+| `onClose`         | 當客戶端關閉時觸發                                         | 無                       | 無   |
+| `onEnd`           | 當客戶端被中止時觸發                                       | 無                       | 無   |
+| `onError`         | 當客戶端出現錯誤時觸發                                     | `error`                  | 無   |
+| `onPacketSend`    | 當客戶端發送包完成時觸發                                   | `packet`                 | 無   |
+| `onPublish`       | 當客戶端發送消息成功時觸發                                 | `topic, message, opts`   | 無   |
+| `onPacketReceive` | 當客戶端收到包時觸發                                       | `packet`                 | 無   |
 
 ---
 
@@ -32,28 +32,24 @@
 
 ### 腳本更新圖表數據的方式 :id=3
 
-通過調用內置函數`updateChartViewData`來更新圖表,可以進行數據的單次單數據更新,參數為 `ChartViewModuleUpdateData` 類型,也可進行單次多數據更新,參數為`ChartViewModuleUpdateData`組成的數組`[ChartViewModuleUpdateData,ChartViewModuleUpdateData]`,數據更新將會按照數組的順序更新
+通過調用`ChartHelper.updateChartViewData()`來更新圖表,可以進行數據的單次單數據更新,參數為 `ChartViewUpdateData` 類型,也可進行單次多數據更新,參數為`ChartViewUpdateData`組成的數組`[ChartViewUpdateData,ChartViewUpdateData]`,數據更新將會按照數組的順序更新
 
-`updateChartViewData`函數只有一個參數`chartViewData`,參數的定義如下
+`ChartHelper.updateChartViewData()`只有一個參數`chartViewUpdateData`,參數的定義如下
 
-```javascript
-declare enum ChartViewModuleDataActionType {
-    ARRAY_APPEND_START = "array_append_start",  //將傳入的data以元素的形式附加到配置目標位置原數組的頭部,data為對應的需要append的數組
-    ARRAY_APPEND_END = "array_append_end", //將傳入的data以元素的形式附加到配置目標位置原數組的尾部,data為對應的需要append的數組
-    ARRAY_MERGE_START = "array_merge_start", //將傳入的data(必須是數組)中的所有元素合併到配置目標位置原數組的頭部,data為對應的需要merge的數組
-    ARRAY_MERGE_END = "array_merge_end", //將傳入的data(必須是數組)中的所有元素合併到原數組的頭部,data為對應的需要merge的數組
-    OBJECT_MERGE = "object_merge",  //將傳入的object和原object進行合併操作,形成一個新的object,data為對應的需要merge的object
-    DELETE = "delete", //將配置目標位置的元素清除,無需設置data
-    REPLACE = "replace", //將配置目標位置的元素替換為傳入的data,data為需要替換的目標元素
-    INCREASE = "increase", //將配置目標位置的元素進行加操作,data為對應需要increase的步長
-    DECREASE = "decrease" //將配置目標位置的元素進行減操作,data為對應需要decrease的步長
-}
-
-interface ChartViewModuleUpdateData {
-  targetPath: Array<any>; //用以標記需要更新的目標位置
-  action: ChartViewModuleDataActionType; //用於標記更新的方式
-  data?: any; //需要更新的目標數據,特定的更新操作不需要傳入data,如刪除
-  version: number; //恆為1
+```typescript
+export interface ChartViewUpdateData {
+  /**
+   * the target path that needs to be updated, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
+   */
+  targetPath: Array<any>;
+  /**
+   * The update action
+   */
+  action: 'array_append_start' | 'array_append_end' | 'array_merge_start' | 'array_merge_end' | 'object_merge' | 'delete' | 'replace' | 'increase' | 'decrease';
+  /**
+   * The target data that needs to be updated, some update actions do not need to pass, such as delete
+   */
+  data?: any;
 }
 ```
 
@@ -118,7 +114,7 @@ setOption(option);
 
 ### 使用參考代碼 :id=5
 
-> 更多使用示例,請參考[圖表>示例](zh-tw/chart/demo)
+> 更多使用示例,請參考[圖表>示例](zh-cn/chart/demo)
 
 **1.單次更新單個目標數據**
 
@@ -126,6 +122,8 @@ setOption(option);
 <!-- tab:配置 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
+
 var option = {
   xAxis: {
     type: 'category',
@@ -153,18 +151,18 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
-
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewData = {
   targetPath: ['series', 'data'],
   action: 'replace',
   data: [1, 2, 3, 4, 5, 6, 7],
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -210,6 +208,7 @@ module.exports = {};
 <!-- tab:配置 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var option = {
   xAxis: {
     type: 'category',
@@ -237,27 +236,26 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
 
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewDatas = [
   {
     targetPath: ['series', 'data'],
     action: 'replace',
-    data: [1, 2, 3, 4, 5, 6, 7],
-    version: 1,
+    data: [1, 2, 3, 4, 5, 6, 7]
   },
   {
     targetPath: ['series', 'data', 0],
     action: 'replace',
-    data: 9,
-    version: 1,
+    data: 9
   },
 ];
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -293,4 +291,4 @@ module.exports = {};
 }
 ```
 
-<!-- tabs:end -->
+<!-- tabs: end -->

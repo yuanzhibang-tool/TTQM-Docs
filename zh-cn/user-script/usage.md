@@ -23,11 +23,12 @@
 !>脚本不会自动退出,即使没有操作也会一直执行,所以可以作为常驻内存应用,支持同时运行多个用户脚本,例如,一个用来永久化消息投递,一个用于模拟`iot`设备,一个用于模拟服务器端程序,
 
 ```javascript
+const { UserScriptHelper } = require("@ttqm/ttqm-support");
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
-    // 使用内置函数publish发布在线主题消息
-    publish('device/123/type/event/event/online', '{}');
+    // 使用UserScriptHelper.publish发布在线主题消息
+    UserScriptHelper.publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
     // 打印topic

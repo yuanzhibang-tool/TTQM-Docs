@@ -32,27 +32,24 @@
 
 ### How the script updates the chart data? :id=3
 
-By calling the built-in function `updateChartViewData` to update the chart, you can update option with single `ChartViewModuleUpdateData`, or update with an array like `[ChartViewModuleUpdateData,ChartViewModuleUpdateData]`, and the Chart will be updated in the order of the array one by one.
+By calling method `ChartHelper.updateChartViewData()` to update the chart, you can update option with single `ChartViewUpdateData`, or update with an array like `[ChartViewUpdateData,ChartViewUpdateData]`, and the Chart will be updated in the order of the array one by one.
 
-The `updateChartViewData` function has only one parameter `chartViewData(s)`, and the definition of the parameters is as follows
+The `ChartHelper.updateChartViewData()` method has only one parameter `ChartViewUpdateData` or [ChartViewUpdateData,ChartViewUpdateData,ChartViewUpdateData], and the definition of the parameters is as follows
 
 ```javascript
-declare enum ChartViewModuleDataActionType {
-     ARRAY_APPEND_START = "array_append_start", //Append the incoming data to the head of the original array at the configuration target location in the form of elements, and data is the corresponding array that needs to be appended
-     ARRAY_APPEND_END = "array_append_end", //Append the incoming data to the end of the original array at the configuration target position in the form of elements, and data is the corresponding array that needs to be appended
-     ARRAY_MERGE_START = "array_merge_start", //Merge all the elements in the incoming data (must be an array) to the head of the original array at the configuration target location, data is the corresponding array that needs to be merged
-     ARRAY_MERGE_END = "array_merge_end", //Merge all the elements in the incoming data (must be an array) to the head of the original array, data is the corresponding array that needs to be merged
-     OBJECT_MERGE = "object_merge", //Merge the incoming object and the original object to form a new object, data is the corresponding object that needs to be merged
-     DELETE = "delete", //Clear the element of the configuration target location, no need to set data
-     REPLACE = "replace", //Replace the element at the configuration target position with the incoming data, and data is the target element to be replaced
-     INCREASE = "increase", //Add the elements of the configuration target position, data is the step size corresponding to the need to increase
-     DECREASE = "decrease" //Reduce the elements of the configuration target position, data is the step size corresponding to the decrease
-}
-
-interface ChartViewModuleUpdateData {
-   targetPath: Array<any>; // the target path that needs to be updated
-   action: ChartViewModuleDataActionType; // The update action
-   data?: any; // The target data that needs to be updated, some update actions do not need to pass, such as delete
+export interface ChartViewUpdateData {
+  /**
+   * the target path that needs to be updated, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
+   */
+  targetPath: Array<any>;
+  /**
+   * The update action
+   */
+  action: 'array_append_start' | 'array_append_end' | 'array_merge_start' | 'array_merge_end' | 'object_merge' | 'delete' | 'replace' | 'increase' | 'decrease';
+  /**
+   * The target data that needs to be updated, some update actions do not need to pass, such as delete
+   */
+  data?: any;
 }
 ```
 
@@ -125,6 +122,7 @@ module.exports = option;
 <!-- tab: Option -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var option = {
   xAxis: {
     type: 'category',
@@ -152,18 +150,19 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
 
 <!-- tab: Script -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewData = {
   targetPath: ['series', 'data'],
   action: 'replace',
   data: [1, 2, 3, 4, 5, 6, 7],
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -209,6 +208,7 @@ module.exports = {};
 <!-- tab: Option -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var option = {
   xAxis: {
     type: 'category',
@@ -236,12 +236,13 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
 
 <!-- tab: Script -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewDatas = [
   {
     targetPath: ['series', 'data'],
@@ -256,7 +257,7 @@ var chartViewDatas = [
     version: 1,
   },
 ];
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 

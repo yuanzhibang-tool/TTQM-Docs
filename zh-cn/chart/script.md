@@ -32,28 +32,24 @@
 
 ### 脚本更新图表数据的方式 :id=3
 
-通过调用内置函数`updateChartViewData`来更新图表,可以进行数据的单次单数据更新,参数为 `ChartViewModuleUpdateData` 类型,也可进行单次多数据更新,参数为`ChartViewModuleUpdateData`组成的数组`[ChartViewModuleUpdateData,ChartViewModuleUpdateData]`,数据更新将会按照数组的顺序更新
+通过调用`ChartHelper.updateChartViewData()`来更新图表,可以进行数据的单次单数据更新,参数为 `ChartViewUpdateData` 类型,也可进行单次多数据更新,参数为`ChartViewUpdateData`组成的数组`[ChartViewUpdateData,ChartViewUpdateData]`,数据更新将会按照数组的顺序更新
 
-`updateChartViewData`函数只有一个参数`chartViewData`,参数的定义如下
+`ChartHelper.updateChartViewData()`只有一个参数`chartViewUpdateData`,参数的定义如下
 
 ```javascript
-declare enum ChartViewModuleDataActionType {
-    ARRAY_APPEND_START = "array_append_start",  //将传入的data以元素的形式附加到配置目标位置原数组的头部,data为对应的需要append的数组
-    ARRAY_APPEND_END = "array_append_end", //将传入的data以元素的形式附加到配置目标位置原数组的尾部,data为对应的需要append的数组
-    ARRAY_MERGE_START = "array_merge_start", //将传入的data(必须是数组)中的所有元素合并到配置目标位置原数组的头部,data为对应的需要merge的数组
-    ARRAY_MERGE_END = "array_merge_end", //将传入的data(必须是数组)中的所有元素合并到原数组的头部,data为对应的需要merge的数组
-    OBJECT_MERGE = "object_merge",  //将传入的object和原object进行合并操作,形成一个新的object,data为对应的需要merge的object
-    DELETE = "delete", //将配置目标位置的元素清除,无需设置data
-    REPLACE = "replace", //将配置目标位置的元素替换为传入的data,data为需要替换的目标元素
-    INCREASE = "increase", //将配置目标位置的元素进行加操作,data为对应需要increase的步长
-    DECREASE = "decrease" //将配置目标位置的元素进行减操作,data为对应需要decrease的步长
-}
-
-interface ChartViewModuleUpdateData {
-  targetPath: Array<any>; //用以标记需要更新的目标位置
-  action: ChartViewModuleDataActionType; //用于标记更新的方式
-  data?: any; //需要更新的目标数据,特定的更新操作不需要传入data,如删除
-  version: number; //恒为1
+export interface ChartViewUpdateData {
+  /**
+   * the target path that needs to be updated, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
+   */
+  targetPath: Array<any>;
+  /**
+   * The update action
+   */
+  action: 'array_append_start' | 'array_append_end' | 'array_merge_start' | 'array_merge_end' | 'object_merge' | 'delete' | 'replace' | 'increase' | 'decrease';
+  /**
+   * The target data that needs to be updated, some update actions do not need to pass, such as delete
+   */
+  data?: any;
 }
 ```
 
@@ -126,6 +122,8 @@ setOption(option);
 <!-- tab:配置 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
+
 var option = {
   xAxis: {
     type: 'category',
@@ -153,18 +151,19 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
 
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewData = {
   targetPath: ['series', 'data'],
   action: 'replace',
   data: [1, 2, 3, 4, 5, 6, 7],
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -210,6 +209,7 @@ module.exports = {};
 <!-- tab:配置 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var option = {
   xAxis: {
     type: 'category',
@@ -237,27 +237,26 @@ var option = {
     },
   ],
 };
-setOption(option);
+ChartHelper.setOption(option);
 ```
 
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require("@ttqm/ttqm-support");
 var chartViewDatas = [
   {
     targetPath: ['series', 'data'],
     action: 'replace',
-    data: [1, 2, 3, 4, 5, 6, 7],
-    version: 1,
+    data: [1, 2, 3, 4, 5, 6, 7]
   },
   {
     targetPath: ['series', 'data', 0],
     action: 'replace',
-    data: 9,
-    version: 1,
+    data: 9
   },
 ];
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 

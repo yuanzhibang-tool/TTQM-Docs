@@ -5,11 +5,12 @@
 !>For event details, please refer to [User Script>Event & built-in Function](en/user-script/event-function)
 
 ```javascript
+const { UserScriptHelper } = require("@ttqm/ttqm-support");
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
     // publish online topic message
-    publish('device/123/type/event/event/online', '{}');
+    UserScriptHelper.publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
     // print topic
@@ -79,11 +80,11 @@ module.exports = {
 !> Exiting the script manually does not emit the `onWillExit` event
 
 ```javascript
-const { FileUtil } = require('@ttqm/ttqm-support');
+const { FileUtil, CommonHelper } = require('@ttqm/ttqm-support');
 const messageCountMap = {};
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    exit();
+    CommonHelper.exit()
   },
   onWillExit: () => {
     // onWillExit will not emit if use exit() function

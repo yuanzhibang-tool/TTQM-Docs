@@ -4,18 +4,18 @@
 
 ### 用戶腳本支持的客戶端事件監聽 :id=1
 
-| 事件              | 描述                                                          | 參數                     | 備註 |
-| ----------------- | ------------------------------------------------------------- | ------------------------ | ---- |
-| `onConnect`       | 當客戶端連接上時觸發                                          | `connack`                | 無   |
-| `onMessage`       | 當客戶端收到消息時觸發                                        | `topic, payload, packet` | 無   |
-| `onReconnect`     | 當客戶端重連時觸發                                            | 無                       | 無   |
-| `onDisconnect`    | 當客戶端收到`disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 無   |
-| `onClose`         | 當客戶端關閉時觸發                                            | 無                       | 無   |
-| `onEnd`           | 當客戶端被中止時觸發                                          | 無                       | 無   |
-| `onError`         | 當客戶端出現錯誤時觸發                                        | `error`                  | 無   |
-| `onPacketSend`    | 當客戶端發送包完成時觸發                                      | `packet`                 | 無   |
-| `onPublish`       | 當客戶端發送消息成功時觸發                                    | `topic, message, opts`   | 無   |
-| `onPacketReceive` | 當客戶端收到包時觸發                                          | `packet`                 | 無   |
+| 事件              | 描述                                                       | 參數                     | 備註 |
+| ----------------- | ---------------------------------------------------------- | ------------------------ | ---- |
+| `onConnect`       | 當客戶端連接上時觸發                                       | `connack`                | 無   |
+| `onMessage`       | 當客戶端收到消息時觸發                                     | `topic, payload, packet` | 無   |
+| `onReconnect`     | 當客戶端重連時觸發                                         | 無                       | 無   |
+| `onDisconnect`    | 當接收到 `disconnect packet from broker. MQTT 5.0 feature` | `packet`                 | 無   |
+| `onClose`         | 當客戶端關閉時觸發                                         | 無                       | 無   |
+| `onEnd`           | 當客戶端被中止時觸發                                       | 無                       | 無   |
+| `onError`         | 當客戶端出現錯誤時觸發                                     | `error`                  | 無   |
+| `onPacketSend`    | 當客戶端發送包完成時觸發                                   | `packet`                 | 無   |
+| `onPublish`       | 當客戶端發送消息成功時觸發                                 | `topic, message, opts`   | 無   |
+| `onPacketReceive` | 當客戶端收到包時觸發                                       | `packet`                 | 無   |
 
 ---
 
@@ -27,14 +27,14 @@
 
 ---
 
-### 用戶腳本支持的內置函數 :id=3
+### 用戶腳本支持的方法 :id=3
 
 | 函數      | 描述                 | 參數                   | 備註                                                    |
 | --------- | -------------------- | ---------------------- | ------------------------------------------------------- |
-| `publish` | 發送消息             | `topic, message, opts` | `topic:string`, `message:string`, `opts` 請參考下方示例 |
-| `exit`    | 手動退出當前用戶腳本 | 無                     | 無                                                      |
+| `UserScriptHelper.publish()` | 發送消息             | `topic, message, opts` | `topic:string`, `message:string`, `opts` 請參考下方示例 |
+| `CommonHelper.exit()`    | 手動退出當前用戶腳本 | 無                     | 無                                                      |
 
-**`publish`中`opts`示例**
+**`UserScriptHelper.publish`中`opts`示例**
 
 ```javascript
 {

@@ -18,7 +18,7 @@
 
 ### 2. Chart Option :id=2
 
-> Chart Option Script is used to initialize the option of the chart. You can use built-in function `setOption`, export the option `object` or export a `Promise` which resolve the chart option. For more option related usage, please refer to [Chart>option](en/chart/option).
+> Chart Option Script is used to initialize the option of the chart. You can use method `ChartHelper.setOption(option)`. For more option related usage, please refer to [Chart>option](en/chart/option).
 
 !>Note: The chart option must return to the option within 10s, otherwise it will be forcibly terminated.
 
@@ -26,6 +26,7 @@
 <!-- tab: Use Function -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var option = {
   xAxis: {
     type: 'category',
@@ -53,75 +54,7 @@ var option = {
     },
   ],
 };
-setOption(option);
-```
-
-<!-- tab: Synchronous Return -->
-
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = option;
-```
-
-<!-- tab: Asynchronous Return -->
-
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = new Promise((resolve, reject) => {
-  resolve(option);
-});
+ChartHelper.setOption(option);
 ```
 
 <!-- tab: Inited Chart -->
@@ -143,6 +76,7 @@ module.exports = new Promise((resolve, reject) => {
 > !> The script will not exit automatically, it will always be executed even if there is no operation
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 setInterval(() => {
   // You can update the corresponding chart data by filtering the topic
   const randomRange = (min, max) => {
@@ -157,11 +91,10 @@ setInterval(() => {
   const returnData = {
     targetPath: ['series', 0, 'data'],
     action: 'replace',
-    data: data,
-    version: 1,
+    data: data
   };
   // Update the chart data through the built-in function updateChartViewData
-  updateChartViewData(returnData);
+  ChartHelper.updateChartViewData(returnData);
   console.log('script debug info!');
 }, 1000);
 
@@ -177,13 +110,12 @@ module.exports = {
       data.push(randomRange(100, 500));
     }
     // Modify multiple items using the format [{...}, {...}, {...}]
-    const returnData = {
+    const updateData1 = {
       targetPath: ['series', 0, 'data'],
       action: 'replace',
-      data: data,
-      version: 1,
+      data: data
     };
-    return returnData;
+    ChartHelper.updateChartViewData(updateData1);
   },
   onPublish: (topic, payload) => {},
 };

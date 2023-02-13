@@ -25,14 +25,14 @@
 
 ---
 
-### Built-in functions supported by User Script :id=3
+### Classes supported by User Script :id=3
 
 | Function  | Description                           | Parameters             | Note                                                                    |
 | --------- | ------------------------------------- | ---------------------- | ----------------------------------------------------------------------- |
-| `publish` | Publish message                       | `topic, message, opts` | `topic:string`, `message:string`, `opts` Please refer to the demo below |
-| `exit`    | Manually exit the current user script | None                   | None                                                                    |
+| `UserScriptHelper.publish()` | Publish message                       | `topic, message, opts` | `topic:string`, `message:string`, `opts` Please refer to the demo below |
+| `CommonHelper.exit()`    | Manually exit the current user script | None                   | None                                                                    |
 
-**`publish` `opts` demo**
+**`UserScriptHelper.publish` `opts` demo**
 
 ```javascript
 {

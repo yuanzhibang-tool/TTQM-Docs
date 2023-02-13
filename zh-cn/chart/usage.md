@@ -18,14 +18,15 @@
 
 ### 2.图表配置 :id=2
 
-> 图表配置用来初始化图表的配置,可以通过内置函数`setOption`,导出配置`object`也可以导出一个`Promise`,在`resolve`中返回图表配置,更多配置相关的使用,请参考[图表>配置](zh-cn/chart/option)
+> 图表配置用来初始化图表的配置,可以通过`ChartHelper.setOption(option)`,请参考[图表>配置](zh-cn/chart/option)
 
 !>注意:图表配置必须在 10s 内返回配置,否则将会被强制终止.
 
 <!-- tabs:start -->
-<!-- tab:使用内置函数 -->
+<!-- tab:初始化配置 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var option = {
   xAxis: {
     type: 'category',
@@ -53,75 +54,7 @@ var option = {
     },
   ],
 };
-setOption(option);
-```
-
-<!-- tab:同步返回 -->
-
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = option;
-```
-
-<!-- tab:异步返回 -->
-
-```javascript
-var option = {
-  xAxis: {
-    type: 'category',
-    data: [
-      'Device-1',
-      'Device-2',
-      'Device-3',
-      'Device-4',
-      'Device-5',
-      'Device-6',
-      'Device-7',
-    ],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 120],
-      type: 'bar',
-      showBackground: true,
-      backgroundStyle: {
-        color: 'rgba(180, 180, 180, 0.2)',
-      },
-    },
-  ],
-};
-module.exports = new Promise((resolve, reject) => {
-  resolve(option);
-});
+ChartHelper.setOption(option);
 ```
 
 <!-- tab:初始化图表 -->
@@ -143,6 +76,8 @@ module.exports = new Promise((resolve, reject) => {
 !>脚本不会自动退出,即使没有操作也会一直执行
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
+
 setInterval(() => {
   // 可通过过滤topic，实现对应chart数据更新
   const randomRange = (min, max) => {
@@ -154,14 +89,13 @@ setInterval(() => {
     data.push(randomRange(100, 500));
   }
   // 修改多项使用 [{...}, {...}, {...}] 格式
-  const returnData = {
-    targetPath: ['series', 0, 'data'],
-    action: 'replace',
-    data: data,
-    version: 1,
-  };
-  // 通过内置函数updateChartViewData更新图表数据
-  updateChartViewData(returnData);
+  const updateData = ChartHelper.getChartViewUpdateData(
+    ['series', 0, 'data'],
+    'replace',
+    data
+  );
+  // 通过ChartHelper.updateChartViewData()更新图表数据
+  ChartHelper.updateChartViewData(updateData);
   console.log('script debug info!');
 }, 1000);
 
@@ -177,13 +111,12 @@ module.exports = {
       data.push(randomRange(100, 500));
     }
     // 修改多项使用 [{...}, {...}, {...}] 格式
-    const returnData = {
+    const updateData1 = {
       targetPath: ['series', 0, 'data'],
       action: 'replace',
       data: data,
-      version: 1,
     };
-    return returnData;
+    ChartHelper.updateChartViewData(updateData1);
   },
   onPublish: (topic, payload) => {},
 };

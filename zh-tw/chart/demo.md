@@ -1,18 +1,19 @@
 > 本部分用來示例如何使用腳本更新圖表配置
 
-!>如果您要查看圖表配置示例,請按照[圖表>配置](zh-tw/chart/option)中的操作來獲取圖表配置示例
+!>如果您要查看圖表配置示例,請按照[圖表>配置](zh-cn/chart/option)中的操作來獲取圖表配置示例
 
 ---
 
 ### 1.監聽事件,並更新數據 :id=1
 
-!>具體的監聽事件描述,請參考[圖表>腳本](zh-tw/chart/script)
+!>具體的監聽事件描述,請參考[圖表>腳本](zh-cn/chart/script)
 
 <!-- tabs:start -->
 
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
     var chartViewData = {
@@ -21,7 +22,7 @@ module.exports = {
       data: 1,
     };
     // data中的第一個元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
@@ -30,7 +31,7 @@ module.exports = {
       data: 1,
     };
     // data中的第二個元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
 };
 ```
@@ -112,12 +113,13 @@ module.exports = {
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data'],
   action: 'replace',
   data: [1, 2, 3, 4, 5, 6, 7],
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -185,10 +187,9 @@ module.exports = {};
 };
 ```
 
-<!-- tabs:end -->
+## <!-- tabs: end -->
 
 ---
-
 ### 3.一次替換多組數據 :id=3
 
 <!-- tabs:start -->
@@ -196,6 +197,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'replace',
@@ -208,7 +210,7 @@ var chartViewData2 = {
   data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
 };
 
-updateChartViewData([chartViewData1, chartViewData2]);
+ChartHelper.updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
@@ -287,6 +289,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data', 0],
   action: 'delete',
@@ -296,7 +299,7 @@ var chartViewData2 = {
   targetPath: ['xAxis', 'data', 0],
   action: 'delete',
 };
-updateChartViewData([chartViewData1, chartViewData2]);
+ChartHelper.updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
@@ -374,12 +377,13 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data', 6],
   action: 'increase',
   data: 2,
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -446,7 +450,6 @@ module.exports = {};
   ],
 }
 ```
-
 <!-- tabs:end -->
 
 ---
@@ -458,12 +461,13 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data', 6],
   action: 'decrease',
   data: 2,
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -542,6 +546,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'array_append_end',
@@ -554,7 +559,7 @@ var chartViewData2 = {
   data: 'Device-8',
 };
 
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -589,7 +594,6 @@ module.exports = {};
   ],
 }
 ```
-
 <!-- tab:目標配置 -->
 
 ```javascript
@@ -634,6 +638,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'array_merge_end',
@@ -646,7 +651,7 @@ var chartViewData1 = {
   data: ['Device-8', 'Device-9'],
 };
 
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -729,6 +734,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: [], //對根節點進行操作
   action: 'object_merge',
@@ -742,7 +748,7 @@ var chartViewData = {
     title: 'Chart Title',
   },
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -816,6 +822,8 @@ module.exports = {};
 
 ---
 
+---
+
 ### 10.替換整個配置 :id=10
 
 <!-- tabs:start -->
@@ -823,6 +831,7 @@ module.exports = {};
 <!-- tab:腳本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   // 對整個根節點進行操作
   targetPath: [],
@@ -847,7 +856,7 @@ var chartViewData = {
     ],
   },
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -882,7 +891,6 @@ module.exports = {};
   ]
 }
 ```
-
 <!-- tab:目標配置 -->
 
 ```javascript
@@ -911,6 +919,7 @@ module.exports = {};
 
 ---
 
+
 ### 11.過濾 topic 並更新數據 :id=11
 
 <!-- tabs:start -->
@@ -919,7 +928,7 @@ module.exports = {};
 
 ```javascript
 // test the topic is contain the sub-topic
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { TopicUtil, ChartHelper } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
     if (TopicUtil.isSubTopic('device_type/+/device_id/+', topic)) {
@@ -929,7 +938,7 @@ module.exports = {
         data: 1,
       };
       // data中的第一個元素加1
-      updateChartViewData(chartViewData);
+      ChartHelper.updateChartViewData(chartViewData);
     }
   },
   onPublish: (topic, message, opts) => {
@@ -939,7 +948,7 @@ module.exports = {
       data: 1,
     };
     // data中的第二個元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
 };
 ```
@@ -1014,4 +1023,4 @@ module.exports = {
 
 ---
 
-!>更多腳本示例,請參照[通用腳本示例](zh-tw/other/common-script-demo.md)
+!>更多腳本示例,請參照[通用腳本示例](zh-cn/other/common-script-demo.md)

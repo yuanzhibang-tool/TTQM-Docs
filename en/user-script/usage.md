@@ -23,11 +23,12 @@
 !> The script will not exit automatically, and will continue even if there is no operation, so it can be used as a resident memory application. You can run multiple user scripts at the same time, for example, one for message delivery, one for simulating `iot` devices ,and the another one for simulating the server-side application,
 
 ```javascript
+const { UserScriptHelper } = require("@ttqm/ttqm-support");
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
-    // Use the built-in function publish to publish online topic messages
-    publish('device/123/type/event/event/online', '{}');
+    // Publish online topic messages via UserScriptHelper.publish
+    UserScriptHelper.publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
     // print topic

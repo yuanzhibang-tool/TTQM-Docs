@@ -27,14 +27,14 @@
 
 ---
 
-### 用户脚本支持的内置函数 :id=3
+### 用户脚本支持的方法 :id=3
 
 | 函数      | 描述                 | 参数                   | 备注                                                    |
 | --------- | -------------------- | ---------------------- | ------------------------------------------------------- |
-| `publish` | 发送消息             | `topic, message, opts` | `topic:string`, `message:string`, `opts` 请参考下方示例 |
-| `exit`    | 手动退出当前用户脚本 | 无                     | 无                                                      |
+| `UserScriptHelper.publish()` | 发送消息             | `topic, message, opts` | `topic:string`, `message:string`, `opts` 请参考下方示例 |
+| `CommonHelper.exit()`    | 手动退出当前用户脚本 | 无                     | 无                                                      |
 
-**`publish`中`opts`示例**
+**`UserScriptHelper.publish`中`opts`示例**
 
 ```javascript
 {

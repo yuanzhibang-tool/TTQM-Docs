@@ -13,6 +13,7 @@
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
     var chartViewData = {
@@ -21,7 +22,7 @@ module.exports = {
       data: 1,
     };
     // data中的第一个元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
   onPublish: (topic, message, opts) => {
     var chartViewData = {
@@ -30,7 +31,7 @@ module.exports = {
       data: 1,
     };
     // data中的第二个元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
 };
 ```
@@ -112,12 +113,13 @@ module.exports = {
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data'],
   action: 'replace',
   data: [1, 2, 3, 4, 5, 6, 7],
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -196,6 +198,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'replace',
@@ -208,7 +211,7 @@ var chartViewData2 = {
   data: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'],
 };
 
-updateChartViewData([chartViewData1, chartViewData2]);
+ChartHelper.updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
@@ -287,6 +290,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data', 0],
   action: 'delete',
@@ -296,7 +300,7 @@ var chartViewData2 = {
   targetPath: ['xAxis', 'data', 0],
   action: 'delete',
 };
-updateChartViewData([chartViewData1, chartViewData2]);
+ChartHelper.updateChartViewData([chartViewData1, chartViewData2]);
 module.exports = {};
 ```
 
@@ -374,12 +378,13 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data', 6],
   action: 'increase',
   data: 2,
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -458,12 +463,13 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: ['series', 'data', 6],
   action: 'decrease',
   data: 2,
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -542,6 +548,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'array_append_end',
@@ -554,7 +561,7 @@ var chartViewData2 = {
   data: 'Device-8',
 };
 
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -634,6 +641,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData1 = {
   targetPath: ['series', 'data'],
   action: 'array_merge_end',
@@ -646,7 +654,7 @@ var chartViewData1 = {
   data: ['Device-8', 'Device-9'],
 };
 
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -729,6 +737,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   targetPath: [], //对根节点进行操作
   action: 'object_merge',
@@ -742,7 +751,7 @@ var chartViewData = {
     title: 'Chart Title',
   },
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -825,6 +834,7 @@ module.exports = {};
 <!-- tab:脚本 -->
 
 ```javascript
+const { ChartHelper } = require('@ttqm/ttqm-support');
 var chartViewData = {
   // 对整个根节点进行操作
   targetPath: [],
@@ -849,7 +859,7 @@ var chartViewData = {
     ],
   },
 };
-updateChartViewData(chartViewData);
+ChartHelper.updateChartViewData(chartViewData);
 module.exports = {};
 ```
 
@@ -923,7 +933,7 @@ module.exports = {};
 
 ```javascript
 // test the topic is contain the sub-topic
-const { TopicUtil } = require('@ttqm/ttqm-support');
+const { TopicUtil, ChartHelper } = require('@ttqm/ttqm-support');
 module.exports = {
   onMessage: (topic, payload, packet) => {
     if (TopicUtil.isSubTopic('device_type/+/device_id/+', topic)) {
@@ -933,7 +943,7 @@ module.exports = {
         data: 1,
       };
       // data中的第一个元素加1
-      updateChartViewData(chartViewData);
+      ChartHelper.updateChartViewData(chartViewData);
     }
   },
   onPublish: (topic, message, opts) => {
@@ -943,7 +953,7 @@ module.exports = {
       data: 1,
     };
     // data中的第二个元素加1
-    updateChartViewData(chartViewData);
+    ChartHelper.updateChartViewData(chartViewData);
   },
 };
 ```

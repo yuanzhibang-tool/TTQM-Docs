@@ -5,11 +5,12 @@
 !>具体的监听事件描述,请参考[用户脚本>脚本事件以及内置函数](zh-cn/user-script/event-function)
 
 ```javascript
+const { UserScriptHelper } = require("@ttqm/ttqm-support");
 module.exports = {
   onConnect: () => {
     console.log('iot connected!');
     // 发布在线主题消息
-    publish('device/123/type/event/event/online', '{}');
+    UserScriptHelper.publish('device/123/type/event/event/online', '{}');
   },
   onMessage: (topic, payload, packet) => {
     // 打印topic
@@ -81,11 +82,11 @@ module.exports = {
 !>手动退出脚本不会触发`onWillExit`事件
 
 ```javascript
-const { FileUtil } = require('@ttqm/ttqm-support');
+const { FileUtil, CommonHelper } = require('@ttqm/ttqm-support');
 const messageCountMap = {};
 module.exports = {
   onMessage: (topic, payload, packet) => {
-    exit();
+    CommonHelper.exit()
   },
   onWillExit: () => {
     // onWillExit will not emit if use exit() function
