@@ -1,5 +1,10 @@
 ```javascript
-const { TcpClient, TopicUtil, ByteUtil } = require('@ttqm/ttqm-support');
+const {
+  TcpClient,
+  TopicUtil,
+  ByteUtil,
+  UserScriptHelper,
+} = require('@ttqm/ttqm-support');
 
 let isReady = false;
 
@@ -43,7 +48,7 @@ module.exports = {
     // publish exit topic message before exit
     // 在退出前发送退出消息
     // 在退出前發送退出消息
-    publish('exit', '{"event":"exit"}', { qos: 2 });
+    UserScriptHelper.publish('exit', '{"event":"exit"}', { qos: 2 });
     console.log('on will exit');
   },
 };

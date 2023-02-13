@@ -1,5 +1,5 @@
 ```javascript
-const { WsServer, ByteUtil } = require('@ttqm/ttqm-support');
+const { WsServer, ByteUtil, UserScriptHelper } = require('@ttqm/ttqm-support');
 
 const server = new WsServer(7777, {
   onConnection: (socketInfo) => {
@@ -24,7 +24,7 @@ const server = new WsServer(7777, {
     // 傳輸過來的data為字節數組,使用ByteUtil轉換為string,更多關於ByteUtil,請訪問: https://doc.ttqm.app/#/zh-cn/question/built-in-module?id=_6
     const dataString = ByteUtil.byteArrayToString(data);
     server.send(dataString, socketInfo.id);
-    publish('test_topic', dataString);
+    UserScriptHelper.publish('test_topic', dataString);
   },
   onSocketClose: (socketInfo, code, reason) => {
     console.log('onSocketClose', socketInfo, code, reason);

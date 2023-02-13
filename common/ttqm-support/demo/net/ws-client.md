@@ -1,5 +1,5 @@
 ```javascript
-const { WsClient, TopicUtil } = require('@ttqm/ttqm-support');
+const { WsClient, TopicUtil, UserScriptHelper } = require('@ttqm/ttqm-support');
 
 let isReady = false;
 
@@ -33,7 +33,7 @@ module.exports = {
   },
   onWillExit: () => {
     // publish exit topic message before exit
-    publish('exit', '{"event":"exit"}', { qos: 2 });
+    UserScriptHelper.publish('exit', '{"event":"exit"}', { qos: 2 });
     // !do something before exit
     console.log('on will exit');
   },

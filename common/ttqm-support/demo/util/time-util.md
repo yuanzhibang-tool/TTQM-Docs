@@ -1,5 +1,5 @@
 ```javascript
-const { TimeUtil, ByteUtil } = require('@ttqm/ttqm-support');
+const { TimeUtil, ByteUtil, CommonHelper } = require('@ttqm/ttqm-support');
 
 const main = async () => {
   const topic = 'version/1/type/device_cmd';
@@ -23,7 +23,7 @@ const main = async () => {
   // stop script process manually
   // 手动停止脚本运行
   // 手動停止腳本運行
-  exit();
+  CommonHelper.exit();
 };
 
 main();
