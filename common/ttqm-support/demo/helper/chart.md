@@ -1,42 +1,175 @@
+> Chart Option Script
+
 ```javascript
-/**
- * Chart view update data, used for update chart, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
- */
-export interface ChartViewUpdateData {
-    /**
-     * the target path that needs to be updated, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
-     */
-    targetPath: Array<any>;
-    /**
-     * The update action
-     */
-    action: 'array_append_start' | 'array_append_end' | 'array_merge_start' | 'array_merge_end' | 'object_merge' | 'delete' | 'replace' | 'increase' | 'decrease';
-    /**
-     * The target data that needs to be updated, some update actions do not need to pass, such as delete
-     */
-    data?: any;
+// for more about chart option, please visit: https://doc.ttqm.app/#/en/chart/option
+// 更多关于图表配置，请访问: https://doc.ttqm.app/#/zh-cn/chart/option
+// 更多關於圖表配置，請訪問: https://doc.ttqm.app/#/zh-tw/chart/option
+
+const { ChartHelper } = require('@ttqm/ttqm-support');
+
+const option = {
+  title: {
+    text: ' Line Chart Demo',
+  },
+  tooltip: {
+    trigger: 'axis',
+    formatter: function (params) {
+      params = params[0];
+      var date = new Date(params.name);
+      return (
+        date.getDate() +
+        '/' +
+        (date.getMonth() + 1) +
+        '/' +
+        date.getFullYear() +
+        ' : ' +
+        params.value[1]
+      );
+    },
+    axisPointer: {
+      animation: false,
+    },
+  },
+  xAxis: {
+    type: 'time',
+    splitLine: {
+      show: false,
+    },
+  },
+  yAxis: {
+    type: 'value',
+    boundaryGap: [0, '100%'],
+    splitLine: {
+      show: false,
+    },
+  },
+  series: [
+    {
+      name: 'Fake Data',
+      type: 'line',
+      lineStyle: {
+        color: '#0984e3',
+      },
+      showSymbol: false,
+      data: [],
+    },
+  ],
+};
+// Set via ChartHelper.setOption
+// 使用内置方法ChartHelper.setOption进行配置
+// 使用內置方法ChartHelper.setOption進行配置
+ChartHelper.setOption(option);
+```
+
+---
+
+> Chart Script
+
+```javascript
+// for more Chart Script, please visit: https://doc.ttqm.app/#/en/chart/script
+// 更多关于图表脚本，请访问: https://doc.ttqm.app/#/zh-cn/chart/script
+// 更多關於圖表腳本，請訪問: https://doc.ttqm.app/#/zh-tw/chart/script
+
+const { ChartHelper } = require('@ttqm/ttqm-support');
+
+// init the chart option with random data.
+// 使用随机数据初始化图表
+// 使用随机数据初始化图表
+function randomData() {
+  now = new Date(+now + oneDay);
+  value = value + Math.random() * 21 - 10;
+  return {
+    name: now.toString(),
+    value: [
+      [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+      Math.round(value),
+    ],
+  };
 }
-/**
- * Chart helper, can be used only for chart scripts, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
- */
-export declare class ChartHelper {
-    /**
-     * Set init option of chart, can be used only for chart option scripts, for more please read: https://doc.ttqm.app/#/en/chart/option
-     * @param option chart option
-     */
-    static setOption(option: any): void;
-    /**
-     * Get chart view update data, can be used only for chart scripts, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
-     * @param targetPath the target path that needs to be updated
-     * @param action The update action
-     * @param [data] The target data that needs to be updated, some update actions do not need to pass, such as delete
-     * @returns chart view update data
-     */
-    static getChartViewUpdateData(targetPath: Array<any>, action: 'array_append_start' | 'array_append_end' | 'array_merge_start' | 'array_merge_end' | 'object_merge' | 'delete' | 'replace' | 'increase' | 'decrease', data?: any): ChartViewUpdateData;
-    /**
-     * Update chart view data, for more please read: https://doc.ttqm.app/#/en/chart/script?id=_3
-     * @param chartViewData the chart view update data, the chart view update data, you can update option with single ChartViewUpdateData, or update with an array like [ChartViewUpdateData,ChartViewUpdateData], and the Chart will be updated in the order of the array one by one
-     */
-    static updateChartViewData(chartViewData: ChartViewUpdateData | Array<ChartViewUpdateData>): void;
+let data = [];
+let now = new Date(1997, 9, 3);
+let oneDay = 24 * 3600 * 1000;
+let value = Math.random() * 1000;
+for (var i = 0; i < 1000; i++) {
+  data.push(randomData());
 }
+
+const initChartData = {
+  targetPath: ['series', 0, 'data'],
+  action: 'replace',
+  data: data,
+};
+
+// set init data
+// 设置图表初始化数据
+// 设置图表初始化数据
+
+updateChartViewData(initChartData);
+
+// update chart data repeatedly
+// 定时更新图表数据
+// 定时更新图表数据
+
+setInterval(() => {
+  const deleteDataItem0 = ChartHelper.getChartViewUpdateData(
+    ['series', 0, 'data', 0],
+    'delete'
+  );
+  const deleteDataItem1 = {
+    targetPath: ['series', 0, 'data', 0],
+    action: 'delete',
+  };
+  const deleteDataItem2 = {
+    targetPath: ['series', 0, 'data', 0],
+    action: 'delete',
+  };
+  const deleteDataItem3 = {
+    targetPath: ['series', 0, 'data', 0],
+    action: 'delete',
+  };
+  const deleteDataItem4 = {
+    targetPath: ['series', 0, 'data', 0],
+    action: 'delete',
+  };
+  const appendDataItem0 = {
+    targetPath: ['series', 0, 'data'],
+    action: 'array_append_end',
+    data: randomData(),
+  };
+  const appendDataItem1 = {
+    targetPath: ['series', 0, 'data'],
+    action: 'array_append_end',
+    data: randomData(),
+  };
+  const appendDataItem2 = {
+    targetPath: ['series', 0, 'data'],
+    action: 'array_append_end',
+    data: randomData(),
+  };
+  const appendDataItem3 = {
+    targetPath: ['series', 0, 'data'],
+    action: 'array_append_end',
+    data: randomData(),
+  };
+  const appendDataItem4 = {
+    targetPath: ['series', 0, 'data'],
+    action: 'array_append_end',
+    data: randomData(),
+  };
+  const updateData = [
+    deleteDataItem0,
+    deleteDataItem1,
+    deleteDataItem2,
+    deleteDataItem3,
+    deleteDataItem4,
+    appendDataItem0,
+    appendDataItem1,
+    appendDataItem2,
+    appendDataItem3,
+    appendDataItem4,
+  ];
+  // update multi items at once
+  // 一次更新多组数据
+  updateChartViewData(updateData);
+}, 100);
 ```
