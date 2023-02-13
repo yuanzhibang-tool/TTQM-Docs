@@ -1,15 +1,7 @@
 ```javascript
-/**
- * Encrypt util, This class is used to get the string hash
- */
-export declare class EncryptUtil {
-    /**
-     * Gets hash of string
-     * @param content the string content
-     * @param [hashName] a valid hash name, eg. sha1 md5 sha256.
-     * @returns the hash in hex
-     */
-    static getHash(content: string, hashName?: string): string;
-}
-
+const { EncryptUtil } = require('@ttqm/ttqm-support');
+const stringContent = '1';
+const stringHashSha1 = EncryptUtil.getHash(stringContent, 'sha1');
+console.log(stringHashSha1);
+// stringHashSha1 = 356a192b7913b04c54574d18c28d46e6395428ab
 ```

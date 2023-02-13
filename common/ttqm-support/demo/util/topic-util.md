@@ -1,21 +1,31 @@
 ```javascript
-/**
- * Topic util, This class is used to handle MQTT topic-related operations
- */
-export declare class TopicUtil {
-    /**
-     * Check if it is a subtopic of the provided topic
-     * @param topic the topic
-     * @param subTopic the subtopic to check
-     * @returns boolean true if it is a subtopic
-     */
-    static isSubTopic(topic: string, subTopic: string): boolean;
-    /**
-     * parse topic which is `key1/value1/key2/value2` format to an object like {key1:value1,key2:value2}
-     * @param topic the topic to parse
-     * @returns an object containing the key and value
-     */
-    static parseKeyValueTopic(topic: string): object;
-}
+const { TopicUtil } = require('@ttqm/ttqm-support');
+// detect subtopic
+const subTopic = 'device_type/1/device_id/123456';
+const isSubTopic = TopicUtil.isSubTopic('device_type/+/device_id/+', subTopic);
+console.log(isSubTopic);
+// isSubTopic = true
+const subTopic1 = 'device_type/1/device_sn/123456';
+const isSubTopic1 = TopicUtil.isSubTopic(
+  'device_type/+/device_id/+',
+  subTopic1
+);
+console.log(isSubTopic1);
+// isSubTopic1 = false
 
+// parse topic
+const subTopicInfo = TopicUtil.parseKeyValueTopic(subTopic);
+// subTopicInfo = {
+//   device_type: 1,
+//   device_id: 123456,
+// };
+
+console.log(subTopicInfo);
+
+const deviceType = subTopicInfo.device_type;
+const deviceId = subTopicInfo.device_id;
+console.log(deviceType);
+console.log(deviceId);
+// deviceType=1
+// deviceId=123456
 ```

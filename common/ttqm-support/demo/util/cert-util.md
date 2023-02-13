@@ -1,92 +1,39 @@
 ```javascript
-/**
- * Cert util, This class is used to handle content related to SSL encryption and decryption
- */
-export declare class CertUtil {
-    /**
-     * encrypt via private key
-     * @param privateKeyPem private key in pem format
-     * @param stringContent data to be encrypted which in string format
-     * @param chunkSize  the chunk size of the string content
-     * @returns encrypted content in base64 format
-     */
-    static privateKeyEncrypt(privateKeyPem: string, stringContent: any, chunkSize: number): string;
-    /**
-     * decrypt via private key
-     * @param privateKeyPem private key in pem format
-     * @param encyptedBase64Content encrypted content in base64 format
-     * @param chunkSize the chunk size of the encypted content
-     * @returns decrypted string in string utf8
-     */
-    static privateKeyDecrypt(privateKeyPem: string, encyptedBase64Content: any, chunkSize: number): string;
-    /**
-     * encrypt via cert
-     * @param certPem cert in pem format
-     * @param stringContent data to be encrypted which in string format
-     * @param chunkSize  the chunk size of the string content
-     * @returns encrypted content in base64 format
-     */
-    static certEncrypt(certPem: string, stringContent: any, chunkSize: number): string;
-    /**
-     * decrypt via cert
-     * @param certPem cert in pem format
-     * @param encyptedBase64Content encrypted content in base64 format
-     * @param chunkSize the chunk size of the encypted content
-     * @returns decrypted string in string utf8
-     */
-    static certDecrypt(certPem: string, encyptedBase64Content: string, chunkSize: number): string;
-    /**
-     * encrypt via public key
-     * @param publicKeyPem public key in pem format
-     * @param stringContent data to be encrypted which in string format
-     * @param chunkSize  the chunk size of the string content
-     * @returns encrypted content in base64 format
-     */
-    static publicKeyEncrypt(publicKeyPem: string, stringContent: any, chunkSize: number): string;
-    /**
-     * encrypt via public key
-     * @param publicKeyPem public key in pem format
-     * @param encyptedBase64Content encrypted content in base64 format
-     * @param chunkSize  the chunk size of the string content
-     * @returns decrypted string in string utf8
-     */
-    static publicKeyDecrypt(publicKeyPem: string, encyptedBase64Content: string, chunkSize: number): string;
-    /**
-     * Get cert encrypt max chunk size
-     * @param certPem cert in pem format
-     * @returns cert encrypt max chunk size
-     */
-    static getCertEncryptMaxChunkSize(certPem: string): number;
-    /**
-     * Get cert encrypt content size
-     * @param certPem cert in pem format
-     * @returns cert encrypt content size
-     */
-    static getCertEncryptContentSize(certPem: string): number;
-    /**
-     * Get public key encrypt max chunk size
-     * @param publicKeyPem public key in pem format
-     * @returns public key encrypt max chunk size
-     */
-    static getPublicKeyEncryptMaxChunkSize(publicKeyPem: string): number;
-    /**
-     * Get public key encrypt content size
-     * @param publicKeyPem public key in pem format
-     * @returns public key encrypt content size
-     */
-    static getPublicKeyEncryptContentSize(publicKeyPem: string): number;
-    /**
-     * Get private key encrypt max chunk size
-     * @param privateKeyPem private key in pem format
-     * @returns private key encrypt max chunk size
-     */
-    static getPrivateKeyEncryptMaxChunkSize(privateKeyPem: string): number;
-    /**
-     * Get private key encrypt content size
-     * @param privateKeyPem private key in pem format
-     * @returns private key encrypt content size
-     */
-    static getPrivateKeyEncryptContentSize(privateKeyPem: string): number;
-}
+const { CertUtil } = require('@ttqm/ttqm-support');
 
+const certPem = `-----BEGIN CERTIFICATE-----
+MIIDWzCCAkOgAwIBAgIURzmUxeH8mb5B7eWBKrxBi0k4ZCgwDQYJKoZIhvcNAQEL
+BQAwPTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMSEwHwYDVQQKDBhJbnRlcm5l
+dCBXaWRnaXRzIFB0eSBMdGQwHhcNMjIxMjE1MDMzOTQ2WhcNMzIxMjEyMDMzOTQ2
+WjA9MQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExITAfBgNVBAoMGEludGVybmV0
+IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+ALcBud38LRL8lQDfvuz3cDM3jEQiG1NdPf0GEscolPSOyZQQe0h1KwcTePilD7gc
+848r22Ug/BzkLNtNzSGQgARizk8KHctu9yejCRmjAArm+xwSdBQGqFm+NXN3zka0
+rObzIxJbdW590bVfPfrOKR1fKrFqkwAYr6ktnVO3CSjsc5UIJphhlMnHLSHjt9b9
+jKW2a2WgOGHFAXspSlsOiCXHyGGYXPVYHOe5Q+Z5P6SxxWHA6oeIH9oy+QnXRGV4
+AiPqlzeCvTTypHlLmdZZmkz+93dNqroARY+3zsSIYe0CWnun30r9GAjdkek1vkr9
+0voEmxjZSAqJgcEakuDVVDkCAwEAAaNTMFEwHQYDVR0OBBYEFGLs3WNbcTW1MsRd
+0nR6hU9z2rECMB8GA1UdIwQYMBaAFGLs3WNbcTW1MsRd0nR6hU9z2rECMA8GA1Ud
+EwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAEPW2cMqXTR3JDnvPenA+B4S
+q/cGJfKr9eooK6t62CdgN3HhZYFH9+V8tF44hIyrOguxK2duwq7EWNIRqqlF3HAT
+MqjCWZ/Z8wXtvcBNrDueZhhlWksQ1cITFJzJnw4ImycsxTyqVaq1UOodZDyygiQc
+kxrjgqSi9uXAQUuKzqN6Mas2AHUPWEB+YRJz5aLBuGIX7hi5sfoQ4kbHMu6jRaug
+4CErzSD1pdQTo7SKyoQXg9UdjdgxgBpWQFltFBG1shl1sr1nxIClZbtr7AXxYlK3
+tXKYeZ4ucHFd7rlOjORpbliWa9A0sjvm7Klic2Pbd6jp2PqdR4EK6Tn5e8S7Sng=
+-----END CERTIFICATE-----`;
+// certificate encrypted data
+const stringContent = '1';
+const encyptedContent = CertUtil.certEncrypt(certPem, stringContent, 100);
+console.log(encyptedContent);
+// encyptedContent= 'YaEtVr5Ct3inafRqWwW9Z9U2q4F0xnjNU7I83va9oixKsfy9DZThVGv2O9CZxOM0THfBbMVNwVnY0xTFZz0ZlzRotJVmlPZ5NZSnLGMxq/nnAt9ujcGUXBeChavjbn6QmAnRuvQs3jgjNPDhqPgVM430xluo2LLVA1xo22Krg4EasswNW6XQ5ZHW3+9apf1GwpQnvp8Mrk9UMwZ8rFfI55aMm6nWP/rPnrC3Q5xav6amMVFWFEUF7hBNEWgCdD22KPzmoSM2tLtrRlEejDOjX09hkvCrM3K+vHGOPrTmN+N05lUJ5jh1t0P4U3rm/1rYHC8OA95SHCem9/k9Rv9kaA=='
+
+// get the maximum chunk size of the certificate encyryption
+const maxChunkSize = CertUtil.getCertEncryptMaxChunkSize(certPem);
+console.log(maxChunkSize);
+// maxChunkSize=214
+
+// Get the number of bytes of content encrypted by the certificate, which is the chunk size that needs to be passed in for decryption
+const encryptedChunkSize = CertUtil.getCertEncryptContentSize(certPem);
+console.log(encryptedChunkSize);
+// encryptedChunkSize=512
 ```
