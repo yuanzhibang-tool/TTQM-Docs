@@ -237,3 +237,38 @@ console.log(originalText); // 'my message'
 [WsServer](../../common/ttqm-support/demo/net/ws-server.md ':include')
 
 <!-- tabs:end -->
+
+---
+
+### 7.模拟数据生成库`Faker` :id=7
+
+**用法示例,更多用法请参照[Faker](https://github.com/faker-js/faker)**
+
+```javascript
+const { faker } = require('@faker-js/faker');
+
+const createRandomUser = () => {
+  return {
+    userId: faker.datatype.uuid(),
+    username: faker.internet.userName(),
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate(),
+    registeredAt: faker.date.past(),
+  };
+};
+
+const user = createRandomUser();
+console.log(user);
+
+// {
+//   userId: '513248d6-061c-4a5e-bf18-a2b06759a951',
+//   username: 'Ines_Gulgowski',
+//   email: 'Cale.Little62@gmail.com',
+//   avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/391.jpg',
+//   password: '_YeMUPJGDvAM8HN',
+//   birthdate: 1993-03-14T16:44:26.836Z,
+//   registeredAt: 2022-10-28T11:39:27.543Z
+// }
+```
