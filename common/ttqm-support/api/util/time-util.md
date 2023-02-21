@@ -27,14 +27,14 @@ export declare class TimeUtil {
     static getUnixSecondFromFormatDate(formatDate: string): number;
     /**
      * Get format date from unix millisecond with given format
-     * @param [format] given format
+     * @param [format] given format like 'YYYY-MM-DD HH:mm:ss'
      * @param [unixMillisecond] given unix millisecond, if not specified, default is current unix millisecond
      * @returns the format date string
      */
     static getFormatDateFromUnixMillisecond(format?: string, unixMillisecond?: number): string;
     /**
      * Get format date from unix second with given format
-     * @param [format] given format
+     * @param [format] given format like 'YYYY-MM-DD HH:mm:ss'
      * @param [unixSecond] given unix second, if not specified, default is current unix second
      * @returns the format date string
      */
