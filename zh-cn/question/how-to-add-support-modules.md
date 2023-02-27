@@ -31,3 +31,9 @@ var array = [1];
 var other = _.concat(array, 2, [3], [[4]]);
 console.log(other);
 ```
+
+---
+
+### 4.安装@types,增强编辑器类型提示
+
+!>从 `TTQM` `1.1.0` 开始内置的脚本编辑器支持代码提示和补全功能,你可以在 [https://www.npmjs.com](https://www.npmjs.com) 上搜索您需要提示的模块,例如需要安装`lodash`的类型定义, 搜索`@types/lodash`,如果存在,请使用 `npm install @types/lodash` 安装,或者直接使用 `npm install @types/对应包名称`进行安装,安装成功则代表包含该库.
