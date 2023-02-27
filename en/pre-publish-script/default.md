@@ -1,6 +1,6 @@
 > Pre-Publish Script, used to process the published message before publishing, the actual published content is the processed content.
 
-!> Note: After the pre-script is enabled, all messages published in this client, such as messages published manually and messages published via the `User Script`.
+!> Note: After the pre-script is enabled, all messages(only string type) published in this client, such as messages published manually and messages published via the `User Script` will be processed by `Pre-Publish Script`. As a special case, if you send a message with type of `Buffer` or `Array<number>` via the script, it will not be processed by `Pre-Publish Script`.
 
 | No. | Title                                                       | Description                                                                                                                    |
 | --- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
