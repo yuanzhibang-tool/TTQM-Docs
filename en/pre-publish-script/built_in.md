@@ -34,6 +34,7 @@
 | Name               | Description                                                                                 |
 | ------------------ | ------------------------------------------------------------------------------------------- |
 | `leafNodeToString` | Convert all leaf nodes in `json` format to `string`, return itself if it is non-json format |
+| `compressJson`     | Compress `json` strings, remove useless content such as line breaks.                        |
 
 !>Leaf node is the node which does not have a child in `json` tree
 
