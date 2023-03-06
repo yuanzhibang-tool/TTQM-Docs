@@ -39,6 +39,7 @@
   - [Common Script Demo](en/other/common-script-demo.md)
   - [Shortcuts](en/other/keyboard-shortcuts-reference.md)
   - [Backup/Restore](en/other/backup-and-restore.md)
+  - [Start MQTT Server](en/other/mqtt-server.md)
   - [Activate](en/other/activate.md)
 
 - [FAQ?](en/question/default.md)
