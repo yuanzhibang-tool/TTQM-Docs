@@ -29,3 +29,31 @@
 10.回放脚本描述
 
 !>请勿在脚本的域中使用 `setTimeout` 以及 `setInterval` 等函数,避免更新脚本后,无法暂停该操作,如果您使用了并且影响到您的操作,请关闭窗口后重新打开回放窗口.
+
+Demo
+
+```javascript
+const { TimeUtil } = require('@ttqm/ttqm-support');
+let filterAndProcessor = {
+  filter: (messageItem) => {
+    const topic = messageItem.topic;
+    const type = messageItem.type;
+    if (type === 'received') {
+      return true;
+    }
+    return false;
+  },
+  processor: (messageItem) => {
+    const messageAllInfo = messageItem.all_info;
+    const messageString = Buffer.from(messageAllInfo.payload).toString();
+    const messageInfo = JSON.parse(messageString);
+    messageInfo.time = TimeUtil.getCurrentUnixSecond();
+    return {
+      topic: messageAllInfo.topic,
+      message: JSON.stringify(messageInfo),
+      opts: messageAllInfo.packet,
+    };
+  },
+};
+module.exports = filterAndProcessor;
+```
