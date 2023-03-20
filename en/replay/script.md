@@ -1,4 +1,4 @@
-> Replay scripts are used to filter messages and process messages before publishing
+> Replay scripts are used to filter messages and process messages before replay.
 
 _DEMO_
 
