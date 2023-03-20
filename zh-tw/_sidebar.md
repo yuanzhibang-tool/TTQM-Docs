@@ -34,6 +34,14 @@
   - [示例](zh-tw/user-script/demo.md)
   - [調試](zh-tw/user-script/debug.md)
 
+- [回放](zh-tw/replay/default.md)
+
+  - [概念](zh-tw/replay/concept.md)
+  - [能力](zh-tw/replay/capability.md)
+  - [使用](zh-tw/replay/usage.md)
+  - [腳本](zh-tw/replay/script.md)
+  - [調試](zh-tw/replay/debug.md)
+
 - [其他](zh-tw/other/default.md)
 
   - [通用腳本示例](zh-tw/other/common-script-demo.md)

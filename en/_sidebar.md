@@ -34,6 +34,14 @@
   - [Demo](en/user-script/demo.md)
   - [Debug](en/user-script/debug.md)
 
+- [Replay](en/replay/default.md)
+
+  - [Concept](en/replay/concept.md)
+  - [Capability](en/replay/capability.md)
+  - [Usage](en/replay/usage.md)
+  - [Script](en/replay/script.md)
+  - [Debug](en/replay/debug.md)
+
 - [Other](en/other/default.md)
 
   - [Common Script Demo](en/other/common-script-demo.md)
