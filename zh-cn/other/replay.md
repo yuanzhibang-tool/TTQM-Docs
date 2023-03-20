@@ -60,10 +60,10 @@ module.exports = filterAndProcessor;
 
 说明
 
-| 键          | 说明   | 备注                                                                                                     |
-| ----------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| `filter`    | 过滤器 | 用来初始化过滤该记录中的数据,只有该过滤后的消息会被回放,每次更新脚本后,都会重新过滤生成新的回放消息数据  |
-| `processor` | 处理器 | 用来处理即将发送的消息,您可以对该消息进行处理如添加时间戳或者标记测试消息,返回空即可在播放时过滤掉该消息 |
+| 键          | 说明   | 返回值                               | 备注                                                                                                     |
+| ----------- | ------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `filter`    | 过滤器 | `true`保留该消息,`false`过滤掉该消息 | 用来初始化过滤该记录中的数据,只有该过滤后的消息会被回放,每次更新脚本后,都会重新过滤生成新的回放消息数据  |
+| `processor` | 处理器 | 参见下方定义                         | 用来处理即将发送的消息,您可以对该消息进行处理如添加时间戳或者标记测试消息,返回空即可在播放时过滤掉该消息 |
 
 `filter`以及`processor`必须是函数类型,该函数的参数根据发送和接收的消息,格式稍有不同:
 
@@ -139,3 +139,30 @@ module.exports = filterAndProcessor;
 ```
 
 <!-- tabs:end -->
+
+_`processor`的返回值定义_
+
+```javascript
+{
+  topic: "device/123/type/event/event/online", // 消息的topic
+  message: "{a:1}", // 消息体,当是字符串时可被前置脚本处理,如果为字节数组[ 123, 97, 58, 49, 125 ],则不会被前置脚本处理
+  opts: { // 发送消息的配置
+    qos: 2, // QoS level, Number, default 0
+    dup: false, // mark as duplicate flag, Boolean, default false
+    retain: false, // retain flag, Boolean, default false
+    properties: { // optional properties MQTT 5.0
+        payloadFormatIndicator: true, // Payload is UTF-8 Encoded Character Data or not boolean
+        messageExpiryInterval: 4321, // the lifetime of the Application Message in seconds number
+        topicAlias: 100, // value that is used to identify the Topic instead of using the Topic Name number
+        responseTopic: 'topic', // String which is used as the Topic Name for a response message string
+        correlationData: Buffer.from([1, 2, 3, 4]), // used by the sender of the Request Message to identify which request the Response Message is for when it is received binary
+        userProperties: { // the User Property is allowed to appear multiple times to represent multiple name, value pairs object
+          'test': 'test'
+        },
+        subscriptionIdentifier: 120, // representing the identifier of the subscription number
+        contentType: 'test' // String describing the content of the Application Message string
+    }
+},
+  disablePrePublishScript: true //可选属性, 为true则不进行前置脚本处理
+}
+```
