@@ -48,7 +48,6 @@
   - [Shortcuts](en/other/keyboard-shortcuts-reference.md)
   - [Backup/Restore](en/other/backup-and-restore.md)
   - [Start MQTT Server](en/other/mqtt-server.md)
-  - [Replay](en/other/replay.md)
   - [Activate](en/other/activate.md)
 
 - [FAQ?](en/question/default.md)
