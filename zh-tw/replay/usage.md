@@ -30,46 +30,6 @@
 
 _腳本樣例_
 
-```javascript
-const { TimeUtil } = require('@ttqm/ttqm-support');
-let filterAndProcessor = {
-  filter: (messageItem) => {
-    // get more info about message item define: https://doc.ttqm.app/#/en/replay/script
-    // 关于更多messageItem的定义: https://doc.ttqm.app/#/zh-cn/replay/script
-    // 關於更多messageItem的定義: https://doc.ttqm.app/#/zh-tw/replay/script
-    const topic = messageItem.topic;
-    const type = messageItem.type;
-    if (type === 'received') {
-      // return true to add the message to the replay message list
-      // 返回true,将该消息添加到回放的消息列表里
-      // 返回true,將該消息添加到回放的消息列表裡
-      return true;
-    }
-    // return false to remove the message from the replay message list
-    // 返回false,将该消息从回放的消息列表中移除
-    // 返回false,將該消息從回放的消息列表中移除
-    return false;
-  },
-  processor: (messageItem) => {
-    // get more info about message item define: https://doc.ttqm.app/#/en/replay/script
-    // 关于更多messageItem的定义: https://doc.ttqm.app/#/zh-cn/replay/script
-    // 關於更多messageItem的定義: https://doc.ttqm.app/#/zh-tw/replay/script
-    const messageAllInfo = messageItem.all_info;
-    // Parse the json message and add the current time at the root node, and add the __test property to mark that this message is for testing.
-    // 解析json消息并在根节点添加当前时间,以及添加__test参数,来标记本消息是用来测试的
-    // 解析json消息並在根節點添加當前時間,以及添加__test參數,來標記本消息是用來測試的
-    const messageString = Buffer.from(messageAllInfo.payload).toString();
-    const messageInfo = JSON.parse(messageString);
-    messageInfo.time = TimeUtil.getCurrentUnixSecond();
-    messageInfo.__test = true;
-    return {
-      topic: messageAllInfo.topic,
-      message: JSON.stringify(messageInfo),
-      opts: messageAllInfo.packet,
-    };
-  },
-};
-module.exports = filterAndProcessor;
-```
+[ReplayScriptDemo](../../common/replay/demo-script.md ':include')
 
 !>具体脚本说明,请参见[回放>脚本](zh-cn/replay/script.md)
