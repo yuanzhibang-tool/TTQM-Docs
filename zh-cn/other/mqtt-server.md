@@ -28,7 +28,7 @@ docker-compose up -d
 
 ```
 
->you can set allow_anonymous false for forbidden anonymous
+# you can set allow_anonymous false for forbidden anonymous
 allow_anonymous false
 include_dir /etc/mosquitto/conf.d
 ```
