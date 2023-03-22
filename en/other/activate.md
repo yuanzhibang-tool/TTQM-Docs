@@ -2,7 +2,7 @@
 
 ### Activate Online
 
-1. Go to Settings > Pro Edition > Get to enter the online activation process, click `Online`
+1. Go to `Settings > Pro Edition > Get` to enter the online activation process, click `Online`
 
 ![1](_media/activate/1.jpg ':size=600')
 
