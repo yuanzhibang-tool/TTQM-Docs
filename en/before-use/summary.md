@@ -7,6 +7,7 @@
 | 3   | [Pre-Publish Script](en/pre-publish-script/default.md)                             | Used to introduce the concept and usage of `Pre-Publish Script`. |
 | 4   | [Chart](en/chart/default.md)                                                       | Used to introduce the concept and usage of the `Chart`.          |
 | 5   | [User Script](en/user-script/default.md)                                           | Used to introduce the concept and usage of `User Script`.        |
-| 6   | [Other](zh-cn/other/default.md)                                                    | Used to introduce some other content.                            |
-| 7   | [FAQ?](en/question/default.md)                                                     | Used to introduce some frequently asked questions.               |
-| 8   | [Privacy Policy & Terms of Service](en/terms-of-service-privacy-policy/default.md) | Used to display `Privacy Policy & Terms of Service`.             |
+| 6   | [Replay](en/replay/default.md)                                                     | Used to introduce the concept and usage of `Replay`              |
+| 7   | [Other](en/other/default.md)                                                       | Used to introduce some other content.                            |
+| 8   | [FAQ?](en/question/default.md)                                                     | Used to introduce some frequently asked questions.               |
+| 9   | [Privacy Policy & Terms of Service](en/terms-of-service-privacy-policy/default.md) | Used to display `Privacy Policy & Terms of Service`.             |
