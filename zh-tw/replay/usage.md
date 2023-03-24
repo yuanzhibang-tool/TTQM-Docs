@@ -26,7 +26,7 @@
 
 ![6](_media/usage/6.jpg ":size=600")
 
-### 7.切換倍率和回放模式(僅支持專業版)
+### 7.切換倍速和回放模式(僅支持專業版)
 
 ![7](_media/usage/7.jpg ":size=600")
 ![7](_media/usage/8.jpg ":size=600")
