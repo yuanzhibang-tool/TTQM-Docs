@@ -19,3 +19,7 @@
 ### User Script :id=3
 
 > Run a simple script to realize the debugging of complex functions, such as: debugging communication protocols between devices, simulating `IoT` devices, simulating server programs, batch message publishing, message delivery, and persistence, etc.
+
+### Replay :id=4
+
+> Using the replay feature, you can filter, process, and replay messages within a specific time to simplify the testing.

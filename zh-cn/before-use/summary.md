@@ -7,6 +7,7 @@
 | 3    | [前置脚本](zh-cn/pre-publish-script/default.md)                         | 用来说明前置脚本的概念和用法     |
 | 4    | [图表](zh-cn/chart/default.md)                                          | 用来说明图表的概念和用法         |
 | 5    | [用户脚本](zh-cn/user-script/default.md)                                | 用来说明用户脚本的概念和用法     |
-| 6    | [其他](zh-cn/other/default.md)                                          | 用来说明一些其他内容             |
-| 7    | [常见问题?](zh-cn/question/default.md)                                  | 用来说明一些常见问题             |
-| 8    | [隐私政策 & 服务协议](zh-cn/terms-of-service-privacy-policy/default.md) | 用来展示`隐私政策 & 服务协议`    |
+| 6    | [回放](zh-cn/replay/default.md)                                         | 用来说明消息回放的概念和用法     |
+| 7    | [其他](zh-cn/other/default.md)                                          | 用来说明一些其他内容             |
+| 8    | [常见问题?](zh-cn/question/default.md)                                  | 用来说明一些常见问题             |
+| 9    | [隐私政策 & 服务协议](zh-cn/terms-of-service-privacy-policy/default.md) | 用来展示`隐私政策 & 服务协议`    |

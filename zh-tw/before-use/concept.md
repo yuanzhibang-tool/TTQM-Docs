@@ -4,7 +4,7 @@
 
 ### 前置腳本(Pre-Publish Script) :id=1
 
-> 前置腳本是指在發送消息之前對要發送的消息進行模板替換,變量替換等操作後後再進行發送的腳本,例如:替換發送消息中的`時間`,`unix時間戳`,`uuid`等,用戶可以通過內置的`變量(variable)`,`變量管道(variable pipe)`,`管道(pipe)`進行處理,用戶自己也可對`變量(variable)`,`變量管道(variable pipe)`,`管道(pipe)`進行拓展,詳見[前置腳本](zh-tw/pre-publish-script/default.md)
+> 前置腳本是指在發送消息之前對要發送的消息進行模板替換,變量替換等操作後後再進行發送的腳本,例如:替換發送消息中的`時間`,`unix時間戳`,`uuid`等,用戶可以通過內置的`變量(variable)`,`變量管道(variable pipe)`,`管道(pipe)`進行處理,用戶自己也可對`變量(variable)`,`變量管道(variable pipe)`,`管道(pipe)`進行拓展,詳見[前置腳本](zh-cn/pre-publish-script/default.md)
 
 !>注意:`變量管道variable pipe`和`管道pipe`的概念的區別在於,`變量管道variable pipe`用以處理單個模板變量,而`管道pipe`用以處理整個消息體
 
@@ -19,3 +19,7 @@
 ### 用戶腳本(User Script) :id=3
 
 > 通過用戶腳本,運行一個常駐內存的程序,來實現對複雜功能的調試,例如:調試設備間的協議,模擬 `IoT` 設備, 模擬服務端程序,批量消息發送,消息投遞,永久化等.
+
+### 回放(Replay) :id=4
+
+> 通過回放功能,可以對特定時間段內收到或者發送的消息進行過濾,處理,回放,以簡化測試流程.
