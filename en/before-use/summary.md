@@ -1,4 +1,4 @@
-!> All scripts and chart-option scripts are developed using `javascript`, and the environment is `node16`. By using scripts, the capabilities of `TTQM` can be greatly expanded. The document structure is as follows,
+!> All scripts and chart-option scripts are developed using `javascript`, and the environment is `node18`. By using scripts, the capabilities of `TTQM` can be greatly expanded. The document structure is as follows,
 
 | No. | Title                                                                              | Description                                                      |
 | --- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
