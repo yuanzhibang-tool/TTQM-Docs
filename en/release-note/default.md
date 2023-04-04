@@ -4,6 +4,20 @@
 
 ### App Changelog :id=app
 
+#### 1.1.15
+
+```
+1. Add Code Intelligence, Code hints, and Automatic Import.
+2. The message editor adds `variable`, `variable_pipe` hints.
+3. The script editor adds Code Intelligence.
+4. Add Replay feature.
+5. Add client import and export functions.
+6. Support more client parameters.
+7. Improve performance.
+8. Fix the bug that client `client_id` does not work.
+9. Fix other bugs.
+```
+
 #### 1.0.13
 
 ```
@@ -23,6 +37,16 @@
 ---
 
 ### Doc Changelog :id=doc
+
+#### 1.1.1
+
+```
+1. Add Replay related content.
+2. Add License related content.
+3. Add Start MQTT Service via Docker content.
+4. Improve language switching.
+5. Improve other documentations.
+```
 
 #### 1.0.1
 
