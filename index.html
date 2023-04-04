@@ -67,9 +67,34 @@
 
 <body>
     <script>
+        function getRightUrl(passLanguage = null) {
+            var hashs = location.hash.split('/');
+            var first_hash = hashs[1];
+            if (passLanguage) {
+                hashs[1] = passLanguage;
+            } else {
+                if (first_hash !== 'zh-cn' && first_hash !== 'en' && first_hash !== 'zh-tw') {
+                    var user_lang = localStorage.getItem('K_USER_LANGUAGE');
+                    if (user_lang) {
+                        hashs[1] = user_lang;
+                    } else {
+                        var navigator_lang = navigator.language;
+                        if (navigator_lang == 'zh' || navigator_lang == 'zh-Hans') {
+                            hashs[1] = 'zh-cn';
+                        } else if (navigator_lang == 'zh-Hant') {
+                            hashs[1] = 'zh-tw';
+                        }
+                        else {
+                            hashs[1] = 'en';
+                        }
+                    }
+                }
+            }
+            var newHash = hashs.join('/');
+            return newHash;
+        }
         // 处理url跳转
-        var hash = location.hash.substr(2);
-        var first_hash = location.hash.substr(2).split('/')[0];
+        var first_hash = location.hash.split('/')[1];
         if (first_hash !== 'zh-cn' && first_hash !== 'en' && first_hash !== 'zh-tw') {
             var user_lang = localStorage.getItem('K_USER_LANGUAGE');
             if (user_lang) {
@@ -86,41 +111,21 @@
                 }
             }
         }
+        var rightUrl = getRightUrl();
+        location.href = rightUrl;
         window.addEventListener('hashchange', (event) => {
-            var first_hash = location.hash.substr(2).split('/')[0];
+            var first_hash = location.hash.split('/')[1];
             if (first_hash == 'zh-cn' || first_hash == 'en' || first_hash == 'zh-tw') {
                 localStorage.setItem('K_USER_LANGUAGE', first_hash);
+            } else {
+                var rightUrl = getRightUrl();
+                location.href = rightUrl;
             }
         });
 
         function changeLang(lang) {
-            var hashs = location.hash.split('/');
-            var currentUrlLang = hashs[1];
-            switch (lang) {
-                case 'en':
-                    if (currentUrlLang === 'en') {
-                        return;
-                    }
-                    hashs[1] = 'en';
-                    break;
-                case 'zh-cn':
-                    if (currentUrlLang === 'zh-cn') {
-                        return;
-                    }
-                    hashs[1] = 'zh-cn';
-                    break;
-                case 'zh-tw':
-                    if (currentUrlLang === 'zh-tw') {
-                        return;
-                    }
-                    hashs[1] = 'zh-tw';
-                    break;
-                default:
-                    break;
-            }
-            var newHashs = hashs.join('/');
-            console.log(newHashs);
-            location.href = newHashs;
+            var rightUrl = getRightUrl(lang);
+            location.href = rightUrl;
         }
     </script>
     <div id="app">Please wait...</div>
