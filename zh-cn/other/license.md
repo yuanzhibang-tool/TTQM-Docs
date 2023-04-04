@@ -24,7 +24,7 @@
 
 ---
 
-### 生成下载设备许可证 :id=download_device_license
+### 生成下载设备许可证 :id=generate_download_device_license
 
 !>只有当自动激活出现问题的时候才需要使用设备许可证激活
 
@@ -41,7 +41,7 @@
 
 ---
 
-### 通过设备许可证激活
+### 通过设备许可证激活 :id=activate_via_device_license
 
 > 将下载的设备许可证(`*.device.license`)拖动到软件窗口,软件将会自动激活!
 

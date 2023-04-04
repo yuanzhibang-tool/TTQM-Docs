@@ -24,7 +24,7 @@
 
 ---
 
-### 生成下載設備許可證 :id=download_device_license
+### 生成下載設備許可證 :id=generate_download_device_license
 
 !>只有當自動激活出現問題的時候才需要使用設備許可證激活
 
@@ -41,7 +41,7 @@
 
 ---
 
-### 通過設備許可證激活
+### 通過設備許可證激活 :id=activate_via_device_license
 
 > 將下載的設備許可證(`*.device.license`)拖動到軟件窗口,軟件將會自動激活!
 

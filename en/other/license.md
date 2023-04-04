@@ -24,7 +24,7 @@
 
 ---
 
-### Generate & download Device License :id=download_device_license
+### Generate & download Device License :id=generate_download_device_license
 
 !>Activate with a device license only if there is a problem with the automatic activation
 
@@ -41,7 +41,7 @@
 
 ---
 
-### Activate via Device License
+### Activate via Device License :id=activate_via_device_license
 
 > Drag the downloaded device license (`*.device.license`) to the app window, the app will be activated automatically!
 
