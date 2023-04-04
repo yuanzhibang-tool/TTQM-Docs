@@ -85,7 +85,6 @@
                     location.href = `#/en/before-use/summary`;
                 }
             }
-
         }
         window.addEventListener('hashchange', (event) => {
             var first_hash = location.hash.substr(2).split('/')[0];
@@ -93,6 +92,36 @@
                 localStorage.setItem('K_USER_LANGUAGE', first_hash);
             }
         });
+
+        function changeLang(lang) {
+            var hashs = location.hash.split('/');
+            var currentUrlLang = hashs[1];
+            switch (lang) {
+                case 'en':
+                    if (currentUrlLang === 'en') {
+                        return;
+                    }
+                    hashs[1] = 'en';
+                    break;
+                case 'zh-cn':
+                    if (currentUrlLang === 'zh-cn') {
+                        return;
+                    }
+                    hashs[1] = 'zh-cn';
+                    break;
+                case 'zh-tw':
+                    if (currentUrlLang === 'zh-tw') {
+                        return;
+                    }
+                    hashs[1] = 'zh-tw';
+                    break;
+                default:
+                    break;
+            }
+            var newHashs = hashs.join('/');
+            console.log(newHashs);
+            location.href = newHashs;
+        }
     </script>
     <div id="app">Please wait...</div>
     <script>

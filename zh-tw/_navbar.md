@@ -5,6 +5,4 @@
 - [聯繫我們](mailto:support@ttqm.app)
 
 - **[繁體中文]**
-  - [En](/en/)
-  - [简体中文](/zh-cn/)
-  - [繁體中文](/zh-tw/)
+<ul><li><a onclick="changeLang('en')" title="En">En</a></li><li><a onclick="changeLang('zh-cn')" title="简体中文">简体中文</a></li><li><a onclick="changeLang('zh-tw')" style="color:#42b983;" title="繁體中文">繁體中文</a></li></ul>
