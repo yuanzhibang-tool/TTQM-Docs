@@ -1,27 +1,52 @@
-!> The TTQM Pro Edition supports more features and has no limit on usage. Welcome to pay for a license, thanks for your support.
+!> TTQM Pro Edition supports more powerful features without any functional limitations. You can purchase related licenses according to your needs, thank you for your support.
 
-### Activate Online
+### Buy Licenses :id=buy_license
 
-1. Go to `Settings > Pro Edition > Get` to enter the online activation process, click `Online`
+> You can buy a license here [Buy License](https://ttqm.app/license/buy)
 
-![1](_media/activate/1.jpg ':size=600')
+---
 
-2.Login to your email
+### Download your Software License :id=download_software_license
 
-3.If you have not paid, please pay first, and click to generate license after payment
+> You can download the license you have purchased here [My Licenses](https://ttqm.app/license/myLicense)
 
-4.Auto-Activate
+![1](_media/license/1.jpg ':size=800')
 
-5.Copy License Info for manual activation
+---
 
-6.Download the License file for manual activation
+### Activate via Software License :id=activate_via_software_license
 
-### Activate Offline
+> Drag the downloaded software license (`*.software.license`) to the app window, the app will be activated automatically!
 
-1.Copy the Get License Url
+!>If you encounter problems during the activation process, please use the device license to activate
 
-2.Open the url on a computer with Internet access
+![1](_media/license/2.jpg ':size=800')
 
-3.After payment, download the License file
+---
 
-4.Activate via license file
+### Generate & download Device License :id=download_device_license
+
+!>Activate with a device license only if there is a problem with the automatic activation
+
+**1. Download Device License Request Info**
+
+![1](_media/license/3.jpg ':size=800')
+
+**2. Generate Device License Online**
+
+> Click Generate Device License on the right side of the corresponding license, and then select the corresponding file to generate a device license.
+
+![1](_media/license/4.jpg ':size=800')
+![1](_media/license/5.jpg ':size=800')
+
+---
+
+### Activate via Device License
+
+> Drag the downloaded device license (`*.device.license`) to the app window, the app will be activated automatically!
+
+![1](_media/license/6.jpg ':size=800')
+
+---
+
+!> If you have trouble activating your license, please email `support@ttqm.app`
