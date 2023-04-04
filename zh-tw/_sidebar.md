@@ -48,7 +48,7 @@
   - [快捷鍵](zh-tw/other/keyboard-shortcuts-reference.md)
   - [備份/恢復](zh-tw/other/backup-and-restore.md)
   - [搭建 MQTT 服務器](zh-tw/other/mqtt-server.md)
-  - [激活](zh-tw/other/activate.md)
+  - [許可證](zh-tw/other/license.md)
 
 - [常見問題?](zh-tw/question/default.md)
 

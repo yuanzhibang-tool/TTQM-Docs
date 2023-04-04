@@ -48,7 +48,7 @@
   - [Shortcuts](en/other/keyboard-shortcuts-reference.md)
   - [Backup/Restore](en/other/backup-and-restore.md)
   - [Start MQTT Server](en/other/mqtt-server.md)
-  - [Activate](en/other/activate.md)
+  - [License](en/other/license.md)
 
 - [FAQ?](en/question/default.md)
 
