@@ -28,13 +28,13 @@ const main = async () => {
 main();
 ```
 
-### 2. Use certificate encryption and decryption, file operation,getting string `hash`
+### 2. Use certificate encryption and decryption, file operation,getting string `hash` :id=2
 
 !> Please see [FAQ?>Built-in Modules?](en/question/built-in-module?id=_6)
 
 ---
 
-### 3. Repeat regularly
+### 3. Repeat regularly :id=3
 
 ```javascript
 // The unit of the second parameter is milliseconds, and a specific operation is performed every 1s
@@ -53,7 +53,7 @@ const intervId = setInterval(() => {
 
 ---
 
-### 4. Delay
+### 4. Delay :id=4
 
 ```javascript
 // The second parameter unit is milliseconds, perform after 4s

@@ -32,6 +32,6 @@ console.log(other);
 
 ---
 
-### 4. Install @types to enhance editor type hints
+### 4. Install @types to enhance editor type hints :id=4
 
 !>From `TTQM` `1.1.0`, the built-in script editor supports code hints and completion functions, you can find it at [https://www.npmjs.com](https://www.npmjs.com) Search for the module you need to prompt, for example, you need to install the type definition of `lodash`, search `@types/lodash`, if it exists, please use `npm install @types/lodash` to install, or directly use `npm install @types/library-name` to install, if it exists, the installation will be successful.

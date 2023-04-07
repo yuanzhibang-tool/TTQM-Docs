@@ -2,7 +2,7 @@
 
 ---
 
-### 启动 `MQTT Server`
+### 启动 `MQTT Server` :id=1
 
 如果您要在 Windows & macOS 使用, 请先安装 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
@@ -22,7 +22,7 @@ docker-compose up -d
 
 ---
 
-### 使能用户权限控制,默认允许匿名登录 `MQTT` 服务器
+### 使能用户权限控制,默认允许匿名登录 `MQTT` 服务器 :id=2
 
 > 你可以更改 `./etc/mosquitto/mosquitto.conf`中的配置来使能用户权限控制
 
