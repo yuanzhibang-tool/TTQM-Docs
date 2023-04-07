@@ -4,7 +4,7 @@
 
 ### App Changelog :id=app
 
-#### 1.1.15
+#### 1.1.15 :id=app_1_1_15
 
 ```
 1. Add Code Intelligence, Code hints, and Automatic Import.
@@ -18,14 +18,14 @@
 9. Fix other bugs.
 ```
 
-#### 1.0.13
+#### 1.0.13 :id=app_1_0_13
 
 ```
 1. Add Touch Bar support.
 2. Fix bugs.
 ```
 
-#### 1.0.10
+#### 1.0.10 :id=app_1_0_10
 
 ```
 1. Add the Demo Client after first launch.
@@ -38,7 +38,7 @@
 
 ### Doc Changelog :id=doc
 
-#### 1.1.1
+#### 1.1.1 :id=doc_1_1_1
 
 ```
 1. Add Replay related content.
@@ -48,7 +48,7 @@
 5. Improve other documentations.
 ```
 
-#### 1.0.1
+#### 1.0.1 :id=doc_1_0_1
 
 ```
 1. Add backup and resotre, shortcut key documentation.

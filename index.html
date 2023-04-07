@@ -69,6 +69,9 @@
     <script>
         function getRightUrl(passLanguage = null) {
             var hashs = location.hash.split('/');
+            if (hashs.length < 4) {
+                hashs = ['#', 'xx', 'before-use', 'summary'];
+            }
             var first_hash = hashs[1];
             if (passLanguage) {
                 hashs[1] = passLanguage;
@@ -91,41 +94,33 @@
                 }
             }
             var newHash = hashs.join('/');
+            if (newHash === location.hash) {
+                return null;
+            }
             return newHash;
         }
         // 处理url跳转
-        var first_hash = location.hash.split('/')[1];
-        if (first_hash !== 'zh-cn' && first_hash !== 'en' && first_hash !== 'zh-tw') {
-            var user_lang = localStorage.getItem('K_USER_LANGUAGE');
-            if (user_lang) {
-                location.href = `#/${user_lang}/before-use/summary`;
-            } else {
-                var navigator_lang = navigator.language;
-                if (navigator_lang == 'zh' || navigator_lang == 'zh-Hans') {
-                    location.href = `#/zh-cn/before-use/summary`;
-                } else if (navigator_lang == 'zh-Hant') {
-                    location.href = `#/zh-tw/before-use/summary`;
-                }
-                else {
-                    location.href = `#/en/before-use/summary`;
-                }
-            }
-        }
         var rightUrl = getRightUrl();
-        location.href = rightUrl;
+        if (rightUrl) {
+            location.href = rightUrl;
+        }
         window.addEventListener('hashchange', (event) => {
             var first_hash = location.hash.split('/')[1];
             if (first_hash == 'zh-cn' || first_hash == 'en' || first_hash == 'zh-tw') {
                 localStorage.setItem('K_USER_LANGUAGE', first_hash);
             } else {
                 var rightUrl = getRightUrl();
-                location.href = rightUrl;
+                if (rightUrl) {
+                    location.href = rightUrl;
+                }
             }
         });
 
         function changeLang(lang) {
             var rightUrl = getRightUrl(lang);
-            location.href = rightUrl;
+            if (rightUrl) {
+                location.href = rightUrl;
+            }
         }
     </script>
     <div id="app">Please wait...</div>
