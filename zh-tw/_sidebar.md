@@ -60,5 +60,10 @@
   - [其他問題?](zh-tw/question/other.md)
 
 - [隱私政策 & 服務協議](zh-tw/terms-of-service-privacy-policy/default.md)
+
   - [隱私政策](zh-tw/terms-of-service-privacy-policy/privacy-policy.md)
   - [服務協議](zh-tw/terms-of-service-privacy-policy/terms-of-service.md)
+
+- [許可證](zh-tw/license/default.md)
+  - [個人許可證](zh-tw/license/personal_license)
+  - [商業許可證](zh-tw/license/commercial_license)

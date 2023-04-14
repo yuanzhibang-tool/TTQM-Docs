@@ -1,4 +1,4 @@
-**_Version:`20221229`_**
+**_Version:`20230414`_**
 
 ---
 
@@ -46,64 +46,76 @@ In view of the above, the user understands and agrees that:
 
 3.4.3 We do not make any guaranteed or joint promises or guarantees for any of the functions, software, services or content provided by the above-mentioned third parties. Solve it by yourself, we will not bear any responsibility;
 
-### 4. Privacy Protection :id=4
+### 4. License :id=4
 
-#### 4.1 :id=4-1
+1. If users need to use the relevant functions provided by the professional edition, they need to purchase the license. We offer two types of licenses, personal license and commercial license;
 
-Protecting user privacy and other personal information is a basic policy of ours. For details, please refer to [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md).
+4.2 A Personal license is an option for private individuals who purchase a license with their own funds, and solely for their own use. Use is permitted on up to 5 devices owned by Licensee;
 
-### 5. Disclaimer :id=5
+4.3 Commercial licenses are the standard licensing option for organizations and commercial entities. Licenses are purchased by companies and are available to people within that organization. Each license only allows one person in the organization to use, multiple people need to purchase multiple commercial licenses;
+
+4.4 If you violate the terms of the relevant license, we have the right to suspend the relevant authorization of the license without refund;
+
+4.5 After any license is purchased, it cannot be refunded;
+
+### 5. Privacy Protection :id=4
 
 #### 5.1 :id=5-1
 
-Users should abide by national laws, regulations and policies in the process of using this product and service, and the behavioral consequences arising from their use shall be borne by the users themselves.
+Protecting user privacy and other personal information is a basic policy of ours. For details, please refer to [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md).
 
-#### 5.2 :id=5-2
-
-Since the content of the web pages pointed to by external links is not under our actual control, we cannot guarantee the accuracy and completeness of the external links set up for the convenience of users.
-
-#### 5.3 :id=5-3
-
-We do not assume any responsibility for product service interruption or other defects caused by force majeure or reasons beyond our control, but we will try our best to reduce the losses and impacts caused to users.
-
-#### 5.4 :id=5-4
-
-We are responsible for the products and services we provide to users in accordance with the law, unless otherwise stipulated by law or otherwise agreed.
-
-#### 5.5 :id=5-5
-
-The user understands and agrees that you will bear the relevant losses and responsibilities for the losses caused by the third-party libraries you use in your use.
-
-### 6. Protocol modification :id=6
+### 6. Disclaimer :id=6
 
 #### 6.1 :id=6-1
 
-We have the right to modify any terms of this agreement at any time. Once the content of this agreement changes, we will update this page. Please forgive us for not notifying them one by one.
+Users should abide by national laws, regulations and policies in the process of using this product and service, and the behavioral consequences arising from their use shall be borne by the users themselves.
 
 #### 6.2 :id=6-2
 
-If you do not agree with the modification we have made to the relevant terms of this agreement, the user has the right to stop using this product and service. If the user continues to use this product and related services, it shall be deemed that the user accepts the modifications we have made to the relevant terms of this agreement.
+Since the content of the web pages pointed to by external links is not under our actual control, we cannot guarantee the accuracy and completeness of the external links set up for the convenience of users.
 
-### 7. APPLICABLE LAWS :id=7
+#### 6.3 :id=6-3
+
+We do not assume any responsibility for product service interruption or other defects caused by force majeure or reasons beyond our control, but we will try our best to reduce the losses and impacts caused to users.
+
+#### 6.4 :id=6-4
+
+We are responsible for the products and services we provide to users in accordance with the law, unless otherwise stipulated by law or otherwise agreed.
+
+#### 6.5 :id=6-5
+
+The user understands and agrees that you will bear the relevant losses and responsibilities for the losses caused by the third-party libraries you use in your use.
+
+### 7. Protocol modification :id=6
 
 #### 7.1 :id=7-1
 
-The conclusion, execution and interpretation of this agreement and the settlement of disputes shall be governed by the laws of the mainland of the People's Republic of China.
+We have the right to modify any terms of this agreement at any time. Once the content of this agreement changes, we will update this page. Please forgive us for not notifying them one by one.
 
 #### 7.2 :id=7-2
 
-If any dispute arises between the two parties regarding the content of this agreement or its implementation, the two parties shall try their best to resolve it through friendly negotiation; if the negotiation fails, either party may file a lawsuit in the People's Court of Daxing District, Beijing, China.
+If you do not agree with the modification we have made to the relevant terms of this agreement, the user has the right to stop using this product and service. If the user continues to use this product and related services, it shall be deemed that the user accepts the modifications we have made to the relevant terms of this agreement.
 
-### 8. Other regulations :id=8
+### 8. APPLICABLE LAWS :id=8
 
 #### 8.1 :id=8-1
 
-If any provision of this agreement is wholly or partially invalid or unenforceable for any reason, the remaining provisions of this agreement shall still be valid and binding.
+The conclusion, execution and interpretation of this agreement and the settlement of disputes shall be governed by the laws of the mainland of the People's Republic of China.
 
 #### 8.2 :id=8-2
 
+If any dispute arises between the two parties regarding the content of this agreement or its implementation, the two parties shall try their best to resolve it through friendly negotiation; if the negotiation fails, either party may file a lawsuit in the People's Court of Daxing District, Beijing, China.
+
+### 9. Other regulations :id=9
+
+#### 9.1 :id=9-1
+
+If any provision of this agreement is wholly or partially invalid or unenforceable for any reason, the remaining provisions of this agreement shall still be valid and binding.
+
+#### 9.2 :id=9-2
+
 Headings in this agreement are for convenience only and shall be ignored when interpreting this agreement and shall not be used as a basis for interpretation of the terms of this agreement.
 
-#### 8.3 :id=8-3
+#### 9.3 :id=9-3
 
 If there is any discrepancy between the non-Chinese language version of this agreement and the simplified Chinese version, the simplified Chinese version shall prevail.
