@@ -48,7 +48,7 @@ In view of the above, the user understands and agrees that:
 
 ### 4. License :id=4
 
-4.1 If users need to use the relevant functions provided by the professional edition, they need to purchase the license. The license is divided into personal license and commercial license;
+1. If users need to use the relevant functions provided by the professional edition, they need to purchase the license. We offer two types of licenses, personal license and commercial license;
 
 4.2 A Personal license is an option for private individuals who purchase a license with their own funds, and solely for their own use. Use is permitted on up to 5 devices owned by Licensee;
 
