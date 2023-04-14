@@ -64,6 +64,6 @@
   - [隐私政策](zh-cn/terms-of-service-privacy-policy/privacy-policy.md)
   - [服务协议](zh-cn/terms-of-service-privacy-policy/terms-of-service.md)
 
-- [许可证](zh-cn/license/default.md)
-  - [个人许可证](zh-cn/license/personal_license)
-  - [商业许可证](zh-cn/license/commercial_license)
+- [许可协议](zh-cn/license_agreement/default.md)
+  - [个人许可协议](zh-cn/license_agreement/personal_license)
+  - [商业许可协议](zh-cn/license_agreement/commercial_license)

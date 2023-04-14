@@ -64,6 +64,6 @@
   - [Privacy Policy](en/terms-of-service-privacy-policy/privacy-policy.md)
   - [Terms of Service](en/terms-of-service-privacy-policy/terms-of-service.md)
 
-- [License](en/license/default.md)
-  - [Personal License](en/license/personal_license)
-  - [Commercial License](en/license/commercial_license)
+- [License Agreement](en/license_agreement/default.md)
+  - [Personal License Agreement](en/license_agreement/personal_license)
+  - [Commercial License Agreement](en/license_agreement/commercial_license)
