@@ -4,6 +4,13 @@
 
 ### App Changelog :id=app
 
+#### 1.1.38 :id=app_1_1_38
+
+```
+1. Add raw message viewer;
+2. Fix bugs;
+```
+
 #### 1.1.15 :id=app_1_1_15
 
 ```
