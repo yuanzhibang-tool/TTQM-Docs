@@ -1,4 +1,4 @@
-**_Version:`20221229`_**
+**_Version:`20230414`_**
 
 ---
 
@@ -54,7 +54,7 @@ We use the collected data for some or all of the following purposes:
 
 8. When you access the service through a mobile device, we may automatically collect certain information, including but not limited to the type of mobile device you use, the unique ID of the mobile device, the IP address of the mobile device, the operating system of the mobile device, the Type of mobile internet browser, unique device identifiers and other diagnostic data (“Usage Data”).
 
-9. Realize your account management and other functions
+9. Realize your account management and license about functions, etc.
 
 ### 2. Information storage :id=2
 
@@ -138,7 +138,7 @@ In accordance with this Privacy Policy, you may permanently and freely opt-out o
 
 If you have any questions about this Privacy Policy, please contact us:
 
-By mail: [support@ttqm.app](mailto:consumer-service@yuanzhibang.com)
+By mail: [support@ttqm.app](mailto:support@ttqm.app)
 
 ### 10. Changes to this Privacy Policy :id=10
 
