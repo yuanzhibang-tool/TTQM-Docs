@@ -1,5 +1,6 @@
 <!-- _navbar.md -->
 
+- [Download](https://ttqm.app)
 - [Stackoverflow](https://stackoverflow.com/questions/tagged/ttqm)
 - [Official Website](https://ttqm.app)
 - [Contact Us](mailto:support@ttqm.app)

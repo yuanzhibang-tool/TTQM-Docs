@@ -57,6 +57,7 @@
   - [如何添加腳本依賴庫?](zh-tw/question/how-to-add-support-modules.md)
   - [圖表配置腳本 echart 模塊未找到錯誤](zh-tw/question/echarts-not-found.md)
   - [腳本可操作的文件目錄有哪些?](zh-tw/question/script-data-dir.md)
+  - [如何運行 AppImage?](zh-tw/question/how-to-run-an-appimage.md)
   - [其他問題?](zh-tw/question/other.md)
 
 - [隱私政策 & 服務協議](zh-tw/terms-of-service-privacy-policy/default.md)
