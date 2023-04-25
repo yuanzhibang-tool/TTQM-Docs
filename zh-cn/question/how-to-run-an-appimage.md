@@ -17,3 +17,25 @@ chmod +x your_ttqm_appimage_path.AppImage
 ```bash
 ./your_ttqm_appimage_path.AppImage
 ```
+
+---
+
+!>如果您在运行 AppImage 的过程中遇到问题,例如设置好权限后,无法通过双击打开,请使用命令行方式打开,根据错误输出进行安装依赖等操作.
+
+```bash
+cd /your_ttqm_app_dir/
+chmod +x TTQM-latest-linux-x86_64.AppImage
+./TTQM-latest-linux-x86_64.AppImage
+# An error occurred while running the app
+
+# AppImages require FUSE to run.
+# You might still be able to extract the contents of this AppImage
+# if you run it with the --appimage-extract option.
+# See https://github.com/AppImage/AppImageKit/wiki/FUSE
+# for more information
+
+```
+
+![Error](_media/how-to-run-an-appimage/1.jpg ':size=600')
+
+!>如果您出现该错误也可访问[https://docs.appimage.org/user-guide/troubleshooting/fuse.html](https://docs.appimage.org/user-guide/troubleshooting/fuse.html)
